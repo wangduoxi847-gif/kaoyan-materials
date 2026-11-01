@@ -110,7 +110,7 @@ function bind(){
   document.querySelectorAll('#list .row[data-h]').forEach(el => {
     el.addEventListener('click', () => {
       const h = el.dataset.h;
-      set('kym_recent', [h, ...get('kym_recent', []).filter(x => x !== h)].slice(0, 8));
+      set('kym_recent', [h, ...get('kym_recent', []).filter(x => x !== h)].slice(0, 2));
     });
   });
   document.querySelectorAll('#list .star').forEach(el => {
