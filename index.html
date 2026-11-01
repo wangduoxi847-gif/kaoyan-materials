@@ -5,170 +5,129 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>考研资料站</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#f5f6f8;color:#222;line-height:1.6;padding-bottom:60px}
-header{background:#1a73e8;color:#fff;padding:28px 20px 18px;text-align:center}
-header h1{font-size:24px;margin-bottom:8px;letter-spacing:2px}
-header p{font-size:14px;opacity:.92;max-width:560px;margin:0 auto 14px}
-.jump{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-.jump a{color:#fff;text-decoration:none;font-size:14px;border:1.5px solid rgba(255,255,255,.75);border-radius:20px;padding:8px 22px;min-height:40px;display:inline-flex;align-items:center}
-.jump a:active{background:rgba(255,255,255,.22)}
-main{max-width:720px;margin:0 auto;padding:16px}
-.searchbar{margin:2px 0 4px}
-.searchbar input{width:100%;font-size:15px;padding:12px 14px;border:1px solid #d5dce5;border-radius:10px;background:#fff;font-family:inherit}
-.searchbar input:focus{outline:none;border-color:#1a73e8}
-#noresult{text-align:center;color:#999;font-size:14px;padding:26px 0}
-section{margin:20px 0;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.07);scroll-margin-top:12px}
-section h2{font-size:17px;padding:13px 16px;background:#eef4fd;color:#1a73e8;border-bottom:1px solid #e3ecf7}
-#recent-sec h2,#freq-sec h2{background:#fff8ec;color:#b26a00;border-bottom:1px solid #f3e8cf}
-ul{list-style:none}
-li{border-bottom:1px solid #f0f0f0}
-li:last-child{border-bottom:none}
-a.doc{display:block;text-decoration:none;color:inherit;padding:12px 16px}
-a.doc:active{background:#f0f6ff}
-.t{display:block;font-size:15px;font-weight:600;color:#222;line-height:1.45}
-.d{display:block;font-size:13px;color:#666;margin-top:4px;line-height:1.55}
-.m{display:block;font-size:12px;color:#999;margin-top:4px}
-.f{display:block;font-size:13px;color:#1a73e8;margin-top:6px;font-weight:600}
-li.fold{padding:0}
-li.fold details{border-bottom:none}
-li.fold summary{list-style:none;cursor:pointer;padding:12px 16px;display:block}
-li.fold summary::-webkit-details-marker{display:none}
-li.fold summary:active{background:#f0f6ff}
-li.fold summary .t::after{content:" ▸";color:#999;font-weight:400}
-li.fold details[open] summary .t::after{content:" ▾"}
-.subgrp{font-size:12.5px;color:#999;padding:10px 16px 2px 26px;font-weight:600;letter-spacing:1px}
-li.fold ul{background:#fbfcfe}
-li.fold li a.doc{padding-left:26px}
-footer{text-align:center;font-size:12px;color:#999;padding:28px 16px 8px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:#f5f6f8;color:#222;font-size:15px;line-height:1.5}
+.wrap{max-width:720px;margin:0 auto;background:#fff;min-height:100vh}
+header{position:sticky;top:0;background:#3d5a99;color:#fff;padding:14px 16px;z-index:10}
+header h1{font-size:18px;letter-spacing:2px}
+header p{font-size:12px;opacity:.85;margin-top:2px}
+.search{position:sticky;top:0;background:#fff;padding:10px 16px;border-bottom:1px solid #eee;z-index:9}
+.search input{width:100%;padding:9px 14px;border:1px solid #dfe3ec;border-radius:20px;font-size:14px;outline:none;background:#f5f6f8}
+.search input:focus{border-color:#3d5a99;background:#fff}
+.crumb{display:flex;flex-wrap:wrap;gap:4px;align-items:center;padding:10px 16px;font-size:14px;color:#666;border-bottom:1px solid #f0f0f0}
+.crumb a{color:#3d5a99;text-decoration:none;cursor:pointer}
+.crumb .sep{color:#bbb}
+.sec-t{padding:12px 16px 4px;font-size:13px;color:#999}
+.row{display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid #f2f2f2;cursor:pointer;text-decoration:none;color:inherit}
+.row:active{background:#f5f6f8}
+.ic{font-size:22px;flex:none;width:30px;text-align:center}
+.row .tt{flex:1;min-width:0}
+.row .t{font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.row .d{font-size:12.5px;color:#888;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
+.row .m{font-size:12px;color:#aaa;margin-top:1px}
+.row .cnt{font-size:12px;color:#aaa;flex:none}
+.star{flex:none;font-size:18px;color:#ccc;padding:4px;cursor:pointer}
+.star.on{color:#f5a623}
+.empty{padding:40px 16px;text-align:center;color:#aaa;font-size:14px}
 </style>
 </head>
 <body>
-<header>
-<h1>考研资料站</h1>
-<p>备考资料集中地：数学二、英语二、408 三科，手机平板直接打开，随用随查。</p>
-<nav class="jump" aria-label="科目跳转">
-<a href="#sec-shuxue2">数学二</a>
-<a href="#sec-english2">英语二</a>
-<a href="#sec-408">408</a>
-</nav>
-</header>
-<main>
-<div class="searchbar"><input id="q" type="search" placeholder="搜索：年份 / 科目 / 标题关键词，如 2017、计组、公式" aria-label="搜索资料"></div>
-<div id="noresult" hidden>没有匹配的资料，换个关键词试试。</div>
-
-<section id="recent-sec" hidden>
-<h2>最近打开</h2>
-<ul id="recent-list"></ul>
-</section>
-<section id="freq-sec" hidden>
-<h2>常用资料</h2>
-<ul id="freq-list"></ul>
-</section>
-
-<section id="sec-shuxue2">
-<h2>数学二</h2>
-<ul>
-<li class="leaf" data-search="数学二 数二 公式速查卡 完整版 v3 31小节 必记 红标 字典"><a class="doc" href="./shuxue2-gongshi-ka-v3.pdf"><span class="t">数二公式速查卡完整版（v3）</span><span class="d">全模块 31 小节重点公式，必记项已标红，做题时放手边当字典查。</span><span class="m">8 页 · 1.0 MB · 更新 2026-10-31</span><span class="f">打开 PDF →</span></a></li>
-<li class="leaf" data-search="数学二 数二 三角函数 公式大全 求导 积分 极限 反三角"><a class="doc" href="./shuxue2-sanjiaohanshu-gongshi.pdf"><span class="t">三角函数公式大全</span><span class="d">十五节全收录：基本公式、诱导、倍角、求导、积分、极限、反三角，带星级和记忆口诀。</span><span class="m">6 页 · 0.6 MB · 更新 2026-11-01</span><span class="f">打开 PDF →</span></a></li>
-<li class="leaf" data-search="数学二 数二 反常积分 计算 标杆 详解"><a class="doc" href="./shuxue2-fanchangjifen-biaogan.pdf"><span class="t">数二反常积分计算标杆详解</span><span class="d">反常积分计算的标杆解法，一步一步拆到看得懂。</span><span class="m">0.4 MB · 更新 2026-10-31</span><span class="f">打开 PDF →</span></a></li>
-<li class="leaf" data-search="数学二 数二 反常积分 速查卡 p积分 敛散性 判别"><a class="doc" href="./shuxue2-fanchangjifen-sucha.pdf"><span class="t">数二反常积分速查卡</span><span class="d">p-积分与敛散性判别法速查，考前翻一遍。</span><span class="m">0.4 MB · 更新 2026-10-31</span><span class="f">打开 PDF →</span></a></li>
-</ul>
-</section>
-
-<section id="sec-english2">
-<h2>英语二</h2>
-<ul>
-<li class="fold" data-search="英语二 英二 2010 年"><details><summary><span class="t">2010 年</span><span class="d">英二阅读精读解析</span></summary><ul><li class="leaf" data-search="英语二 英二 2010 阅读 精读解析 逐词逐句 长难句 词汇 干扰项"><a class="doc" href="./english2-2010-yuedu.pdf"><span class="t">2010 英二阅读精读解析</span><span class="d">逐词逐句精讲：长难句拆解＋词汇＋干扰项分析。</span><span class="m">0.4 MB · 更新 2026-10-31</span><span class="f">打开 PDF →</span></a></li></ul></details></li>
-<li class="fold" data-search="英语二 英二 2011 年"><details><summary><span class="t">2011 年</span><span class="d">英二阅读精读解析</span></summary><ul><li class="leaf" data-search="英语二 英二 2011 阅读 精读解析 逐词逐句 长难句 词汇 干扰项"><a class="doc" href="./english2-2011-yuedu.pdf"><span class="t">2011 英二阅读精读解析</span><span class="d">逐词逐句精讲：长难句拆解＋词汇＋干扰项分析。</span><span class="m">0.4 MB · 更新 2026-10-31</span><span class="f">打开 PDF →</span></a></li></ul></details></li>
-<li class="fold" data-search="英语二 英二 2012 年"><details><summary><span class="t">2012 年</span><span class="d">英二阅读精读解析</span></summary><ul><li class="leaf" data-search="英语二 英二 2012 阅读 精读解析 逐词逐句 长难句 词汇 干扰项"><a class="doc" href="./english2-2012-yuedu.pdf"><span class="t">2012 英二阅读精读解析</span><span class="d">逐词逐句精讲：长难句拆解＋词汇＋干扰项分析。</span><span class="m">0.4 MB · 更新 2026-10-31</span><span class="f">打开 PDF →</span></a></li></ul></details></li>
-<li class="fold" data-search="英语二 英二 2013 年"><details><summary><span class="t">2013 年</span><span class="d">英二阅读精读解析</span></summary><ul><li class="leaf" data-search="英语二 英二 2013 阅读 精读解析 逐词逐句 长难句 词汇 干扰项"><a class="doc" href="./english2-2013-yuedu.pdf"><span class="t">2013 英二阅读精读解析</span><span class="d">逐词逐句精讲：长难句拆解＋词汇＋干扰项分析。</span><span class="m">0.4 MB · 更新 2026-10-31</span><span class="f">打开 PDF →</span></a></li></ul></details></li>
-<li class="fold" data-search="英语二 英二 2014 年"><details><summary><span class="t">2014 年</span><span class="d">英二阅读精读解析</span></summary><ul><li class="leaf" data-search="英语二 英二 2014 阅读 精读解析 逐词逐句 长难句 词汇 干扰项"><a class="doc" href="./english2-2014-yuedu.pdf"><span class="t">2014 英二阅读精读解析</span><span class="d">逐词逐句精讲：长难句拆解＋词汇＋干扰项分析。</span><span class="m">0.4 MB · 更新 2026-10-31</span><span class="f">打开 PDF →</span></a></li></ul></details></li>
-<li class="fold" data-search="英语二 英二 2015 年"><details><summary><span class="t">2015 年</span><span class="d">英二阅读精读解析</span></summary><ul><li class="leaf" data-search="英语二 英二 2015 阅读 精读解析 逐词逐句 长难句 词汇 干扰项"><a class="doc" href="./english2-2015-yuedu.pdf"><span class="t">2015 英二阅读精读解析</span><span class="d">逐词逐句精讲：长难句拆解＋词汇＋干扰项分析。</span><span class="m">0.3 MB · 更新 2026-10-31</span><span class="f">打开 PDF →</span></a></li></ul></details></li>
-<li class="fold" data-search="英语二 英二 2016 年"><details><summary><span class="t">2016 年</span><span class="d">英二阅读精读解析</span></summary><ul><li class="leaf" data-search="英语二 英二 2016 阅读 精读解析 逐词逐句 长难句 词汇 干扰项"><a class="doc" href="./english2-2016-yuedu.pdf"><span class="t">2016 英二阅读精读解析</span><span class="d">逐词逐句精讲：长难句拆解＋词汇＋干扰项分析。</span><span class="m">0.4 MB · 更新 2026-10-31</span><span class="f">打开 PDF →</span></a></li></ul></details></li>
-<li class="fold" data-search="英语二 英二 2017 年"><details><summary><span class="t">2017 年（8 项）</span><span class="d">整套解析＋Text 1–4 精读＋逐词翻译</span></summary><div class="subgrp">整套解析</div><ul><li class="leaf" data-search="英语二 英二 2017 阅读 精读解析 逐词逐句 长难句 词汇 干扰项 整套"><a class="doc" href="./english2-2017-yuedu.pdf"><span class="t">2017 英二阅读精读解析</span><span class="d">逐词逐句精讲：长难句拆解＋词汇＋干扰项分析。</span><span class="m">0.4 MB · 更新 2026-10-31</span><span class="f">打开 PDF →</span></a></li></ul><div class="subgrp">分篇精读 Text 1–4</div><ul><li class="leaf" data-search="英语二 英二 2017 Text1 精读解析 定位句 逐词比对 分篇"><a class="doc" href="./english2-2017-text1-jingdu.pdf"><span class="t">2017 Text 1 精读解析</span><span class="d">单篇精读版：定位句逐词比对流程示范。</span><span class="m">0.2 MB · 更新 2026-10-31</span><span class="f">打开 PDF →</span></a></li><li class="leaf" data-search="英语二 英二 2017 Text2 精读解析 定位句 逐词比对 分篇"><a class="doc" href="./english2-2017-text2-jingdu.pdf"><span class="t">2017 Text 2 精读解析</span><span class="d">单篇精读版：定位句逐词比对流程示范。</span><span class="m">0.2 MB · 更新 2026-10-31</span><span class="f">打开 PDF →</span></a></li><li class="leaf" data-search="英语二 英二 2017 Text3 精读解析 定位句 逐词比对 分篇"><a class="doc" href="./english2-2017-text3-jingdu.pdf"><span class="t">2017 Text 3 精读解析</span><span class="d">单篇精读版：定位句逐词比对流程示范。</span><span class="m">0.2 MB · 更新 2026-10-31</span><span class="f">打开 PDF →</span></a></li><li class="leaf" data-search="英语二 英二 2017 Text4 精读解析 定位句 逐词比对 分篇"><a class="doc" href="./english2-2017-text4-jingdu.pdf"><span class="t">2017 Text 4 精读解析</span><span class="d">单篇精读版：定位句逐词比对流程示范。</span><span class="m">0.2 MB · 更新 2026-10-31</span><span class="f">打开 PDF →</span></a></li></ul><div class="subgrp">分篇逐词翻译 Text 1–4</div><ul><li class="leaf" data-search="英语二 英二 2017 Text1 逐词翻译 生词 分篇"><a class="doc" href="./english2-2017-text1-fanyi.pdf"><span class="t">2017 Text 1 逐词翻译</span><span class="d">全文逐词翻译，卡生词时对照着看。</span><span class="m">0.1 MB · 更新 2026-10-31</span><span class="f">打开 PDF →</span></a></li><li class="leaf" data-search="英语二 英二 2017 Text2 逐词翻译 生词 分篇"><a class="doc" href="./english2-2017-text2-fanyi.pdf"><span class="t">2017 Text 2 逐词翻译</span><span class="d">全文逐词翻译，卡生词时对照着看。</span><span class="m">0.1 MB · 更新 2026-10-31</span><span class="f">打开 PDF →</span></a></li><li class="leaf" data-search="英语二 英二 2017 Text3 逐词翻译 生词 分篇"><a class="doc" href="./english2-2017-text3-fanyi.pdf"><span class="t">2017 Text 3 逐词翻译</span><span class="d">全文逐词翻译，卡生词时对照着看。</span><span class="m">0.1 MB · 更新 2026-10-31</span><span class="f">打开 PDF →</span></a></li><li class="leaf" data-search="英语二 英二 2017 Text4 逐词翻译 生词 分篇"><a class="doc" href="./english2-2017-text4-fanyi.pdf"><span class="t">2017 Text 4 逐词翻译</span><span class="d">全文逐词翻译，卡生词时对照着看。</span><span class="m">0.1 MB · 更新 2026-10-31</span><span class="f">打开 PDF →</span></a></li></ul></details></li>
-<li class="leaf" data-search="英语二 英二 2010 2017 阅读 精读解析 合集 打包下载 zip"><a class="doc" href="./english2-2010-2017-yuedu.zip"><span class="t">2010–2017 英二阅读精读解析合集（zip）</span><span class="d">8 年精读解析一次性打包下载。</span><span class="m">2.7 MB · 更新 2026-10-31</span><span class="f">下载 zip →</span></a></li>
-</ul>
-</section>
-
-<section id="sec-408">
-<h2>408</h2>
-<ul>
-<li class="leaf" data-search="408 2022 选择题 详解 升级版 图像 口诀 考频"><a class="doc" href="./408-2022-xuanzeti-congling.pdf"><span class="t">2022 选择题详解（升级版）</span><span class="d">109 页升级版：图像＋口诀＋考频标注的完整拆解。</span><span class="m">109 页 · 3.2 MB · 更新 2026-10-31</span><span class="f">打开 PDF →</span></a></li>
-<li class="leaf" data-search="408 2022 综合应用题 详解 大题 审题 步骤"><a class="doc" href="./408-2022-zongheyingyongti.pdf"><span class="t">2022 综合应用题详解（从零版）</span><span class="d">大题逐题精讲：从审题到完整步骤。</span><span class="m">16 页 · 1.0 MB · 更新 2026-10-31</span><span class="f">打开 PDF →</span></a></li>
-<li class="leaf" data-search="408 2021 选择题 详解 升级版 图像 口诀 考频"><a class="doc" href="./408-2021-xuanzeti-shengji.pdf"><span class="t">2021 选择题详解（升级版）</span><span class="d">123 页升级版：图像＋口诀＋考频标注的完整拆解。</span><span class="m">123 页 · 3.4 MB · 更新 2026-10-31</span><span class="f">打开 PDF →</span></a></li>
-<li class="leaf" data-search="408 2020 选择题 详解 升级版 图像 口诀 考频"><a class="doc" href="./408-2020-xuanzeti-shengji.pdf"><span class="t">2020 选择题详解（升级版）</span><span class="d">123 页升级版：图像＋口诀＋考频标注的完整拆解。</span><span class="m">123 页 · 3.5 MB · 更新 2026-10-31</span><span class="f">打开 PDF →</span></a></li>
-<li class="leaf" data-search="408 2019 选择题 详解 升级版 图像 口诀 考频"><a class="doc" href="./408-2019-xuanzeti-shengji.pdf"><span class="t">2019 选择题详解（升级版）</span><span class="d">116 页升级版：图像＋口诀＋考频标注的完整拆解。</span><span class="m">116 页 · 3.2 MB · 更新 2026-10-31</span><span class="f">打开 PDF →</span></a></li>
-<li class="leaf" data-search="408 2018 选择题 详解 升级版 图像 口诀 考频"><a class="doc" href="./408-2018-xuanzeti-shengji.pdf"><span class="t">2018 选择题详解（升级版）</span><span class="d">114 页升级版：图像＋口诀＋考频标注的完整拆解。</span><span class="m">114 页 · 2.9 MB · 更新 2026-10-31</span><span class="f">打开 PDF →</span></a></li>
-<li class="leaf" data-search="408 2017 选择题 详解 升级版 图像 口诀 考频"><a class="doc" href="./408-2017-xuanzeti-shengji.pdf"><span class="t">2017 选择题详解（升级版）</span><span class="d">115 页升级版：图像＋口诀＋考频标注的完整拆解。</span><span class="m">115 页 · 3.8 MB · 更新 2026-10-31</span><span class="f">打开 PDF →</span></a></li>
-<li class="leaf" data-search="408 2016 选择题 详解 升级版 图像 口诀 考频"><a class="doc" href="./408-2016-xuanzeti-shengji.pdf"><span class="t">2016 选择题详解（升级版）</span><span class="d">123 页升级版：图像＋口诀＋考频标注的完整拆解。</span><span class="m">123 页 · 4.3 MB · 更新 2026-10-31</span><span class="f">打开 PDF →</span></a></li>
-<li class="leaf" data-search="408 2015 选择题 详解 升级版 图像 口诀 考频"><a class="doc" href="./408-2015-xuanzeti-shengji.pdf"><span class="t">2015 选择题详解（升级版）</span><span class="d">121 页升级版：图像＋口诀＋考频标注的完整拆解。</span><span class="m">121 页 · 4.6 MB · 更新 2026-11-01</span><span class="f">打开 PDF →</span></a></li>
-<li class="leaf" data-search="408 2014 选择题 详解 升级版 图像 口诀 考频"><a class="doc" href="./408-2014-xuanzeti-shengji.pdf"><span class="t">2014 选择题详解（升级版）</span><span class="d">112 页升级版：图像＋口诀＋考频标注的完整拆解。</span><span class="m">112 页 · 3.8 MB · 更新 2026-11-01</span><span class="f">打开 PDF →</span></a></li>
-<li class="leaf" data-search="408 2013 选择题 详解 升级版 图像 口诀 考频"><a class="doc" href="./408-2013-xuanzeti-shengji.pdf"><span class="t">2013 选择题详解（升级版）</span><span class="d">111 页升级版：图像＋口诀＋考频标注的完整拆解。</span><span class="m">111 页 · 3.8 MB · 更新 2026-11-01</span><span class="f">打开 PDF →</span></a></li>
-<li class="leaf" data-search="408 2012 选择题 详解 升级版 图像 口诀 考频"><a class="doc" href="./408-2012-xuanzeti-shengji.pdf"><span class="t">2012 选择题详解（升级版）</span><span class="d">118 页升级版：图像＋口诀＋考频标注的完整拆解。</span><span class="m">118 页 · 4.3 MB · 更新 2026-11-01</span><span class="f">打开 PDF →</span></a></li>
-<li class="leaf" data-search="408 2011 选择题 详解 升级版 图像 口诀 考频"><a class="doc" href="./408-2011-xuanzeti-shengji.pdf"><span class="t">2011 选择题详解（升级版）</span><span class="d">109 页升级版：图像＋口诀＋考频标注的完整拆解。</span><span class="m">109 页 · 4.4 MB · 更新 2026-11-01</span><span class="f">打开 PDF →</span></a></li>
-<li class="leaf" data-search="408 2010 选择题 详解 升级版 图像 口诀 考频"><a class="doc" href="./408-2010-xuanzeti-shengji.pdf"><span class="t">2010 选择题详解（升级版）</span><span class="d">106 页升级版：图像＋口诀＋考频标注的完整拆解。</span><span class="m">106 页 · 4.2 MB · 更新 2026-11-01</span><span class="f">打开 PDF →</span></a></li>
-<li class="leaf" data-search="408 2009 选择题 详解 升级版 图像 口诀 考频"><a class="doc" href="./408-2009-xuanzeti-shengji.pdf"><span class="t">2009 选择题详解（升级版）</span><span class="d">109 页升级版：图像＋口诀＋考频标注的完整拆解。</span><span class="m">109 页 · 4.2 MB · 更新 2026-11-01</span><span class="f">打开 PDF →</span></a></li>
-<li class="leaf" data-search="408 2009 2022 解析 合集 打包下载 zip"><a class="doc" href="https://github.com/wangduoxi847-gif/kaoyan-materials/releases/download/heji-2026-11-01/408-2009-2022-heji.zip"><span class="t">2009–2022 解析合集（zip）</span><span class="d">14 年选择题升级版解析打包下载。</span><span class="m">31.8 MB · 更新 2026-11-01</span><span class="f">下载 zip →</span></a></li>
-<li class="leaf" data-search="408 五星考点 背诵手册 网页版 大题 高频结论 速记 背诵"><a class="doc" href="./408-wuxing-beisong.html"><span class="t">408 五星考点背诵手册（网页版）</span><span class="d">大题高频结论速记，每天 20–30 分钟背诵（加默写约 40–60 分钟）。</span><span class="m">网页版 · 更新 2026-10-31</span><span class="f">打开网页 →</span></a></li>
-</ul>
-</section>
-
-</main>
-<footer>资料持续更新 · 仅供个人备考使用</footer>
+<div class="wrap">
+<header><h1>考研资料站</h1><p>数学 &middot; 英语 &middot; 408，随用随查</p></header>
+<div class="search"><input id="q" type="search" placeholder="搜索资料…"></div>
+<nav class="crumb" id="crumb"></nav>
+<main id="list"></main>
+<noscript><div class="empty">本站需要 JavaScript 才能浏览，请用夸克 / Chrome 打开。</div></noscript>
+</div>
 <script>
-(function(){
-var KEY_R="kydz_recent_v1",KEY_F="kydz_freq_v1";
-function get(k,d){try{var v=JSON.parse(localStorage.getItem(k));return v==null?d:v}catch(e){return d}}
-function put(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
-function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
-function linkHTML(x,act){
-  return '<li class="leaf"><a class="doc" href="'+esc(x.href)+'"><span class="t">'+esc(x.t)+'</span><span class="f">'+act+' \u2192</span></a></li>';
+const FILES = [{"p": "数学/公式速查", "t": "数二公式速查卡完整版（v3）", "d": "全模块 31 小节重点公式，必记项已标红，做题时放手边当字典查。", "m": "8 页 · 1.0 MB · 更新 2026-10-31", "h": "./shuxue2-gongshi-ka-v3.pdf"}, {"p": "数学/公式速查", "t": "三角函数公式大全", "d": "十五节全收录：基本公式、诱导、倍角、求导、积分、极限、反三角，带星级和记忆口诀。", "m": "6 页 · 0.6 MB · 更新 2026-11-01", "h": "./shuxue2-sanjiaohanshu-gongshi.pdf"}, {"p": "数学/专题详解", "t": "数二反常积分计算标杆详解", "d": "反常积分计算的标杆解法，一步一步拆到看得懂。", "m": "0.4 MB · 更新 2026-10-31", "h": "./shuxue2-fanchangjifen-biaogan.pdf"}, {"p": "数学/公式速查", "t": "数二反常积分速查卡", "d": "p-积分与敛散性判别法速查，考前翻一遍。", "m": "0.4 MB · 更新 2026-10-31", "h": "./shuxue2-fanchangjifen-sucha.pdf"}, {"p": "英语/2010", "t": "2010 英二阅读精读解析", "d": "逐词逐句精讲：长难句拆解＋词汇＋干扰项分析。", "m": "0.4 MB · 更新 2026-10-31", "h": "./english2-2010-yuedu.pdf"}, {"p": "英语/2011", "t": "2011 英二阅读精读解析", "d": "逐词逐句精讲：长难句拆解＋词汇＋干扰项分析。", "m": "0.4 MB · 更新 2026-10-31", "h": "./english2-2011-yuedu.pdf"}, {"p": "英语/2012", "t": "2012 英二阅读精读解析", "d": "逐词逐句精讲：长难句拆解＋词汇＋干扰项分析。", "m": "0.4 MB · 更新 2026-10-31", "h": "./english2-2012-yuedu.pdf"}, {"p": "英语/2013", "t": "2013 英二阅读精读解析", "d": "逐词逐句精讲：长难句拆解＋词汇＋干扰项分析。", "m": "0.4 MB · 更新 2026-10-31", "h": "./english2-2013-yuedu.pdf"}, {"p": "英语/2014", "t": "2014 英二阅读精读解析", "d": "逐词逐句精讲：长难句拆解＋词汇＋干扰项分析。", "m": "0.4 MB · 更新 2026-10-31", "h": "./english2-2014-yuedu.pdf"}, {"p": "英语/2015", "t": "2015 英二阅读精读解析", "d": "逐词逐句精讲：长难句拆解＋词汇＋干扰项分析。", "m": "0.3 MB · 更新 2026-10-31", "h": "./english2-2015-yuedu.pdf"}, {"p": "英语/2016", "t": "2016 英二阅读精读解析", "d": "逐词逐句精讲：长难句拆解＋词汇＋干扰项分析。", "m": "0.4 MB · 更新 2026-10-31", "h": "./english2-2016-yuedu.pdf"}, {"p": "英语/2017", "t": "2017 英二阅读精读解析", "d": "逐词逐句精讲：长难句拆解＋词汇＋干扰项分析。", "m": "0.4 MB · 更新 2026-10-31", "h": "./english2-2017-yuedu.pdf"}, {"p": "英语/2017", "t": "2017 Text 1 精读解析", "d": "单篇精读版：定位句逐词比对流程示范。", "m": "0.2 MB · 更新 2026-10-31", "h": "./english2-2017-text1-jingdu.pdf"}, {"p": "英语/2017", "t": "2017 Text 2 精读解析", "d": "单篇精读版：定位句逐词比对流程示范。", "m": "0.2 MB · 更新 2026-10-31", "h": "./english2-2017-text2-jingdu.pdf"}, {"p": "英语/2017", "t": "2017 Text 3 精读解析", "d": "单篇精读版：定位句逐词比对流程示范。", "m": "0.2 MB · 更新 2026-10-31", "h": "./english2-2017-text3-jingdu.pdf"}, {"p": "英语/2017", "t": "2017 Text 4 精读解析", "d": "单篇精读版：定位句逐词比对流程示范。", "m": "0.2 MB · 更新 2026-10-31", "h": "./english2-2017-text4-jingdu.pdf"}, {"p": "英语/2017", "t": "2017 Text 1 逐词翻译", "d": "全文逐词翻译，卡生词时对照着看。", "m": "0.1 MB · 更新 2026-10-31", "h": "./english2-2017-text1-fanyi.pdf"}, {"p": "英语/2017", "t": "2017 Text 2 逐词翻译", "d": "全文逐词翻译，卡生词时对照着看。", "m": "0.1 MB · 更新 2026-10-31", "h": "./english2-2017-text2-fanyi.pdf"}, {"p": "英语/2017", "t": "2017 Text 3 逐词翻译", "d": "全文逐词翻译，卡生词时对照着看。", "m": "0.1 MB · 更新 2026-10-31", "h": "./english2-2017-text3-fanyi.pdf"}, {"p": "英语/2017", "t": "2017 Text 4 逐词翻译", "d": "全文逐词翻译，卡生词时对照着看。", "m": "0.1 MB · 更新 2026-10-31", "h": "./english2-2017-text4-fanyi.pdf"}, {"p": "英语", "t": "2010–2017 英二阅读精读解析合集（zip）", "d": "8 年精读解析一次性打包下载。", "m": "2.7 MB · 更新 2026-10-31", "h": "./english2-2010-2017-yuedu.zip"}, {"p": "408/选择题详解（升级版）", "t": "2022 选择题详解（升级版）", "d": "109 页升级版：图像＋口诀＋考频标注的完整拆解。", "m": "109 页 · 3.2 MB · 更新 2026-10-31", "h": "./408-2022-xuanzeti-congling.pdf"}, {"p": "408", "t": "2022 综合应用题详解（从零版）", "d": "大题逐题精讲：从审题到完整步骤。", "m": "16 页 · 1.0 MB · 更新 2026-10-31", "h": "./408-2022-zongheyingyongti.pdf"}, {"p": "408/选择题详解（升级版）", "t": "2021 选择题详解（升级版）", "d": "123 页升级版：图像＋口诀＋考频标注的完整拆解。", "m": "123 页 · 3.4 MB · 更新 2026-10-31", "h": "./408-2021-xuanzeti-shengji.pdf"}, {"p": "408/选择题详解（升级版）", "t": "2020 选择题详解（升级版）", "d": "123 页升级版：图像＋口诀＋考频标注的完整拆解。", "m": "123 页 · 3.5 MB · 更新 2026-10-31", "h": "./408-2020-xuanzeti-shengji.pdf"}, {"p": "408/选择题详解（升级版）", "t": "2019 选择题详解（升级版）", "d": "116 页升级版：图像＋口诀＋考频标注的完整拆解。", "m": "116 页 · 3.2 MB · 更新 2026-10-31", "h": "./408-2019-xuanzeti-shengji.pdf"}, {"p": "408/选择题详解（升级版）", "t": "2018 选择题详解（升级版）", "d": "114 页升级版：图像＋口诀＋考频标注的完整拆解。", "m": "114 页 · 2.9 MB · 更新 2026-10-31", "h": "./408-2018-xuanzeti-shengji.pdf"}, {"p": "408/选择题详解（升级版）", "t": "2017 选择题详解（升级版）", "d": "115 页升级版：图像＋口诀＋考频标注的完整拆解。", "m": "115 页 · 3.8 MB · 更新 2026-10-31", "h": "./408-2017-xuanzeti-shengji.pdf"}, {"p": "408/选择题详解（升级版）", "t": "2016 选择题详解（升级版）", "d": "123 页升级版：图像＋口诀＋考频标注的完整拆解。", "m": "123 页 · 4.3 MB · 更新 2026-10-31", "h": "./408-2016-xuanzeti-shengji.pdf"}, {"p": "408/选择题详解（升级版）", "t": "2015 选择题详解（升级版）", "d": "121 页升级版：图像＋口诀＋考频标注的完整拆解。", "m": "121 页 · 4.6 MB · 更新 2026-11-01", "h": "./408-2015-xuanzeti-shengji.pdf"}, {"p": "408/选择题详解（升级版）", "t": "2014 选择题详解（升级版）", "d": "112 页升级版：图像＋口诀＋考频标注的完整拆解。", "m": "112 页 · 3.8 MB · 更新 2026-11-01", "h": "./408-2014-xuanzeti-shengji.pdf"}, {"p": "408/选择题详解（升级版）", "t": "2013 选择题详解（升级版）", "d": "111 页升级版：图像＋口诀＋考频标注的完整拆解。", "m": "111 页 · 3.8 MB · 更新 2026-11-01", "h": "./408-2013-xuanzeti-shengji.pdf"}, {"p": "408/选择题详解（升级版）", "t": "2012 选择题详解（升级版）", "d": "118 页升级版：图像＋口诀＋考频标注的完整拆解。", "m": "118 页 · 4.3 MB · 更新 2026-11-01", "h": "./408-2012-xuanzeti-shengji.pdf"}, {"p": "408/选择题详解（升级版）", "t": "2011 选择题详解（升级版）", "d": "109 页升级版：图像＋口诀＋考频标注的完整拆解。", "m": "109 页 · 4.4 MB · 更新 2026-11-01", "h": "./408-2011-xuanzeti-shengji.pdf"}, {"p": "408/选择题详解（升级版）", "t": "2010 选择题详解（升级版）", "d": "106 页升级版：图像＋口诀＋考频标注的完整拆解。", "m": "106 页 · 4.2 MB · 更新 2026-11-01", "h": "./408-2010-xuanzeti-shengji.pdf"}, {"p": "408/选择题详解（升级版）", "t": "2009 选择题详解（升级版）", "d": "109 页升级版：图像＋口诀＋考频标注的完整拆解。", "m": "109 页 · 4.2 MB · 更新 2026-11-01", "h": "./408-2009-xuanzeti-shengji.pdf"}, {"p": "408", "t": "2009–2022 解析合集（zip）", "d": "14 年选择题升级版解析打包下载。", "m": "31.8 MB · 更新 2026-11-01", "h": "https://github.com/wangduoxi847-gif/kaoyan-materials/releases/download/heji-2026-11-01/408-2009-2022-heji.zip"}, {"p": "408", "t": "408 五星考点背诵手册（网页版）", "d": "大题高频结论速记，每天 20–30 分钟背诵（加默写约 40–60 分钟）。", "m": "网页版 · 更新 2026-10-31", "h": "./408-wuxing-beisong.html"}];
+let cur = [];
+const $ = id => document.getElementById(id);
+const get = (k, d) => { try { const v = JSON.parse(localStorage.getItem(k)); return Array.isArray(v) ? v : d; } catch(e){ return d; } };
+const set = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} };
+const byHref = h => FILES.find(f => f.h === h);
+function foldersAt(prefix){
+  const s = new Set();
+  for (const f of FILES){
+    if (prefix){
+      if (f.p !== prefix && !f.p.startsWith(prefix + '/')) continue;
+      if (f.p === prefix) continue;
+      s.add(f.p.slice(prefix.length + 1).split('/')[0]);
+    } else { s.add(f.p.split('/')[0]); }
+  }
+  if (!prefix){
+    const order = ['数学','英语','408'];
+    return order.filter(x => s.has(x)).concat([...s].filter(x => !order.includes(x)).sort());
+  }
+  return [...s].sort();
 }
-function renderMini(){
-  var r=get(KEY_R,[]),sec=document.getElementById("recent-sec"),ul=document.getElementById("recent-list");
-  if(r.length){sec.hidden=false;ul.innerHTML=r.map(function(x){return linkHTML(x,"打开")}).join("")}else{sec.hidden=true;ul.innerHTML=""}
-  var f=get(KEY_F,{}),arr=Object.keys(f).map(function(h){return{href:h,t:f[h].t,n:f[h].n}});
-  arr.sort(function(a,b){return b.n-a.n});arr=arr.slice(0,5);
-  var fs=document.getElementById("freq-sec"),fu=document.getElementById("freq-list");
-  if(arr.length){fs.hidden=false;fu.innerHTML=arr.map(function(x){return linkHTML(x,"打开")}).join("")}else{fs.hidden=true;fu.innerHTML=""}
+function filesAt(prefix){ return FILES.filter(f => f.p === prefix); }
+function countFiles(folderPath){
+  const pre = folderPath + '/';
+  return FILES.filter(f => f.p === folderPath || f.p.startsWith(pre)).length;
 }
-document.addEventListener("click",function(e){
-  var t=e.target,el=(t&&t.closest)?t.closest("a.doc"):null;if(!el)return;
-  var tEl=el.querySelector(".t"),tt=tEl?tEl.textContent.trim():el.textContent.trim();
-  var href=el.getAttribute("href");
-  var r=get(KEY_R,[]).filter(function(x){return x.href!==href});
-  r.unshift({t:tt,href:href});put(KEY_R,r.slice(0,5));
-  var f=get(KEY_F,{});f[href]={t:tt,n:(f[href]?f[href].n:0)+1};put(KEY_F,f);
-});
-var q=document.getElementById("q"),nr=document.getElementById("noresult");
-function doSearch(){
-  var s=q.value.trim().toLowerCase(),any=false;
-  ["sec-shuxue2","sec-english2","sec-408"].forEach(function(id){
-    var sec=document.getElementById(id),secAny=false;
-    var leaves=sec.querySelectorAll("li.leaf");
-    for(var i=0;i<leaves.length;i++){
-      var li=leaves[i];
-      var hit=!s||(li.getAttribute("data-search")||"").toLowerCase().indexOf(s)>=0;
-      li.hidden=!hit;if(hit)secAny=true;
-    }
-    var folds=sec.querySelectorAll("li.fold");
-    for(var j=0;j<folds.length;j++){
-      var fl=folds[j],fhit=false,ll=fl.querySelectorAll("li.leaf");
-      for(var k=0;k<ll.length;k++){if(!ll[k].hidden){fhit=true;break}}
-      fl.hidden=!fhit;if(fhit){secAny=true;var d=fl.querySelector("details");if(d)d.open=!!s}
-    }
-    sec.hidden=!secAny;if(secAny)any=true;
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+function rowFolder(name, full){
+  const n = countFiles(full);
+  return '<div class="row" data-f="' + esc(full) + '"><div class="ic">📁</div><div class="tt"><div class="t">' + esc(name) + '</div></div><div class="cnt">' + n + ' 项</div><div class="cnt">›</div></div>';
+}
+function rowFile(f){
+  const starred = get('kym_star', []).includes(f.h) ? ' on' : '';
+  return '<a class="row" data-h="' + esc(f.h) + '" href="' + esc(f.h) + '"><div class="ic">📄</div><div class="tt"><div class="t">' + esc(f.t) + '</div><div class="d">' + esc(f.d) + '</div><div class="m">' + esc(f.m) + '</div></div><div class="star' + starred + '" data-s="' + esc(f.h) + '">★</div></a>';
+}
+function render(){
+  const q = $('q').value.trim();
+  const list = $('list'), crumb = $('crumb');
+  if (q){
+    crumb.innerHTML = '<a data-c="">全部文件</a><span class="sep">/</span><span>搜索“' + esc(q) + '”</span>';
+    const hits = FILES.filter(f => (f.t + f.d).includes(q));
+    list.innerHTML = hits.length ? hits.map(rowFile).join('') : '<div class="empty">没找到“' + esc(q) + '”</div>';
+    bind(); return;
+  }
+  const prefix = cur.join('/');
+  let ch = '<a data-c="">全部文件</a>';
+  cur.forEach((seg, i) => { ch += '<span class="sep">/</span><a data-c="' + i + '">' + esc(seg) + '</a>'; });
+  crumb.innerHTML = ch;
+  let html = '';
+  if (!cur.length){
+    const stars = get('kym_star', []).map(byHref).filter(Boolean);
+    if (stars.length) html += '<div class="sec-t">⭐ 星标文件</div>' + stars.map(rowFile).join('');
+    const rec = get('kym_recent', []).map(byHref).filter(Boolean);
+    if (rec.length) html += '<div class="sec-t">🕘 最近打开</div>' + rec.map(rowFile).join('');
+  }
+  const folders = foldersAt(prefix);
+  const files = filesAt(prefix);
+  if (!folders.length && !files.length && cur.length) html += '<div class="empty">空文件夹</div>';
+  html += folders.map(nm => rowFolder(nm, prefix ? prefix + '/' + nm : nm)).join('');
+  html += files.map(rowFile).join('');
+  list.innerHTML = html;
+  bind();
+}
+function bind(){
+  document.querySelectorAll('#list .row[data-f]').forEach(el => {
+    el.onclick = () => { cur = el.dataset.f.split('/'); $('q').value=''; render(); window.scrollTo(0,0); };
   });
-  var hasR=get(KEY_R,[]).length>0,hasF=Object.keys(get(KEY_F,{})).length>0;
-  document.getElementById("recent-sec").hidden=!!s||!hasR;
-  document.getElementById("freq-sec").hidden=!!s||!hasF;
-  nr.hidden=any||!s;
-  if(!s)renderMini();
+  document.querySelectorAll('#list .row[data-h]').forEach(el => {
+    el.addEventListener('click', () => {
+      const h = el.dataset.h;
+      set('kym_recent', [h, ...get('kym_recent', []).filter(x => x !== h)].slice(0, 8));
+    });
+  });
+  document.querySelectorAll('#list .star').forEach(el => {
+    el.onclick = e => {
+      e.preventDefault(); e.stopPropagation();
+      const h = el.dataset.s;
+      let s = get('kym_star', []);
+      s = s.includes(h) ? s.filter(x => x !== h) : [...s, h];
+      set('kym_star', s); render();
+    };
+  });
+  document.querySelectorAll('#crumb a').forEach(a => {
+    a.onclick = () => { const i = a.dataset.c; cur = i === '' ? [] : cur.slice(0, +i + 1); $('q').value=''; render(); };
+  });
 }
-q.addEventListener("input",doSearch);
-renderMini();
-})();
+$('q').addEventListener('input', render);
+render();
 </script>
 </body>
 </html>
