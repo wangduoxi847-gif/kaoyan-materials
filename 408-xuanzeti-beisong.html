@@ -1,0 +1,2876 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>408 选择题背诵手册 · 网页版</title>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:"Noto Serif SC",Georgia,"Songti SC","SimSun",serif;color:#1f2733;background:#f3f4f7;line-height:1.75;font-size:15.5px}
+a{color:#2b5d8a}
+.wrap{max-width:860px;margin:0 auto;padding:0 18px 80px}
+.cover{background:#fff;border:1px solid #d9dde4;border-top:4px solid #1f2733;margin:26px 0 18px;padding:40px 44px 34px}
+.kicker{font-family:"Noto Sans SC",sans-serif;font-size:12.5px;letter-spacing:3px;color:#c8862b;font-weight:500}
+.cover h1{font-size:32px;font-weight:900;letter-spacing:2px;margin:10px 0 6px;line-height:1.25}
+.cover .sub{font-family:"Noto Sans SC",sans-serif;font-size:14px;color:#6b7585;margin-bottom:22px}
+.goal{display:flex;border:1px solid #d9dde4;border-radius:9px;overflow:hidden;font-family:"Noto Sans SC",sans-serif}
+.goal div{flex:1;padding:14px 16px;border-right:1px solid #d9dde4}
+.goal div:last-child{border-right:0}
+.goal b{display:block;font-size:21px;font-weight:700;font-family:"Noto Serif SC",serif}
+.goal span{font-size:12px;color:#6b7585}
+.note{margin-top:20px;font-size:13.5px;color:#3d4757;background:#f3f4f7;border-left:3px solid #c8862b;padding:11px 15px;border-radius:0 6px 6px 0;font-family:"Noto Sans SC",sans-serif;line-height:1.7}
+.note.warn{border-left-color:#b3261e;background:#fbeceb}
+.toc{background:#fff;border:1px solid #d9dde4;margin:16px 0;padding:18px 22px}
+.toc h2{font-size:17px;margin-bottom:10px}
+.toc .t-sub{font-size:14.5px;font-weight:700;margin:12px 0 4px}
+.toc .t-sub a{text-decoration:none;color:#1f2733}
+.toc ul{list-style:none;margin-left:4px}
+.toc li{font-size:13.5px;line-height:1.9;font-family:"Noto Sans SC",sans-serif}
+.toc li a{text-decoration:none;color:#3d4757}
+.toc li a:hover{color:#2b5d8a}
+.toc .cnt{color:#6b7585;font-size:12px}
+.sec{background:#fff;border:1px solid #d9dde4;margin:16px 0}
+.sec>.sec-h{padding:16px 22px;border-bottom:1px solid #e8ebf0;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.sec>.sec-h .no{font-family:"Noto Sans SC",sans-serif;font-size:13px;font-weight:700;color:#fff;width:26px;height:26px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.sec>.sec-h h2{font-size:21px;font-weight:900;letter-spacing:1px}
+.sec>.sec-h .en{font-family:"Noto Sans SC",sans-serif;font-size:12px;color:#6b7585;margin-left:auto;letter-spacing:1px}
+.sec-b{padding:18px 22px}
+h3.grp{font-size:16.5px;font-weight:700;margin:22px 0 10px;padding-left:11px;border-left:4px solid #1f2733;line-height:1.4}
+h3.grp:first-child{margin-top:4px}
+#anchor-ds{border-top:4px solid #2b5d8a}#anchor-ds .no{background:#2b5d8a}#anchor-ds h3.grp{border-color:#2b5d8a}
+#anchor-co{border-top:4px solid #1f7a6d}#anchor-co .no{background:#1f7a6d}#anchor-co h3.grp{border-color:#1f7a6d}
+#anchor-os{border-top:4px solid #9a5a28}#anchor-os .no{background:#9a5a28}#anchor-os h3.grp{border-color:#9a5a28}
+#anchor-cn{border-top:4px solid #3d7a34}#anchor-cn .no{background:#3d7a34}#anchor-cn h3.grp{border-color:#3d7a34}
+.card{border:1px solid #e8ebf0;border-radius:9px;margin:12px 0;overflow:hidden;break-inside:avoid;page-break-inside:avoid}
+.card-h{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:10px 14px;border-bottom:1px solid #e8ebf0;background:#fafbfc}
+.card-h .code{font-family:"Noto Sans SC",sans-serif;font-size:12.5px;font-weight:700;color:#6b7585}
+.card-h .ttl{font-size:15.5px;font-weight:700;flex:1;min-width:180px;line-height:1.4}
+.badge{font-family:"Noto Sans SC",sans-serif;font-size:11.5px;font-weight:500;padding:2px 9px;border-radius:20px;white-space:nowrap;background:#eef3f9;color:#2b5d8a;border:1px solid #d3e0ee}
+.card-b{padding:12px 16px 6px}
+.card-b h4{font-size:14.5px;font-weight:700;margin:10px 0 4px}
+.card-b h4 .src{font-family:"Noto Sans SC",sans-serif;font-size:12px;color:#6b7585;font-weight:400}
+.card-b ul{margin:0 0 8px 20px}
+.card-b li{margin-bottom:4px}
+.card-b ul.luodian li{margin-bottom:5px}
+.hubu{font-size:13.5px;color:#6b7585;background:#f3f4f7;border-radius:6px;padding:8px 12px;margin:8px 0;font-family:"Noto Sans SC",sans-serif}
+footer{margin-top:26px;font-size:13px;color:#6b7585;font-family:"Noto Sans SC",sans-serif;line-height:1.8}
+@media(max-width:640px){.cover{padding:28px 20px 24px}.cover h1{font-size:26px}.goal{flex-wrap:wrap}.goal div{flex:1 1 40%}}
+@media print{body{background:#fff}.cover,.toc,.sec{border-color:#ccc}.card{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="cover">
+<div class="kicker">408 · 选择题背诵手册</div>
+<h1>408 选择题背诵手册</h1>
+<p class="sub">基于往年每道选择题的相关知识点，把零碎的知识点汇总在一块 · 2009–2022 年真题选择题</p>
+<div class="goal"><div><b>91</b><span>个 section</span></div><div><b>548</b><span>道真题选择题</span></div><div><b>2009–2022</b><span>年份范围</span></div><div><b>4 科</b><span>数据结构 · 组成原理 · 操作系统 · 计网</span></div></div>
+<div class="note">来源：源A cs408-notes（知识库 + 真题库）与源B 408-first-round（复旦发哥课程笔记），取长补短；缺口处用 ddy-ddy/cs-408 收录的王道 2023 复习指导书与 OneNote 笔记补齐（只作核对与补缺参考，不抄原文）。只收 2009–2022 年选择题，2023–2026 已排除，留作 12 月模考。</div>
+<div class="note warn">质量提醒（请先读）：108/548 道题源A无解析，其中 11 道同时无答案——这 11 道已独立求解并标注答案，其余 97 道的一句话总结据题干归纳、句末已标注；源A知识库偏薄的小节，知识点据真题解析提炼；通道与 HDLC 在最新大纲已删除，标注为“超纲，了解即可”，但真题考过所以收录。</div>
+</div>
+<div class="toc"><h2>目录</h2>
+<div class="t-sub"><a href="#anchor-ds">数据结构</a> <span class="cnt">30 个 section · 146 题</span></div><ul>
+<li><a href="#s-1.1.1">1.1.1 算法时空复杂度</a> <span class="cnt">（8 次）</span></li>
+<li><a href="#s-1.2.2">1.2.2 线性表的链式存储</a> <span class="cnt">（3 次）</span></li>
+<li><a href="#s-1.5.1">1.5.1 KMP 匹配算法</a> <span class="cnt">（2 次）</span></li>
+<li><a href="#s-1.3.1">1.3.1 栈</a> <span class="cnt">（11 次）</span></li>
+<li><a href="#s-1.3.2">1.3.2 队列</a> <span class="cnt">（5 次）</span></li>
+<li><a href="#s-1.4.2">1.4.2 特殊矩阵的压缩存储</a> <span class="cnt">（2 次）</span></li>
+<li><a href="#s-1.4.3">1.4.3 稀疏矩阵的压缩存储</a> <span class="cnt">（2 次）</span></li>
+<li><a href="#s-1.6.1">1.6.1 二叉树的概念与存储</a> <span class="cnt">（6 次）</span></li>
+<li><a href="#s-1.6.2">1.6.2 二叉树的遍历与线索化</a> <span class="cnt">（10 次）</span></li>
+<li><a href="#s-1.6.3">1.6.3 树/森林与二叉树的转换</a> <span class="cnt">（7 次）</span></li>
+<li><a href="#s-1.6.4">1.6.4 哈夫曼树及其编码</a> <span class="cnt">（9 次）</span></li>
+<li><a href="#s-1.7.1">1.7.1 图的基本概念与存储</a> <span class="cnt">（7 次）</span></li>
+<li><a href="#s-1.7.2">1.7.2 图的遍历</a> <span class="cnt">（4 次）</span></li>
+<li><a href="#s-1.7.3">1.7.3 最短路径</a> <span class="cnt">（4 次）</span></li>
+<li><a href="#s-1.7.4">1.7.4 最小生成树</a> <span class="cnt">（2 次）</span></li>
+<li><a href="#s-1.7.5">1.7.5 拓扑排序与关键路径</a> <span class="cnt">（9 次）</span></li>
+<li><a href="#s-1.8.2">1.8.2 折半查找</a> <span class="cnt">（1 次）</span></li>
+<li><a href="#s-1.8.3">1.8.3 分块查找</a> <span class="cnt">（1 次）</span></li>
+<li><a href="#s-1.8.4">1.8.4 二叉排序树</a> <span class="cnt">（3 次）</span></li>
+<li><a href="#s-1.8.5">1.8.5 平衡二叉树</a> <span class="cnt">（7 次）</span></li>
+<li><a href="#s-1.8.6">1.8.6 散列查找</a> <span class="cnt">（5 次）</span></li>
+<li><a href="#s-1.8.7">1.8.7 B 树与 B+ 树</a> <span class="cnt">（10 次）</span></li>
+<li><a href="#s-1.9.1">1.9.1 直接插入排序</a> <span class="cnt">（3 次）</span></li>
+<li><a href="#s-1.9.2">1.9.2 希尔排序</a> <span class="cnt">（3 次）</span></li>
+<li><a href="#s-1.9.3">1.9.3 冒泡排序</a> <span class="cnt">（1 次）</span></li>
+<li><a href="#s-1.9.4">1.9.4 快速排序</a> <span class="cnt">（8 次）</span></li>
+<li><a href="#s-1.9.5">1.9.5 简单选择排序</a> <span class="cnt">（1 次）</span></li>
+<li><a href="#s-1.9.6">1.9.6 堆排序</a> <span class="cnt">（5 次）</span></li>
+<li><a href="#s-1.9.7">1.9.7 归并排序</a> <span class="cnt">（4 次）</span></li>
+<li><a href="#s-1.9.8">1.9.8 基数排序</a> <span class="cnt">（3 次）</span></li>
+</ul>
+<div class="t-sub"><a href="#anchor-co">计算机组成原理</a> <span class="cnt">27 个 section · 152 题</span></div><ul>
+<li><a href="#s-2.1.1">2.1.1 计算机层级结构</a> <span class="cnt">（4 次）</span></li>
+<li><a href="#s-2.1.2">2.1.2 计算机性能指标</a> <span class="cnt">（9 次）</span></li>
+<li><a href="#s-2.2.1">2.2.1 定点数的表示与运算</a> <span class="cnt">（8 次）</span></li>
+<li><a href="#s-2.2.2">2.2.2 浮点数的表示与运算</a> <span class="cnt">（9 次）</span></li>
+<li><a href="#s-2.2.3">2.2.3 数据类型转换</a> <span class="cnt">（7 次）</span></li>
+<li><a href="#s-2.2.4">2.2.4 数据的大小端和对齐存储</a> <span class="cnt">（4 次）</span></li>
+<li><a href="#s-2.3.1">2.3.1 主存储器与 CPU 的连接</a> <span class="cnt">（15 次）</span></li>
+<li><a href="#s-2.3.2">2.3.2 外部存储器</a> <span class="cnt">（5 次）</span></li>
+<li><a href="#s-2.3.3">2.3.3 Cache 高速缓存</a> <span class="cnt">（10 次）</span></li>
+<li><a href="#s-2.3.4">2.3.4 虚拟存储器</a> <span class="cnt">（4 次）</span></li>
+<li><a href="#s-2.4.1">2.4.1 指令格式与操作码扩展</a> <span class="cnt">（5 次）</span></li>
+<li><a href="#s-2.4.2">2.4.2 寻址方式</a> <span class="cnt">（8 次）</span></li>
+<li><a href="#s-2.4.3">2.4.3 程序的机器级代码表示</a> <span class="cnt">（4 次）</span></li>
+<li><a href="#s-2.4.4">2.4.4 RISC 与 CISC</a> <span class="cnt">（1 次）</span></li>
+<li><a href="#s-2.5.1">2.5.1 指令周期与执行过程</a> <span class="cnt">（4 次）</span></li>
+<li><a href="#s-2.5.2">2.5.2 数据通路</a> <span class="cnt">（3 次）</span></li>
+<li><a href="#s-2.5.3">2.5.3 微程序与硬布线控制器</a> <span class="cnt">（2 次）</span></li>
+<li><a href="#s-2.5.4">2.5.4 异常与中断机制</a> <span class="cnt">（12 次）</span></li>
+<li><a href="#s-2.5.5">2.5.5 指令流水线</a> <span class="cnt">（8 次）</span></li>
+<li><a href="#s-2.5.6">2.5.6 多处理器</a> <span class="cnt">（1 次）</span></li>
+<li><a href="#s-2.6.1">2.6.1 总线分类与性能指标</a> <span class="cnt">（11 次）</span></li>
+<li><a href="#s-2.6.2">2.6.2 总线定时与事务</a> <span class="cnt">（2 次）</span></li>
+<li><a href="#s-2.6.3">2.6.3 总线标准</a> <span class="cnt">（2 次）</span></li>
+<li><a href="#s-2.7.1">2.7.1 I/O 接口概念与功能</a> <span class="cnt">（3 次）</span></li>
+<li><a href="#s-2.7.2">2.7.2 程序查询方式</a> <span class="cnt">（3 次）</span></li>
+<li><a href="#s-2.7.3">2.7.3 程序中断方式</a> <span class="cnt">（5 次）</span></li>
+<li><a href="#s-2.7.4">2.7.4 DMA 方式</a> <span class="cnt">（3 次）</span></li>
+</ul>
+<div class="t-sub"><a href="#anchor-os">操作系统</a> <span class="cnt">16 个 section · 139 题</span></div><ul>
+<li><a href="#s-3.1.1">3.1.1 操作系统的概念与功能</a> <span class="cnt">（4 次）</span></li>
+<li><a href="#s-3.1.2">3.1.2 操作系统的运行环境</a> <span class="cnt">（16 次）</span></li>
+<li><a href="#s-3.1.3">3.1.3 操作系统的结构与引导</a> <span class="cnt">（2 次）</span></li>
+<li><a href="#s-3.2.1">3.2.1 进程与线程</a> <span class="cnt">（12 次）</span></li>
+<li><a href="#s-3.2.2">3.2.2 处理机调度</a> <span class="cnt">（18 次）</span></li>
+<li><a href="#s-3.2.3">3.2.3 同步与互斥</a> <span class="cnt">（9 次）</span></li>
+<li><a href="#s-3.2.4">3.2.4 死锁</a> <span class="cnt">（12 次）</span></li>
+<li><a href="#s-3.3.1">3.3.1 连续与非连续分配</a> <span class="cnt">（7 次）</span></li>
+<li><a href="#s-3.3.2">3.3.2 虚拟内存管理</a> <span class="cnt">（20 次）</span></li>
+<li><a href="#s-3.4.1">3.4.1 文件的逻辑结构与物理结构</a> <span class="cnt">（3 次）</span></li>
+<li><a href="#s-3.4.2">3.4.2 文件系统</a> <span class="cnt">（14 次）</span></li>
+<li><a href="#s-3.4.3">3.4.3 文件的共享与保护</a> <span class="cnt">（3 次）</span></li>
+<li><a href="#s-3.5.1">3.5.1 I/O 设备与控制方式</a> <span class="cnt">（5 次）</span></li>
+<li><a href="#s-3.5.2">3.5.2 设备独立性软件</a> <span class="cnt">（7 次）</span></li>
+<li><a href="#s-3.5.3">3.5.3 设备分配与回收</a> <span class="cnt">（2 次）</span></li>
+<li><a href="#s-3.5.4">3.5.4 磁盘与调度算法</a> <span class="cnt">（5 次）</span></li>
+</ul>
+<div class="t-sub"><a href="#anchor-cn">计算机网络</a> <span class="cnt">18 个 section · 111 题</span></div><ul>
+<li><a href="#s-4.1.2">4.1.2 三种交换方式</a> <span class="cnt">（1 次）</span></li>
+<li><a href="#s-4.1.3">4.1.3 OSI 与 TCP/IP 参考模型</a> <span class="cnt">（11 次）</span></li>
+<li><a href="#s-4.2.1">4.2.1 通信基础</a> <span class="cnt">（6 次）</span></li>
+<li><a href="#s-4.2.2">4.2.2 传输介质与编码调制</a> <span class="cnt">（7 次）</span></li>
+<li><a href="#s-4.3.1">4.3.1 组帧与差错控制</a> <span class="cnt">（1 次）</span></li>
+<li><a href="#s-4.3.2">4.3.2 流量控制与滑动窗口机制</a> <span class="cnt">（8 次）</span></li>
+<li><a href="#s-4.3.3">4.3.3 介质访问控制</a> <span class="cnt">（7 次）</span></li>
+<li><a href="#s-4.3.4">4.3.4 局域网与交换机</a> <span class="cnt">（9 次）</span></li>
+<li><a href="#s-4.4.1">4.4.1 网络层的功能</a> <span class="cnt">（2 次）</span></li>
+<li><a href="#s-4.4.2">4.4.2 IPv4 协议与地址</a> <span class="cnt">（17 次）</span></li>
+<li><a href="#s-4.4.4">4.4.4 路由算法与协议</a> <span class="cnt">（5 次）</span></li>
+<li><a href="#s-4.4.5">4.4.5 网络层设备</a> <span class="cnt">（3 次）</span></li>
+<li><a href="#s-4.5.1">4.5.1 UDP 协议特点与应用</a> <span class="cnt">（4 次）</span></li>
+<li><a href="#s-4.5.2">4.5.2 TCP 协议</a> <span class="cnt">（18 次）</span></li>
+<li><a href="#s-4.6.1">4.6.1 网络应用模型</a> <span class="cnt">（3 次）</span></li>
+<li><a href="#s-4.6.3">4.6.3 FTP 协议</a> <span class="cnt">（2 次）</span></li>
+<li><a href="#s-4.6.4">4.6.4 电子邮件</a> <span class="cnt">（4 次）</span></li>
+<li><a href="#s-4.6.5">4.6.5 HTTP 协议与网页访问</a> <span class="cnt">（3 次）</span></li>
+</ul>
+</div>
+<div class="sec" id="anchor-ds"><div class="sec-h"><span class="no">1</span><h2>数据结构</h2><span class="en">Data Structure · 30 section · 146 题</span></div><div class="sec-b">
+<h3 class="grp">第1章 基本概念与时空复杂度</h3>
+<div class="card" id="s-1.1.1">
+<div class="card-h"><span class="code">1.1.1</span><span class="ttl">算法时空复杂度</span><span class="badge">真题 8 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>复杂度量级链：O(1) &lt; O(log2 n) &lt; O(n) &lt; O(n log2 n) &lt; O(n²) &lt; O(n³) &lt; O(2^n) &lt; O(n!) &lt; O(n^n)。</li>
+<li>主定理：T(n) = aT(n/b) + O(n^d)，比较 log_b a 与 d 定量级；归并排序 T(n) = 2T(n/2) + O(n)，log_2 2 = 1 = d，故为 O(n log n)。</li>
+<li>循环变量倍增（如 i *= 2）执行约 log2 n 次；递归须写出递推式再展开求解。</li>
+<li>算法 5 特性：有穷性、确定性、可行性、输入 ≥ 0 个、输出 ≥ 1 个。</li>
+<li>原地工作指辅助空间 O(1)，不随输入规模 n 增长。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第1章 绪论）</span></h4>
+<ul>
+<li>while 三步：设 t 次 → 写变量通式 → 用边界列等式 → 解出 t 只留量级。</li>
+<li>等比求和：首项 a、公比 q（q≠1）、n 项 → a(qⁿ−1)/(q−1)；等差求和：n(a₁+aₙ)/2。</li>
+<li>双层 for 先标"外层第几次"：外层变量常是 1、2、4、8 跳变，只看变量本身会数错次数。</li>
+<li>近似原则：2^(t+1)→2^t，n/2→n，t+1→t，t²+t→t²，2n−1→n；做完近似再看量级。</li>
+<li>看到每次乘 2 / 除 2 → log；看到累加 1+2+…+t → 平方根；看到内层次数成等比 → 总和由末项决定 → 一次方。</li>
+<li>空间复杂度只看额外空间：辅助数组、递归栈；输入本身不计。</li>
+<li>易错：把双层 for 直接相乘；算出 log₂n−2、n/2、2n−1 时不要慌，选项只给量级；对数底数纠结（log₂n 与 log₃n 同一量级）。</li>
+<li>易错：递归只数"层数"忘记乘每次开销；空间复杂度漏掉递归栈（阶乘递归空间是 O(n) 不是 O(1)）。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 8 次</span></h4>
+<ul class="luodian">
+<li><b>2011-1</b>：while 循环变量每次翻倍，设执行 t 次列等式求 t 的量级。</li>
+<li><b>2012-1</b>：阶乘递归每层一次乘法，写递推式求时间复杂度。</li>
+<li><b>2013-1</b>：合并两升序链表为降序链表的最坏时间复杂度（源A解析损坏，据题干归纳）。</li>
+<li><b>2014-1</b>：外层 k 倍增、内层线性，双重循环总执行次数的量级。</li>
+<li><b>2015-1</b>：递归调用时栈中保存的调用信息自栈底到栈顶的顺序。</li>
+<li><b>2017-1</b>：sum 累加 1+2+…+k 达 n，循环趟数 k 的量级。</li>
+<li><b>2019-1</b>：循环终止条件为 (x+1)² &gt; n，循环执行次数的量级。</li>
+<li><b>2022-1</b>：外层 i 倍增、内层执行 i 次，总循环次数为等比求和的量级。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点。</p>
+</div></div>
+<h3 class="grp">第2章 线性表</h3>
+<div class="card" id="s-1.2.2">
+<div class="card-h"><span class="code">1.2.2</span><span class="ttl">线性表的链式存储</span><span class="badge">真题 3 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>顺序表按位查找 O(1)（随机存取），链表按位查找 O(n)；已知指针时链表插删 O(1)，顺序表插删 O(n)。</li>
+<li>顺序表存储密度为 1；单链表 &lt; 1，双向链表更低。</li>
+<li>判空（带头结点）：单链表 head-&gt;next == NULL；循环单链表 head-&gt;next == head；双向链表 head-&gt;next == NULL；静态链表 next == -1。</li>
+<li>快慢指针找中点、找倒数第 k 个结点、判环；头插法原地逆置 O(n)/O(1)；归并双指针合并有序单链表。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第2章 线性表）</span></h4>
+<ul>
+<li>顺序表：随机存取快，插删要搬家，空间要连续，长度得先定；链表：插删只改针，找位要走路，空间碎片化，指针占密度。</li>
+<li>出现"平均"→ 顺序表插删一律 O(n)；出现"第 i 个"→ 顺序表 O(1)，链表 O(n)；出现"给定指针 p"→ 链表插删 O(1)。</li>
+<li>插入"先连后断"：先用 p-&gt;next 把新结点接上，最后再改 p-&gt;next 指向新结点；"先给新结点找好退路，再动老指针。"</li>
+<li>双链表插入四步口诀："后连后、后回指、前指 p、p 指 s"，最后一步永远是改 p-&gt;next，必须排最后。</li>
+<li>删除三件套："存 q → 跨过 q → free(q)"，一句不能少。</li>
+<li>判空速查（带头结点）：单链表 L-&gt;next == NULL；循环单链表 L-&gt;next == L；循环双链表 L-&gt;next == L 且 L-&gt;prior == L。</li>
+<li>易错：头指针 ≠ 头结点，求表长时头结点不计入；插入顺序写反导致断链；删除时 free 错对象；笼统说"链表插删 O(1)"，正确说法是已知前驱时改指针 O(1)，按位序插删总时间 O(n)。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 3 次</span></h4>
+<ul class="luodian">
+<li><b>2016-1</b>：按单链表内存存储状态求插入新结点后各结点 next 所指的链接地址。</li>
+<li><b>2016-2</b>：双向循环链表删除 p 所指结点的正确语句序列（保证不断链）。</li>
+<li><b>2021-1</b>：删除带头结点非空单循环链表首元素的正确语句序列，含仅剩一个结点时尾指针回指头结点的特判。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点。</p>
+</div></div>
+<div class="card" id="s-1.5.1">
+<div class="card-h"><span class="code">1.5.1</span><span class="ttl">KMP 匹配算法</span><span class="badge">真题 2 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>next[j] 为模式串前 j 个字符中前缀与后缀最长相等长度（0 开始口径：next[0] = -1；失配时 j 回退到 next[j]，主串指针 i 不回退）。</li>
+<li>KMP 时间复杂度 O(n+m)；比较次数须逐次累加，回退后当前位置要重新比较。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第4章 串）</span></h4>
+<ul>
+<li>"第一个 1、第二个 0"：next[0] = 1、next[1] = 0，先把这两个写死，再从左往右推。</li>
+<li>"只看前面、不看自己；错开一位、完全相等"：求 next[j] 的铁律。</li>
+<li>"同字符就继承，不同字符就保留"：nextval 一句话规则；继承时用已更新的 nextval 值。</li>
+<li>"非 1 主串不动，是 1 主串加一"：判断 i 是否前进只看 next（或 nextval）是否为 1。</li>
+<li>滑动距离 = j − next[j]；若问"最长滑动距离"，把所有 j 的 j−nextval[j] 都算出来取最大。</li>
+<li>比较次数不要用"滑了几位"去减：回退后当前位置要重新比，逐次累加最稳。</li>
+<li>易错：next 与 nextval 混用下标口径；以为失配后主串一定不动；比较次数按"位移"算（2019 题若答 6+3 = 9 就错，正确是 6+4 = 10）。</li>
+<li>注意：源B用 1 开始口径（next[0] = 1），真题解析用 0 开始口径（next[0] = -1），换算时注意（两源说法不一致，以真题解析为准）。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 2 次</span></h4>
+<ul class="luodian">
+<li><b>2015-8</b>：KMP 首次失配时 i 不动、j 回退到 next[j]，求下次开始匹配的 i、j。</li>
+<li><b>2019-9</b>：KMP 按 next 数组回退续比，累计至匹配成功的单个字符比较次数。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点（源A 知识库无 KMP 小节，本节知识点依据为真题解析）。</p>
+</div></div>
+<h3 class="grp">第3章 栈、队列和数组</h3>
+<div class="card" id="s-1.3.1">
+<div class="card-h"><span class="code">1.3.1</span><span class="ttl">栈</span><span class="badge">真题 11 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>卡特兰数：n 个不同元素依次进栈，合法出栈序列总数为 (2n)! / ((n+1)! n!)。</li>
+<li>非法出栈序列判定：对任一元素 x，在 x 之后出栈且原序列中排在 x 之前的元素须降序排列。</li>
+<li>中缀转后缀：操作数直接输出；左括号压栈；右括号弹至左括号并丢弃；运算符须高于栈顶才压栈，否则一直弹（相等也弹，左结合）。</li>
+<li>后缀求值：先弹出的操作数为右操作数（减法、除法别写反）。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第3章 栈、队列和数组）</span></h4>
+<ul>
+<li>栈："后进先出，一端进出"；队列："先进先出，一端进另一端出"。</li>
+<li>顺序栈判空判满：top = -1 起 → 空 -1、满 MaxSize-1；top = 0 起 → 空 0、满 MaxSize；先移再存指向栈顶，先存再移指向栈顶之上。</li>
+<li>中缀转后缀口诀："数直接出，左括号进，右括号弹到左括号，运算符外面大才进、否则一直弹"；相等也弹（左结合）。</li>
+<li>后缀求值口诀："先弹的当右边"（减法、除法别写反）。</li>
+<li>卡特兰数速算：n = 3 → 5，n = 4 → 14，n = 5 → 42（记这三个数足够应付选择）。</li>
+<li>递归树：结点数 = 时间，高度 = 空间。</li>
+<li>易错：后缀求值弹出顺序反了；中缀转后缀遇右括号不入栈，弹出的左括号丢弃（后缀里没有括号）；卡特兰数的前提是入栈顺序固定、元素互异、栈容量不限。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 11 次</span></h4>
+<ul class="luodian">
+<li><b>2009-2</b>：由出队顺序反推栈 S 至少需要的容量（源A无解析，据题干归纳）。</li>
+<li><b>2010-1</b>：带"不允许连续三次退栈"限制，判断不可能得到的出栈序列（源A解析为答案串，据题干归纳）。</li>
+<li><b>2011-2</b>：以 d 开头的出栈序列个数：d 出栈前 a、b、c 已出栈，e 可插任意空位。</li>
+<li><b>2012-2</b>：中缀转后缀过程中运算符栈同时保存的操作符个数的最大值。</li>
+<li><b>2013-2</b>：入栈 1…n、出栈第二位为 3 时第三位可能取值的个数（源A解析损坏，据题干归纳）。</li>
+<li><b>2014-2</b>：中缀转后缀扫描到 f 时运算符栈中的元素（源A无解析，据题干归纳）。</li>
+<li><b>2017-2</b>：辨析栈的四则叙述：非递归重写、函数调用、入栈与出栈次序、受限线性表。</li>
+<li><b>2018-1</b>：双栈模拟后缀表达式求值，先弹出的操作数为右操作数。</li>
+<li><b>2018-2</b>：队列出队、入栈、出栈输出三种操作，判断不可能得到的输出序列。</li>
+<li><b>2020-2</b>：按给定 Push/Pop 操作序列模拟，写出出栈序列。</li>
+<li><b>2022-2</b>：入栈序列与出栈序列能否互相判定合法性，及全入栈再出栈时的关系。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点。</p>
+</div></div>
+<div class="card" id="s-1.3.2">
+<div class="card-h"><span class="code">1.3.2</span><span class="ttl">队列</span><span class="badge">真题 5 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>循环队列（front 指队头、rear 指队尾下一个位置）：牺牲一单元法队空 front == rear、队满 (rear+1) % MaxSize == front、长度 (rear-front+MaxSize) % MaxSize。</li>
+<li>另两种判满方案：size 计数器（size == 0 空、size == MaxSize 满）；tag 标记（front == rear 且 tag 为 0/1）。</li>
+<li>队列先进先出，一端进、另一端出。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第3章 栈、队列和数组）</span></h4>
+<ul>
+<li>循环队列三句：入队动 rear、出队动 front、都要 % M；"空看相等，满看 rear 追上一格就撞 front"。</li>
+<li>长度公式：(rear - front + M) % M，M 是容量；两端都开区间时再减 1。</li>
+<li>易错：长度公式里的 M 是容量（题目给 0..M-1 共 M 个单元、实际只存 M-1 个，取模仍用 M）。</li>
+<li>易错：判满公式与初始化绑定，(rear+1) % M == front 只在"front 指队头、rear 指队尾后一个"时成立，换约定必须重推。</li>
+<li>易错：链队出队删到最后一个结点必须 rear = front，否则 rear 悬空；只用 front == rear 判满时，装满一圈与空无法区分，必须靠"牺牲一个单元"。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 5 次</span></h4>
+<ul class="luodian">
+<li><b>2009-1</b>：打印机缓冲区主机写、打印机取，考该缓冲区的逻辑结构（源A解析仅为答案字母，据题干归纳）。</li>
+<li><b>2010-2</b>：两端入队、一端出队的队列，判断不可能得到的出队序列（源A无解析，据题干归纳）。</li>
+<li><b>2011-3</b>：循环队列 front 指队头、rear 指队尾时，首元素存 A[0] 的 front、rear 初值。</li>
+<li><b>2014-3</b>：两端可入队出队的循环队列在给定指针约定下的队空与队满条件（源A无解析，据题干归纳）。</li>
+<li><b>2016-3</b>：多轨道火车编组：先入队元素须小于后入队元素，考队列先进先出的应用。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点。</p>
+</div></div>
+<div class="card" id="s-1.4.2">
+<div class="card-h"><span class="code">1.4.2</span><span class="ttl">特殊矩阵的压缩存储</span><span class="badge">真题 2 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>对称矩阵 A[n][n] 按行优先存入一维数组 B[k]（下标均从 0 开始）：k = i(i+1)/2 + j（i ≥ j）；上三角元素先转置为下三角再算。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第3章 栈、队列和数组）</span></h4>
+<ul>
+<li>矩阵压缩四问：存哪一半？行优先还是列优先？下标 0 起还是 1 起？最后一行/列单独看了吗？</li>
+<li>数组地址一句话："行优先乘列数，列优先乘行数"。</li>
+<li>易错：对称矩阵只存上三角时忘转置（问 M[7][2] 必须转成 M[2][7] 再算）；下标基准差一；三角矩阵的最后一行/列单独算（M[6][6] 在 12×12 上三角里只存 1 个）。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 2 次</span></h4>
+<ul class="luodian">
+<li><b>2016-4</b>：100 阶三对角矩阵按行优先压缩存储，求 m30,30 在一维数组中的下标（源A解析损坏，据题干归纳）。</li>
+<li><b>2018-3</b>：12 阶对称矩阵上三角按行优先存储，求 m6,6 的下标（注意最后一行只存 1 个）。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点。</p>
+</div></div>
+<div class="card" id="s-1.4.3">
+<div class="card-h"><span class="code">1.4.3</span><span class="ttl">稀疏矩阵的压缩存储</span><span class="badge">真题 2 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>三元组表结点存行 row、列 col、值 value，是压缩存储稀疏矩阵的主要结构（源A本章无小节，依据为 2017-3 真题解析）。</li>
+<li>十字链表将行单链表与列单链表结合存储稀疏矩阵；邻接矩阵空间复杂度 O(n²)，不适于存储稀疏矩阵。</li>
+<li>稀疏矩阵压缩存储只存非零元；按行/列优先压缩时下标按存储顺序累计计数。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第3章 栈、队列和数组）</span></h4>
+<ul>
+<li>源B 未覆盖（B 第3章只讲特殊矩阵压缩，未讲稀疏矩阵三元组/十字链表）。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 2 次</span></h4>
+<ul class="luodian">
+<li><b>2017-3</b>：适用于压缩存储稀疏矩阵的两种存储结构（三元组表与十字链表）。</li>
+<li><b>2020-1</b>：10 阶对称矩阵上三角按列优先存储，m7,2 先转置为 m2,7 再算下标。</li>
+</ul>
+</div></div>
+<h3 class="grp">第4章 树和二叉树</h3>
+<div class="card" id="s-1.6.1">
+<div class="card-h"><span class="code">1.6.1</span><span class="ttl">二叉树的概念与存储</span><span class="badge">真题 6 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>n0 = n2 + 1（任意二叉树恒成立）；第 i 层最多 2^(i-1) 个结点；高度 h 最多 2^h - 1 个结点。</li>
+<li>完全二叉树高度 h = ⌊log2 n⌋ + 1 = ⌈log2(n+1)⌉；编号（1 起）：左孩子 2i、右孩子 2i+1、父结点 ⌊i/2⌋。</li>
+<li>完全二叉树度为 1 的结点至多 1 个：总结点偶数时 n1 = 1，奇数时 n1 = 0（源B）。</li>
+<li>顺序存储须补成完全二叉树，空结点也占单元；高度 5 的二叉树顺序存储至少需 2^5 - 1 = 31 个单元（源B）。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第5章 树与二叉树）</span></h4>
+<ul>
+<li>完全二叉树：父 ⌊i/2⌋，左 2i，右 2i+1（1 起）；左 2i+1，右 2i+2，父 ⌊(i-1)/2⌋（0 起）。</li>
+<li>判断孩子是否存在：拿 2i（2i+1）与 n 比大小，超了就没有。</li>
+<li>叶结点数：n0 = n2+1；n0+n2 是奇数。</li>
+<li>完全二叉树高度：⌈log₂(n+1)⌉ = ⌊log₂ n⌋+1。</li>
+<li>空指针数：二叉链表 n+1；三叉（带双亲）n+2；m 叉 n(m-1)+1。</li>
+<li>顺序存储必须补空，且空结点占单元；非完全二叉树按高度 5 存储需要 2^5-1 = 31 个单元，不是 10 个。</li>
+<li>"任意一棵"要看最坏情况：问"至少需要多少单元"，答案是 31 而不是 16，因为要覆盖结点全歪在右侧的形态。</li>
+<li>0 起编号公式全变：左 2i+1、右 2i+2、父 ⌊(i-1)/2⌋，用 1 起公式做 0 起题必错。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 6 次</span></h4>
+<ul class="luodian">
+<li><b>2009-5</b>：完全二叉树第 6 层有 8 个叶结点，求结点个数的最大值（源A解析损坏，据题干归纳）。</li>
+<li><b>2010-5</b>：度为 4 的树中各类度结点个数已知，求叶结点个数（源A无解析，据题干归纳）。</li>
+<li><b>2011-4</b>：768 个结点的完全二叉树中叶结点的个数（度为 1 的结点至多 1 个）。</li>
+<li><b>2018-4</b>：所有叶结点同层、非叶结点均有 2 个孩子的完全二叉树，叶结点 k 时总结点数。</li>
+<li><b>2020-3</b>：高度 5、10 个结点的二叉树顺序存储至少需要的存储单元数（补成满二叉树）。</li>
+<li><b>2022-4</b>：244 个结点的三叉树高度至少为几（满三叉树结点数夹逼）。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点。</p>
+</div></div>
+<div class="card" id="s-1.6.2">
+<div class="card-h"><span class="code">1.6.2</span><span class="ttl">二叉树的遍历与线索化</span><span class="badge">真题 10 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>n 个结点的二叉链表共 2n 个指针域，其中 n+1 个为空指针域，可建线索。</li>
+<li>线索规则：ltag == 1 时 lchild 指向前驱结点；rtag == 1 时 rchild 指向后继结点。</li>
+<li>前序 + 中序可唯一还原二叉树；前序 + 后序不能唯一还原（每层一个孩子时有 2^(n-1) 种）。</li>
+<li>先序序列固定时不同二叉树个数为卡特兰数：n = 3 → 5，n = 4 → 14（源A栈章卡特兰公式；源B树章口诀）。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第5章 树与二叉树）</span></h4>
+<ul>
+<li>先序 + 中序还原："先序定根，中序分左右，数长度切先序，递归到底"。</li>
+<li>序列相同/相反：先 = 中 → 无左孩子；中 = 后 → 无右孩子；先与中相反 → 无右孩子；先与后相反 → 每层 1 个（高 = n）。</li>
+<li>先序固定求树数：卡特兰数 C(2n,n)/(n+1)，n = 3 → 5，n = 4 → 14，n = 5 → 42。</li>
+<li>线索找前驱/后继："tag = 1 直接取，tag = 0 钻到底"（前驱钻左子树最右，后继钻右子树最左）。</li>
+<li>易错：深度与高度混用；路径长度数"边"不数"点"；先序 + 后序不能唯一确定；线索化后仍有 2 个空指针（中序首结点的 lchild、末结点的 rchild）；后序线索树求不出后序后继（需要双亲指针）。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 10 次</span></h4>
+<ul class="luodian">
+<li><b>2009-3</b>：由给定二叉树与遍历后序列判断遍历方式（N/L/R 组合）（源A无解析，据题干归纳）。</li>
+<li><b>2010-3</b>：由图判断符合后序线索树定义的线索二叉树（源A无解析，据题干归纳）。</li>
+<li><b>2011-5</b>：前序与后序序列已知，判断中序遍历序列不可能的一种。</li>
+<li><b>2012-3</b>：前序 + 后序序列确定根结点的孩子结点（前序 XY、后序 YX 则 X 为 Y 的祖先）。</li>
+<li><b>2013-5</b>：后序线索二叉树中叶结点 X 有左兄弟 Y，求 X 的右线索指向（源A解析损坏，据题干归纳）。</li>
+<li><b>2014-4</b>：对二叉树中序线索化后结点 x 的左、右线索指向（源A无解析，据题干归纳）。</li>
+<li><b>2015-2</b>：先序序列为 a,b,c,d 的不同二叉树的个数（相当于入栈序列的出栈种数）。</li>
+<li><b>2017-4</b>：先序序列与中序序列相同，对非叶结点形态的要求。</li>
+<li><b>2017-5</b>：由后序序列与树形判断与结点 a 同层的结点。</li>
+<li><b>2022-3</b>：中序遍历中相邻两结点 p、q 可能具有的关系（逐项举反例排除）。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点。</p>
+</div></div>
+<div class="card" id="s-1.6.3">
+<div class="card-h"><span class="code">1.6.3</span><span class="ttl">树/森林与二叉树的转换</span><span class="badge">真题 7 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>树转二叉树：左孩子右兄弟——第一个孩子放左子树，其余孩子依次挂在它的右子树上。</li>
+<li>遍历对应：树的先根遍历 ↔ 二叉树先序遍历；树的后根遍历 ↔ 二叉树中序遍历。</li>
+<li>森林的树棵数 = 对应二叉树根结点右链上的结点数；森林叶子数 = 二叉树中左孩子指针为空的结点数。</li>
+<li>树中结点数比边数多 1：森林 F 有 n 个结点、e 条边时含 n-e 棵树。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第5章 树与二叉树）</span></h4>
+<ul>
+<li>树转二叉树："左孩子右兄弟"，第一个孩子放左边，其余孩子依次挂在它的右边。</li>
+<li>树/森林 ↔ 二叉树：先对先、后对中（先根 ↔ 先序，后根 ↔ 中序）。</li>
+<li>易错：右兄弟链 ≠ 右孩子，转换后二叉树中右指针指向的是兄弟不是右孩子，判断"是否叶子"只看左指针是否为空。</li>
+<li>易错：森林的树的棵数 = 根右链结点数，不是"根 + 右子树"的结点数。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 7 次</span></h4>
+<ul class="luodian">
+<li><b>2009-6</b>：森林转二叉树后 u 为 v 的父结点的父结点，求原森林中 u、v 可能的关系（源A无解析，据题干归纳）。</li>
+<li><b>2011-6</b>：2011 个结点、116 个叶结点的树对应二叉树中无右孩子结点的个数。</li>
+<li><b>2014-5</b>：森林 F 中叶子个数与对应二叉树 T 中左孩子指针为空结点个数的关系（源A无解析，据题干归纳）。</li>
+<li><b>2016-5</b>：森林 15 条边、25 个结点，求其中树的棵数（结点数比边数多 1）。</li>
+<li><b>2019-2</b>：树转二叉树后哪种遍历序列与树的后根遍历序列相同（先对先、后对中）。</li>
+<li><b>2020-4</b>：森林先根 + 中根遍历序列已知，求对应二叉树的后根遍历序列。</li>
+<li><b>2021-4</b>：由对应二叉树先序 + 中序序列还原树形，求森林中树的棵数（根右链结点数）。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点（源A 知识库无树/森林转换小节，本节知识点依据为真题解析）。</p>
+</div></div>
+<div class="card" id="s-1.6.4">
+<div class="card-h"><span class="code">1.6.4</span><span class="ttl">哈夫曼树及其编码</span><span class="badge">真题 9 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>哈夫曼树只有度为 0 和度为 2 的结点（无度为 1 结点）；n 个叶子时总结点数 2n-1。</li>
+<li>WPL = Σ(叶子权值 × 到根路径长度)；速算：WPL 等于所有非叶结点权值之和。</li>
+<li>哈夫曼编码是前缀编码：任一编码都不是另一编码的前缀；出现频次越高码长越短。</li>
+<li>定长编码位数 ⌈log2(字符种数)⌉；加权平均长度 = WPL ÷ 权值总和（源B）。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第5章 树与二叉树）</span></h4>
+<ul>
+<li>WPL：逐项"权 × 深度"相加；或直接加所有非叶结点权值（更快更稳）。</li>
+<li>加权平均长度：WPL ÷ 权值总和（= 平均码长）。</li>
+<li>定长编码位数：⌈log₂(字符种数)⌉。</li>
+<li>哈夫曼树结点数：2n-1（n 个叶子，无度 1 结点）。</li>
+<li>易错：WPL 只算叶子，把非叶结点也算进去必错；"加权平均长度 ≠ WPL"，问"平均码长"要除以权值和；字符总数不是字符种数；哈夫曼树形态不唯一但码长固定，用"码长 + 前缀性"排除选项，不要重画。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 9 次</span></h4>
+<ul class="luodian">
+<li><b>2010-6</b>：n 个权值互不相同的字符构成哈夫曼树，判断哪一叙述错误（源A无解析，据题干归纳）。</li>
+<li><b>2013-4</b>：三叉树 6 个叶结点权值已知，求最小带权路径长度（源A解析损坏，据题干归纳）。</li>
+<li><b>2014-6</b>：5 个字符 4 种编码方案，判断哪种不是前缀编码（源A无解析，据题干归纳）。</li>
+<li><b>2015-3</b>：由根到两叶结点的路径权值序列判断能否属于同一棵哈夫曼树。</li>
+<li><b>2017-6</b>：已知各字符哈夫曼编码，对编码序列译码（前缀编码逐段切分）。</li>
+<li><b>2018-5</b>：已知各字符出现次数，判断哪组可能是其哈夫曼编码（码长与频次反向）。</li>
+<li><b>2019-3</b>：哈夫曼树共 115 个结点，求叶子字符个数 n（总结点数 2n-1）。</li>
+<li><b>2021-5</b>：5 个叶结点权值已知，求最小带权路径长度 WPL。</li>
+<li><b>2022-5</b>：哈夫曼编码集与定长编码集对应的两棵二叉树，判断叙述正误。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点。</p>
+</div></div>
+<h3 class="grp">第5章 图论</h3>
+<div class="card" id="s-1.7.1">
+<div class="card-h"><span class="code">1.7.1</span><span class="ttl">图的基本概念与存储</span><span class="badge">真题 7 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>无向图各顶点度数之和 = 2 × 边数；有向图入度之和 = 出度之和 = 边数。</li>
+<li>邻接矩阵空间 O(V²)，适用稠密图；邻接表空间 O(V+E)（无向 O(V+2E)），适用稀疏图。</li>
+<li>无向连通图至少 n-1 条边；n 个顶点保证任何情况下连通最少需 (n-1)(n-2)/2 + 1 条边（源B）。</li>
+<li>有向无环图可去重为 DAG 描述表达式，重复子表达式只存一个顶点。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第6章 图）</span></h4>
+<ul>
+<li>度与边：无向"度之和 = 2 倍边"，有向"入和 = 出和 = 边数"。</li>
+<li>连通最少边：无向 n-1（留缺口/星形），强连通 n（绕一圈）。</li>
+<li>最坏情况连通：先让 n-1 个点成完全图（(n-1)(n-2)/2 条），再 +1 条必连通。</li>
+<li>矩阵看度：有向"行出列入"，无向"行 = 列 = 度"，对称可压缩。</li>
+<li>Aⁿ 数路径：几次方就是几步，元素值就是条数。</li>
+<li>邻接表 vs 多重表：无向邻接表存 2E，多重表存 E；顶点指针邻接表 1 个、多重表 1 个、十字链表 2 个。</li>
+<li>易错：极大/极小连通子图混淆（极大是连通分量，极小是边尽量少；生成树才要求"含全部顶点 + 极小"）；子图反向不成立；对称矩阵 ≠ 无向图（不对称一定是有向图）；求度时忘记入度（有向图"度 = 入度 + 出度"）。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 7 次</span></h4>
+<ul class="luodian">
+<li><b>2009-7</b>：辨析无向连通图的特性：度之和为偶数、边数与顶点数关系、度为 1 的顶点（源A无解析，据题干归纳）。</li>
+<li><b>2010-7</b>：7 个顶点的无向图在任何情况下都连通所需的最少边数（源A无解析，据题干归纳）。</li>
+<li><b>2011-8</b>：辨析回路与简单路径、稀疏图存储、拓扑序列与回路的关系。</li>
+<li><b>2013-7</b>：由邻接矩阵求各顶点的度（源A无解析，据题干归纳）。</li>
+<li><b>2017-7</b>：无向图 16 条边、度为 4 与 3 的顶点数已知，求顶点个数至少为几。</li>
+<li><b>2019-6</b>：用有向无环图描述表达式 (x+y)*((x+y)/x)，去重后顶点个数的最小值。</li>
+<li><b>2022-6</b>：辨析无向图顶点数与边数、连通性的关系叙述（举反例排除）。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点。</p>
+</div></div>
+<div class="card" id="s-1.7.2">
+<div class="card-h"><span class="code">1.7.2</span><span class="ttl">图的遍历</span><span class="badge">真题 4 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>BFS 借助辅助队列，可求无权图单源最短路；DFS 用递归或辅助栈。</li>
+<li>邻接矩阵：BFS/DFS 均为 O(V²)；邻接表：均为 O(V+E)。</li>
+<li>邻接表存储的有向图 BFS：每个顶点入队一次 O(n)，每条边至少访问一次 O(e)，总 O(n+e)。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第6章 图）</span></h4>
+<ul>
+<li>BFS 求最短路只能用于无权图/等权图，带权必须用 Dijkstra。</li>
+<li>易错：邻接表求入度写成 O(E) 是错的，必须遍历所有顶点表（每个顶点都要访问一次），是 O(V+E)。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 4 次</span></h4>
+<ul class="luodian">
+<li><b>2012-5</b>：邻接表存储的有向图广度优先遍历的时间复杂度（顶点入队一次、每边访问一次）。</li>
+<li><b>2013-8</b>：由无向图判断不是广度优先遍历序列的选项（源A解析仅为答案字母，据题干归纳）。</li>
+<li><b>2015-5</b>：给定有向图从 v0 开始深度优先遍历可能得到的序列（邻接点任选）。</li>
+<li><b>2016-6</b>：由图判断不是深度优先搜索序列的选项（按 DFS 策略逐项模拟）。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点。</p>
+</div></div>
+<div class="card" id="s-1.7.3">
+<div class="card-h"><span class="code">1.7.3</span><span class="ttl">最短路径</span><span class="badge">真题 4 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>Dijkstra 单源最短路径：严禁含负权边；每轮挑未确定顶点中 dist 最小者定死、再松弛。</li>
+<li>Floyd 所有顶点对最短路 O(V³)，动态规划，允许负权边、禁止负权回路。</li>
+<li>邻接矩阵 Dijkstra 为 O(V²)；邻接表 O(V²) 或 O(E log V)。</li>
+<li>修改后 DFS（访问语句移至退出递归前）遍历 DAG 的输出序列为逆拓扑序列。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第6章 图）</span></h4>
+<ul>
+<li>Dijkstra 口诀："挑最小、定死它、拿它松驰、再来一轮"。</li>
+<li>易错：Dijkstra 表行数搞错，V 个顶点（含源点）只写 V-1 行有效更新；已打勾的顶点不再改，也不再用它去更新自己。</li>
+<li>易错：BFS 求最短路只能用于无权图/等权图，带权必须用 Dijkstra。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 4 次</span></h4>
+<ul class="luodian">
+<li><b>2012-7</b>：Dijkstra 求源点 a 到各顶点的最短路径，各条最短路径目标顶点的出现顺序。</li>
+<li><b>2016-8</b>：Dijkstra 求顶点 1 到其余各顶点的最短路径，目标顶点的确定顺序。</li>
+<li><b>2020-6</b>：修改后 DFS（访问语句移至退出递归前）遍历有向无环图，输出序列的性质。</li>
+<li><b>2021-8</b>：Dijkstra 求出第二条最短路径后 dist 数组内容的更新。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点。</p>
+</div></div>
+<div class="card" id="s-1.7.4">
+<div class="card-h"><span class="code">1.7.4</span><span class="ttl">最小生成树</span><span class="badge">真题 2 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>最小生成树代价唯一，树形可不唯一；权值最小的边未必出现在每棵 MST 中。</li>
+<li>Prim 基于顶点扩展，邻接矩阵 O(V²)，稠密图优先；Kruskal 按边权递增选边、并查集判环，O(E log E)，稀疏图优先。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第6章 图）</span></h4>
+<ul>
+<li>Prim 口诀："选中一个整体，未选的各求最小，再挑全局最小"。</li>
+<li>Kruskal 口诀："从小到大挑边，成环就扔，够 V-1 条就停"。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 2 次</span></h4>
+<ul class="luodian">
+<li><b>2012-8</b>：辨析最小生成树的性质：代价唯一、最小边未必都在每棵 MST 中、Prim 起点的影响。</li>
+<li><b>2015-6</b>：可能是 Kruskal 第 2 次选中、但不是 Prim（从 v4 开始）第 2 次选中的边。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点。</p>
+</div></div>
+<div class="card" id="s-1.7.5">
+<div class="card-h"><span class="code">1.7.5</span><span class="ttl">拓扑排序与关键路径</span><span class="badge">真题 9 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>拓扑排序：统计入度、入度为 0 进栈/队列；输出个数不足 V 则必有环；邻接表 O(V+E)。</li>
+<li>拓扑序列唯一当且仅当每一步入度为 0 的顶点恰好一个。</li>
+<li>关键路径：ve 取 max（正推）、vl 取 min（倒推）；活动最早开始 e 看起点 ve，最迟开始 l 看终点 vl 减权；e = l 的活动为关键活动。</li>
+<li>关键路径长度为权值之和最大的路径；缩短任一关键活动未必缩短工期（多条关键路径时须缩短共有活动）。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第6章 图）</span></h4>
+<ul>
+<li>关键路径口诀："正推取最大，倒推取最小；e 看头，l 看尾减权；e = l 是关键"。</li>
+<li>关键路径速判：只算 ve，ve(汇) = 长度；从汇点倒推 d = 0 的边即关键路径。</li>
+<li>拓扑判环："输出个数不足 V，必有环"。</li>
+<li>易错：关键路径正倒推取最值搞反（ve 取 max，vl 取 min）；e 与 l 的取点搞反（e 用起点的 ve，l 用终点的 vl 减权）；关键路径长度 ≠ 边数最多，是权值之和最大；"缩短任一关键活动就能缩短工期"是错的（多条关键路径时只有缩短所有关键路径共有的活动才有效）；"延长任一关键活动一定延长工期"是对的；拓扑序列不唯一 ≠ 拓扑排序不存在。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 9 次</span></h4>
+<ul class="luodian">
+<li><b>2010-8</b>：对有向图拓扑排序可得到的不同拓扑序列的个数（源A无解析，据题干归纳）。</li>
+<li><b>2012-6</b>：邻接矩阵主对角线以下元素全为零的有向图，拓扑序列存在性与唯一性。</li>
+<li><b>2013-9</b>：AOE 网中加快哪些活动的进度可以缩短整个工程的工期（源A解析仅为答案数字，据题干归纳）。</li>
+<li><b>2014-7</b>：对有向图拓扑排序可能得到的拓扑序列（源A无解析，据题干归纳）。</li>
+<li><b>2016-7</b>：邻接表存储的有向图拓扑排序算法的时间复杂度。</li>
+<li><b>2018-7</b>：由有向图判断不是其拓扑序列的选项（前两位必为入度为 0 的两顶点）。</li>
+<li><b>2019-5</b>：AOE 网中活动 d 的最早开始时间与最迟开始时间（关键路径倒推）。</li>
+<li><b>2020-8</b>：辨析 AOE 网估算工程进度的叙述：关键路径为权值和最大、关键活动的影响。</li>
+<li><b>2021-7</b>：给定有向图拓扑有序序列的个数（每步入度为 0 的顶点恰好一个则唯一）。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点。</p>
+</div></div>
+<h3 class="grp">第6章 查找与散列</h3>
+<div class="card" id="s-1.8.2">
+<div class="card-h"><span class="code">1.8.2</span><span class="ttl">折半查找</span><span class="badge">真题 1 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>折半查找只适用于有序顺序表；判定树：成功比较次数 = 层数，失败比较次数 = 失败结点父结点层数。</li>
+<li>折半查找最多比较次数 ⌈log2(n+1)⌉；判定树失败结点共 n+1 个（源B）。</li>
+<li>步长为 3 的跳跃查找：x 靠近开头时比较次数可少于折半查找（2016-9 真题解析）。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第7章 查找）</span></h4>
+<ul>
+<li>画折半判定树：定中间作根 → 左右递归 → 底层补 n+1 个方形失败结点。</li>
+<li>数折半比较次数：成功 = 层数；失败 = 方形结点的父结点层数。</li>
+<li>折半最多比较：⌈log₂(n+1)⌉（n = 16 → 5，n = 600 → 10，n = 15 → 4）。</li>
+<li>易错：折半查找用于有序链表——错，链表不支持随机访问，只能顺序查找；失败比较次数多数一层；ASL(失败)分母写成 n 是错的，判定树失败是 n+1 个区间。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 1 次</span></h4>
+<ul class="luodian">
+<li><b>2016-9</b>：步长为 3 的跳跃查找与折半查找比较次数的比较（x 靠近开头时更少）。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点。</p>
+</div></div>
+<div class="card" id="s-1.8.3">
+<div class="card-h"><span class="code">1.8.3</span><span class="ttl">分块查找</span><span class="badge">真题 1 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>源A 知识库本章未设分块查找小节，分块查找要点见下方源B口诀（分块 ASL 公式与最优块长）。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第7章 查找）</span></h4>
+<ul>
+<li>分块 ASL：(b+1)/2 + (s+1)/2，n = bs，最优 s = √n。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 1 次</span></h4>
+<ul class="luodian">
+<li><b>2011-7</b>：判断不可能构成某二叉排序树中一条查找路径的序列（须满足查找路径的大小单调性）。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点。</p>
+</div></div>
+<div class="card" id="s-1.8.4">
+<div class="card-h"><span class="code">1.8.4</span><span class="ttl">二叉排序树</span><span class="badge">真题 3 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>BST 性质：左子树 &lt; 根 &lt; 右子树；中序遍历得到递增序列。</li>
+<li>查找/插入/删除：最坏 O(n)，平均 O(log n)；插入必落到叶子；删除"叶直删、独子顶、双子换前驱/后继"（源B）。</li>
+<li>插入顺序决定 BST 树形；判断 BST 须看整棵子树，不只左右孩子（源B）。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第7章 查找）</span></h4>
+<ul>
+<li>BST 插/删：插入必落叶子；删除"叶直删、独子顶、双子换前驱/后继"。</li>
+<li>易错：BST 只看左右孩子——判断必须用"子树全部结点"；BST 删除双子树时删错对象——是"复制前驱/后继的值上来，再删原位置的那个前驱/后继"，不是把原结点删两次、也不是把整棵子树搬上来。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 3 次</span></h4>
+<ul class="luodian">
+<li><b>2013-6</b>：BST 删除某结点再插回，树形是否复原（叶结点与非叶结点分情况）（源A解析损坏，据题干归纳）。</li>
+<li><b>2018-6</b>：由二叉排序树图判断元素之间应满足的大小关系（中序遍历递增）。</li>
+<li><b>2020-5</b>：判断哪个关键字输入序列不能生成给定的二叉排序树（插入顺序定树形）。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点。</p>
+</div></div>
+<div class="card" id="s-1.8.5">
+<div class="card-h"><span class="code">1.8.5</span><span class="ttl">平衡二叉树</span><span class="badge">真题 7 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>AVL 定义：任意结点左右子树高度差 ≤ 1；查找/插入/删除严格 O(log2 n)。</li>
+<li>四种旋转：LL/RR 单旋，LR/RL 双旋；只调最小不平衡子树（源B）。</li>
+<li>LL（右单旋）：在 A 的左孩子的左子树插入，A 的平衡因子由 1 增至 2；把 A 的左孩子 B 向右上旋转代替 A 成根结点，A 向右下旋转成 B 的右子树的根，B 的原右子树作 A 的左子树。</li>
+<li>RR（左单旋）：在 A 的右孩子的右子树插入，A 的平衡因子由 1 减至 -2；把 A 的右孩子 B 向左上旋转代替 A 成根结点，A 向左下旋转成 B 的左子树的根，B 的原左子树作 A 的右子树。</li>
+<li>LR（先左后右双旋）：在 A 的左孩子的右子树插入，A 的平衡因子由 1 增至 2；先把 A 的左孩子 B 的右子树的根结点 C 向左上旋转提升到 B 的位置，再把 C 向右上旋转提升到 A 的位置。</li>
+<li>RL（先右后左双旋）：在 A 的右孩子的左子树插入，A 的平衡因子由 -1 减至 -2；先把 A 的右孩子 B 的左子树的根结点 C 向右上旋转提升到 B 的位置，再把 C 向左上旋转提升到 A 的位置。</li>
+<li>删除：先按二叉排序树的方法删结点 w，再从 w 向上回溯找第一个不平衡结点 z（最小不平衡子树）；y 为 z 的高度最高的孩子，x 为 y 的高度最高的孩子；四种位置组合与插入的调整方式相同。与插入不同：删除后如子树高度减 1，可能需要对 z 的祖先结点继续调整，甚至回溯到根。（王道 DS 指导 7.3.2，pp.273–276）</li>
+<li>高度 h 的 AVL 最少结点数 N(h) = N(h-1) + N(h-2) + 1：1, 2, 4, 7, 12, 20, 33, 54, 88（源B）。</li>
+<li>AVL 插入、删除都可能引起旋转调整，删后插回未必复原（2019-4 真题解析）。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第7章 查找）</span></h4>
+<ul>
+<li>AVL 判型：从不平衡点沿插入方向走两条边，LL/RR 单旋，LR/RL 双旋。</li>
+<li>AVL 快速做法："上找第一个不平，下取前三个，小中大重排，其余按大小挂回"。</li>
+<li>AVL 删除判型：改"沿插入方向"为"哪边高往哪走"，等高与上层同向。</li>
+<li>AVL 最少结点：N(h) = N(h-1) + N(h-2) + 1：1, 2, 4, 7, 12, 20, 33, 54, 88（"斐波那契 +1"）。</li>
+<li>易错：AVL 删除沿用插入的判型方向——错，删除必须从失衡点往"高度大"的子树走；只调最小不平衡子树，有多个失衡结点时只调最靠下的那个；LR 与 RL 的旋转顺序颠倒（LR 是"先左旋下面、再右旋整体"，RL 反之）；N(h) 边界写错（N(0) = 0、N(1) = 1），最多结点是 2^h-1，不要与最少混。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 7 次</span></h4>
+<ul class="luodian">
+<li><b>2009-4</b>：由图判断满足平衡二叉树定义的二叉排序树（源A无解析，据题干归纳）。</li>
+<li><b>2010-4</b>：AVL 插入关键字 48 后新树中关键字 37 的左、右子结点（源A无解析，据题干归纳）。</li>
+<li><b>2012-4</b>：高度为 6、所有非叶结点平衡因子均为 1 的平衡二叉树的结点总数。</li>
+<li><b>2013-3</b>：关键字 1–7 依次插入初始为空的 AVL，求平衡因子为 0 的分支结点个数（源A解析损坏，据题干归纳）。</li>
+<li><b>2015-4</b>：无重复关键字的 AVL 中序遍历为降序序列，辨析关于该树的叙述。</li>
+<li><b>2019-4</b>：AVL 删除某结点再插回，T1 与 T3 是否相同（插入删除可能引起旋转）。</li>
+<li><b>2021-6</b>：给定 AVL 插入关键字 23 后的调整类型与新根结点。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点（源A 知识库只有 AVL 定义表，无四种旋转与最少结点数细节）。</p>
+</div></div>
+<div class="card" id="s-1.8.6">
+<div class="card-h"><span class="code">1.8.6</span><span class="ttl">散列查找</span><span class="badge">真题 5 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>装填因子 α = 表中记录数 n / 散列表长度 m；散列查找效率取决于散列函数、冲突处理策略、装填因子。</li>
+<li>线性探测 di = 1, 2, 3, …, m-1，易产生二次聚集；平方探测 di = ±1², ±2², …, ±k²，可避免堆积但不能探查所有单元；拉链法同义词串入单链表，无堆积。</li>
+<li>成功 ASL：从散列位置数到元素本身；失败 ASL：对散列函数每个可能值数到第一个空单元（空单元算 1 次），分母为值域大小（源B）。</li>
+<li>删除必须逻辑删除（打标记），物理抹空会截断探测链（源B）。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第7章 查找）</span></h4>
+<ul>
+<li>散列成功 ASL：拿元素算 H(k)，从该位置数到元素本身，几次就几。</li>
+<li>散列失败 ASL：对 H 的每个可能值，数到第一个空单元，空单元算 1 次；分母 = 值域大小（除留余数法 = p）。</li>
+<li>散列删除：打标记，逻辑删除，绝不抹空。</li>
+<li>易错：散列表物理删除——抹空会截断探测链，导致后面的同义词查不到；散列失败 ASL 只对已存元素算——错，要对散列函数的每个可能取值都算一遍；"空单元算不算一次"——408 真题惯例：算（与空位置比较也是一次比较）；拉链法失败分母是散列函数值域大小（如 mod 13 → 13 条链），不是元素个数；装填因子 α = n/m（记录数/表长），不是 m/n，开放定址 α 必须 &lt; 1。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 5 次</span></h4>
+<ul class="luodian">
+<li><b>2011-9</b>：提高散列表查找效率的正确措施（装填因子、散列函数、堆积的表述）。</li>
+<li><b>2014-8</b>：散列冲突堆积现象直接影响的因素（源A无解析，据题干归纳）。</li>
+<li><b>2018-9</b>：线性探测再散列插入关键字后查找成功的平均查找长度。</li>
+<li><b>2019-8</b>：线性探测插入关键字后查找失败的平均查找长度（对每个散列值数到空单元）。</li>
+<li><b>2022-9</b>：影响散列方法平均查找长度的因素（装填因子、散列函数、冲突解决策略）。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点。</p>
+</div></div>
+<div class="card" id="s-1.8.7">
+<div class="card-h"><span class="code">1.8.7</span><span class="ttl">B 树与 B+ 树</span><span class="badge">真题 10 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>m 阶 B 树：所有叶子在同一层；除根外非叶结点孩子数 ≥ ⌈m/2⌉，关键字数 ⌈m/2⌉-1 ~ m-1；根最少 1 个关键字（特例）。</li>
+<li>B 树插入看上限：满 m 个就裂，中间 ⌈m/2⌉ 上位，根裂树高 +1；删除看下限：先直接删，不行借（父子换位），再不行合并（带父关键字）（源B）。</li>
+<li>分裂（插入时）：插入位置一定是最低层的某个非叶结点；插入后若结点关键字个数大于 m-1，必须分裂。取一个新结点，在插入后的原结点从中间位置 ⌈m/2⌉ 把关键字分为两部分，左部分留在原结点，右部分放新结点，中间位置 ⌈m/2⌉ 的结点插入原结点的父结点；若父结点也超限则继续分裂，直至传到根结点，树高增 1。</li>
+<li>删除与合并：删除后要使结点关键字个数 ≥ ⌈m/2⌉-1。被删关键字不在终端结点，用其前驱（或后继）替代，转化为终端结点删除。终端结点删除分三种情况：① 直接删除（删后结点关键字个数仍 ≥ ⌈m/2⌉）；② 兄弟够借（被删结点删前关键字个数 = ⌈m/2⌉-1，且相邻兄弟关键字个数 ≥ ⌈m/2⌉，调整该结点、兄弟结点及其双亲结点，即父子换位法）；③ 兄弟不够借（合并——将该结点、兄弟结点及父结点中分隔两者的关键字合并成一个结点，若父结点因此关键字数不足则递归处理）。</li>
+<li>非叶结点结构：[n, P0, K1, P1, K2, P2, …, Kn, Pn]，关键字递增，指针 Pi-1 所指子树关键字均小于 Ki，Pi 所指子树均大于 Ki，关键字个数 n 满足 ⌈m/2⌉-1 ≤ n ≤ m-1。</li>
+<li>m 阶 B 树高度：含 n 个关键字、阶为 m 的 B 树，h ≥ log_m(n+1)，h ≤ log_⌈m/2⌉((n+1)/2)+1。例：3 阶 B 树 8 个关键字，2 ≤ h ≤ 3.17。（王道 DS 指导 7.4.1，pp.296–298）</li>
+<li>B+ 树：非叶结点仅存索引，所有数据在叶子链表中，叶结点按关键字从小到大顺序链接，支持顺序查找与范围查询；n 个关键字对应 n 个分支，无 +1。</li>
+<li>B 树磁盘读写代价低、查询效率稳定，适用于文件索引与数据库索引。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第7章 查找）</span></h4>
+<ul>
+<li>B 树上下界：关键字 ⌈m/2⌉-1 ~ m-1，分支 ⌈m/2⌉ ~ m，根是特例 1 个起。</li>
+<li>B 树插入：看上限，满 m 个就裂，中间 ⌈m/2⌉ 上位，根裂树高 +1。</li>
+<li>B 树删除：看下限，先"直接删"，不行"借（父子换位）"，再不行"合并（带父关键字）"。</li>
+<li>B 树高度：最小：大家都塞满 log_m(n+1)；最大：大家都取最少 log_{⌈m/2⌉}((n+1)/2)+1。</li>
+<li>易错：把"阶"当成关键字数——m 阶是分支数上限；B 树根结点套用下限公式——根最少 1 个关键字（2 个分支），这是特例；B 树删除乱合并——只有兄弟也不够借时才合并，合并一定要把父结点中那个分隔关键字一起并进来；B 树插入分裂位置随意取——规范是 ⌈m/2⌉，m 为偶数时中间偏左/偏右都可，但整题必须一致；B+ 树按 B 树数分支——B+ 树 n 关键字对应 n 个分支，没有"+1"。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 10 次</span></h4>
+<ul class="luodian">
+<li><b>2009-8</b>：判断不符合 m 阶 B 树定义要求的叙述（源A解析损坏，据题干归纳）。</li>
+<li><b>2012-9</b>：3 阶 B 树删除关键字 78（兄弟够借）后最右叶结点中的关键字。</li>
+<li><b>2013-10</b>：高度为 2 的 5 阶 B 树所含关键字的最少个数（源A解析损坏，据题干归纳）。</li>
+<li><b>2014-9</b>：15 个关键字的 4 阶 B 树中含关键字结点个数的最大值（源A解析为答案串，据题干归纳）。</li>
+<li><b>2016-10</b>：B+ 树不同于 B 树的特点（叶结点含全部关键字且顺序链接）。</li>
+<li><b>2017-9</b>：判断适合使用 B+ 树的应用（文件索引与数据库索引）。</li>
+<li><b>2018-8</b>：高度为 5 的 3 阶 B 树含有的关键字个数的最少值（非叶结点取最少关键字）。</li>
+<li><b>2020-10</b>：依次插入关键字后 4 阶 B 树的分裂过程与根结点中的关键字（源A解析串题，据题干归纳）。</li>
+<li><b>2021-9</b>：高度为 3 的 3 阶 B 树第 2 层有 4 个关键字，求结点个数的最大值。</li>
+<li><b>2022-8</b>：5 阶 B 树删除关键字 260 后调整，判断不可能是新树根结点关键字序列的选项。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点（源A 知识库只有 B/B+ 树对比表，无插入分裂与删除借位合并细节）。</p>
+</div></div>
+<h3 class="grp">第7章 内部与外部排序</h3>
+<div class="card" id="s-1.9.1">
+<div class="card-h"><span class="code">1.9.1</span><span class="ttl">直接插入排序</span><span class="badge">真题 3 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>直接插入：平均 O(n²)，最好 O(n)，最坏 O(n²)，空间 O(1)，稳定；基本有序时效率极高。</li>
+<li>折半插入：比较次数减为 O(n log n)，但移动次数不变，时间仍 O(n²)，空间 O(1)，稳定。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第8章 排序）</span></h4>
+<ul>
+<li>插入类："从第二个开始，往前找位置，大的往后挪"。</li>
+<li>选算法：基本有序 → 插入/冒泡；要稳定 → 插入/冒泡/归并/基数；要 O(1) 空间又要最坏 n log n → 堆；数据量大且随机 → 快排；外部 → 归并。</li>
+<li>易错：折半插入以为移动次数也减少了——只减少比较次数，移动次数不变，时间仍是 O(n²)。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 3 次</span></h4>
+<ul class="luodian">
+<li><b>2012-11</b>：折半插入与直接插入排序可能的不同之处（比较次数，移动次数相同）。</li>
+<li><b>2020-11</b>：基本有序时直接插入比简单选择效率更高的原因（源A无解析，据题干归纳）。</li>
+<li><b>2022-11</b>：采用直接插入而不采用快速排序的可能原因（基本有序、元素少、空间 O(1)、稳定）。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点。</p>
+</div></div>
+<div class="card" id="s-1.9.2">
+<div class="card-h"><span class="code">1.9.2</span><span class="ttl">希尔排序</span><span class="badge">真题 3 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>希尔排序：缩小增量直接插入，平均 O(n^1.3)，最好 O(n)，最坏 O(n²)，空间 O(1)，不稳定。</li>
+<li>组内排序采用直接插入排序；最后一趟增量必须为 1，否则不能保证整体有序（源B）。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第8章 排序）</span></h4>
+<ul>
+<li>希尔："增量是几就分几组，写几行竖着排"——验证增量时直接按增量写成若干行，每行一组，一眼看出是否组内有序。</li>
+<li>易错：希尔增量最后不是 1；稳定性判断错——希尔、快排、简单选择、堆都是不稳定，直接插入、折半插入、冒泡、归并、基数是稳定。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 3 次</span></h4>
+<ul class="luodian">
+<li><b>2014-10</b>：由希尔排序第 1 趟结果反推采用的增量（源A无解析，据题干归纳）。</li>
+<li><b>2015-11</b>：希尔排序的组内排序采用的排序方法（直接插入排序）。</li>
+<li><b>2018-10</b>：由希尔排序两趟结果验证增量分组与组内递增。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点。</p>
+</div></div>
+<div class="card" id="s-1.9.3">
+<div class="card-h"><span class="code">1.9.3</span><span class="ttl">冒泡排序</span><span class="badge">真题 1 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>冒泡排序：平均 O(n²)，最好 O(n)，最坏 O(n²)，空间 O(1)，稳定；每趟确定一个最值最终位置，加 flag 可提前退场。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第8章 排序）</span></h4>
+<ul>
+<li>冒泡："一趟一个极值；某趟没交换，直接收工"。</li>
+<li>选算法：基本有序 → 插入/冒泡；要稳定 → 插入/冒泡/归并/基数。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 1 次</span></h4>
+<ul class="luodian">
+<li><b>2009-10</b>：由第二趟排序结果反推排序方法（源A解析损坏，据题干归纳）。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点。</p>
+</div></div>
+<div class="card" id="s-1.9.4">
+<div class="card-h"><span class="code">1.9.4</span><span class="ttl">快速排序</span><span class="badge">真题 8 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>快速排序：平均 O(n log2 n)，最好 O(n log2 n)，最坏 O(n²)，空间 O(log2 n) ~ O(n)，不稳定；内部排序综合最快。</li>
+<li>正序/逆序时退化为单支树 O(n²)；每趟排序结束枢轴元素落到最终位置。</li>
+<li>快排只适用于顺序存储（随机访问）；递归次数与划分平衡性有关，与分区处理顺序无关。</li>
+<li>"一趟"指对所有未确定最终位置的元素都处理一遍；第一趟只产生 1 个到位枢轴，第二趟产生 2 个（源B）。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第8章 排序）</span></h4>
+<ul>
+<li>快排："挖坑填数、左右交替、相遇填枢轴"；换向只看是否发生了交换。</li>
+<li>选算法：数据量大且随机 → 快排；要 O(1) 空间又要最坏 n log n → 堆。</li>
+<li>易错："一趟"与"一次划分"混淆——快排第一趟只产生 1 个到位枢轴，第二趟产生 2 个；快排比较次数与交换方向——初始必须从后往前，只有发生交换才换向，没交换不换向。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 8 次</span></h4>
+<ul class="luodian">
+<li><b>2010-10</b>：递归实现快速排序时递归次数的叙述正误（源A无解析，据题干归纳）。</li>
+<li><b>2010-11</b>：由前三趟排序结果反推采用的排序方法（源A无解析，据题干归纳）。</li>
+<li><b>2011-10</b>：实现快速排序待排序序列宜采用的存储方式（顺序存储）。</li>
+<li><b>2012-10</b>：每趟排序结束至少能确定一个元素最终位置的排序方法（简单选择、快速、堆）。</li>
+<li><b>2014-11</b>：判断不可能是快速排序第 2 趟排序结果的选项（源A无解析，据题干归纳）。</li>
+<li><b>2017-11</b>：顺序存储换链式存储后时间效率会降低的排序方法（希尔、堆依赖随机访问）。</li>
+<li><b>2019-7</b>：选择排序算法时除时空效率外还需考虑的因素（规模、存储方式、稳定性、初始状态）。</li>
+<li><b>2019-10</b>：按"趟"的定义判断不可能是快速排序第二趟结果的序列。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点。</p>
+</div></div>
+<div class="card" id="s-1.9.5">
+<div class="card-h"><span class="code">1.9.5</span><span class="ttl">简单选择排序</span><span class="badge">真题 1 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>简单选择排序：平均/最好/最坏均为 O(n²)，空间 O(1)，不稳定；比较次数恒为 n(n-1)/2，与初始状态无关；移动次数最少。</li>
+<li>每趟确定一个极值元素的最终位置。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第8章 排序）</span></h4>
+<ul>
+<li>简单选择："选最小，换到位；比较次数永远是 n(n−1)/2"。</li>
+<li>易错：简单选择的时间复杂度以为与初始序列有关——比较次数恒为 n(n−1)/2，与初始状态无关。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 1 次</span></h4>
+<ul class="luodian">
+<li><b>2009-9</b>：小根堆插入关键字 3 后的向上调整过程（源A解析为答案串，据题干归纳）。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点。</p>
+</div></div>
+<div class="card" id="s-1.9.6">
+<div class="card-h"><span class="code">1.9.6</span><span class="ttl">堆排序</span><span class="badge">真题 5 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>堆排序：平均/最好/最坏均为 O(n log2 n)，空间 O(1)，不稳定；建堆严格 O(n)，堆顶下沉 O(log n)；适合求海量数据 Top-K。</li>
+<li>堆是一棵完全二叉树，可顺序存储；只要求父大于子（大根堆），不要求左右子树有序。</li>
+<li>建堆从最后一个非叶结点 ⌊n/2⌋ 开始倒着调；插入只往上比（与父结点比）；删除用末尾元素替堆顶再往下沉（源B）。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第8章 排序）</span></h4>
+<ul>
+<li>堆："建堆倒着调、左右挑大个、换下继续沉；插入只上比；删除末尾替、往下沉"。</li>
+<li>易错：堆的插入去做左右孩子比较——插入只与父结点比；删除后忘记继续下沉——换下来的结点若下面还有孩子，必须继续比；"依次插入"当成"一次建堆"——前者每来一个元素调整一次，结果通常不同；建堆从最后一个非叶子结点 ⌊n/2⌋ 开始倒着调到 1，从叶子开始调是无效动作。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 5 次</span></h4>
+<ul class="luodian">
+<li><b>2011-11</b>：大根堆尾部插入新元素再调整为大根堆的比较次数。</li>
+<li><b>2015-10</b>：小根堆删除堆顶后重建堆过程中关键字之间的比较次数。</li>
+<li><b>2018-11</b>：由数据序列建成大根堆的正确序列变化过程（从最后一个非叶结点倒着调）。</li>
+<li><b>2020-9</b>：辨析关于大根堆的叙述：完全二叉树、顺序存储、是否二叉排序树、次大值位置。</li>
+<li><b>2021-11</b>：关键字依次插入初始为空的大根堆得到的堆序列（逐个向上调整）。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点。</p>
+</div></div>
+<div class="card" id="s-1.9.7">
+<div class="card-h"><span class="code">1.9.7</span><span class="ttl">归并排序</span><span class="badge">真题 4 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>二路归并：平均/最好/最坏均为 O(n log2 n)，空间 O(n)，稳定；归并的含义是将两个或两个以上有序表合并为一个新有序表。</li>
+<li>外部排序：磁盘 I/O 占 90% 以上，目标是减少 I/O；k 路平衡归并趟数 S = ⌈log_k m⌉，总读写 I/O = 2N(1 + ⌈log_k m⌉)。</li>
+<li>败者树：非叶结点记败者段号，顶层 ls[0] 记冠军；重赛沿单一路径向上比对，选全局最小只需 ⌈log2 k⌉ 次比较。</li>
+<li>最佳归并树：以各段块数为权构造 k 叉哈夫曼树，总 I/O = 2 × WPL；虚段补齐：(n0-1) mod (k-1) ≠ 0 时补 (k-1) - [(n0-1) mod (k-1)] 个权 0 虚段。</li>
+<li>置换-选择排序：动态冻结小于上一输出值的元素，生成平均长度 2w 的超长初始归并段。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第8章 排序）</span></h4>
+<ul>
+<li>归并："两两合并，段长翻倍，⌈log₂n⌉ 趟"。</li>
+<li>外排："先生成段、再多路并；趟数 ⌈log_k r⌉，I/O 两倍 WPL；k 叉哈夫曼要补零，补 (k−1)−余数 个"。</li>
+<li>易错：归并趟数写成 log₂n 不取整——必须向上取整；外部排序 I/O 忘记乘 2——读写各一遍，总 I/O = 2×WPL；最佳归并树补虚段算反——补的是 (k−1) − 余数 个，不是余数本身；败者树结点里存的是归并段编号，不是关键字。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 4 次</span></h4>
+<ul class="luodian">
+<li><b>2016-11</b>：10TB 数据文件排序应使用的方法（外部排序）。</li>
+<li><b>2017-10</b>：选择归并排序而没选插入排序的可能理由（时间效率更高、空间更大）。</li>
+<li><b>2019-11</b>：120 个初始归并段、12 路归并实现最佳归并需补充的虚段个数。</li>
+<li><b>2022-10</b>：二路归并排序中二路归并操作的功能（两有序表合并为一新有序表）。</li>
+</ul>
+<p class="hubu">互补：发哥课未讲败者树重赛细节与置换-选择排序，源A 补齐。</p>
+</div></div>
+<div class="card" id="s-1.9.8">
+<div class="card-h"><span class="code">1.9.8</span><span class="ttl">基数排序</span><span class="badge">真题 3 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>基数排序：时间 O(d(n+r))，空间 O(r)，稳定；基于多关键字位分配与收集，无比较排序，适合 n 大位少。</li>
+<li>LSD：先个位、再十位、后百位；分配一个个放，收集一串串接（源B）。</li>
+<li>元素移动次数与关键字初始排列次序无关（2015-9 真题解析）。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第8章 排序）</span></h4>
+<ul>
+<li>基数："先个位、再十位、后百位；分配一个个放，收集一串串接"。</li>
+<li>易错：基数排序空间写成 O(n)——只需 r 个队列的头尾指针，O(r)；时间是 O(d(n+r))，别丢 r。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 3 次</span></h4>
+<ul class="luodian">
+<li><b>2013-11</b>：基数排序第 2 趟分配收集后得到的关键字序列。答案 C（默认 LSD，第 2 趟：007,110,911,114,119,120,122）。（源A无解析无答案，已独立求解）</li>
+<li><b>2015-9</b>：元素移动次数与关键字初始排列次序无关的排序算法（基数排序）。</li>
+<li><b>2021-10</b>：LSD 基数排序第 1 趟分配收集后元素 372 前后紧邻的元素。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点。</p>
+</div></div>
+</div></div>
+<div class="sec" id="anchor-co"><div class="sec-h"><span class="no">2</span><h2>计算机组成原理</h2><span class="en">Computer Organization · 27 section · 152 题</span></div><div class="sec-b">
+<h3 class="grp">第1章 计算机系统概述与性能指标</h3>
+<div class="card" id="s-2.1.1">
+<div class="card-h"><span class="code">2.1.1</span><span class="ttl">计算机层级结构</span><span class="badge">真题 4 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>冯·诺依曼机五大部件：运算器、控制器、存储器、输入设备、输出设备；指令和数据以同等地位存于存储器中，形式上无差别，按地址寻访。</li>
+<li>指令和数据均采用二进制表示；指令由操作码和地址码组成；传统冯·诺依曼架构以运算器为中心，现代计算机以存储器/Cache 为中心。</li>
+<li>硬件能直接执行的只有机器语言（二进制编码）；汇编语言是机器语言的符号表示，须经汇编后才能执行。</li>
+<li>翻译程序：编译程序一次全部翻译成目标程序（源程序不变无须重编译）；解释程序翻译一句执行一句，不生成目标程序；汇编程序把汇编语言源程序翻译为机器语言程序。</li>
+<li>采用二进制的原因：运算规则简单；只需高低两种电平，物理器件易制造；与逻辑量"真/假"吻合，便于用逻辑门电路实现运算。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：01_第1章_计算机系统概述；本章无口诀节）</span></h4>
+<ul>
+<li>指令和数据形式相同，靠"取指阶段/执行阶段"区分，不是靠内容或存放位置区分。</li>
+<li>绝大多数指令给的是地址码，要按地址再取数；只有立即寻址才是数据直接在指令中。</li>
+<li>目标文件 ≠ 可执行目标文件：汇编后得到 .o，不能运行；链接后才生成可执行文件。</li>
+<li>预处理只引入库函数的声明并删除注释；库函数实现在链接阶段才装入；链接程序处理的是已经是机器码的目标文件。</li>
+<li>存储程序是"程序和数据预先存入主存，之后自动逐条取指执行"，不是边输入边执行。</li>
+<li>存储容量 16G 的 G 是 2^30，主频 1.5G 的 G 是 10^9，同一个字母两种含义；大写 K = 2^10，小写 k = 10^3。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 4 次</span></h4>
+<ul class="luodian">
+<li><b>2015-12</b>：硬件能直接执行的只有机器语言，汇编语言须经汇编才能执行。</li>
+<li><b>2016-12</b>：编译、解释、汇编三种翻译程序的区别：是否生成目标程序。</li>
+<li><b>2018-12</b>：冯·诺依曼机采用二进制编码的三个原因：运算简单、器件易造、契合逻辑门。</li>
+<li><b>2019-12</b>：冯·诺依曼基本思想辨析：指令和数据同等地位存放，执行前须预先存入存储器。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<div class="card" id="s-2.1.2">
+<div class="card-h"><span class="code">2.1.2</span><span class="ttl">计算机性能指标</span><span class="badge">真题 9 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>CPU 执行时间 = 程序指令数 × CPI / 主频 f = 总时钟周期数 × 时钟周期 Tc。</li>
+<li>MIPS = 指令条数 /（执行时间 × 10^6）= 主频 f /（CPI × 10^6）。</li>
+<li>CPI = 总时钟周期数 / 总指令条数 = Σ（CPI_i × 占比_i），须按指令比例加权平均。</li>
+<li>机器字长通常与 CPU 寄存器位数、加法器位数有关；通用寄存器位数一定与机器字长相同。</li>
+<li>数量级：存储容量、地址空间用二进制（1K = 2^10，1M = 2^20，1G = 2^30）；时钟频率、传输速率用十进制（1MHz = 10^6 Hz，1Gbps = 10^9 bps）。</li>
+<li>PFLOPS = 每秒 10^15 次浮点运算；千万亿 = 10^15，亿亿 = 10^16。</li>
+<li>提高时钟频率、优化数据通路结构、编译优化都能缩短程序执行时间。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：01_第1章_计算机系统概述；本章无口诀节）</span></h4>
+<ul>
+<li>平均 CPI 不是各类 CPI 的算术平均，必须按指令比例加权：0.8×1 + 0.2×10 = 2.8，而不是 (1+10)/2 = 5.5。</li>
+<li>T = N×CPI/f 默认算出的是秒；选项常给 ms/μs，须再换算（2.8×10^-5 s = 28 μs = 0.028 ms）。</li>
+<li>主频单位 GHz 代入时要写 10^9，不要写成 10^6 或 2^30；MIPS 结果已含 10^6，0.4×10^9 条/秒应表述为 400 MIPS。</li>
+<li>求时间比值时，同一 ISA + 同一基准程序 ⇒ N 相同，可直接约掉：T1/T2 = (CPI1/CPI2)·(f2/f1)，主频在分母，比值方向别写反。</li>
+<li>指令条数与 CPI 同时变化时，按乘积缩放：条数 ×0.7、CPI ×1.2 ⇒ 时间 ×0.84。</li>
+<li>把"每秒执行条数多"直接等同于"程序跑得快"是错的：同一高级语言程序在不同机器上编译出的 N 可能不同。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 9 次</span></h4>
+<ul class="luodian">
+<li><b>2010-12</b>：提高时钟频率、优化数据通路、编译优化三项都能缩短程序执行时间。（源A无解析，据题干归纳）</li>
+<li><b>2011-12</b>：描述浮点数操作速度的指标是 MFLOPS（每秒百万次浮点运算）。</li>
+<li><b>2012-12</b>：CPU 提速只缩短 CPU 时间：T = 90/1.5 + 10 = 70 秒，I/O 时间不变。</li>
+<li><b>2013-12</b>：CPI 加权平均为 3.0，MIPS = 1200/3 = 400。</li>
+<li><b>2014-12</b>：指令数 ×0.7、CPI ×1.2，执行时间 = 20×0.7×1.2 = 16.8 秒。（源A无解析，据题干归纳）</li>
+<li><b>2017-12</b>：同 ISA 同程序，时间比 = (2/1.5):(1/1.2) = 1.6。</li>
+<li><b>2020-12</b>：位数一定与机器字长相同的是通用寄存器。</li>
+<li><b>2021-12</b>：93.0146 PFLOPS 即每秒约 9.3×10^16 次浮点运算。</li>
+<li><b>2022-12</b>：平均 CPI = 0.8×1 + 0.2×10 = 2.8，CPU 执行时间为 28 μs。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<h3 class="grp">第2章 数据的表示和运算</h3>
+<div class="card" id="s-2.2.1">
+<div class="card-h"><span class="code">2.2.1</span><span class="ttl">定点数的表示与运算</span><span class="badge">真题 8 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>原码范围 ±(2^(n-1)-1)，+0 ≠ -0（双重 0）；反码范围同原码，也有双重 0；补码范围 -2^(n-1) ~ 2^(n-1)-1，0 唯一，负数比正数多一个。</li>
+<li>补码运算：[x+y]补 = [x]补 + [y]补，减法变加法：[x-y]补 = [x]补 + [-y]补。</li>
+<li>溢出判据：同号相加得异号即溢出；进位法 V = Cn ⊕ Cn-1；双符号位 01 正溢、10 负溢。</li>
+<li>逻辑移位左移右移空位都补 0；算术移位符号位不参与移动，右移空位补符号位，左移空位补 0。</li>
+<li>标志位：CF 服务于无符号数（进位/借位），OF 服务于有符号数（溢出）；进位 ≠ 溢出，最高位有进位丢弃不代表溢出。</li>
+<li>n 位补码最小值 100…0 = -2^(n-1)，最大值 011…1 = 2^(n-1)-1；全 1 补码 = -1。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：02_第2章_2.1数据的表示 + 03_第2章_2.2运算与2.3浮点）</span></h4>
+<ul>
+<li>原码 ↔ 补码快速法：符号位不变，最右的 1 和它右边的 0 不变，其余取反（正反两个方向规则相同）。</li>
+<li>补码求真值：首位负权法，-(最高位权) + 其余位按正权求和；或用 2^n 减去补码当无符号数的值得绝对值。</li>
+<li>十六进制判正负：首位 ≥ 8 为负，≤ 7 为正；-128 没有原码和反码（8 位），其补码是 1000 0000。</li>
+<li>判溢出三法：范围法看真值是否越界；符号法同号相加得异号即溢出；进位法 V = Cn ⊕ Cn-1。</li>
+<li>算术右移 vs 逻辑右移：左移两者一样（低位补 0），只有右移不同——逻辑右移高位补 0，算术右移高位补符号位。</li>
+<li>进位 ≠ 溢出：CF 服务于无符号数，OF 服务于有符号数；OF 与 SF 不是一回事，SF 只是结果最高位。</li>
+<li>双符号位判溢出：01 是正溢出、10 是负溢出，不要记反。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 8 次</span></h4>
+<ul class="luodian">
+<li><b>2010-13</b>：8 位补码加法溢出判断：同号相加得异号即溢出。（源A无解析，据题干归纳）</li>
+<li><b>2013-14</b>：补码算术移位求 z = 2x + y/2 的机器数。</li>
+<li><b>2014-13</b>：x = 103、y = -25，8 位定点补码运算的溢出判断。（源A无解析，据题干归纳）</li>
+<li><b>2015-13</b>：3 个"1"、5 个"0"组成的 8 位补码最小整数为 -125（10000011）。</li>
+<li><b>2018-13</b>：补码转原码求真值 x = -33、y = 65，x-y 的机器数为 FFFFFF9EH。</li>
+<li><b>2018-16</b>：逻辑右移空位补 0，算术右移空位补符号位。</li>
+<li><b>2018-19</b>：减法标志位：最高位进位与符号位进位相同则 OF = 0，被减数大则 CF = 0。</li>
+<li><b>2022-13</b>：32 位补码所能表示的整数范围是 -2^31 ~ 2^31-1。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<div class="card" id="s-2.2.2">
+<div class="card-h"><span class="code">2.2.2</span><span class="ttl">浮点数的表示与运算</span><span class="badge">真题 9 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>IEEE 754 真值公式：X = (-1)^S × (1.M) × 2^(E-Bias)；单精度 32 位：1 位符号、8 位阶码（Bias = 127）、23 位尾数（隐藏最高位 1，有效精度 24 位）。</li>
+<li>双精度 64 位：1 位符号、11 位阶码（Bias = 1023）、52 位尾数（有效精度 53 位）。</li>
+<li>特殊阶码：阶码全 0 + 尾数全 0 为 ±0；全 0 + 尾数非 0 为非规格化数；全 1 + 尾数全 0 为 ±∞；全 1 + 尾数非 0 为 NaN；规格化数阶码只能取 1~254。</li>
+<li>最小规格化正数：数符 0、阶码取 1、尾数全 0，即 1.0×2^-126。</li>
+<li>浮点加减步骤：对阶、尾数运算、规格化、舍入、判溢出；对阶是小阶向大阶看齐。</li>
+<li>对阶不会引起阶码上溢或下溢；右规和尾数舍入都可能引起阶码上溢；左规时可能引起阶码下溢；尾数溢出时结果不一定溢出。</li>
+<li>十进制小数转二进制可能无限循环，无法用精度有限的 IEEE 754 格式精确表示。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：03_第2章_2.2运算与2.3浮点）</span></h4>
+<ul>
+<li>IEEE 754 真值速算：按 1|8|23 切（double 为 1|11|52）；指数 = 阶码字段 - 127；尾数前补"1."。</li>
+<li>特殊阶码口诀：零零是零，壹零无穷，壹非 NaN，零非规格。</li>
+<li>float 有效位数：尾数 23 位 + 隐藏位 = 24 位二进制有效位，约对应 7 位十进制有效数字。</li>
+<li>阶码全 0 与全 1 含义不同：全 0 + 尾数非 0 是非规格化（指数固定 -126，无隐藏位）；规格化数阶码只能是 1~254。</li>
+<li>IEEE 754 阶码偏置是 127 不是 128；不要把移码定义的 2^(n-1) 直接搬来。</li>
+<li>选项默认十进制：算出 0.01B 不能直接选 0.01×2^-126，要换成 0.25。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 9 次</span></h4>
+<ul class="luodian">
+<li><b>2009-13</b>：浮点加法全过程（对阶、尾数运算、规格化、舍入、判溢出）求 X+Y 的最终结果。（源A无解析，据题干归纳）</li>
+<li><b>2011-13</b>：x = -8.25 的 IEEE 754 单精度表示为 C1040000H。</li>
+<li><b>2012-14</b>：float 能表示的最大正整数是 2^128 - 2^104。</li>
+<li><b>2013-13</b>：C6400000H 按 1|8|23 切分，阶码 140、指数 13，真值为 -12288。</li>
+<li><b>2014-14</b>：两 float 数皆为负，x 绝对值远大于 y，故 x&lt;y 且符号相同。（源A无解析，据题干归纳）</li>
+<li><b>2015-14</b>：浮点加减运算中对阶、右规、舍入、左规与溢出的关系辨析。</li>
+<li><b>2018-14</b>：IEEE 754 单精度最小规格化正数为 1.0×2^-126。</li>
+<li><b>2021-14</b>：1.2 转二进制无限循环，不能用 IEEE 754 浮点格式精确表示。</li>
+<li><b>2022-14</b>：-0.4375 的 IEEE 754 单精度浮点数表示（按 1|8|23 切分编码）。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<div class="card" id="s-2.2.3">
+<div class="card-h"><span class="code">2.2.3</span><span class="ttl">数据类型转换</span><span class="badge">真题 7 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>机器数一个位都不变，只是换一种解释方式：同一机器数按无符号与按补码解释，数值不同。</li>
+<li>短转长必须扩展，数值一定不变；长转短只保留低位，可能改变数值。</li>
+<li>扩展方式：无符号数用零扩展，有符号数（补码）用符号扩展（正数补 0、负数补 1）。</li>
+<li>同时跨字长和跨符号性时：先按自身类型扩展到相同字长，再做有符号/无符号的解释转换。</li>
+<li>等长有符号转无符号：机器数不变，符号位成为数值的一部分，负数变正数。</li>
+<li>int 转 float、float 转 int 可能丢精度；float 转 double 精度不降；double 与 float 相加可能丢精度。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：02_第2章_2.1数据的表示）</span></h4>
+<ul>
+<li>零扩展补 0、符号扩展补符号：正数补 0、负数补 1，扩展后数值不变。</li>
+<li>先扩位、后改符号性：16 位有符号 → 32 位无符号，要先符号扩展到 32 位，再按无符号解释。</li>
+<li>长转短只保留低位，可能改变数值；短转长必须扩展，数值一定不变。</li>
+<li>同时跨字长和跨符号性时顺序错是易错真题坑：必须先按自身类型扩展到相同字长，再做解释转换。</li>
+<li>65530 = 65535 - 5 = 16 个 1 减 5，比短除法快得多。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 7 次</span></h4>
+<ul class="luodian">
+<li><b>2009-12</b>：short -9 符号扩展为 32 位，z = 127 + (-9) = 118，机器数为 00000076H。（源A无解析，据题干归纳）</li>
+<li><b>2010-14</b>：int/float/double 互转精度辨析：仅 I、III 两式结果为"真"。（源A无解析，据题干归纳）</li>
+<li><b>2012-13</b>：16 位无符号 short 转 32 位无符号 int 用零扩展，65530 = FFFAH → 0000FFFAH。</li>
+<li><b>2016-13</b>：等长有符号转无符号机器数不变：-32767 的补码按无符号解释为 32769。</li>
+<li><b>2019-13</b>：65535 的 16 位机器数全 1，按 short 补码解释为 -1。</li>
+<li><b>2020-13</b>：同一机器数 C8000000H 按 float 为 -2^17，按 int 为负数（取反加 1 求值）。</li>
+<li><b>2021-13</b>：带符号比较：z 为正、x 与 y 为负，x = -3H 大于 y = -21H。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<div class="card" id="s-2.2.4">
+<div class="card-h"><span class="code">2.2.4</span><span class="ttl">数据的大小端和对齐存储</span><span class="badge">真题 4 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>大端模式：数据的最高位字节（MSB）存放在内存的低地址端；小端模式：最低位字节（LSB）存放在内存的低地址端（x86 常用）。</li>
+<li>小端方式下，数据的最低有效字节地址表示数据地址；多字节数据的字节序整体反转，字节内部位序不变。</li>
+<li>边界对齐：int 型数据地址须是 4 的倍数，short 型须是 2 的倍数；结构体成员按自身大小对齐，整体按最大成员对齐，末尾补齐。</li>
+<li>结构体大小 ≠ 成员大小之和：要按对齐规则补空洞，最后整体向上取整到最大成员的倍数。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：03_第2章_2.2运算与2.3浮点）</span></h4>
+<ul>
+<li>大小端口诀：大端同序（低地址高字节），小端反序（低地址低字节），字节内不变。</li>
+<li>边界对齐口诀：成员对齐看自身大小，整体对齐看最大成员；十六进制只看末位。</li>
+<li>小端的字节序表述：小端是"低地址存低字节"，最终内存里看到的是整个数据字节序反转，不是每个字节内部位反转。</li>
+<li>指令里的左右 ≠ 数据里的左右：指令左边是低地址，数据左边是高字节，填机器码时最容易绕晕。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 4 次</span></h4>
+<ul class="luodian">
+<li><b>2012-15</b>：小端 + 边界对齐存放结构体：int 地址须为 4 的倍数，273 的低字节 11H 在首地址处。</li>
+<li><b>2016-14</b>：小端存放 double 型数据：低位字节在低地址，8046H 单元存放 22H。</li>
+<li><b>2018-15</b>：小端方式下 -64 的补码 FFFFFFC0H 按字节反序存放为 C0 FF FF FF。</li>
+<li><b>2020-14</b>：边界对齐 + 小端：short 占 2 字节后补 2 空字节，34H 所在单元地址为首地址 +6。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<h3 class="grp">第3章 存储器层次结构 (Cache / 主存)</h3>
+<div class="card" id="s-2.3.1">
+<div class="card-h"><span class="code">2.3.1</span><span class="ttl">主存储器与 CPU 的连接</span><span class="badge">真题 15 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>芯片数 = 目标总容量 ÷ 单片容量；字扩展改字数（组数管地址），位扩展改字长（每组片数管位数）。</li>
+<li>地址范围算个数：末 - 首 + 1（闭区间），如 5FFFH - 4000H + 1 = 2000H = 8KB。</li>
+<li>MAR 位数取主存地址空间（理论最大寻址范围），不是实际主存容量；如 64MB 地址空间 ⇒ MAR 至少 26 位。</li>
+<li>DRAM 地址引脚：行列地址线复用，地址引脚数取行、列所需位数的较大者；数据引脚数 = 单元位数。</li>
+<li>DRAM 用电容存储，工作期间必须定时刷新；刷新按行进行，一行刷新一次，刷新计数器位数 = 行地址位数。</li>
+<li>SRAM 与 DRAM 都易失，断电都丢数据；Cache 用 SRAM，主存用 DRAM。</li>
+<li>多模块低位交叉：模块号 = 地址 % 模块数；相邻 m 次访问落同一模块即可能发生访存冲突；低位交叉流水条件 m = T/r。</li>
+<li>容量 = 2^MAR × MDR；按字节编址时地址数 = 字节数。</li>
+<li>主存储器（MM）在 CPU 外，存指令和数据，由 RAM 和 ROM 实现；控制存储器（CS）在 CPU 控制器内，存全部微指令，只读不写。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：04_第3章_3.1-3.3存储器与主存扩展）</span></h4>
+<ul>
+<li>芯片数 = 目标总容量 ÷ 单片容量；拆开写就是"组数 × 每组片数"，组数管地址，每组片数管位数。</li>
+<li>地址引脚：先求总单元数取 log2 得地址位数，DRAM 再减半；或拆行、列后取较大者。</li>
+<li>地址范围算个数：末 - 首 + 1（闭区间）；十六进制转 2 的幂：2000H = 2^13，400000H = 2^22。</li>
+<li>片选译码：片选位数 = log2(组数)；低位地址位宽 = log2(单片单元数)；地址切分从低位切起。</li>
+<li>高位交叉：÷模块容量，商体号、余体内地址；低位交叉：÷模块个数，商体内地址、余体号。</li>
+<li>SRAM 与 DRAM 都易失，别把 SRAM 当成非易失；DRAM 刷新按行，不按单元、不按列。</li>
+<li>存取周期 ≠ 存取时间，Tm = Ta + 复原时间，Tm &gt; Ta，带宽用 Tm 算。</li>
+<li>高位交叉不提高带宽，只是扩大容量；同时启动必须地址对齐，否则要拆成多个周期。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 15 次</span></h4>
+<ul class="luodian">
+<li><b>2009-15</b>：芯片扩展：ROM 需 2 片 2K×8 位，RAM 需 30 片 4K×4 位。（源A无解析，据题干归纳）</li>
+<li><b>2010-15</b>：地址 0B1FH 所在芯片组的最小地址为 0800H。（源A无解析，据题干归纳）</li>
+<li><b>2010-16</b>：RAM 易失、ROM 非易失，二者都随机存取；仅 I、II 正确。（源A无解析，据题干归纳）</li>
+<li><b>2010-22</b>：显存带宽 = 分辨率 × 颜色深度 × 帧频 ÷ 50%，至少约 7834 Mbps。（源A无解析，据题干归纳）</li>
+<li><b>2011-14</b>：光盘采用顺序存取方式，不属于随机存取。</li>
+<li><b>2011-15</b>：MAR 位数按 64MB 主存地址空间取 26 位，不按实际主存容量。</li>
+<li><b>2014-15</b>：4M×8 位 DRAM 地址引脚 11 根（行列复用）、数据引脚 8 根，共 19 根。（源A无解析，据题干归纳）</li>
+<li><b>2015-17</b>：工作期间需要刷新的是 DRAM（电容存储，信息会丢失）。</li>
+<li><b>2015-18</b>：4 体低位交叉编址，相邻 4 次访问中 8004 与 8000 落同一模块，可能冲突。</li>
+<li><b>2016-16</b>：ROM 区 8KB、RAM 区 56KB，需 14 片 8K×4 位 SRAM。</li>
+<li><b>2017-13</b>：4 体交叉、double 型 8 字节从 2 号芯片起存，读取需 3 个存取周期。</li>
+<li><b>2017-18</b>：主存储器与控制存储器的位置、内容与访问方式辨析。</li>
+<li><b>2018-17</b>：2K×1 位 DRAM 行列复用取较大者定引脚数，行数少可减少刷新开销。</li>
+<li><b>2021-15</b>：RAM 区 2^22 字 ×32 位，需 32 片 512K×8 位 RAM 芯片。</li>
+<li><b>2022-17</b>：内存条容量 512MB，芯片地址引脚为 29 位的说法不正确。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<div class="card" id="s-2.3.2">
+<div class="card-h"><span class="code">2.3.2</span><span class="ttl">外部存储器</span><span class="badge">真题 5 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>闪存（Flash）是 EEPROM 的进一步发展，可读可写，用 MOS 管浮栅上有无电荷存信息；它仍属 ROM 的一种，写速度比读速度慢不少。</li>
+<li>闪存是非易失性存储器，采用随机访问方式；常见 SSD 固态硬盘即由 Flash 芯片组成。</li>
+<li>海明码纠一位错：校验位数 k 须满足 2^k ≥ n + k + 1，8 位数据至少 4 位校验位。</li>
+<li>提高 RAID 可靠性的措施：磁盘镜像、奇偶校验；条带化只提高性能不提高可靠性，增加 Cache 机制不提高可靠性。</li>
+<li>一次磁盘读写时间 = 寻道时间 + 旋转延迟时间 + 传输时间（+ 控制器延时）；平均旋转延迟为转半圈的时间。</li>
+<li>磁盘平均存取时间：寻道时间 + 1/(2r)（r 为转速）+ 传输时间。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：未覆盖）</span></h4>
+<ul>
+<li>源B 未覆盖</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 5 次</span></h4>
+<ul class="luodian">
+<li><b>2012-16</b>：闪存的性质辨析：属 ROM、可读写、写慢于读、非易失、随机访问。</li>
+<li><b>2013-15</b>：海明码对 8 位数据纠一位错，校验位数至少 4 位。</li>
+<li><b>2013-20</b>：提高 RAID 可靠性靠磁盘镜像与奇偶校验，条带化与 Cache 机制不能。</li>
+<li><b>2013-21</b>：磁盘平均存取时间 = 寻道 6ms + 平均旋转延迟 3ms + 传输 0.2ms + 控制器延时 0.2ms。</li>
+<li><b>2015-20</b>：7200rpm 磁盘访问一个扇区的平均存取时间约为 12.2ms。</li>
+</ul>
+<p class="hubu">互补：发哥课未讲，源A 补齐</p>
+</div></div>
+<div class="card" id="s-2.3.3">
+<div class="card-h"><span class="code">2.3.3</span><span class="ttl">Cache 高速缓存</span><span class="badge">真题 10 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>三种映射地址划分：直接映射 [Tag | 行号 | 块内地址]；全相联 [Tag | 块内地址]；组相联 [Tag | 组号 | 块内地址]。</li>
+<li>行号 = 块号 mod 行数；组号 = 块号 mod 组数；标记 = 块号 ÷ 行数（组数）的商。</li>
+<li>Cache 总位数 = 行数 ×（数据块位数 + Tag 位数 + 有效位 1 + 脏位 1（写回法）+ 替换位 log2 k）。</li>
+<li>比较器：直接映射 1 个，全相联为行数个，组相联为路数个；比较器位数均为标记位数。</li>
+<li>命中条件：标记相等且有效位为 1；有效位为 0 时标记相同也不命中。</li>
+<li>脏位只在回写法（写回法）出现，直写法不需要；替换算法位只在全相联/组相联出现，位数 = log2（路数）；直接映射不需要替换算法。</li>
+<li>命中率 H = Nc / (Nc + Nm)；平均访问时间 Ta = Tc + (1-H)·Tm；缺失时耗时 Tc + Tm。</li>
+<li>时间局部性：一条指令被执行后不久可能再次被执行；空间局部性：一个存储单元被访问后其附近单元很快被访问。</li>
+<li>指令 Cache 与数据 Cache 分离的主要目的是减少指令流水线资源冲突（结构冒险）。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：05_第3章_3.5Cache）</span></h4>
+<ul>
+<li>口诀："块内看大小，行号看行数，剩下全给标记"；"除块得块号，除行得标记"；"直接一个比较器，全相联按行数，组相联按路数"。</li>
+<li>口诀："数据按字节，标记按比特；回写才有脏位，相联才有替换位"；"Cache 必查一次，缺失才加 Tm"。</li>
+<li>命中率题通用套路：算一块能放几个数据；只分析一个块，首个数据缺失、同块其余命中；确认每个数据访问几次；缺失率 = 1 ÷ 每块访问总次数。</li>
+<li>标记位不含块内地址；直接映射比较器只有 1 个，但位数是标记位数。</li>
+<li>脏位只在回写法出现；替换算法位只在全相联/组相联出现，位数 = log2(路数)。</li>
+<li>命中后按块内地址取一个数据送 CPU，不是把整块送给 CPU；缺失时整块调入 Cache 的同时把该地址数据送 CPU。</li>
+<li>LRU 的"最近"要看访问序列，不是调入顺序；替换时严格按"最久未被访问"选。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 10 次</span></h4>
+<ul class="luodian">
+<li><b>2009-14</b>：Cache 16 块、2 路组相联、块 32B，主存 129 号单元所在块号为 4，装入第 4 组。</li>
+<li><b>2009-21</b>：访存 1000 次、缺失 50 次，Cache 命中率为 95%。</li>
+<li><b>2010-17</b>：一次访存中 TLB、Cache、页表命中/缺失组合的逻辑约束辨析。</li>
+<li><b>2012-17</b>：2 路组相联 + LRU 替换，按访问序列模拟置换过程求命中情况。</li>
+<li><b>2014-16</b>：指令 Cache 与数据 Cache 分离的主要目的是减少流水线资源冲突。（源A无解析，据题干归纳）</li>
+<li><b>2015-15</b>：直接映射 + 回写法，Cache 总容量 = 数据区 128K 位 + 标记阵列 20K 位 = 148K 位。</li>
+<li><b>2016-15</b>：数组顺序访问、每块含 4 个 int，读加写共访存两次，缺失率约为 1/8。</li>
+<li><b>2017-14</b>：循环指令本身具时间局部性，对数组的访问具空间局部性。</li>
+<li><b>2021-16</b>：直接映射 + 回写法，Cache 行位数 = 数据 256 位 + 标记 17 位 + 脏位 1 + 有效位 1 = 275 位。</li>
+<li><b>2022-16</b>：8 路组相联，比较器个数为 8 个、位数为标记位数 20 位。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<div class="card" id="s-2.3.4">
+<div class="card-h"><span class="code">2.3.4</span><span class="ttl">虚拟存储器</span><span class="badge">真题 4 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>虚拟地址 VA = [虚页号 VPN | 页内偏移量 PO]；物理地址 PA = [物理页框号 PPN | 页内偏移量 PO]，页内偏移量直接拼接。</li>
+<li>页大小 4KB ⇒ 页内地址 12 位；虚拟地址空间 4GB ⇒ 虚拟地址 32 位，其中高 20 位为虚页号。</li>
+<li>TLB（快表）采用全相联映射，查 TLB 命中得页框号；TLB 命中 → 页表命中 → 缺页异常（访外存调页）。</li>
+<li>缺页处理：缺页中断处理程序从外存读入所缺的页，完成后回到发生缺页的指令重新执行。</li>
+<li>Cache 由 SRAM 组成；TLB 通常由相联存储器组成，也可用 SRAM 实现；DRAM 需要不断刷新、性能较低。</li>
+<li>页表虚页号若以十进制给出，须先把虚页号转十进制再查表。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：未覆盖）</span></h4>
+<ul>
+<li>源B 未覆盖</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 4 次</span></h4>
+<ul class="luodian">
+<li><b>2013-16</b>：TLB 全相联查表：虚页号查页框号，与页内偏移拼接得物理地址。</li>
+<li><b>2019-14</b>：缺页处理完成后回到发生缺页的指令继续执行，回到下一条指令的说法错误。</li>
+<li><b>2020-15</b>：TLB 与 Cache 的组成与特性辨析：Cache 由 SRAM 组成。</li>
+<li><b>2022-15</b>：虚页号 00082H（十进制 130）查页表得页框 018H，拼接页内偏移 840H 得 018840H。</li>
+</ul>
+<p class="hubu">互补：发哥课未讲，源A 补齐</p>
+</div></div>
+<h3 class="grp">第4章 指令系统与寻址方式</h3>
+<div class="card" id="s-2.4.1">
+<div class="card-h"><span class="code">2.4.1</span><span class="ttl">指令格式与操作码扩展</span><span class="badge">真题 5 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>指令集体系结构（ISA）规定指令字和指令格式、通用寄存器个数和位数；CPU 时钟周期、加法器进位方式不由 ISA 规定。</li>
+<li>操作码位数由指令条数决定：48 条指令需 6 位操作码；寻址方式位数由种类数决定：4 种寻址方式需 2 位。</li>
+<li>扩展操作码递推：第 i 级可用码点数 Ni = (N(i-1) - n(i-1)) × 2^k，即"上一级剩下的前缀数 × 本级新增地址位形成的组合数"。</li>
+<li>短操作码不能是长操作码的前缀，否则同一串二进制有两种解释；各级编码必须唯一、可立即译码。</li>
+<li>定长操作码条数按操作类型算：N 位 = 2^N 条，不能乘地址码组合数。</li>
+<li>单地址指令中直接寻址的可寻址范围由形式地址字段位数决定，如 8 位形式地址 ⇒ 0~255。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：06_第4章_指令系统）</span></h4>
+<ul>
+<li>扩展操作码口诀："短码不作长码头，前缀唯一好译码；上级留一往下扩，乘完地址减实际。"</li>
+<li>分配原则：地址多的指令先占码点，逐级向下扩展；每级故意留出 1 个（或几个）状态作为下一级的扩展前缀。</li>
+<li>寻址特征不是固定 4 位：10 种才需 4 位，4 种 2 位、2 种 1 位，审题时先数种类。</li>
+<li>定长操作码条数按操作类型算：N 位 = 2^N 条，不能乘地址码组合数。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 5 次</span></h4>
+<ul class="luodian">
+<li><b>2014-17</b>：Store 指令字段划分：按寄存器数与指令字长推形式地址位数与偏移量补码范围。</li>
+<li><b>2017-16</b>：三地址 29 条需 5 位操作码，指令字长至少 23 位。</li>
+<li><b>2020-16</b>：48 条指令需 6 位操作码，4 种寻址方式需 2 位，直接寻址范围为 0~255。</li>
+<li><b>2022-18</b>：ISA 规定的内容辨析：指令格式与通用寄存器属 ISA，时钟周期与进位方式不属。</li>
+<li><b>2022-19</b>：扩展操作码逐级递推：二地址 12 条、一地址 254 条时，零地址指令最多 128 条。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<div class="card" id="s-2.4.2">
+<div class="card-h"><span class="code">2.4.2</span><span class="ttl">寻址方式</span><span class="badge">真题 8 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>立即寻址：操作数直接在指令中，访存 0 次；直接寻址 EA = A，访存 1 次；间接寻址 EA = (A)，一次间接访存 2 次。</li>
+<li>寄存器寻址 EA = R，访存 0 次；寄存器间接寻址 EA = (R)，访存 1 次。</li>
+<li>基址寻址 EA = (BR) + A，访存 1 次，用于多道程序动态重定位（OS 面向）；变址寻址 EA = (IX) + A，访存 1 次，用于数组遍历（程序员面向）。</li>
+<li>相对寻址 EA = (PC) + A，访存 1 次，用于条件跳转；PC 是取指后的 PC（本条指令地址 + 指令长度）。</li>
+<li>偏移寻址 = 基址寻址、相对寻址、变址寻址；间接寻址不需要寄存器，不属于偏移寻址。</li>
+<li>先变址后间址：EA = ((I) + D)；变址寻址访问数组时，EA = 首地址 + 变址值 × 元素字节数。</li>
+<li>基址与变址的区别在"谁变"：基址 BR 不变、A 变，用于程序浮动；变址 IX 变、A 不变，用于数组。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：06_第4章_指令系统）</span></h4>
+<ul>
+<li>访存次数口诀："立即寄存不访存，直接间接一二分；寄间相对基变址，通通只访一次存。"</li>
+<li>相对寻址口诀："先加指令长，再加偏移量；本条地址不能用，PC 已指下行。"</li>
+<li>基址变址口诀："基址不变挪程序，变址常变跑数组。"</li>
+<li>寄存器寻址 vs 寄存器间接：EA = R 操作数在寄存器里、不访存；EA = (R) 寄存器里是内存地址、还要访存 1 次。</li>
+<li>间接寻址访存次数：一次间接 2 次（取地址 + 取数），二次间接 3 次，都不含取指。</li>
+<li>无符号基址 + 有符号偏移不能直接加：位数不同须先符号扩展（负数高位补 1）。</li>
+<li>大端下"最低字节"在最高地址：32 位数据最低字节在 EA + 3。</li>
+<li>数组变址要乘元素大小：IX 只存下标时，EA = 首地址 + IX × 元素字节数。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 8 次</span></h4>
+<ul class="luodian">
+<li><b>2009-16</b>：相对寻址目标地址 = 取指后 PC + 位移量 = 2002H + 06H = 2008H。答案 C。（源A无解析无答案，已独立求解）。</li>
+<li><b>2011-16</b>：间接寻址不属于偏移寻址；基址、相对、变址寻址都属于偏移寻址。</li>
+<li><b>2013-17</b>：变址寻址 EA = (R) + A = 3000H，操作数为 (3000H) = 4000H。</li>
+<li><b>2016-17</b>：先变址后间址的有效地址为 ((I) + D)。</li>
+<li><b>2017-15</b>：变址寻址最适合按下标顺序访问一维数组元素。</li>
+<li><b>2018-18</b>：变址寻址 EA = (IX) + A，变址值 256 除以元素 8 字节得下标 32。</li>
+<li><b>2019-15</b>：基址寻址 EA = (BR) + A，大端方式下操作数最低字节在 EA + 3 处。</li>
+<li><b>2019-17</b>：寄存器与寄存器间接寻址的取数执行需通用寄存器组、存储器与 ALU。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<div class="card" id="s-2.4.3">
+<div class="card-h"><span class="code">2.4.3</span><span class="ttl">程序的机器级代码表示</span><span class="badge">真题 4 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>汇编语言程序员可见的寄存器：程序计数器（PC）、通用寄存器组、基址寄存器、标志/状态寄存器；不可见：存储器地址寄存器（MAR）、存储器数据寄存器（MDR）、指令寄存器（IR）、微指令寄存器。</li>
+<li>无符号整数比较大于时转移（bgt）的转移条件：CF = 0 且 ZF = 0（相减无进位/借位，也不为 0）。</li>
+<li>高级语言源程序转换为可执行目标文件的主要过程：预处理、编译、汇编、链接四个阶段。</li>
+<li>目标文件经汇编得到（.o），不能运行；链接后才生成可执行文件。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：未覆盖）</span></h4>
+<ul>
+<li>源B 未覆盖</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 4 次</span></h4>
+<ul class="luodian">
+<li><b>2010-18</b>：汇编语言程序员可见的是程序计数器（PC），MAR、MDR、IR 不可见。（源A无解析，据题干归纳）</li>
+<li><b>2011-17</b>：无符号整数比较大于时转移的条件是 CF = 0 且 ZF = 0。</li>
+<li><b>2021-17</b>：汇编程序员可见基址寄存器与标志状态寄存器，指令寄存器与微指令寄存器不可见。</li>
+<li><b>2022-20</b>：源程序转换为可执行目标文件须经预处理、编译、汇编、链接四个阶段。</li>
+</ul>
+<p class="hubu">互补：发哥课未讲，源A 补齐</p>
+</div></div>
+<div class="card" id="s-2.4.4">
+<div class="card-h"><span class="code">2.4.4</span><span class="ttl">RISC 与 CISC</span><span class="badge">真题 1 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>CISC：指令庞杂、长度不固定，多数指令可直接访存，绝大多数采用微程序控制器，流水线调度困难。</li>
+<li>RISC：指令精炼定长、格式规范，仅 Load/Store 指令可访存，绝大多数采用硬布线控制器，原生适配高效流水线。</li>
+<li>指令定长、对齐、仅 Load/Store 访存都有利于实现指令流水线。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：06_第4章_指令系统）</span></h4>
+<ul>
+<li>CISC/RISC 口诀："CISC 多杂长、微程序；RISC 少简定、硬布线、load/store、多寄存器、必流水。"</li>
+<li>CISC/RISC 别记反：CISC = 微程序、不定长、指令多、寻址多、寄存器少；RISC = 组合逻辑、定长、指令少、寻址少、寄存器多、只有 load/store 访存、必流水线。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 1 次</span></h4>
+<ul class="luodian">
+<li><b>2009-17</b>：RISC 特点辨析：定长指令、仅 Load/Store 访存、硬布线控制、适配流水线。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<h3 class="grp">第5章 CPU、数据通路与控制器</h3>
+<div class="card" id="s-2.5.1">
+<div class="card-h"><span class="code">2.5.1</span><span class="ttl">指令周期与执行过程</span><span class="badge">真题 4 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>指令周期 4 个阶段：取指周期 PC → MAR；主存 → MDR；MDR → IR；(PC)+1 → PC；间址周期 Ad(IR) → MAR；主存 → MDR；MDR → EA；执行周期 ALU 运算与 PSW 更新；中断周期保存断点、关中断、向量送 PC。</li>
+<li>CPU 区分指令与数据的依据是指令周期的不同阶段（取指阶段取的是指令，执行阶段取的是数据）。</li>
+<li>PC 位数由存储器字数决定：主存 4GB、字长 32 位 ⇒ 2^30 个字，PC 至少 30 位；IR 位数由指令字长决定，32 位指令 ⇒ IR 至少 32 位。</li>
+<li>时钟周期是 CPU 工作的最小时间单位，时钟周期的倒数为机器主频；指令周期由若干机器周期组成，一个机器周期又包含若干时钟周期。</li>
+<li>单周期处理器：所有指令的指令周期为一个时钟周期，CPI 为 1；要迁就最慢的指令，时钟频率较低。</li>
+<li>机器字长 = ALU 位数 = 通用寄存器位数。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：07_第5章_中央处理器）</span></h4>
+<ul>
+<li>取指微操作序列必须背下来：(PC)→MAR，M(MAR)→MDR，(MDR)→IR，提到取指就要会默写。</li>
+<li>PC 自增的时机与增量：取指阶段一取出指令就更新 PC；增量是"指令占的地址单元数"，不是"字节数"，按字编址时要除以字长。</li>
+<li>PC 位数 ≠ MAR 位数：指令按边界对齐时，PC 只需能区分"第几个指令槽"，位数比 MAR 少 log2(指令字节数) 位。</li>
+<li>MAR 与 MDR 的位数不是一回事：MAR 由地址总线宽度/存储单元数决定，MDR 由存储字长/数据总线宽度决定。</li>
+<li>时钟周期是 CPU 最小时间单位，后面流水线还会反复用。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 4 次</span></h4>
+<ul class="luodian">
+<li><b>2009-11</b>：CPU 按指令周期的不同阶段区分指令与数据。（源A无解析，据题干归纳）</li>
+<li><b>2016-18</b>：PC 至少 30 位（4GB/4B = 2^30 个字），IR 至少 32 位（指令字长）。</li>
+<li><b>2016-20</b>：单周期处理器辨析：CPI 为 1、时钟频率较低，"可采用单总线结构"说法错误。</li>
+<li><b>2019-16</b>：处理器时钟脉冲信号辨析：时钟周期是最小时间单位，指令周期由若干机器周期组成。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<div class="card" id="s-2.5.2">
+<div class="card-h"><span class="code">2.5.2</span><span class="ttl">数据通路</span><span class="badge">真题 3 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>数据通路：指令执行过程中数据所经过的路径，包括路径上的部件；ALU、通用寄存器、状态寄存器、Cache、MMU、浮点运算逻辑、异常和中断处理逻辑都属数据通路的一部分。</li>
+<li>数据通路不包括控制部件；数据流动路径由控制部件控制，控制部件按指令功能生成控制信号。</li>
+<li>单总线结构：一个时钟只能有一个 out 信号；两条微操作无逻辑先后且不共用同一组总线/部件时可合并到同一时钟。</li>
+<li>ALU 无记忆功能，两个操作数之一须先进暂存器 Y，结果回总线须经暂存器 Z；实现单总线数据通路需要三态门与暂存器。</li>
+<li>执行"add xaddr, 3"类指令分取数、运算、写回三过程；Cache 直写方式下写回须同时写 Cache 与主存，至少访存 1 次。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：07_第5章_中央处理器）</span></h4>
+<ul>
+<li>数据通路大题答题模板：读图圈 out/in 部件 → 拆指令判寻址方式 → 写微操作"（源）→ 目的" → 配控制信号，最后检查每个时钟只有一个 out。</li>
+<li>能否合并到同一时钟的判据：两条微操作无逻辑先后且不共用同一组总线/部件 → 可合并；有逻辑先后或同一时钟出现两个 out → 必须分开。</li>
+<li>要访存 → 先把地址送 MAR；内存 ↔ CPU → 必经 MDR；两个操作数运算 → 必有一个先进暂存器 Y；结果回总线 → 必经 Z。</li>
+<li>单总线为什么必须加暂存器：ALU 无记忆功能，两端直连总线会互相覆盖；ALU 输出直连总线会反馈干扰自身输入。</li>
+<li>Y 没有 out、Z 没有 in；信号以图为准，"图上有几个就写几个"，不要凭想象补信号。</li>
+<li>MDRin 与 MDRinE 不能混：MDRinE 走数据总线（内存侧），MDRin/MDRout 走 CPU 内部总线。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 3 次</span></h4>
+<ul class="luodian">
+<li><b>2015-16</b>：指令执行分取数、运算、写回；Cache 直写时写回须同时写主存，至少访存 1 次。</li>
+<li><b>2017-19</b>：数据通路的组成辨析：数据通路包括取指部件等，不包括控制部件。</li>
+<li><b>2021-18</b>：数据通路的组成范围辨析：控制部件只发控制信号，不属数据通路。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<div class="card" id="s-2.5.3">
+<div class="card-h"><span class="code">2.5.3</span><span class="ttl">微程序与硬布线控制器</span><span class="badge">真题 2 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>硬布线（组合逻辑门）控制器：速度极快，设计修改极其困难（RISC 标配）。</li>
+<li>微程序（存储逻辑）控制器：将指令细化为微命令保存在控制存储器（CM）中，易于扩充修改（CISC 标配）。</li>
+<li>微指令操作控制字段采用字段直接编码法：互斥类微命令分在同一段内，相容性微命令分在不同段内；每个小段要留出一个状态，表示本字段不发出任何微命令。</li>
+<li>字段直接编码位数：每段位数 = ⌈log2（该段微命令数 + 1）⌉，各段相加。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：未覆盖）</span></h4>
+<ul>
+<li>源B 未覆盖</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 2 次</span></h4>
+<ul class="luodian">
+<li><b>2009-19</b>：硬布线控制器相对微程序控制器：指令执行速度快，指令功能修改和扩展难。（源A无解析，据题干归纳）</li>
+<li><b>2012-18</b>：字段直接编码：5 个互斥类（7、3、12、5、6 个微命令）各留一空状态，需 3+2+4+3+3 = 15 位。</li>
+</ul>
+<p class="hubu">互补：发哥课未讲，源A 补齐</p>
+</div></div>
+<div class="card" id="s-2.5.4">
+<div class="card-h"><span class="code">2.5.4</span><span class="ttl">异常与中断机制</span><span class="badge">真题 12 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>中断是来自处理器外部的请求事件（如键盘输入、时钟到时、网络数据包到达）；异常（内中断）源自 CPU 执行指令内部的事件（如非法操作码、地址越界、算术溢出、缺页、陷入指令）。</li>
+<li>内部异常分三类：故障（fault）、陷阱（trap）、终止（abort）；除数为零和自陷（INT）会跳过中断指令，不返回发生异常的指令。</li>
+<li>中断隐指令（硬件自动完成，非真正指令）：关中断、保存断点与状态（PC/PSW）、寻找入口地址（中断向量查表）并送 PC。</li>
+<li>通用寄存器的保护由中断服务程序（软件）完成，不属中断隐指令；PC 和 PSW 由硬件自动压入内核栈。</li>
+<li>单级中断服务程序顺序：保护现场 → 中断事件处理 → 恢复现场 → 开中断 → 中断返回。</li>
+<li>多重中断：保护被中断进程现场时关中断，执行中断处理程序时开中断；中断屏蔽字按处理优先级设置，低优先级与自身写 1、高优先级写 0。</li>
+<li>CPU 在一条指令执行结束的阶段采样中断请求信号，再决定是否响应；中断请求来自 CPU 以外的事件，异常发生在 CPU 内部。</li>
+<li>缺页中断发生在指令执行过程之中，处理后必须回到当前指令重新执行。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：08_第6-7章_总线与IO系统；B 07 明确 5.5 基础阶段跳过，与 7.3 合并再学）</span></h4>
+<ul>
+<li>中断响应（隐指令，硬件 3 步）：关中断 → 保存断点和 PSW → 引出服务程序（入口送 PC）。</li>
+<li>注：步数口径——源A 计硬件 4 步、共 10 步；源B 计硬件 3 步、共 9 步；差别只是源A 把“切换为内核态并跳转”单列为硬件第 4 步，实质相同（两源说法不一致，以上为实质说明）。</li>
+<li>中断处理（软件 6 步）：保护现场和屏蔽字 → 开中断 → 执行服务程序 → 关中断 → 恢复现场和屏蔽字 → 开中断、中断返回。</li>
+<li>断点口诀：故障当前、中断下条、陷阱下条、终止不回。</li>
+<li>屏蔽字口诀：低优先级写 1，自己写 1，高优先级写 0；屏蔽字看处理优先级，不看响应优先级。</li>
+<li>中断隐指令由硬件完成，不是指令；通用寄存器由"保护现场"保存，属中断服务程序（软件）的事。</li>
+<li>有中断请求 ≠ 立即响应，要等当前指令执行完；缺页属于内中断/异常，不能写成外中断。</li>
+<li>异常在指令执行中响应、中断在指令执行后响应。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 12 次</span></h4>
+<ul class="luodian">
+<li><b>2009-22</b>：能引起外部中断的是键盘输入；除零、浮点下溢、缺页属内部异常。（源A无解析，据题干归纳）</li>
+<li><b>2010-21</b>：单级中断服务程序顺序：保护现场 → 处理 → 恢复现场 → 开中断 → 中断返回。（源A无解析，据题干归纳）</li>
+<li><b>2011-19</b>：开中断状态下指令执行的叙述辨析：取指要访存、PC 自动加 1、时钟周期不可分割。</li>
+<li><b>2011-21</b>：五级中断屏蔽字按处理优先级设置：高等级置 0、低等级置 1。</li>
+<li><b>2012-22</b>：中断隐指令只做关中断、保护断点、引出服务程序；保存通用寄存器属服务程序。</li>
+<li><b>2014-18</b>：微程序下地址字段：微指令总数 2 + 32×4 = 130 条，下地址字段至少 8 位。（源A无解析，据题干归纳）</li>
+<li><b>2015-22</b>：内部异常分故障、陷阱、终止；除零与自陷不返回原指令，D 项错误。</li>
+<li><b>2016-22</b>：中断与异常的来源辨析：中断来自 CPU 外部，异常来自 CPU 内部。</li>
+<li><b>2017-22</b>：多重中断保护现场时关中断、处理时开中断；B 项错误。</li>
+<li><b>2018-22</b>：中断优先级由屏蔽字决定；开中断后才能响应中断请求。</li>
+<li><b>2020-18</b>：自陷（Trap）属于内中断。</li>
+<li><b>2021-21</b>：缺页中断处理后必须回到当前指令重新执行。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<div class="card" id="s-2.5.5">
+<div class="card-h"><span class="code">2.5.5</span><span class="ttl">指令流水线</span><span class="badge">真题 8 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>流水线时钟周期至少取最长功能段（或最长部件）的时间，再加流水段寄存器延时。</li>
+<li>流水线三公式：时间 T = (k + n - 1)Δt；吞吐率 TP = n / T，极限 1/Δt；加速比 S = nk / (k + n - 1)，极限 k 且永远达不到 k；效率 E = n / (k + n - 1)。</li>
+<li>结构冒险：多个指令同一周期争用同一硬件资源，解决靠插入气泡、指令与数据 Cache 分离。</li>
+<li>数据冒险（RAW/WAR/WAW）：后续指令依赖前面尚未写回的数据，解决靠数据旁路转发、编译器指令重排；数据旁路（转发）本身不会引起阻塞。</li>
+<li>控制冒险：分支跳转改变 PC 导致流水线断流，解决靠分支预测、延迟槽技术。</li>
+<li>超标量：在 CPU 中有一条以上的流水线，每个时钟周期可完成一条以上指令，其实质是以空间换时间；不缩短流水线功能段的处理时间。</li>
+<li>五段流水线：取指（IF）、译码/取数（ID）、执行（EX）、访存（MEM）、写回（WB）；"写后读"中间隔够 3 条指令即无冲突。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：07_第5章_中央处理器）</span></h4>
+<ul>
+<li>流水线三类公式速记：T = (k+n-1)Δt；TP = n/T；S = nk/(k+n-1)；E = n/(k+n-1)。</li>
+<li>三类冒险一句话：结构冒险"抢同一个部件"；数据冒险"写没写完就要读"（RAW），能转发就转发，转不了就延迟，load-use 只能"等一拍再转发"；控制冒险"PC 还没定就取指"。</li>
+<li>时空图画法：每条指令一行、每时钟一列，五段依次填格；遇冒险画叉阻塞、后续段整体右移，"需多少时钟" = 最后一格列号。</li>
+<li>加速比达不到 k，S = nk/(k+n-1) &lt; k，只在 n→∞ 时趋近 k。</li>
+<li>超标量 ≠ 超流水线：超标量是空间并行（多套硬件、CPI&lt;1）；超流水线是时间上把段分得更细（CPI 仍 = 1，靠提高主频提速）。</li>
+<li>控制冒险的阻塞位置：条件转移阻塞到 MEM 之后（不是 EX 之后）；无条件转移在 EX 段就改 PC。</li>
+<li>"写后读"不等于"一定冲突"，中间隔了 ≥3 条指令（对五段流水线）时不再有冒险。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 8 次</span></h4>
+<ul class="luodian">
+<li><b>2009-18</b>：流水线时钟周期至少取最长功能段时间 90ns。（源A无解析，据题干归纳）</li>
+<li><b>2010-19</b>：数据旁路（转发）不会引起指令流水线阻塞。（源A无解析，据题干归纳）</li>
+<li><b>2011-18</b>：指令定长、对齐、仅 Load/Store 访存都有利于实现指令流水线。</li>
+<li><b>2013-18</b>：4 级流水线 100 条指令无阻塞，吞吐率 TP = n / [(k+n-1)Δt]。</li>
+<li><b>2016-19</b>：无转发五段流水线，I2 写 R5、I3 读 R5 构成写后读数据冒险。</li>
+<li><b>2017-17</b>：超标量每周期可发射多条指令、可结合动态调度；不缩短功能段时间。</li>
+<li><b>2018-20</b>：时钟周期至少取最长部件时间 80ps 加寄存器延时 20ps，即 100ps。</li>
+<li><b>2019-18</b>：五段流水线写后读相关：I1/I3、I2/I3、I3/I4 相关，I2/I4 无关。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<div class="card" id="s-2.5.6">
+<div class="card-h"><span class="code">2.5.6</span><span class="ttl">多处理器</span><span class="badge">真题 1 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>MIMD 结构分多计算机系统和多处理器系统；向量处理器是 SIMD 的变体，属 SIMD 结构。</li>
+<li>硬件多线程技术是在一个核中处理多个线程，可用于单核处理器。</li>
+<li>共享内存多处理器（SMP）具有共享的单一物理地址空间，所有核都可通过存取指令访问同一片主存地址空间。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：未覆盖）</span></h4>
+<ul>
+<li>源B 未覆盖</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 1 次</span></h4>
+<ul class="luodian">
+<li><b>2022-22</b>：并行处理技术辨析：硬件多线程可用于单核处理器，C 项不正确。</li>
+</ul>
+<p class="hubu">互补：发哥课未讲，源A 补齐</p>
+</div></div>
+<h3 class="grp">第6章 总线与输入输出系统</h3>
+<div class="card" id="s-2.6.1">
+<div class="card-h"><span class="code">2.6.1</span><span class="ttl">总线分类与性能指标</span><span class="badge">真题 11 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>总线带宽 = 总线工作频率 × 总线宽度（字节）；工作频率 = 时钟频率 × 每时钟传送次数。</li>
+<li>总线宽度是数据线位数（bit 或 B），总线带宽是"宽度 × 工作频率"（B/s），二者不是一回事。</li>
+<li>同步总线：通信双方采用同一个时钟信号；一次总线事务不一定在一个时钟周期内完成，时钟频率不一定等于工作频率。</li>
+<li>异步总线采用握手方式通信；半同步是"统一时钟 + 握手"的折中。</li>
+<li>突发（猝发）传输：在一个总线周期中传输多个存储地址连续的数据，一次传输一个地址和一批地址连续的数据。</li>
+<li>地址/数据线复用只是减少线的数量、节省成本，不能提高传输率。</li>
+<li>并行总线传输不一定比串行总线快：时钟频率提高到一定程度时，并行导线间干扰严重，串行总线反而可通过提高时钟频率提速。</li>
+<li>QPI 总线是点对点全双工同步串行总线，设备可同时接收和发送信息。</li>
+<li>多总线结构：速率高的总线连高速设备，速率低的总线连低速设备；各总线通过桥接器相连。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：08_第6-7章_总线与IO系统）</span></h4>
+<ul>
+<li>总线带宽 = 宽度（B）× 工作频率；工作频率 = 时钟频率 × 每时钟传送次数。</li>
+<li>一个时钟两次就乘 2，两个时钟一次就除以 2；带宽只算数据段，平均速率才算全程。</li>
+<li>突发只传首地址，地址时间别忘记加。</li>
+<li>总线宽度 ≠ 总线带宽：题目给"64 位总线"只说明宽度，必须再乘工作频率。</li>
+<li>同步定时 ≠ 异步定时：同步靠全系统统一时钟，不是各设备各自提供时钟；异步靠握手信号。</li>
+<li>总线带宽计算是必考级高频：公式只有"带宽 = 工作频率 × 宽度"，但题目只给时钟频率，必须先换算工作频率。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 11 次</span></h4>
+<ul class="luodian">
+<li><b>2009-20</b>：总线带宽 = 4B × (10MHz ÷ 2) = 20MB/s。（源A无解析，据题干归纳）</li>
+<li><b>2011-20</b>：握手（应答）信号不在系统总线的数据线上传输。</li>
+<li><b>2012-19</b>：突发写 128 位数据：传地址 10ns + 传数据 40ns，共 50ns。</li>
+<li><b>2014-19</b>：32 根复用线、66MHz、每时钟传 2 次，最大数据传输率 = 528MB/s。（源A无解析，据题干归纳）</li>
+<li><b>2015-19</b>：同步通信用统一时钟信号，不是由各设备提供时钟。</li>
+<li><b>2016-21</b>：并行总线不一定比串行总线快，A 项错误。</li>
+<li><b>2017-20</b>：PCI-Express 总线采用串行数据包传输数据，D 项错误。</li>
+<li><b>2018-21</b>：提高同步总线传输率靠加宽、提频、突发传输；地址/数据线复用不能。</li>
+<li><b>2019-19</b>：3 通道 × 8B × 1333MHz，存储器总线总带宽约 32GB/s。</li>
+<li><b>2020-19</b>：QPI 带宽 = 2.4G × 2 × 2 × 2B/s = 19.2GB/s。</li>
+<li><b>2021-19</b>：总线概念辨析：同步总线共用时钟，一次总线事务可跨多个时钟周期。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<div class="card" id="s-2.6.2">
+<div class="card-h"><span class="code">2.6.2</span><span class="ttl">总线定时与事务</span><span class="badge">真题 2 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>总线事务三阶段：传地址 → 准备数据 → 传数据。</li>
+<li>突发传输：主设备只需给出一个首地址，从设备就能从首地址开始的若干连续单元读出或写入多个数据。</li>
+<li>同步定时靠统一时钟；异步定时靠握手信号，不互锁最快最不可靠，全互锁最慢最可靠。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：08_第6-7章_总线与IO系统）</span></h4>
+<ul>
+<li>突发传送：只传首地址、后续地址硬件自增；突发只传首地址，地址时间别忘记加。</li>
+<li>总线事务三阶段（传地址 → 准备数据 → 传数据）按真题流程记。</li>
+<li>平均速率 vs 峰值带宽：带宽只算数据段，平均速率才算全程。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 2 次</span></h4>
+<ul class="luodian">
+<li><b>2010-20</b>：均为总线标准的英文缩写组是 ISA、EISA、PCI、PCI-Express。（源A无解析，据题干归纳；题干注：已不在考纲范围）</li>
+<li><b>2014-20</b>：只给首地址连续读写多个数据的总线事务方式称突发传输。（源A无解析，据题干归纳）</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<div class="card" id="s-2.6.3">
+<div class="card-h"><span class="code">2.6.3</span><span class="ttl">总线标准</span><span class="badge">真题 2 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>USB 总线（通用串行总线）：即插即用、热插拔、菊花链连接、可扩充高达 127 个外部设备、高速传输。</li>
+<li>USB 是串行总线，不能同时传输两位数据。</li>
+<li>设备与设备控制器（I/O 接口）之间互连用 USB 等接口标准。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：未覆盖）</span></h4>
+<ul>
+<li>源B 未覆盖</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 2 次</span></h4>
+<ul class="luodian">
+<li><b>2012-20</b>：USB 总线特性辨析：USB 是串行总线，不能同时传输两位数据。</li>
+<li><b>2013-19</b>：设备与设备控制器之间互连的接口标准辨析。（题干注：已不在考纲范围）</li>
+</ul>
+<p class="hubu">互补：发哥课未讲，源A 补齐</p>
+</div></div>
+<div class="card" id="s-2.7.1">
+<div class="card-h"><span class="code">2.7.1</span><span class="ttl">I/O 接口概念与功能</span><span class="badge">真题 3 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>I/O 端口（I/O 接口）是 CPU 与设备之间的交接面；I/O 接口中 CPU 可访问的寄存器称为 I/O 端口。</li>
+<li>I/O 指令实现的数据传送发生在 CPU 寄存器和 I/O 端口之间。</li>
+<li>I/O 总线：数据线、命令线和地址线；命令线和地址线单向（CPU → I/O 接口），命令字、状态字、中断类型号由 I/O 接口发往 CPU，只能经数据线传输。</li>
+<li>状态端口和控制端口可以合用同一个寄存器；独立编址时 I/O 端口地址和主存地址可能相同；统一编址时 CPU 可用访存指令访问 I/O 端口。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：08_第6-7章_总线与IO系统）</span></h4>
+<ul>
+<li>控制命令走数据线，不要因为名字叫"控制"就选控制线；中断类型号也走数据线，中断请求/响应信号才走控制线。</li>
+<li>I/O 端口是 CPU 与设备之间的交接面；主机和 I/O 设备工作方式与速度差异大，I/O 端口应运而生。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 3 次</span></h4>
+<ul class="luodian">
+<li><b>2012-21</b>：I/O 接口的命令字、状态字、中断类型号均经 I/O 总线的数据线传向 CPU。</li>
+<li><b>2014-21</b>：统一编址时 CPU 可用访存指令访问 I/O 端口，D 项错误。（源A无解析，据题干归纳）</li>
+<li><b>2017-21</b>：I/O 指令实现的数据传送发生在 CPU 寄存器与 I/O 端口之间。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<div class="card" id="s-2.7.2">
+<div class="card-h"><span class="code">2.7.2</span><span class="ttl">程序查询方式</span><span class="badge">真题 3 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>程序查询方式：CPU 全程忙碌轮询状态字，数据通路为内存 ↔ CPU ↔ 设备，适用极低速设备。</li>
+<li>CPU 用于设备 I/O 的时间占比 = 每秒查询次数 × 每次查询时钟周期数 ÷ 主频。</li>
+<li>中断方式下 CPU 用于 I/O 的时间占比 = 中断响应和处理时间 ÷ 中断请求间隔。</li>
+<li>程序中断 I/O 方式中，CPU 和打印机通过 I/O 端口的状态口和控制口交互，打印字符直接传到打印机 I/O 端口，不涉及主存地址。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：08_第6-7章_总线与IO系统）</span></h4>
+<ul>
+<li>三种 I/O 方式对比：程序查询 CPU 干预最高、全程忙等；中断较高、每传一个数据都要响应；DMA 最低、只参与预处理和后处理。</li>
+<li>趋势：程序查询 → 中断 → DMA，CPU 干预越来越少，并行度越来越高。</li>
+<li>CPU 用于 I/O 时间百分比是高频计算：按"次数 × 单次开销 ÷ 主频"代公式。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 3 次</span></h4>
+<ul class="luodian">
+<li><b>2011-22</b>：定时查询开销 = 200 次/秒 × 500 周期 ÷ 50MHz = 0.2%。</li>
+<li><b>2014-22</b>：中断响应处理 100ns、每 400ns 一次请求，CPU 用于该设备 I/O 的时间至少 25%。（源A无解析，据题干归纳）</li>
+<li><b>2015-21</b>：中断 I/O 方式下 CPU 与打印接口不交换主存地址，只交换状态与控制信息。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<div class="card" id="s-2.7.3">
+<div class="card-h"><span class="code">2.7.3</span><span class="ttl">程序中断方式</span><span class="badge">真题 5 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>程序中断方式：设备就绪后发起中断请求，数据通路为内存 ↔ CPU ↔ 设备，适用键盘、鼠标等字符型低速设备。</li>
+<li>中断服务程序在内核态下执行；用户程序在用户态，二者是不同的程序，靠中断向量跳转、靠中断返回指令返回断点。</li>
+<li>中断响应三步（中断隐指令，硬件）：关中断 → 保存断点和 PSW → 引出服务程序（入口送 PC）。</li>
+<li>中断处理六步（软件）：保护现场和屏蔽字 → 开中断 → 执行服务程序 → 关中断 → 恢复现场和屏蔽字 → 开中断、中断返回。</li>
+<li>外部中断包括不可屏蔽中断（NMI）和可屏蔽中断；NMI 不受中断标志位 IF 影响，即使关中断也会被响应。</li>
+<li>CPU 响应中断须满足：中断源有中断请求、CPU 允许中断（开中断）、一条指令执行完毕且没有更紧迫的任务。</li>
+<li>若外设准备数据的时间小于中断处理时间，可能导致数据丢失（缓冲区被覆盖）。</li>
+<li>中断 I/O 方式每次中断可传一个数据缓冲寄存器的数据，如 32 位寄存器一次传 4B。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：08_第6-7章_总线与IO系统）</span></h4>
+<ul>
+<li>中断响应（隐指令，硬件 3 步）：关中断 → 保存断点和 PSW → 引出服务程序（入口送 PC）。</li>
+<li>中断处理（软件 6 步）：保护现场和屏蔽字 → 开中断 → 执行服务程序 → 关中断 → 恢复现场和屏蔽字 → 开中断、中断返回。</li>
+<li>断点口诀：故障当前、中断下条、陷阱下条、终止不回。</li>
+<li>屏蔽字口诀：低优先级写 1，自己写 1，高优先级写 0。</li>
+<li>DMA 与中断响应时机不同：中断在一条指令执行结束后响应；DMA 在总线周期结束后响应，不必等当前指令完成。</li>
+<li>外设准备数据时间应 ≥ 中断处理时间，否则数据被覆盖。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 5 次</span></h4>
+<ul class="luodian">
+<li><b>2019-21</b>：每次中断传 4B，12.5k 次中断 × 1000 周期 ÷ 1GHz，CPU 占用率约 1.25%。</li>
+<li><b>2020-20</b>：访存缺页属内中断；定时器到时与网络数据包到达属外部中断。</li>
+<li><b>2020-21</b>：非屏蔽中断不受 IF 影响；CPU 响应中断须满足有请求、开中断、当前指令执行完。</li>
+<li><b>2021-22</b>：多重中断服务程序在内核态执行，A 项错误。</li>
+<li><b>2022-21</b>：外设准备数据快于中断处理会导致数据丢失，C 项不正确。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<div class="card" id="s-2.7.4">
+<div class="card-h"><span class="code">2.7.4</span><span class="ttl">DMA 方式</span><span class="badge">真题 3 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>DMA 方式：CPU 仅在预处理和结束时介入，数据通路为内存 ↔ 设备（直接传输，不经 CPU），适用磁盘、网卡等高速块设备。</li>
+<li>DMA 传送三阶段：预处理（CPU 设置传送参数：起始地址、方向、个数）→ 数据传送（DMA 控制器直接控制总线完成）→ 后处理（DMA 发中断请求，CPU 执行中断服务程序做结束处理）。</li>
+<li>DMA 传送前由 DMA 控制器请求总线使用权；数据传送阶段纯硬件完成，没有"DMA 传送程序"。</li>
+<li>DMA 响应时机：在总线周期结束后（总线空闲）响应，不必等当前指令完成；DMA 不保存/恢复现场，因为它不是一个程序被打断。</li>
+<li>周期挪用 DMA：利用 CPU 不访问存储器的那些周期实现 DMA 操作，以字为单位；停止 CPU 访存方式以块为单位，整个数据块传送期间 CPU 不能访存。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：08_第6-7章_总线与IO系统）</span></h4>
+<ul>
+<li>DMA 过程：预处理（CPU 设起始地址/方向/个数）→ 数据传送（硬件，块/字）→ 后处理（中断，CPU 校验）。</li>
+<li>DMA 传块，周期挪用一个字。</li>
+<li>DMA 与中断响应时机不同：中断在一条指令执行结束后响应；DMA 在总线周期结束后响应。</li>
+<li>DMA 没有"DMA 传送程序"，数据传送阶段纯硬件完成，只有预处理和后处理需要 CPU。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 3 次</span></h4>
+<ul class="luodian">
+<li><b>2013-22</b>：中断 I/O 与 DMA 比较：DMA 数据传送不经 CPU，CPU 只在预处理与后处理介入。</li>
+<li><b>2019-22</b>：DMA 三阶段辨析：预处理 CPU 设参数、传送 DMA 控总线、结束发中断由 CPU 后处理。</li>
+<li><b>2020-22</b>：周期挪用利用 CPU 不访存的周期传数据，C 项错误。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+</div></div>
+<div class="sec" id="anchor-os"><div class="sec-h"><span class="no">3</span><h2>操作系统</h2><span class="en">Operating System · 16 section · 139 题</span></div><div class="sec-b">
+<h3 class="grp">第1章 操作系统概述与体系结构</h3>
+<div class="card" id="s-3.1.1">
+<div class="card-h"><span class="code">3.1.1</span><span class="ttl">操作系统的概念与功能</span><span class="badge">真题 4 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>操作系统四大特征：并发（最基本特征）、共享（互斥共享与同时访问共享）、虚拟（时分复用虚拟 CPU、空分复用虚拟内存）、异步（进程以不可预知的速度推进）。</li>
+<li>多道程序设计：多个程序同时放入内存、交替在 CPU 上运行，共享系统软硬件资源；一道程序因 I/O 暂停时 CPU 立即转去运行另一道程序，I/O 设备与 CPU 并行工作靠中断技术实现。</li>
+<li>批处理系统没有交互能力（作业执行时用户无法干预，只能事先编制作业控制说明间接干预）；分时系统正为交互而发展出来；批处理系统分为单道批处理系统和多道批处理系统。</li>
+<li>多道程序系统的优点：CPU 利用率、系统吞吐量、I/O 设备利用率提高；代价：组织作业和切换作业要付出额外开销。</li>
+<li>多任务操作系统的特点是并发和并行；多个任务须互斥访问共享资源，须对共享资源加以保护；多 CPU 不是多任务操作系统的必备硬件。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：01 第1章 操作系统概述）</span></h4>
+<ul>
+<li>“多道程序数 ↑，CPU 利用率不会无限 ↑”（切换有开销）；“批处理有交互性”——错，单道、多道批处理都没有交互性，有交互性的是分时和实时。</li>
+<li>“并行 = 并发”——错：单 CPU 上多个程序只能并发，CPU 与 I/O、多个 I/O 设备之间才是并行；“同时访问 = 真正同时”——错，同时访问宏观同时、微观仍是交替。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 4 次</span></h4>
+<ul class="luodian">
+<li><b>2016-23</b>：批处理系统无交互、分为单道/多道，中断技术使多道批处理 I/O 与 CPU 并行。</li>
+<li><b>2017-28</b>：多道程序系统提高 CPU 利用率、吞吐量与 I/O 利用率，但系统开销大。</li>
+<li><b>2018-23</b>：多任务操作系统具并发与并行特点、须保护共享资源，不必运行在多 CPU 平台。</li>
+<li><b>2022-23</b>：操作系统最基本特征是并发与共享；不支持虚拟存储也能实现多道程序并发；进程多不等于 CPU 利用率高。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<div class="card" id="s-3.1.2">
+<div class="card-h"><span class="code">3.1.2</span><span class="ttl">操作系统的运行环境</span><span class="badge">真题 16 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>内核态（管态，Ring 0）可执行特权指令与非特权指令；用户态（目态，Ring 3）仅允许执行非特权指令。</li>
+<li>用户态 → 内核态的唯一途径是通过中断 / 异常 / 系统调用；内核态 → 用户态通过修改程序状态字 PSW 主动降级返回。</li>
+<li>系统调用是操作系统提供给应用程序的接口：用户在用户态调用，具体的系统调用服务程序在内核态执行；不同操作系统的系统调用接口并不统一。</li>
+<li>特权指令包括：有关 I/O 设备操作的指令、有关访问程序状态的指令、存取特殊寄存器指令、清内存、关中断等指令。</li>
+<li>中断处理：断点（PC）与程序状态字 PSW 由硬件（中断隐指令）保存，通用寄存器内容由操作系统保存；时钟中断处理与时间有关的信息并决定是否执行调度程序。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：01 第1章 操作系统概述）</span></h4>
+<ul>
+<li>三对概念成对背：用户程序 ↔ 非特权指令 ↔ 用户态；内核程序 ↔ 特权指令 ↔ 内核态。</li>
+<li>状态转换口诀：“进内核靠中断异常，出内核靠返回指令；trap 在用户态，改模式靠硬件”。</li>
+<li>系统调用四步：“传参 → 陷入 → 处理 → 返回”，与“函数调用”只差“跨特权级”。</li>
+<li>九个步骤口诀：“关、存、引（硬件三步）→ 保、析、处、恢、开、返（OS 六步）”。</li>
+<li>内外中断判别法：问“这事是不是当前这条指令自己惹出来的？”是 → 内中断（异常），不是（外部设备/时钟/电源）→ 外中断。</li>
+<li>故障/自陷/终止判别法：能修好重执行 → 故障；主动陷入、执行完往下走 → 自陷；修不了、程序死 → 终止。</li>
+<li>易错：“内核态只能执行特权指令”错，内核态特权与非特权指令都能执行；“trap 是特权指令/在内核态执行”错，trap 是非特权指令、在用户态执行；“保存断点是操作系统做的”错，保存断点（PC、PSW）、关中断、引出中断服务程序都由硬件完成，保存通用寄存器才是 OS 做；“把 CPU 模式改为内核态是 OS 做的”错，由硬件完成；“缺页是外中断”错，缺页属内中断（故障），可修复、返回当前指令重执行；“除零是自陷”错，除零是故障（不可修复，常终止程序）；“printf 是系统调用”错，printf 是库函数，内部封装 write 系统调用。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 16 次</span></h4>
+<ul class="luodian">
+<li><b>2010-23</b>：操作系统提供给应用程序的接口是系统调用。（源A无解析，据题干归纳）</li>
+<li><b>2011-24</b>：在用户态执行的是命令解释程序；缺页处理、时钟中断、进程调度在核心态执行。</li>
+<li><b>2012-23</b>：辨“在用户态发生”与“完成”：系统调用调用程序、外部中断发生在用户态，进程切换只能发生在核心态。</li>
+<li><b>2012-24</b>：中断处理一定保存断点（PC）与程序状态字 PSW，子程序调用只需保存断点。</li>
+<li><b>2013-28</b>：整数除零（内中断）与 read 系统调用导致用户态切内核态，sin 函数调用不导致。</li>
+<li><b>2014-25</b>：关中断指令是特权指令，不能在用户态执行。</li>
+<li><b>2015-23</b>：处理外部中断时，PC 由中断隐指令自动保存，通用寄存器内容由操作系统保存。</li>
+<li><b>2015-24</b>：除零异常、中断指令、缺页异常都可能使 CPU 由用户态变内核态，无异常可能的指令不会。</li>
+<li><b>2017-24</b>：执行系统调用的顺序：传递参数 → 执行陷入指令 → 执行服务程序 → 返回用户态。</li>
+<li><b>2018-29</b>：时钟中断服务程序更新内核时钟变量、当前进程占用 CPU 时间与时间片内剩余时间。</li>
+<li><b>2019-25</b>：系统调用服务程序在内核态执行；系统调用避免用户程序直接访问外设；各操作系统系统调用接口不统一。</li>
+<li><b>2020-25</b>：中断现场保存由硬件与操作系统分工：硬件保存 PC，操作系统保存 PSW，不是操作系统单独完成。</li>
+<li><b>2021-23</b>：只能在内核态执行的是特权指令，如 I/O 操作、访问程序状态、存取特殊寄存器类指令。</li>
+<li><b>2021-32</b>：通过系统调用完成的是创建新进程；调页、进程调度、生成随机数不通过系统调用。</li>
+<li><b>2022-27</b>：用户态只能执行非特权指令，内核态可执行特权指令与非特权指令。</li>
+<li><b>2022-31</b>：系统调用时硬件完成保存断点与 PSW、改 CPU 模式为内核态，操作系统完成保存通用寄存器与执行服务程序。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<div class="card" id="s-3.1.3">
+<div class="card-h"><span class="code">3.1.3</span><span class="ttl">操作系统的结构与引导</span><span class="badge">真题 2 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>操作系统引导 7 步：通电置 PC（指向 ROM 中 BIOS）→ 硬件自检 POST → 读 CMOS 确定启动设备 → 加载主引导记录 MBR（查磁盘分区表 DPT）→ 定位活动分区 → 加载分区引导记录 PBR → 运行 Bootloader 装载内核入 RAM。</li>
+<li>计算机开机后，操作系统最终被加载到 RAM。</li>
+<li>操作系统初始化过程中创建中断向量表（CPU 据中断号查表跳转到对应中断处理程序）；硬盘逻辑格式化时创建分区表，并在每个分区初始化文件系统、创建根目录与索引结点表。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：01 第1章 操作系统概述 §五，教材补充，课程第一轮跳过）</span></h4>
+<ul>
+<li>大内核 vs 微内核：大内核性能高（模块间直接函数调用）、可靠性低；微内核只留进程通信、低级调度、中断处理在内核，可靠性高、性能低；典型：Linux/UNIX 是大内核，Mach/QNX 是微内核。</li>
+<li>引导流程框架：CPU 加电 → 执行 BIOS 自举程序 → 读主引导记录 MBR → 执行分区引导记录 → 加载活动分区的引导程序 → 装入操作系统内核并初始化。</li>
+<li>虚拟机：第一类 VMM 直接运行在硬件上（如 Xen、VMware ESXi），第二类 VMM 运行在宿主操作系统之上（如 VMware Workstation）。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 2 次</span></h4>
+<ul class="luodian">
+<li><b>2013-29</b>：计算机开机后，操作系统最终被加载到 RAM。</li>
+<li><b>2022-24</b>：操作系统初始化过程中创建的是中断向量表；分区表、文件系统与索引结点表在硬盘逻辑格式化/初始化文件系统时创建。</li>
+</ul>
+</div></div>
+<h3 class="grp">第2章 进程线程、调度与死锁</h3>
+<div class="card" id="s-3.2.1">
+<div class="card-h"><span class="code">3.2.1</span><span class="ttl">进程与线程</span><span class="badge">真题 12 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>进程状态机转换：就绪态 → 运行态（被调度选中获 CPU 时间片）；运行态 → 就绪态（时间片耗尽或被更高优先级进程抢占）；运行态 → 阻塞态（主动请求某一资源未满足，如等待 I/O 或执行 P 操作）；阻塞态 → 就绪态（所等待事件发生，如 I/O 完成或被 V 操作唤醒）。</li>
+<li>处理器管理的关键技术包括进程与线程调度、进程同步与互斥（信号量机制、管程）、进程间通信 IPC、死锁的预防/避免（银行家算法）/检测与解除（源A第 1 章全景表）。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：02 第2章 进程线程与调度）</span></h4>
+<ul>
+<li>状态判定三步：先问“它有没有 CPU”→ 有 CPU 才可能“主动阻塞”；再问“它缺什么”→ 只缺 CPU 是就绪，缺事件是阻塞；最后问“谁动的”→ 自己动 = 主动（运行 → 阻塞），别人动 = 被动（阻塞 → 就绪）。</li>
+<li>不可能转换四连：就绪不阻塞、阻塞不运行、创建不运行、挂起不运行。</li>
+<li>线程私有记“一栈两器三 ID”：栈（栈指针）、PC + 通用寄存器、线程 ID/状态；堆和文件描述符都是共享的。</li>
+<li>易错：就绪态不能直接变阻塞态（就绪进程没有 CPU，无法发起 I/O）；阻塞态进程即使 CPU 空闲也不能运行，必须先被唤醒进入就绪队列；线程私有“栈”、共享“堆”；父进程与子进程不共享虚拟地址空间（fork 后共享的是部分物理页，写时复制）；用户级线程一个线程因 I/O 阻塞会让整个进程阻塞，且不能利用多核。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 12 次</span></h4>
+<ul class="luodian">
+<li><b>2009-23</b>：单处理机中进程与进程只能并发不能并行；处理机与设备、处理机与通道、设备与设备可并行。（源A无解析，据题干归纳）</li>
+<li><b>2010-24</b>：用户登录成功与启动程序执行导致创建新进程，设备分配不导致。（源A无解析，据题干归纳）</li>
+<li><b>2011-25</b>：同一进程的线程不能共享的是栈指针（线程私有栈）。</li>
+<li><b>2012-31</b>：用户级线程的管理工作全由应用程序完成，无需内核干预，内核意识不到线程的存在。</li>
+<li><b>2014-26</b>：读磁盘操作完成后，操作系统必将该进程由阻塞态改为就绪态。（源A无解析，据题干归纳）</li>
+<li><b>2014-31</b>：进程对管道的读操作和写操作都可能被阻塞；管道是单向的。（源A无解析，据题干归纳）</li>
+<li><b>2018-25</b>：两线程各对共享变量 x 加 1，最终 x=2 只有先执行 thread1 再执行 thread2 或反之两种可能。</li>
+<li><b>2018-27</b>：申请临界资源、从磁盘读数据可能导致当前进程阻塞；CPU 分配给高优先级进程只会让 P 进入就绪队列。</li>
+<li><b>2019-23</b>：内核级线程由内核维护上下文并调度；用户级线程切换效率更高、可在不支持内核级线程的系统上实现。</li>
+<li><b>2020-29</b>：父进程与子进程不共享虚拟地址空间；创建子进程时分配进程描述符与唯一 pid。</li>
+<li><b>2021-24</b>：创建新进程必须申请空白 PCB 并初始化 PCB；新进程一般置为就绪态而非执行态。</li>
+<li><b>2022-28</b>：读文件、申请外设、执行信号量 wait 操作都可能使进程由执行态转阻塞态，时间片用完只转就绪态。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<div class="card" id="s-3.2.2">
+<div class="card-h"><span class="code">3.2.2</span><span class="ttl">处理机调度</span><span class="badge">真题 18 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>FCFS（先来先服务）：非抢占，算法简单、公平，长作业有利、短作业不利（护航效应）。</li>
+<li>SJF/SPF（短作业优先）：抢占与非抢占均可，平均等待时间/周转时间最短，会导致长作业饥饿。</li>
+<li>HRRN（高响应比优先）：非抢占，兼顾长短作业、无饥饿；响应比 R =（等待时间 + 服务时间）/ 服务时间 ≥ 1。</li>
+<li>RR（时间片轮转）：抢占，响应时间极佳；时间片过大退化为 FCFS，过小则切换开销剧增。</li>
+<li>多级反馈队列：抢占，综合最优、兼顾长短与交互；各队列时间片递增，进程用完时间片自动降级。</li>
+<li>可引起进程调度的事件：中断处理结束、进程阻塞、进程执行结束、进程时间片用完；不适合调度的情况：在处理中断的过程中、进程在操作系统内核程序临界区中、其他需完全屏蔽中断的原子操作过程中。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：02 第2章 进程线程与调度）</span></h4>
+<ul>
+<li>算周转四步模板：画时间轴 → 按规则填每段区间（抢占式标“剩余时间”）→ 读每个进程的完成时刻 f → 周转 T = f − a，带权周转 W = T/s，最后求平均；带权周转可以 &gt; 10。</li>
+<li>饥饿判断：SJF、优先级会饥饿，FCFS、HRRN、RR 不会。</li>
+<li>RR 推演技巧：每次时间片结束时，先把“这一段时间内新到达的进程”按到达顺序入队，再把“刚被剥夺的进程”挂到队尾。</li>
+<li>MLFQ 推演技巧：先写清三条规则（新进程入 Q1、用完时间片降级、高队列非空不跑低队列），每换一个队列标一次剩余时间。</li>
+<li>抢占式 SJF 的比较对象是“新到进程的服务时间”与“当前进程的剩余时间”，不是原始服务时间。</li>
+<li>易错：时间片 q 过大退化为 FCFS、过小则上下文切换开销占比过高，不能说“q 越小越好”；优先级方向要看清题目（数值大还是小代表优先级高）；等待时间是多段之和，响应时间只算第一次；带权周转时间的分母是服务时间，不是周转时间。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 18 次</span></h4>
+<ul class="luodian">
+<li><b>2009-24</b>：综合考虑进程等待时间与执行时间的是高响应比优先调度算法。答案 D。（源A无解析无答案，已独立求解）。</li>
+<li><b>2010-26</b>：降低进程优先级的合理时机是进程时间片用完；刚完成 I/O、长期处于就绪队列时不宜降级。（源A无解析，据题干归纳）</li>
+<li><b>2011-23</b>：高响应比优先满足短任务优先且不会发生饥饿；响应比 =（等待时间 + 执行时间）/ 执行时间。</li>
+<li><b>2012-29</b>：多道批处理系统性能计算：P2 晚 5ms 到达，P1 先占 CPU，按甘特图推演完成时间。</li>
+<li><b>2012-30</b>：进程处于临界区时不影响处理机调度；处理中断过程、内核临界区、屏蔽中断的原子操作中不适合调度。</li>
+<li><b>2013-31</b>：为提高系统资源利用率，I/O 占比越高的进程优先级越高，合理顺序为 P3 &gt; P2 &gt; P1。（源A无解析，据题干归纳）</li>
+<li><b>2014-23</b>：不可能导致饥饿现象的是时间片轮转；静态优先数与短作业优先都可能饥饿。（源A无解析，据题干归纳）</li>
+<li><b>2015-25</b>：请求某一资源（P 操作）导致进程由执行态变阻塞态；被剥夺处理机只导致变就绪态。</li>
+<li><b>2016-24</b>：单 CPU 单输入单输出设备下 3 个作业输入、计算、输出流水作业，画甘特图求最少完成时间。</li>
+<li><b>2017-23</b>：t=2 时调度：先来先服务选最先到达的 J1，短作业优先选运行时间最短的 J3。</li>
+<li><b>2017-27</b>：时间片用完后进程由执行态变就绪态；进程切换带来系统开销，时间片大小综合响应时间、开销等因素确定。</li>
+<li><b>2018-24</b>：非抢占式优先级调度：计入每次调度切换 1μs 开销，按优先权求平均周转时间 75μs。</li>
+<li><b>2019-24</b>：可能将进程唤醒的事件是 I/O 结束与某进程退出临界区；当前进程时间片用完只会进入就绪队列。</li>
+<li><b>2019-27</b>：二级反馈队列：Q1 时间片轮转 10ms，用完转入 Q2 短进程优先，算平均等待时间 15ms。</li>
+<li><b>2020-26</b>：设计多级反馈队列调度须考虑就绪队列数量、优先级、各队列调度算法与进程迁移条件。</li>
+<li><b>2021-25</b>：分时系统实现时间片轮转调度须用 PCB、时钟中断处理程序与进程就绪队列，不用阻塞队列。</li>
+<li><b>2021-27</b>：可能引起进程调度程序执行的有中断处理结束、进程阻塞、进程执行结束、进程时间片用完。</li>
+<li><b>2022-25</b>：抢占式优先级调度按进入就绪队列时刻与优先级推演，全程共调度 6 次。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<div class="card" id="s-3.2.3">
+<div class="card-h"><span class="code">3.2.3</span><span class="ttl">同步与互斥</span><span class="badge">真题 9 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>处理器管理的关键技术包括进程同步与互斥：信号量机制、管程（源A第 1 章全景表）。</li>
+<li>进程状态转换与 PV 操作的联系：运行态 → 阻塞态可由执行 P 操作（请求资源未满足）引起；阻塞态 → 就绪态可由 V 操作唤醒引起。</li>
+<li>管程是由一组数据以及定义在这组数据之上的操作组成的软件模块：局部于管程的数据只能被管程内过程访问；进程只有通过调用管程内过程才能进入管程访问共享数据；每次仅允许一个进程在管程内执行某个内部过程；管程既能实现进程间互斥，也能实现进程间同步。</li>
+<li>条件变量是管程内用于进程同步的特殊变量，作用类似信号量机制中的信号量；进程执行 x.wait() 时阻塞并挂到条件变量对应的阻塞队列上、释放管程使用权，执行 x.signal() 时唤醒对应阻塞队列队头进程。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：03 第2章 同步互斥与死锁）</span></h4>
+<ul>
+<li>信号量定值口诀：资源数 = 信号量初值；mutex 恒为 1；同步的“资源”还没产生，初值 0；系统本来就有存货（信箱已有 X 封），初值就写 X。</li>
+<li>同步写法口诀：前 V 后 P，先发生的动作后面 V，后发生的动作前面 P，初值 0。</li>
+<li>互斥写法口诀：PV 夹临界区，一锁一开成对出现；P = 加锁，V = 解锁。</li>
+<li>生产者消费者 PV 顺序口诀：先资源、后互斥（empty/full 在前，mutex 在后）；V 的顺序无所谓，P 的顺序要命。</li>
+<li>信号量值速读：值为正 → 剩几个资源；值为负 → 几个进程在等；值 = 初始值 − 已被拿走数。</li>
+<li>易错：生产者消费者两个 P 写反（先 P(mutex) 后 P(empty)）会死锁；同步信号量初值写成 1 则同步失效，同步初值必须是 0；信号量为负表示有进程在等待，不是还剩资源；记录型信号量 P 里判 &lt; 0、V 里判 &lt;= 0。</li>
+<li>管程（源B 03 §五，教材补充概念级）：管程把共享数据结构 + 对该结构的所有操作 + 同步机制封装成模块，管程内过程互斥执行由编译器保证；条件变量没有值，signal 时若无进程等待则信号丢失。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 9 次</span></h4>
+<ul class="luodian">
+<li><b>2010-25</b>：信号量初值 3、当前值 1，说明可用资源数 M=1、等待进程数 N=0。</li>
+<li><b>2010-27</b>：flag + turn 类 C 伪代码（Peterson 算法）能保证进程互斥进入临界区，且不会出现饥饿。（源A无解析，据题干归纳）</li>
+<li><b>2011-32</b>：两进程对共享变量 x 加 1/减 1 交错执行，结果可能是 1、2、0，不可能是 −1。</li>
+<li><b>2016-27</b>：TSL 指令实现互斥时等待进程忙等待、不让权等待，不满足“让权等待”同步准则。</li>
+<li><b>2016-30</b>：只有对同一共享变量 x 的自增操作执行先后会影响结果、需要互斥执行；不同作用域的 x 互不影响。</li>
+<li><b>2016-32</b>：管程既能实现进程间互斥也能实现进程间同步；管程内数据只能被管程内过程访问，每次仅一进程在管程内执行。</li>
+<li><b>2018-28</b>：进程执行管程内条件变量 x.wait() 时阻塞并挂到 x 对应的阻塞队列上，释放管程使用权。</li>
+<li><b>2018-32</b>：能实现让权等待的是记录型信号量（引入阻塞机制消除忙等待）；硬件方法与 Peterson 算法不能实现让权等待。</li>
+<li><b>2020-32</b>：临界区互斥须遵循互斥、空闲让进、有限等待三原则；不能进入临界区的执行态进程不必立即放弃 CPU。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<div class="card" id="s-3.2.4">
+<div class="card-h"><span class="code">3.2.4</span><span class="ttl">死锁</span><span class="badge">真题 12 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>死锁产生 4 大必要条件：互斥使用、不可剥夺、请求并保持、循环等待。</li>
+<li>银行家算法：在分配资源前先预判分配后系统是否处于安全状态（能否找到至少一个合法安全序列），若安全才正式分配。</li>
+<li>死锁处理三策略：死锁预防（破坏四个必要条件中的一个或几个）、死锁避免（银行家算法）、死锁检测和解除。</li>
+<li>破坏循环等待条件一般采用顺序资源分配法：给系统资源编号，规定每个进程必须按编号递增顺序请求资源。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：03 第2章 同步互斥与死锁）</span></h4>
+<ul>
+<li>银行家算法三步：Need = Max − Allocation；Available = 总量 − ΣAllocation；拿 Need 与 Work 逐项比，全都 ≤ 才可推进，推进后 Work += Allocation。</li>
+<li>银行家校验口诀：全部进程跑完，Work 必然回到资源总量；不相等 = 算错。</li>
+<li>死锁最小进程数公式（同类资源，每进程最多需 m 个，共 R 个）：K_min = ⌊(R−1)/(m−1)⌋ + 1；例 R=8、m=3 → ⌊7/2⌋+1 = 4。</li>
+<li>预防 vs 避免的字眼抠死：破坏四个必要条件 = 预防，银行家算法 = 避免。</li>
+<li>易错：资源分配图有环不一定死锁，只有每类资源单实例时有环必死锁；“不安全状态”和“死锁”不同，不安全只是可能死锁；死锁进程必处于阻塞态，饥饿进程可能在就绪态，死锁至少两个进程；银行家算法算错 Work 的常见原因是进程完成后只加 Need 而不是把已分配的全部资源加回 Work。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 12 次</span></h4>
+<ul class="luodian">
+<li><b>2009-25</b>：8 台打印机、每进程最多需 3 台，可能发生死锁的进程数 K 最小值为 4。</li>
+<li><b>2011-27</b>：用银行家算法判断，该时刻不存在安全序列。</li>
+<li><b>2012-27</b>：银行家算法安全性检查：求 Need 与 Available，初始可满足 P1 与 P3，试分配后以 P3 开头的序列均安全。</li>
+<li><b>2013-32</b>：银行家算法是死锁避免算法；安全状态一定无死锁，不安全状态不一定出现死锁。</li>
+<li><b>2014-24</b>：三进程分别需 3、4、5 台同类设备，可确保不发生死锁的设备数 n 最小为 10。（源A无解析，据题干归纳）</li>
+<li><b>2015-26</b>：死锁避免（S1）限制用户申请资源顺序、需进程资源总量信息；死锁检测（S2）不限制顺序、不需总量信息。</li>
+<li><b>2016-25</b>：4 进程共享 3 个临界资源，穷举分配情况，处于死锁状态的进程数至少为 3。</li>
+<li><b>2018-26</b>：安全性检测：可用资源 1 台时 P3 可运行，但 P1、P2 永远等不到足够资源，系统不安全。</li>
+<li><b>2019-30</b>：剥夺进程资源可解除死锁；死锁预防最严苛、可确保不发生死锁；银行家算法不能用于判断是否已死锁；资源分配图简化可检测死锁。</li>
+<li><b>2020-27</b>：银行家算法：Need = Max − Allocated，初始只能满足 P2，安全序列为 P2 → P1 → P3。</li>
+<li><b>2021-31</b>：n 个进程各需 2 个临界资源时，临界资源数为 n 会死锁、为 n+1 时至少一进程可运行完并释放资源。</li>
+<li><b>2022-26</b>：银行家算法安全性检查：初始只能满足 P0，安全序列可为 P0、P1、P2 或 P0、P2、P1。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<h3 class="grp">第3章 内存管理与虚拟内存</h3>
+<div class="card" id="s-3.3.1">
+<div class="card-h"><span class="code">3.3.1</span><span class="ttl">连续与非连续分配</span><span class="badge">真题 7 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>基本分页：无外部碎片，有页内碎片；逻辑地址 → 页号 + 页内偏移；内存利用率高，无逻辑独立性。</li>
+<li>基本分段：无内部碎片，有外部碎片；逻辑地址 → 段号 + 段内偏移；方便代码共享与保护，易产生碎片。</li>
+<li>段页式管理：无外部碎片，仅段内最后一页有内部碎片；地址变换为段号 → 段表 → 页表 → 物理块，综合优势、访存开销大（需 3 次访存）。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：04 第3章 内存管理）</span></h4>
+<ul>
+<li>分页是“拼”、分段是“加”：分页把页号直接替换成页框号、偏移不变，分段必须基址 + 偏移；段表项须存段长 + 基址，页表只存页框号。</li>
+<li>偏移位数速查：页大小 4KB → 12 位 → 十六进制 3 位；十六进制地址从右往左切 3 位即得偏移，左边剩下全是页号。</li>
+<li>十进制就除、二进制就切：A ÷ 页大小，商 = 页号、余 = 偏移；二进制/十六进制直接截取低位。</li>
+<li>物理地址 = 页框号 × 页大小 + 偏移；4KB 页时就是“页框号后面补 3 个十六进制 0，再加偏移”。</li>
+<li>碎片口诀：单一有内无外、固定有内无外、动态有外无内、分页有内无外、分段有外无内。</li>
+<li>算法口诀：首次从头、邻近接着找、最佳容量升、最坏容量降；只有首次/邻近按地址，最佳/最坏按容量。</li>
+<li>易错：越界条件是页号 ≥ 页表长度（页号 = 页表长度也越界），分段同理段内偏移 ≥ 段长就越界；最佳适应“名为最佳、实际最差”，每次留下极小剩余块、产生大量外部碎片；回收必须与相邻空闲区合并，前后都空闲要三者合并；段表必须“段长 + 基址”，页表只存页框号。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 7 次</span></h4>
+<ul class="luodian">
+<li><b>2009-26</b>：分区分配内存管理方式的主要保护措施是界地址保护。（源A无解析，据题干归纳）</li>
+<li><b>2009-27</b>：段号占 8 位、地址长 32 位时段内偏移 24 位，最大段长为 2^24 字节。（源A无解析，据题干归纳）</li>
+<li><b>2010-28</b>：最佳适配算法按分配释放顺序推演后，主存中最大空闲分区为 9MB。（源A无解析，据题干归纳）</li>
+<li><b>2016-28</b>：分段地址变换：逻辑地址取段号 S 与段内偏移 W，比较段号与段表长度判越界，再查段表得物理地址。</li>
+<li><b>2017-25</b>：回收起始地址 60K、大小 140KB 的分区时与前后空闲分区合并，再按分区大小由小到大排序。</li>
+<li><b>2019-28</b>：段的共享是两个作业的段表相应表项指向被共享段的同一个物理副本，内存中仅保存一份。</li>
+<li><b>2019-32</b>：最佳适应算法总是匹配与当前要求最接近的空闲分区，最容易产生最多的内存碎片。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<div class="card" id="s-3.3.2">
+<div class="card-h"><span class="code">3.3.2</span><span class="ttl">虚拟内存管理</span><span class="badge">真题 20 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>4 大页面置换算法：OPT 淘汰以后永不使用或最长时期内不用的页面，是理论上限、无法实现；FIFO 淘汰最早进入内存的页面，会产生 Belady 异常（分配物理块数增多但缺页率反增）；LRU 淘汰最近最长时间未被访问的页面，性能最接近 OPT、硬件开销大；CLOCK 循环指针扫描、检查访问位 u 与修改位 m，是实际操作系统最常采纳的折中方案。</li>
+<li>虚拟存储器建立在离散分配的内存管理方式基础上：请求分页存储管理、请求分段存储管理、请求段页式存储管理；虚拟存储器容量既不受外存容量限制也不受内存容量限制，由 CPU 的寻址范围决定。</li>
+<li>抖动现象：刚刚被换出的页很快又要被访问，又要换出其他页，如此频繁置换页面，以致大部分时间都花在页面置换上；撤销部分进程可减少所用页面数、防止抖动。</li>
+<li>对换功能的操作系统把外存分为文件区（存放文件）与对换区（存放从内存换出的进程）。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：05 第3章 虚拟内存）</span></h4>
+<ul>
+<li>置换算法一句话：OPT 看未来最远，LRU 看过去最久，FIFO 看进来最早，CLOCK 看访问位转圈。</li>
+<li>字段口诀：请求分页页表 = 基本 2 个 + “存、访、改、外”4 个新增字段。</li>
+<li>缺页链口诀：“判界 — 查快 — 查表 — 看位 — 中断 — 存场 — 找址 — 腾框 — 调入 — 改表 — 重执 — 拼址”。</li>
+<li>改进型 CLOCK 淘汰序：把（A,M）当二进制数，00 &lt; 01 &lt; 10 &lt; 11，从小到大淘汰。</li>
+<li>缺页次数 vs 置换次数：还有空闲页框 → 只缺页不置换；页框全满 → 缺页必置换。</li>
+<li>易错：缺页中断是故障，在指令执行期间产生，必须重新执行当前指令（返回地址不是下一条指令）；OPT 与 LRU 方向弄反，OPT 往后看（未来），LRU 往前看（过去）；以为页框越多缺页一定越少，FIFO 有 Belady 异常；被淘汰页修改位 = 1 必须写回外存，= 0 才能直接丢弃；驻留集是“分给你几个”，工作集是“你实际要用几个”，要求驻留集 ≥ 工作集。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 20 次</span></h4>
+<ul class="luodian">
+<li><b>2010-29</b>：二级页表：逻辑地址空间 2^16 页、页大小 2^10 B、页表项 2B 时，页目录表含 128 个表项。（源A无解析，据题干归纳）</li>
+<li><b>2011-28</b>：缺页中断调入新页面时须修改页表项、分配页框，同时发生磁盘 I/O。</li>
+<li><b>2011-29</b>：外存分文件区与对换区；抖动是页面频繁置换；撤销部分进程可防止抖动。</li>
+<li><b>2011-30</b>：编译过程将源代码编译成目标模块时形成逻辑地址。</li>
+<li><b>2012-25</b>：虚拟存储器须建立在离散分配基础上，有请求分页、请求分段、请求段页式三种实现；容量由 CPU 寻址范围决定。</li>
+<li><b>2013-30</b>：缺页时操作系统可能执行置换页与分配内存，不会处理越界错。</li>
+<li><b>2014-28</b>：增大快表（TLB）容量、让页表常驻内存能加快虚实地址转换，增大交换区不能。（源A无解析，据题干归纳）</li>
+<li><b>2014-30</b>：可能出现 Belady 异常的只有 FIFO 算法，LRU 不会。（源A无解析，据题干归纳）</li>
+<li><b>2014-32</b>：多级页表的优点是减少页表所占的连续内存空间。（源A无解析，据题干归纳）</li>
+<li><b>2015-27</b>：求 LRU 淘汰页的便捷法：对页号序列从后往前数到 4 个不同数字为止，停止处即要淘汰的页号 2。</li>
+<li><b>2015-30</b>：固定分配时页面数不变，不可能出现全局置换；其余三种是现代操作系统常见的内存分配策略。</li>
+<li><b>2016-26</b>：改进型 CLOCK 置换算法按（A,M）=（0,0）→（0,1）→（1,0）→（1,1）的顺序扫描选择淘汰帧。</li>
+<li><b>2016-29</b>：工作集是最近 k 次内存访问所访问过的页面集合（窗口 6 时为 6,0,3,2 去重后）。</li>
+<li><b>2019-29</b>：LRU 页面置换：首次访问 5 换出最久未用的 1，首次访问 3 换出最久未访问的 2，置换次数 5 次。</li>
+<li><b>2019-31</b>：十六进制地址转二进制后按前 10 位、11~20 位、21~32 位切分页目录号、页号与页内偏移。</li>
+<li><b>2020-28</b>：缺页中断发生频率、慢表访问时间、缺页中断处理时间都会影响有效访问时间。</li>
+<li><b>2021-28</b>：页大小 4KB 时低 12 位是页内偏移；CLOCK 换出 3 号页、2 号页放入 60H 页框后物理地址为 60A01H。</li>
+<li><b>2021-29</b>：多级页表中页表基址寄存器存放顶级页表（即一级页表）的起始物理地址。</li>
+<li><b>2022-29</b>：缺页异常须调页入内存、建立页与页框对应关系并修改存在位；有空闲页框时不需淘汰其他页。</li>
+<li><b>2022-30</b>：页缓冲队列长度影响页面置换速度，但不影响缺页率。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<h3 class="grp">第4章 文件系统与磁盘调度</h3>
+<div class="card" id="s-3.4.1">
+<div class="card-h"><span class="code">3.4.1</span><span class="ttl">文件的逻辑结构与物理结构</span><span class="badge">真题 3 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>连续分配：支持随机存取，但有外部碎片且不易扩充。</li>
+<li>链接分配：隐式链接仅支持顺序存取；显式链接（FAT 表）支持随机存取。</li>
+<li>UNIX inode 多级索引结构：直接索引 + 一级间接 + 二级间接 + 三级间接，极大扩展文件最大容量。</li>
+<li>文件物理结构对比（源A第 4 章）：连续、链接、索引分配 / UNIX Inode 结构、FAT 表（源A第 1 章全景表文件管理行）。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：06 第4章 文件管理）</span></h4>
+<ul>
+<li>读盘次数速判：连续 1 / 隐式链接 n（第 n 块 n+1）/ FAT 1 / 单级索引 2 / m 级 m+1；前提“inode 已在内存”，否则整体 +1。</li>
+<li>最大文件长度三步：n = 块大小 ÷ 地址项大小；块数 = 直接数 + n + n² + n³…；块数 × 块大小，注意 1024 进位。</li>
+<li>逻辑块号定区间（直接 d 项、每索引块 n 项）：直接 0~d−1；一级 d~d+n−1；二级 d+n~d+n+n²−1。</li>
+<li>易错：隐式链接读盘次数算少，读第 3 块要读 3 次；以为 FAT 也要顺序找，FAT 在内存查表无 I/O、只读目标块 1 次、支持直接访问；索引分配记成 1 次，单级索引要“先读索引块、再读数据块”= 2 次，只有混合索引的直接地址项才 1 次。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 3 次</span></h4>
+<ul class="luodian">
+<li><b>2009-28</b>：适合随机访问且易于文件扩展的文件物理结构是索引结构。（源A无解析，据题干归纳）</li>
+<li><b>2010-30</b>：混合索引（4 直接 + 2 一级 + 1 二级，块 256B、项 4B）单个文件最大长度为 1057KB。（源A无解析，据题干归纳）</li>
+<li><b>2013-24</b>：支持 CD-ROM 视频文件快速随机播放、性能最好的文件数据块组织方式是连续结构。（源A无解析，据题干归纳）</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<div class="card" id="s-3.4.2">
+<div class="card-h"><span class="code">3.4.2</span><span class="ttl">文件系统</span><span class="badge">真题 14 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>文件目录结构管理：多级树形目录、FCB 文件控制块；索引节点（Inode）分离机制；目录检索、硬链接与软链接特性对比（源A index 目录结构 12 次）。</li>
+<li>文件存取与读写权限控制：存取控制矩阵 / ACL（源A第 1 章全景表文件管理行）。</li>
+<li>文件物理存储空间动态分配：连续分配、链接分配、索引分配 / UNIX Inode 结构、FAT 表（源A第 1 章全景表）。</li>
+<li>文件操作 open/read/write/close（源A index：文件操作 9 次）；外存空闲空间管理位示图（源A index：位示图 7 次）。</li>
+<li>传统的文件系统管理磁盘空间方法：空闲表法、空闲链表法、位示图和成组链接法；文件分配表 FAT 的表项与物理磁盘块一一对应。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：06 第4章 文件管理）</span></h4>
+<ul>
+<li>位示图流水线：块号 ÷ 每块位数 → 商定块（+ 起始块号）、余数定位；余数 ÷ 8 商为字节号、余数为位号。</li>
+<li>两计数器口诀：“链接计数看名字（硬链接数），打开计数看进程（几个进程在用）”。</li>
+<li>open / close / delete 三句话：open = 调 FCB 进内存 + 建表项；close = 删进程表项 + 系统表计数 −1；delete = 删目录项 + 链接计数 −1（为 0 才释放 inode）+ 释放盘块。</li>
+<li>易错：把“打开”当成“读入文件内容”，open 只把目录项/FCB（inode）调入内存并建表目，读数据是 read 的事；close 当 delete，关闭只删进程表项、系统表计数 −1，不能删目录项、不能释放 inode、不能减 inode 链接计数；位示图大小只由磁盘总块数决定，与空闲块数无关；忘了加位图起始块号，算出的商只是位图内相对块号，必须 + 起始块号；软链接的 inode 计数写成 2 是错的，软链接是独立新文件、自己计数 1，不改变原文件计数。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 14 次</span></h4>
+<ul class="luodian">
+<li><b>2009-30</b>：文件访问控制信息存储的合理位置是文件控制块 FCB。（源A无解析，据题干归纳）</li>
+<li><b>2010-31</b>：设置当前工作目录的主要目的是加快文件的检索速度。（源A无解析，据题干归纳）</li>
+<li><b>2013-23</b>：删除文件时操作系统不可能执行删除此文件所在的目录；删除目录项、文件控制块、释放内存缓冲区都可能执行。</li>
+<li><b>2013-26</b>：与单个文件长度无关的因素是索引结点的总数；间接索引级数、地址项个数、文件块大小都与长度有关。</li>
+<li><b>2014-27</b>：位图法管理 10GB 分区（簇 4KB）时，存放位图需 80 个簇。（源A无解析，据题干归纳）</li>
+<li><b>2014-29</b>：首次打开文件时操作系统将文件控制块读到内存中，不读文件内容。（源A无解析，据题干归纳）</li>
+<li><b>2015-29</b>：混合索引容量计算：10 个直接指针 10KB，一级索引 256KB，二级索引 64MB。</li>
+<li><b>2015-31</b>：位示图表示法：4096 个块每 8×1024 位一组共需 51 个块，从 32 号块起占用到 82 号块。</li>
+<li><b>2017-26</b>：绝大多数操作系统为改善磁盘访问时间，以簇为单位进行空间分配。</li>
+<li><b>2017-31</b>：硬链接是多个文件名指向同一个索引结点；两个进程各自维护自己的文件描述符。</li>
+<li><b>2018-31</b>：提前读、延迟写、缓冲区结合预读与滞后写都能提高文件访问速度。</li>
+<li><b>2019-26</b>：传统磁盘空间管理方法为空闲表法、空闲链表法、位示图与成组链接法；FAT 表项与物理磁盘块一一对应。</li>
+<li><b>2020-31</b>：最多创建文件个数 = 最多索引节点个数；索引节点占 4 字节（32 位）时最多表示 2^32 个文件。</li>
+<li><b>2021-30</b>：删除文件时回收磁盘空间、回收文件控制块、删除目录项；删除文件不会导致其快捷方式（软链接）被删除。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<div class="card" id="s-3.4.3">
+<div class="card-h"><span class="code">3.4.3</span><span class="ttl">文件的共享与保护</span><span class="badge">真题 3 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>目录结构：树形目录检索、FCB 结构、索引节点（Inode）分离机制、硬链接与软链接特性对比（源A index 目录结构 12 次）。</li>
+<li>文件保护：存取控制矩阵 / ACL；文件存取与读写权限控制（源A第 1 章全景表文件管理行；源A index 文件保护 3 次）。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：06 第4章 文件管理）</span></h4>
+<ul>
+<li>两计数器口诀：“链接计数看名字（硬链接数），打开计数看进程（几个进程在用）”。</li>
+<li>易错：两个计数器混用，inode 链接计数（硬链接数）与系统表打开计数（进程数）是两回事，close 动后者、delete 动前者；软链接的 inode 计数写成 2 是错的，软链接是独立新文件、自己计数 1，只有硬链接才让原 inode +1；以为删原文件会让软链接“指针悬空”，软链接存的是路径字符串而非指针，文件仍在、只是按路径访问失败；新建文件时权限写进目录文件是错的，有 inode 后目录项只有“文件名 + inode 号”，权限/大小/物理地址都在 inode 里。</li>
+<li>ACL 用矩阵表示：4 类用户 5 种权限 = 20 个二进制位。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 3 次</span></h4>
+<ul class="luodian">
+<li><b>2009-31</b>：建软链接不改变原文件引用计数，建硬链接使计数 +1；删 F1 后 F2、F3 的引用计数值均为 1。（源A无解析，据题干归纳）</li>
+<li><b>2017-30</b>：用户访问权限抽象为矩阵（4 行 5 列），1 代表 true、0 代表 false，共需 20 位。</li>
+<li><b>2020-23</b>：系统打开文件表整个系统只有一张，同一文件打开多次只需改变引用计数；进程关闭文件时引用计数减 1，为 0 时才删除。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<h3 class="grp">第5章 I/O 核心子系统与 SPOOLing</h3>
+<div class="card" id="s-3.5.1">
+<div class="card-h"><span class="code">3.5.1</span><span class="ttl">I/O 设备与控制方式</span><span class="badge">真题 5 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>I/O 软件 4 层结构：用户层 I/O 软件（库函数 API，如 printf、scanf）、设备独立性软件、设备驱动程序、中断处理程序（源A 05 §1）。</li>
+<li>设备管理关键技术：缓冲技术（单/双/循环缓冲）、中断处理与 DMA 直接内存访问、设备驱动程序封装与设备独立性、虚拟设备与池化技术 SPOOLing（源A第 1 章全景表设备管理行）。</li>
+<li>DMA 传输过程：主机向内存写入 DMA 命令块，向 DMA 控制器写入该命令块的地址并启动 I/O 设备；CPU 继续其他工作，DMA 控制器直接操作内存总线传输；传输完成后 DMA 控制器中断 CPU。</li>
+<li>设备驱动程序由厂家提供：主机须先安装驱动程序才能使用设备；驱动程序负责初始化设备（如将设备控制器中的寄存器初始化）；设备的读/写操作本质是在设备控制器和主机之间传送数据，只有厂家提供的驱动程序能控制设备的读/写操作。</li>
+<li>四种 I/O 控制方式（王道 OS 指导 5.1.2，pp.287–289）：</li>
+<li>程序直接控制（轮询）：CPU 每读一个字都要循环查 I/O 控制器状态位，确认数据就绪才取数、再存入内存；全程 CPU 忙等，CPU 与外设只能串行，CPU 利用率极低。优点只有实现简单。</li>
+<li>中断驱动：外设备好数据后主动发中断，CPU 收到中断才停下当前工作、保存现场、取一个字存入内存、恢复现场；发完读命令后 CPU 可去做别的事。但每个字都要经过 CPU 中转、都要中断一次，频繁读写（如磁盘）时 CPU 仍被大量中断占用。</li>
+<li>DMA：在外设与内存之间开一条不经过 CPU 的直通数据路；CPU 只在传送开始（下发命令、设置内存地址寄存器 MAR 与数据计数器 DC 初值、启动 DMA 控制器）与结束（DMA 控制器发中断报告完成）时干预，整块数据的搬运由 DMA 控制器负责；基本单位是数据块；每个 DMA 控制器对应一台设备；典型用于磁盘这类块设备。DMA 控制器内有四类寄存器：命令/状态寄存器 CR、内存地址寄存器 MAR、数据寄存器 DR、数据计数器 DC。</li>
+<li>通道：专管 I/O 的处理机，是 DMA 的发展；CPU 只需发一条 I/O 指令（给出通道程序首地址与要访问的设备），通道从内存取通道程序并执行，完成后才中断 CPU；干预单位从「一个数据块」放宽到「一组数据块及有关控制」；CPU、通道、I/O 设备三者可并行；一个通道可控制多台设备；代价是实现复杂、需专门硬件。（超纲，了解即可——王道书标 *，已在最新大纲删除）</li>
+<li>递进关系：CPU 干预越来越少（每字轮询 → 每字中断 → 每块首尾干预 → 每组首尾干预），数据单位越来越大（字 → 字 → 数据块 → 数据块组），并行度越来越高（串行 → CPU 与外设部分并行 → CPU 与 DMA 并行 → CPU、通道、I/O 三者并行）。</li>
+<li>DMA 与中断的关键区别：中断方式是每个数据需要传输时都中断 CPU，且传送在中断处理时由 CPU 控制完成；DMA 是一批数据全部传完才中断一次，且传送由 DMA 控制器控制完成。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B 未覆盖）</span></h4>
+<ul>
+<li>源B 未覆盖</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 5 次</span></h4>
+<ul class="luodian">
+<li><b>2009-32</b>：程序员利用系统调用打开 I/O 设备时，通常使用的设备标识是逻辑设备名。答案 A。（源A无解析无答案，已独立求解）。</li>
+<li><b>2010-32</b>：本地用户通过键盘登录系统时，首先获得键盘输入信息的程序是中断处理程序。（源A无解析，据题干归纳）</li>
+<li><b>2012-28</b>：read 系统调用：数据不在内存时产生中断、进程阻塞，调入后唤醒为就绪态；read 用 open 返回的文件描述符而非文件名作参数。</li>
+<li><b>2017-32</b>：DMA 传输执行顺序：写 DMA 命令块 → 启动设备并由 DMA 控制器传输 → 传输完成中断 CPU。</li>
+<li><b>2022-32</b>：驱动程序负责初始化设备；进程执行驱动程序时可能因设备忙碌进入阻塞态；厂家在驱动程序中实现一种合适的 I/O 控制方式。</li>
+</ul>
+<p class="hubu">互补：发哥课未讲，源A 补齐</p>
+</div></div>
+<div class="card" id="s-3.5.2">
+<div class="card-h"><span class="code">3.5.2</span><span class="ttl">设备独立性软件</span><span class="badge">真题 7 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>I/O 软件 4 层结构：用户层 I/O 软件（库函数 API，如 printf、scanf）；设备独立性软件：逻辑设备名到物理设备名的映射（LUT 表）、缓冲池管理、设备保护；设备驱动程序：向设备控制器寄存器发出特定读写指令；中断处理程序：响应硬件设备完成中断。</li>
+<li>缓冲技术：单/双/循环缓冲，缓解 CPU 与外部设备间的速度差异。</li>
+<li>SPOOLing 假脱机技术：利用高速共享磁盘存储空间，将独占设备（如打印机）虚拟为多台逻辑共享设备；核心组件为输入井/输出井（外存磁盘上）与输入进程/输出进程（内存中）。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B 未覆盖）</span></h4>
+<ul>
+<li>源B 未覆盖</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 7 次</span></h4>
+<ul class="luodian">
+<li><b>2011-26</b>：I/O 软件自上而下四层：用户层、与设备无关软件层（即系统调用处理程序）、设备驱动程序、中断处理程序。</li>
+<li><b>2011-31</b>：单缓冲区读入 10 个磁盘块并处理耗时 1550，双缓冲区耗时 1100。</li>
+<li><b>2012-26</b>：I/O 子系统层次结构：用户层、与设备无关的软件层、设备驱动程序、中断处理程序。</li>
+<li><b>2013-25</b>：I/O 请求处理流程中，计算数据所在磁盘柱面号、磁头号、扇区号的程序是设备驱动程序。</li>
+<li><b>2013-27</b>：系统缓冲区与用户工作区均单缓冲时，读入并分析 2 个数据块的最短时间为 300。</li>
+<li><b>2015-28</b>：磁盘与内存的速度差异决定了可将内存经常访问的文件调入磁盘缓冲区，高速缓存复制访问比磁盘 I/O 机械操作快。</li>
+<li><b>2016-31</b>：SPOOLing 将独占设备改造成共享设备；输入/输出井与高速磁盘在外存，设备与输入/输出井间数据传送由系统实现。</li>
+</ul>
+<p class="hubu">互补：发哥课未讲，源A 补齐</p>
+</div></div>
+<div class="card" id="s-3.5.3">
+<div class="card-h"><span class="code">3.5.3</span><span class="ttl">设备分配与回收</span><span class="badge">真题 2 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>设备独立性软件负责逻辑设备名到物理设备名的映射（LUT 表）、缓冲池管理与设备保护（源A 05 §1）。</li>
+<li>设备可以看作特殊文件（本节源A知识库内容极简，设备分配与回收的系统论述以真题落点为准）。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B 未覆盖）</span></h4>
+<ul>
+<li>源B 未覆盖</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 2 次</span></h4>
+<ul class="luodian">
+<li><b>2009-29</b>：SCAN 调度（磁头 105 道、向磁道序号增大方向移动）的磁道访问序列为 110,170,180,195,68,45,35,12。（源A无解析，据题干归纳）</li>
+<li><b>2020-30</b>：设备可以看作特殊文件；访问设备的驱动程序与具体设备无关的说法错误。</li>
+</ul>
+</div></div>
+<div class="card" id="s-3.5.4">
+<div class="card-h"><span class="code">3.5.4</span><span class="ttl">磁盘与调度算法</span><span class="badge">真题 5 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>FCFS（先来先服务）：按请求顺序依次寻道，公平，平均寻道距离长。</li>
+<li>SSTF（最短寻道时间优先）：优先处理离当前磁头最近的柱面，寻道效率高，可能引起边缘柱面饥饿。</li>
+<li>SCAN（电梯调度算法）：沿一个方向扫描到头，再反向扫描，彻底消除饥饿，对两端请求有利（两源说法不一致，以真题解析为准）。</li>
+<li>C-SCAN（循环扫描）：仅单向扫描，到底后立即返回起点重新扫描，消除了两端与中间请求的不均衡性。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：05 第3章 虚拟内存与第5章 磁盘，磁盘部分）</span></h4>
+<ul>
+<li>调度算法记忆：FCFS 傻走、SSTF 就近、SCAN 到底、CSCAN 单向回头、LOOK 见好就收。</li>
+<li>SCAN vs LOOK 一句话：SCAN 认端点，LOOK 认请求；CSCAN 回 0，CLOOK 回最小请求。</li>
+<li>算总距离的标准写法：先列“访问序列”，再在相邻两项下写差值，最后求和——差值一律取绝对值。</li>
+<li>地址三级口诀：“先柱面（找磁道）→ 再盘面（选磁头）→ 最后扇区（定点）”；柱面优先是为了少移臂、多换头。</li>
+<li>时间公式口诀：“寻道看跨几道，旋转就是半圈，传输按字节除一圈”。</li>
+<li>格式化三步口诀：“物理分扇区，中间划分区，最后建文件系统”；分区是“夹心”，两头都不算。</li>
+<li>易错：旋转延迟算成一圈，平均是半圈 1/(2r)；转速给 r/min 时先 ÷60 得 r/s；SCAN 忘记走到端点，最大请求 184 但盘面到 199 时 SCAN 必须多走 15 个磁道；CSCAN/CLOOK 漏算回程，CSCAN 的 199→0 是 199 个磁道，CLOOK 是回到最小请求而不是 0；扇区是读写/寻址最小单位，簇是分配最小单位。</li>
+<li>注：源B 称“真题里 SCAN/CSCAN 默认按 LOOK/CLOOK 处理”，与源A及 2015-32 真题解析（磁头走到最外侧 199 再返回）不一致，以真题解析为准。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 5 次</span></h4>
+<ul class="luodian">
+<li><b>2012-32</b>：影响磁盘 I/O 性能的因素：重排 I/O 请求次序（I/O 调度）、缓冲区结合预读与滞后写、优化文件物理块分布。</li>
+<li><b>2015-32</b>：SCAN 算法：磁头 58 号、从外侧向内侧移动时先访问 130 与 199 再返回访问 42 与 15，移过磁道数 325。</li>
+<li><b>2017-29</b>：低级格式化为磁盘每个扇区建立数据结构；分区独立于物理格式化与逻辑格式化；逻辑格式化创建文件系统。</li>
+<li><b>2018-30</b>：持续出现某磁道访问请求时 SSTF、SCAN、C-SCAN 都会一直服务该请求，FCFS 按请求次序调度最公平。</li>
+<li><b>2021-26</b>：最短寻道时间优先算法每次选离当前磁头最近的磁道，访问序列 184,182,187,176,199，总移动距离 41。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+</div></div>
+<div class="sec" id="anchor-cn"><div class="sec-h"><span class="no">4</span><h2>计算机网络</h2><span class="en">Computer Network · 18 section · 111 题</span></div><div class="sec-b">
+<h3 class="grp">第1章 计算机网络体系结构</h3>
+<div class="card" id="s-4.1.2">
+<div class="card-h"><span class="code">4.1.2</span><span class="ttl">三种交换方式</span><span class="badge">真题 1 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>电路交换：建连→传输→释放，独占通路、直达，中间不存储转发；完成时间最短。</li>
+<li>报文交换：整报文存储转发，逐跳收全再发；完成时间最长，不失序。</li>
+<li>分组交换：分组（首部 + 数据段）存储转发，可流水线并行；可能失序、重复，需编号重组。</li>
+<li>分组交换总时延 = (N + k − 1) × T（N 分组数，k 段数，T 单跳发送时延）；分组数按净荷算（分组长 − 首部）。</li>
+<li>报文交换总时延 = k × T_报文；电路交换 = 建立时间 + 1 个发送时延。</li>
+<li>完成传输时间：电路交换 &lt; 分组交换 &lt; 报文交换；只有分组交换会乱序。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第1章 计算机网络体系结构）</span></h4>
+<ul>
+<li>流水线万能式：总时延 = (N + k − 1) × T；记法“先把 N 个全发出去，再让最后一个走完全程”。</li>
+<li>三问定式：①分几组（用净荷算）→②单跳 T 是多少→③末分组还要走几跳；列式前先画甘特图。</li>
+<li>分组数用错分母是坑：分组数 = 总数据量 ÷ 每分组净荷，不是 ÷ 分组总长。</li>
+<li>字节忘乘 8 是坑：L 必须以 bit 代入；速率用 10⁶、容量用 2²⁰，题干注明进制时听题干的。</li>
+<li>电路交换不算中间转发时延：直通，只需“建立时间 + 源端发送时间”。</li>
+<li>(N+k−1)T 成立前提是各跳速率相同且无处理/排队停顿；速率不同时末分组每跳分别算。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 1 次</span></h4>
+<ul class="luodian">
+<li><b>2010-34</b>：考分组交换流水线总时延（净荷 980 B 分 1000 组，末组走完全程）。（源A无解析，据题干归纳）</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<div class="card" id="s-4.1.3">
+<div class="card-h"><span class="code">4.1.3</span><span class="ttl">OSI 与 TCP/IP 参考模型</span><span class="badge">真题 11 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>OSI 七层自下而上：物理层、数据链路层、网络层、传输层、会话层、表示层、应用层。</li>
+<li>自下而上第一个提供端到端服务的层次是传输层；会话层（第 5 层）负责建立、管理和终止应用间会话。</li>
+<li>各层 PDU：应用层报文、传输层报文段、网络层分组、数据链路层帧、物理层比特。</li>
+<li>TCP/IP 参考模型：应用层、传输层、网际层、网络接口层；网际层只提供无连接、不可靠、尽最大努力的数据报服务。</li>
+<li>协议三要素：语义（讲什么）、语法（如何讲）、时序/同步（交流次序）。</li>
+<li>流量控制分层：数据链路层是相邻结点间，网络层是全网，传输层是端到端。</li>
+<li>OSI 应用层数据传输效率：除物理层和应用层外，每层封装开销计入分母。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第1章 计算机网络体系结构）</span></h4>
+<ul>
+<li>“看见会话层就找同步/断点续传/检查点”；“看见压缩加密编码就找表示层”。</li>
+<li>“链路层看下一跳，网络层看两台机，传输层看两个进程”——地址分别是 MAC / IP / 端口。</li>
+<li>单位换算口诀：“速率频率十进制，容量存储二进制；K 大写 2¹⁰，k 小写 10³；题目指定听题目”。</li>
+<li>“可靠 = 面向连接”是错的：可靠看检错/纠错/应答，连接看有没有建链，两者独立。</li>
+<li>五层当成标准是错的：标准只有 OSI 七层与 TCP/IP 四层，五层是教学拆分。</li>
+<li>传输介质本身不属于物理层，物理层只规定接口特性。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 11 次</span></h4>
+<ul class="luodian">
+<li><b>2009-33</b>：考 OSI 自下而上首个提供端到端服务的层次（传输层）。</li>
+<li><b>2010-33</b>：考网络体系结构所描述的内容（分层、协议、服务与接口的界定）。</li>
+<li><b>2011-33</b>：考 TCP/IP 网际层提供无连接、不可靠、尽最大努力的数据报服务。</li>
+<li><b>2013-33</b>：考 OSI 应用层相邻层（表示层）实现的功能。</li>
+<li><b>2013-35</b>：考报文交换与分组交换总时延对比（分组数按净荷、末分组走完全程）。（两源说法不一致，以真题解析为准：题干为 8 Mb，按比特算 800 ms）</li>
+<li><b>2014-33</b>：考 OSI 中直接为会话层提供服务的层次（传输层）。</li>
+<li><b>2017-33</b>：考 OSI 各层封装开销下的应用层数据传输效率。</li>
+<li><b>2019-33</b>：考 OSI 第 5 层（会话层）的主要功能（会话建立、管理与终止）。</li>
+<li><b>2020-33</b>：考协议三要素中的时序（信息交流次序）。</li>
+<li><b>2021-33</b>：考 TCP/IP 传输层相邻下一层（网际层）的主要功能。</li>
+<li><b>2022-33</b>：考实现相邻结点间流量控制的层次（数据链路层）。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<h3 class="grp">第2章 物理层与通信基础</h3>
+<div class="card" id="s-4.2.1">
+<div class="card-h"><span class="code">4.2.1</span><span class="ttl">通信基础</span><span class="badge">真题 6 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>奈氏准则（无噪声极限）：C = 2W log₂V（b/s），W 带宽，V 信号状态数。</li>
+<li>香农公式（有噪声极限）：C = W log₂(1 + S/N)（b/s）；信噪比 dB = 10 log₁₀(S/N)。</li>
+<li>两条件都给时分别计算，取两者最小值作为极限数据传输速率。</li>
+<li>波特率与比特率：比特率 = 波特率 × log₂V；码元速率上限 2W 只是波特率上限。</li>
+<li>QAM 状态数 V = 相位数 × 每相位幅度数。</li>
+<li>信号传播速度不影响信道数据传输速率（影响传播时延）。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第2章物理层与第3章链路层上）</span></h4>
+<ul>
+<li>先问三句再动笔：①单位是 Hz 还是 bit/s？②问波特率还是比特率？③有噪声吗？</li>
+<li>有噪声→香农，无噪声→奈氏，条件全给→取小。</li>
+<li>dB 除 10 再取 10 的幂：30 dB → S/N = 10³ = 1000；log₂速记 1000 ≈ 10。</li>
+<li>QAM 求 V：相位数 × 每相位幅度数；QAM 求比特率：波特率 × log₂(状态数)。</li>
+<li>把 2W 当比特率是错的；香农公式前面没有系数 2；dB 必须先换算成 S/N 倍数再代入。</li>
+<li>ASK 的“4 个幅值”是 4 种状态（V = 4，2 bit/码元），不是 4 bit/码元。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 6 次</span></h4>
+<ul class="luodian">
+<li><b>2009-34</b>：考无噪声 QAM 最大速率（V = 4 相位 × 4 幅度 = 16，奈氏准则）。（源A无解析，据题干归纳）</li>
+<li><b>2011-34</b>：考波特率与比特率换算（4 相位调制，比特率 ÷ log₂4）。</li>
+<li><b>2014-35</b>：考不影响信道数据传输速率的因素（信号传播速度）。（源A无解析，据题干归纳）</li>
+<li><b>2016-34</b>：考香农公式求实际速率（30 dB → S/N = 1000，取理论值 50%）。</li>
+<li><b>2017-34</b>：考奈氏与香农两式取小反推最少信号状态数（N ≥ 32）。</li>
+<li><b>2022-34</b>：考奈氏准则（4 个幅值 ASK，V = 4，最大速率 800 kbps）。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<div class="card" id="s-4.2.2">
+<div class="card-h"><span class="code">4.2.2</span><span class="ttl">传输介质与编码调制</span><span class="badge">真题 7 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>物理层接口四特性：机械特性（形状、尺寸、引脚）、电气特性（电压范围）、功能特性（电平意义）、过程特性（事件顺序/时序）。</li>
+<li>NRZ：整码元电平不变；NRZI：电平翻转表示 0、保持不变表示 1；曼彻斯特：码元中点必跳变；差分曼彻斯特：中点跳变当时钟，边界跳变表示 0、无跳变表示 1。</li>
+<li>曼彻斯特与差分曼彻斯特：前者数据写在位内部，后者数据写在位边界；差分曼彻斯特第 1 位无上一位参考，无法判断。</li>
+<li>CDMA：各站码片序列相互正交；发送 1 发码片本身，发送 0 发反码，静默发全 0；接收端用规格化内积判决（+1 为 1，−1 为 0，0 为未发送）。</li>
+<li>100Base-T：100 Mb/s 快速以太网，基带传输，传输介质为双绞线（T 表双绞线，F 表光纤）。</li>
+<li>物理地址（MAC 地址）属于数据链路层，不属于物理层。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第2章物理层与第3章链路层上）</span></h4>
+<ul>
+<li>编码口诀：归零“中间回零”；非归零“整位不动”；反向非归零“1 不跳 0 跳”；曼彻斯特“中间必跳，前高后低是 1”；差分曼彻斯特“中间跳当时钟，边界无跳是 1”。</li>
+<li>曼彻斯特 vs 差分曼彻斯特一句话：前者数据写在位内部，后者数据写在位边界。</li>
+<li>差分曼彻斯特从第一位开始判是错的：第一位没有前一位参考，必然判错。</li>
+<li>曼彻斯特与差分曼彻斯特的 1/0 规则互换是错的，两条规则来源完全不同。</li>
+<li>集线器当交换机用是错的：集线器不隔离冲突域、带宽均分；交换机才隔离冲突域。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 7 次</span></h4>
+<ul class="luodian">
+<li><b>2012-34</b>：考物理层接口特性中描述事件发生顺序的是过程特性。</li>
+<li><b>2013-34</b>：考 10Base-T 网卡收到的曼彻斯特信号波形对应的比特串。</li>
+<li><b>2014-37</b>：考 CDMA 接收端用码片内积解出 A 发送的数据。（源A无解析，据题干归纳）</li>
+<li><b>2015-34</b>：考两种编码方案的识别（NRZ 与曼彻斯特编码的特点）。</li>
+<li><b>2018-34</b>：考不属于物理层接口规范定义范畴的选项（物理地址属数据链路层）。</li>
+<li><b>2019-34</b>：考 100Base-T 快速以太网使用的导向传输介质（双绞线）。</li>
+<li><b>2021-34</b>：考差分曼彻斯特编码波形对应的位串（第 1 位无法判断，从第 2 位起判）。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<h3 class="grp">第3章 数据链路层与 MAC</h3>
+<div class="card" id="s-4.3.1">
+<div class="card-h"><span class="code">4.3.1</span><span class="ttl">组帧与差错控制</span><span class="badge">真题 1 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>奇偶校验：码距 d = 2，仅检奇数个比特错，偶数个错漏检，无纠错与定位能力。</li>
+<li>CRC：检错能力强（单比特、双比特、奇数个错及长度 ≤ r 的突发错全检出），仅检错不纠错；生成多项式须含常数项 1。</li>
+<li>CRC 计算：数据后补 r 个 0，模 2 除得余数 FCS 拼接发送；接收端余数为 0 接收、非 0 丢弃。</li>
+<li>海明码：码距 d = 3，检 2 错、纠 1 错；校验位位数满足 2^r ≥ k + r + 1，校验位放在 2^(i−1) 位置。</li>
+<li>海明码伴随式非 0 时，其十进制值直接对应出错位编号，取反即修复。</li>
+<li>HDLC 帧格式：标志 F（8 位，01111110）｜地址 A（8 位）｜控制 C（8 位）｜信息 Info（可变）｜帧检验序列 FCS（16 位，CRC）｜标志 F。FCS 校验区间是地址 A + 控制 C + 信息 Info；透明传输区间还包括 FCS。</li>
+<li>零比特填充：发送端扫描数据比特流，每遇到连续 5 个 1 就在其后插入一个 0；接收端找到标志 F 定界后扫描比特流，每遇到 5 个连续的 1 就删掉其后的一个 0，还原原数据。这样数据里即使出现 01111110 也不会被误认成标志。</li>
+<li>HDLC 与 PPP 的区别：PPP 面向字节、HDLC 面向比特；PPP 帧比 HDLC 多一个 2 字节协议字段（0x0021 表示 IP 数据报）；PPP 不用序号与确认（只保证无差错接收），HDLC 信息帧用编号与确认、能提供可靠传输。</li>
+<li>HDLC 属超纲（王道书标 *，已在最新大纲删除），但 2013 年真题考过，收录合理。（王道 计网指导 3.2.3 p.70、*3.7.3 pp.124–125；ddy OneNote 计网第3章）</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第2章物理层与第3章链路层上）</span></h4>
+<ul>
+<li>源B 未覆盖（B 注：HDLC 已删出大纲，3.2 组帧与 3.3 差错控制留到后期补，本笔记无内容）；本节 HDLC 内容由王道指导与 ddy 笔记补齐。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 1 次</span></h4>
+<ul class="luodian">
+<li><b>2013-37</b>：考 HDLC 组帧后对应的比特串（标志与填充规则）。答案 A：数据 01111100 01111110，第一字节 5 个连续 1 后插 0，第二字节 6 个连续 1、第 5 个 1 后插 0，填充后为 01111100 00111110 10。（源A解析损坏但答案字段正确，已独立验算）</li>
+</ul>
+</div></div>
+<div class="card" id="s-4.3.2">
+<div class="card-h"><span class="code">4.3.2</span><span class="ttl">流量控制与滑动窗口机制</span><span class="badge">真题 8 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>停止-等待：W_T = 1，W_R = 1，单帧逐一确认；序号比特数 n ≥ 1。</li>
+<li>GBN：W_T &gt; 1，W_R = 1，累计确认，超时重传已发未确认的全部帧；W_T ≤ 2^n − 1。</li>
+<li>SR：W_T &gt; 1，W_R &gt; 1，逐帧非累计确认，仅重传出错帧；W_T + W_R ≤ 2^n，通常 W_T = W_R = 2^(n−1)。</li>
+<li>信道利用率：停等 U = t_tx / (t_tx + 2 × t_prop + t_ack)；流水线 U = min(1, W_T × t_tx / T_cycle)。</li>
+<li>最高利用率判据：W_T ≥ ⌈T_cycle / t_tx⌉；帧长给范围时按最短帧算（所需窗口最大）。</li>
+<li>确认帧若与数据帧等长，须计入确认帧发送时延；若忽略则 t_ack ≈ 0。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第2章物理层与第3章链路层上）</span></h4>
+<ul>
+<li>三协议窗口一句话：停等“一一对应，1 位编号”；GBN“收窗为 1，发窗占满减一”（2^n−1）；SR“收发对半分”（2^(n−1)）。</li>
+<li>判协议：出现“累计确认”→GBN；出现“缓存失序帧”“仅重传出错帧”→SR。</li>
+<li>GBN 重传个数：收到最大确认号 m 后，超时重发“从 m+1 到已发送的最后一帧”。</li>
+<li>SR 重传个数：只数“已超时/已判错”的帧，未超时的不管。</li>
+<li>GBN 收到 0、2、3 的确认却重发 1~3 是错的：累计确认意味着 3 号确认已包含 0~2，应从 4 号起重发。</li>
+<li>求 n 时用 2^n ≥ K 而不是 2^n − 1 ≥ K（GBN），边界上会差一位。</li>
+<li>2τ 只乘了一次 τ 是错的：题目给“单向传播时延”必须乘 2；给 RTT 则直接用。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 8 次</span></h4>
+<ul class="luodian">
+<li><b>2009-35</b>：考 GBN 累计确认下超时需重发的帧数（只收到 0、2、3 号确认）。（源A无解析，据题干归纳）</li>
+<li><b>2011-35</b>：考 SR 非累计确认下超时需重发的帧数（仅重传 0、2 号帧）。</li>
+<li><b>2012-36</b>：考 GBN 达到最高信道利用率的帧序号位数（按最短帧算）。</li>
+<li><b>2014-36</b>：考 GBN 发送窗口与往返周期下的最大平均数据传输速率。（源A无解析，据题干归纳）</li>
+<li><b>2015-35</b>：考滑动窗口链路利用率 ≥ 80% 时帧序号的最少比特数。</li>
+<li><b>2018-36</b>：考停-等协议信道利用率 40% 时的数据帧长度。</li>
+<li><b>2019-35</b>：考滑动窗口无二义性条件（发送窗口 + 接收窗口 ≤ 2^n）下的接收窗口最大值。</li>
+<li><b>2020-36</b>：考停-等协议的最大信道利用率（发送时延 ÷ 发送周期）。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<div class="card" id="s-4.3.3">
+<div class="card-h"><span class="code">4.3.3</span><span class="ttl">介质访问控制</span><span class="badge">真题 7 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>CSMA/CD：先听后发、边发边听，冲突停发；用于有线以太网（IEEE 802.3），MAC 层无确认。</li>
+<li>争用期 = 2τ（τ 为单程传播时延）；最短帧长 = 2τ × 数据传输速率；传统以太网最短帧长 64 B。</li>
+<li>二进制指数退避：k = min(重传次数, 10)，从 [0, 2^k − 1] 中随机选 r，退避 r × 2τ；重传 16 次仍失败则报错。</li>
+<li>CSMA/CA：用于无线局域网（IEEE 802.11），碰撞避免，必须有 ACK；无线不能用 CD（信号衰减大、无法边发边听，存在隐蔽站）。</li>
+<li>CSMA/CA 用 RTS/CTS 预约信道，用 NAV 虚拟载波监听；IFS 优先级：SIFS 最短最高，DIFS 最长最低。</li>
+<li>随机访问（ALOHA、CSMA）可能发生冲突；信道划分与轮询访问不会发生冲突。</li>
+<li>冲突域隔离：集线器/中继器不能隔离，交换机/网桥能隔离冲突域、不能隔离广播域，路由器两者都能隔离。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第3章 数据链路层下）</span></h4>
+<ul>
+<li>十六字诀：先听后发→边听边发→冲突停发→随机重发。</li>
+<li>最小帧长三步法：①单位全换成 bit 与 bit/s；②2τ = L/V 或 L = 2τV；③有中继器/集线器时把设备延迟并入 τ 再乘 2。</li>
+<li>退避三句：k = min(n, 10)；r ∈ [0, 2^k−1]；退避 = r × 2τ；10 Mb/s 以太网 2τ = 51.2 μs 直接背。</li>
+<li>CA 时序记法：只有第一个是 DIFS，后面全是 SIFS；“先 DIFS，再退避，RTS→CTS→数据→ACK”。</li>
+<li>域的口诀：集线器什么都不隔；交换机隔冲突不隔广播；路由器两个都隔。</li>
+<li>2τ 与 τ 混用是错的：争用期是往返 2τ；求距离时 L = V·2τ，解出的 2τ 要除 2 才是单程时延。</li>
+<li>k 的截断是坑：第 11、12、16 次重传 k 都是 10，不是 11/12/16。</li>
+<li>CSMA/CD 无法用于无线：不是“无线不想用”，而是检测不到（发射信号淹没接收信号 + 隐藏站）。</li>
+<li>DIFS 与 SIFS 长短写反就全错：SIFS 最短（优先级最高），DIFS 最长。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 7 次</span></h4>
+<ul class="luodian">
+<li><b>2009-37</b>：考 CSMA/CD 最小帧长变化与最远两站点距离的关系。</li>
+<li><b>2013-36</b>：考可能发生冲突的介质访问控制方法（随机访问类）。</li>
+<li><b>2015-36</b>：考关于 CSMA/CD 协议叙述中的错误项（CSMA/CD 用于有线，CSMA/CA 用于无线）。</li>
+<li><b>2016-35</b>：考交换机隔离冲突域下确认帧在物理层可达的主机（仅同冲突域内主机）。</li>
+<li><b>2016-36</b>：考含集线器再生延迟时两站点理论上可相距的最远距离。</li>
+<li><b>2019-36</b>：考 CSMA/CD 最小帧长与单向传播时延的关系（发送最小帧时间 ≥ 2τ）。</li>
+<li><b>2020-37</b>：考 802.11 发送帧前等待的帧间间隔中最长的是 DIFS。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<div class="card" id="s-4.3.4">
+<div class="card-h"><span class="code">4.3.4</span><span class="ttl">局域网与交换机</span><span class="badge">真题 9 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>以太网交换机是多端口网桥，工作在数据链路层；转发决策用目的 MAC 地址（自学习用源地址）。</li>
+<li>以太网 MAC 协议：无连接，不对数据帧编号、不要求对方确认，尽最大努力交付（不可靠服务）。</li>
+<li>以太网帧：目的 MAC 6 B + 源 MAC 6 B + 类型 2 B + FCS 4 B = 18 B 头尾；最小帧 64 B，最大帧 1518 B。</li>
+<li>直通交换：只收目的 MAC（6 B）即转发；存储转发：收完整帧再转发。</li>
+<li>交换机转发表查不到目的地址时泛洪（除入端口外所有端口）；查到则只从对应端口转发。</li>
+<li>交换机隔离冲突域、不隔离广播域；只有路由器（或 VLAN）能隔离广播域。</li>
+<li>802.11 数据帧地址：地址 1 = 当前接收方，地址 2 = 当前发送方，地址 3 = 剩下的那个；To AP 帧的地址 1 是 AP 的 MAC（BSSID）。</li>
+<li>CSMA/CA 是唯一对正确接收的数据帧进行确认的 MAC 协议（CDMA 属物理层，CSMA/CD 无确认）。</li>
+<li>源A本章 md 未单列交换机/网桥小节（见汇报）；以上交换机要点据源B第3章与源A真题解析。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第3章 数据链路层下）</span></h4>
+<ul>
+<li>帧长记忆链：18（头尾）= 6+6+2+4；64（最小）= 18+46；1518（最大）= 18+1500。</li>
+<li>802.11 地址记法：地址 1 = 当前收、地址 2 = 当前发、地址 3 = 剩下的那个。</li>
+<li>判别协议看数字：802.3 = 以太网（用 CD），802.11 = 无线局域网（用 CA）；10Base-T 一律是以太网。</li>
+<li>自学习用的是源地址，转发用的是目的地址：搞反则整道题全错；“查不到就泛洪”要排除入端口。</li>
+<li>交换表初始为空时第一次必然泛洪：问“哪几个端口收到”须先算“空表→泛洪”这一步。</li>
+<li>交换机隔离冲突域但不隔离广播域：广播帧仍会泛洪到所有端口。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 9 次</span></h4>
+<ul class="luodian">
+<li><b>2009-36</b>：考以太网交换机转发决策使用的 PDU 地址（目的物理地址）。（源A无解析，据题干归纳）</li>
+<li><b>2011-36</b>：考对正确接收的数据帧进行确认的 MAC 协议（CSMA/CA）。</li>
+<li><b>2012-35</b>：考以太网 MAC 协议提供的服务（无连接、不可靠、尽最大努力交付）。</li>
+<li><b>2013-38</b>：考直通交换转发一个以太网帧引入的至少转发延迟（只收目的 MAC 6 B）。答案 B（6×8bit ÷ 100Mbps = 0.48μs）。（源A无解析无答案，已独立求解）。</li>
+<li><b>2014-34</b>：考交换机自学习与转发表下数据帧与确认帧的转发端口。（源A无解析，据题干归纳）</li>
+<li><b>2015-37</b>：考关于交换机叙述中的正确项（隔离冲突域、不隔离广播域）。</li>
+<li><b>2016-33</b>：考 R1、Switch、Hub 实现的最高功能层（网络层、数据链路层、物理层）。</li>
+<li><b>2017-35</b>：考 802.11 To AP 数据帧的地址 1、2、3 分别是谁的 MAC 地址。</li>
+<li><b>2018-35</b>：考 802.11 CSMA/CA 进行信道预约的方法（RTS/CTS）。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<h3 class="grp">第4章 网络层与 IP 协议</h3>
+<div class="card" id="s-4.4.1">
+<div class="card-h"><span class="code">4.4.1</span><span class="ttl">网络层的功能</span><span class="badge">真题 2 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>网络层两大功能：路由选择（控制平面，运行路由协议维护路由表）与分组转发（数据平面，查表转发）。</li>
+<li>虚电路服务：面向连接，先建连；分组只带短虚电路号；同一虚电路分组走同一路由、有序到达；不需为每条虚电路预分配带宽。</li>
+<li>数据报服务：无连接，每分组带完整源/目的地址，独立选路，可能失序、丢失。</li>
+<li>SDN：控制平面与数据平面分离；控制器向数据平面交换机下发流表用南向接口，对上层开发者提供北向接口。</li>
+<li>源A本章 md 未展开虚电路/SDN（见汇报）；以上要点据源B第4章详解与源A真题解析。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第4章 网络层）</span></h4>
+<ul>
+<li>源B 口诀/易错节未覆盖本节主题（B 详解有虚电路 vs 数据报对比表，SDN 注“第一轮跳过”；口诀/易错节无对应条目）。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 2 次</span></h4>
+<ul class="luodian">
+<li><b>2020-34</b>：考关于虚电路网络叙述中的错误项（不需为每条虚电路预分配带宽）。</li>
+<li><b>2022-37</b>：考 SDN 控制器向数据平面交换机下发流表使用的接口（南向接口）。</li>
+</ul>
+</div></div>
+<div class="card" id="s-4.4.2">
+<div class="card-h"><span class="code">4.4.2</span><span class="ttl">IPv4 协议与地址</span><span class="badge">真题 17 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>IPv4 首部三长度单位：首部长度 × 4 B（最小 20 B，最大 60 B）；总长度 × 1 B（最大 65535 B）；片偏移 × 8 B（除末片外每片数据须为 8 B 整数倍）。</li>
+<li>IP 分片：每片数据 = MTU − 20 后向下取 8 的倍数；片偏移是数据在原数据报中的绝对位置 ÷ 8；每片都要加 20 B 首部；末片可任意小。</li>
+<li>子网划分：借 n 位分子网 → 2^n 个子网；每网可分配主机数 = 2^h − 2（全 0 网络地址、全 1 广播地址不可分配）；子网号可取全 0/全 1。</li>
+<li>网络地址 = IP 与子网掩码逐位相与；广播地址 = 主机位全置 1（= 网络地址 + 块大小 − 1）。</li>
+<li>路由聚合：找共同前缀，不同位之后全清零；n 个连续等长 /p 块 → /(p − log₂n)（2 块减 1、4 块减 2）。</li>
+<li>最长前缀匹配：多条匹配取前缀最长者；默认路由 0.0.0.0/0 恒匹配，是兜底。</li>
+<li>特殊地址：0.0.0.0/32 只能作源地址（本主机本网络）；127.0.0.1 回送地址；255.255.255.255 受限广播（路由器不转发）。</li>
+<li>ARP：将 IP 地址解析为 MAC 地址；广播请求、单播响应；跨网段解析的是网关的 MAC。</li>
+<li>ICMP 报文封装在 IP 分组中，IP 直接为 ICMP 提供服务；拥塞丢弃时路由器可发源点抑制报文。</li>
+<li>DHCP：应用层协议，UDP 承载，服务器 67、客户机 68；DISCOVER→OFFER→REQUEST→ACK 四步全广播，客户机源地址 0.0.0.0。</li>
+<li>默认网关须是与主机直连的路由器接口地址；同网段通信不看网关；判断同网段用发送方自己的掩码。</li>
+<li>/30 点对点链路只有 2 个可用地址，已知一个，对端在同块另一号（末两位 01↔10）。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第4章 网络层）</span></h4>
+<ul>
+<li>首部三单位：首部长度 ×4、总长度 ×1、片偏移 ×8；默念“四一八”。</li>
+<li>分片四步：减首部（−20）→除 8 取整（↓×8）→算片数→算偏移（起始序号 ÷8）；偏移是绝对位置，不是相对上一片。</li>
+<li>掩码速记：128/192/224/240/248/252/254 ↔ 多 1/2/3/4/5/6/7 位。</li>
+<li>求网络地址：前 N 位照抄，只展开跨界的那一个字节；求广播地址：网络地址 + 块大小 − 1。</li>
+<li>聚合公式：n 个连续等长 /p 块 → /(p − log₂n)；聚合判定：先找第一个不同的位，它前面的就是公共前缀。</li>
+<li>同网段判定：拿自己的掩码分别与目的 IP、本机 IP 相与，两个网络号相等 → 同网段。</li>
+<li>/30 速判：只有两个可用地址，已知一个，另一个在“同块另一号”。</li>
+<li>最长前缀匹配：先能匹配、再取最长；0.0.0.0/0 恒匹配，是兜底。</li>
+<li>DHCP 口诀：“D-O-R-A，四步全广播；客户源全零，服务器源是自己”。</li>
+<li>ARP 口诀：“广播请求、单播响应；跨网段求的是网关的 MAC”。</li>
+<li>IP/MAC 口诀：“IP 端到端不变，MAC 逐跳都变”（NAT 例外）。</li>
+<li>可用主机数忘记减 2 是坑：/29 是 6 台不是 8 台；/30 是 2 台不是 4 台。</li>
+<li>把“受限广播”和“直接广播”混为一谈是错的：受限 = 32 位全 1（路由器不转发）；直接广播 = 主机号全 1。</li>
+<li>以为网关配错就一定不通是错的：同网段通信不看网关。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 17 次</span></h4>
+<ul class="luodian">
+<li><b>2010-36</b>：考路由器因拥塞丢弃 IP 分组时可发的 ICMP 报文类型（源点抑制）。（源A无解析，据题干归纳）</li>
+<li><b>2010-37</b>：考定长子网划分的最大子网个数与每子网最大可分配地址数。（源A无解析，据题干归纳）</li>
+<li><b>2011-37</b>：考路由聚合（两个 /25 子网聚合为一条路由加入 R1）。</li>
+<li><b>2011-38</b>：考 /30 子网中能接收目的地址为广播地址分组的最大主机数（2 台）。答案 C。（源A无解析无答案，已独立求解）。</li>
+<li><b>2012-33</b>：考在 TCP/IP 体系中直接为 ICMP 提供服务的协议（IP）。</li>
+<li><b>2012-38</b>：考 ARP 协议的功能（IP 地址解析为 MAC 地址）。</li>
+<li><b>2012-39</b>：考子网广播地址的计算（主机号全置 1）。</li>
+<li><b>2016-38</b>：考 /30 点对点链路中 R2 转发 IP 分组的源与目的 IP 地址。</li>
+<li><b>2016-39</b>：考默认网关与子网掩码配置错误时的主机连通性判断。</li>
+<li><b>2017-36</b>：考只能作源 IP 地址、不能作目的 IP 地址的地址（0.0.0.0）。</li>
+<li><b>2017-38</b>：考 /16 网络划分为 128 个子网后每子网可分配的最大 IP 地址数。</li>
+<li><b>2018-38</b>：考路由聚合技术（4 条 /21 路由找共同前缀聚合）。</li>
+<li><b>2019-37</b>：考变长子网划分下可能的最小子网的可分配 IP 地址数。</li>
+<li><b>2021-35</b>：考将一个 IP 网络划分为 3 个互不重叠子网时不可能的另一子网。</li>
+<li><b>2021-36</b>：考 IP 分片第 2 个分片的总长度字段与 MF 标志位（MTU 800 B）。</li>
+<li><b>2022-35</b>：考主机 IP 与子网掩码相与求所在网络的网络地址。</li>
+<li><b>2022-36</b>：考主机 H 的子网掩码与默认网关（直连路由器接口地址）。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<div class="card" id="s-4.4.4">
+<div class="card-h"><span class="code">4.4.4</span><span class="ttl">路由算法与协议</span><span class="badge">真题 5 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>RIP：内部网关协议，距离向量算法（Bellman-Ford），度量为跳数，≤ 15 跳可达、16 = 不可达；UDP 520 承载，每 30 s 向邻居发整张表。</li>
+<li>OSPF：内部网关协议，链路状态算法（Dijkstra），度量为链路费用；直接封装在 IP 中（协议号 89），洪泛 LSA，有区域（骨干区 0）。</li>
+<li>BGP-4：外部网关协议，路径向量算法，度量为 AS 路径；TCP 179 承载，用于 AS 之间。</li>
+<li>距离向量更新：收到邻居向量后，取“经该邻居到达目的网络的距离 + 1”与原路由比较，取更短者；无则添加。</li>
+<li>最长前缀匹配：目的地址与多条路由记录都匹配时，选前缀最长的记录转发；无匹配且无默认路由则丢弃并回 ICMP 终点不可达。</li>
+<li>路由器查表转发：特定主机路由优先于网络路由；默认路由 0.0.0.0/0 兜底。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第4章 网络层）</span></h4>
+<ul>
+<li>三协议口诀：“RIP 数跳（≤15、30 s、UDP 520）；OSPF 算代价（LS、洪泛、区域 0、协议号 89）；BGP 看路径（TCP 179、AS 间）”。</li>
+<li>最长前缀匹配：先能匹配、再取最长；0.0.0.0/0 恒匹配，是兜底。</li>
+<li>RIP 的 16 当成“可到达”是错的：RIP 里 16 = 不可达，最大有效跳数是 15。</li>
+<li>RIP 的三个定时器：更新 30 s、超时 180 s（6 个周期未收到 → 置 16 不可达）、清除 120 s。</li>
+<li>OSPF 的五种分组：Hello、DD、LSR、LSU、LSAck。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 5 次</span></h4>
+<ul class="luodian">
+<li><b>2010-35</b>：考 RIP 距离向量中 &lt;net1, 16&gt; 的含义（16 = 不可达，R1 不能经 R2 到达）。（源A无解析，据题干归纳）</li>
+<li><b>2015-38</b>：考路由器路由表最长前缀匹配转发（目的地址 169.96.40.5 选 /27 记录）。（源A sectionCode 损坏为 169.96.40，据题干归入本节）</li>
+<li><b>2016-37</b>：考 RIP 不可达通告后 R2 更新到达该网络的距离（置 16 的传播计算）。</li>
+<li><b>2017-37</b>：考直接封装 RIP、OSPF、BGP 报文的协议（UDP、IP、TCP）。</li>
+<li><b>2021-37</b>：考距离向量路由算法下路由器 E 更新后的到达目的网络的路由表。</li>
+</ul>
+<p class="hubu">互补：发哥课未讲，源B 为教材补充，源A 补齐</p>
+</div></div>
+<div class="card" id="s-4.4.5">
+<div class="card-h"><span class="code">4.4.5</span><span class="ttl">网络层设备</span><span class="badge">真题 3 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>路由器功能：运行路由协议设置路由表；监测到拥塞时合理丢弃 IP 分组并可发源点抑制 ICMP；对 IP 分组首部做差错校验、丢弃有差错首部的报文（但不保证分组不丢失）。</li>
+<li>跨网传输时 IP 地址端到端不变，MAC 地址逐跳变化（NAT 除外）。</li>
+<li>只有路由器能隔离广播域；中继器、集线器既不能隔离冲突域也不能隔离广播域；网桥/交换机只隔离冲突域。</li>
+<li>源A本章 md 未单列网络层设备小节（见汇报）；以上要点据源B第4章详解十七与源A真题解析。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第4章 网络层）</span></h4>
+<ul>
+<li>域的口诀：集线器什么都不隔；交换机隔冲突不隔广播；路由器两个都隔；冲突域数端口，广播域数路由接口。</li>
+<li>以为 NAT 路由器像普通路由器一样不改 IP 是错的：普通路由器不改 IP，NAT 路由器一定改。</li>
+<li>以为 IP 地址也会逐跳改变是错的：只有 MAC 逐跳变，IP 端到端不变（NAT 是唯一例外）。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 3 次</span></h4>
+<ul class="luodian">
+<li><b>2010-38</b>：考能够抑制广播风暴的网络设备（仅路由器）。（源A无解析，据题干归纳）</li>
+<li><b>2012-37</b>：考关于 IP 路由器功能的正确描述（路由协议、拥塞丢弃、首部校验）。</li>
+<li><b>2018-37</b>：考 IP 分组跨路由器传输时 MAC 地址与 IP 地址的变化（IP 不变、MAC 逐跳变）。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<h3 class="grp">第5章 传输层 (TCP / UDP)</h3>
+<div class="card" id="s-4.5.1">
+<div class="card-h"><span class="code">4.5.1</span><span class="ttl">UDP 协议特点与应用</span><span class="badge">真题 4 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>UDP：无连接、不可靠（尽最大努力交付）、面向报文（保留应用层边界，不拆分不合并）；支持单播、多播、广播。</li>
+<li>UDP 首部固定 8 B（源端口、目的端口、长度、校验和各 2 B）；无流量控制、无拥塞控制。</li>
+<li>UDP 提供复用/分用服务；分用依据是目的端口号（源端口号仅在需对方回信时选用）。</li>
+<li>UDP 校验和只检错、不保障可靠传输；可靠传输靠 TCP 的确认重传、滑动窗口、保序去重。</li>
+<li>TCP 与 UDP 传输效率：应用层数据 12 B 时，UDP 总长 20 B、效率 60%；TCP 首部最短 20 B，总长 32 B、效率 37.5%。</li>
+<li>DNS 适合 UDP（无连接、高效开销小）；FTP、SMTP、HTTP 要求可靠，用 TCP。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第5章传输层与第6章应用层）</span></h4>
+<ul>
+<li>UDP 长度与 IP 首部长度混淆是坑：UDP 长度 = 首部 + 数据（最小 8）；IP 首部长度只算首部。</li>
+<li>UDP 校验和忘记取反 / 忘记进位回卷是坑：最高位进位要加到最低位，最后必须按位取反。</li>
+<li>“发用 SMTP，收用 POP3”；DNS 查询默认 UDP 53（源B第6章部分）。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 4 次</span></h4>
+<ul class="luodian">
+<li><b>2014-39</b>：考关于 UDP 叙述的正确项（无连接、复用/分用；校验和不保障可靠）。（源A无解析，据题干归纳）</li>
+<li><b>2018-33</b>：考可用传输层无连接服务的应用层协议（DNS 用 UDP）。</li>
+<li><b>2018-39</b>：考 UDP 实现分用时依据的头部字段（目的端口号）。</li>
+<li><b>2021-39</b>：考 12 B 应用层数据经 UDP 与 TCP 传输的最大传输效率（60% 与 37.5%）。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<div class="card" id="s-4.5.2">
+<div class="card-h"><span class="code">4.5.2</span><span class="ttl">TCP 协议</span><span class="badge">真题 18 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>TCP：面向连接、可靠交付、面向字节流、点对点单播；首部最短 20 B、最长 60 B（数据偏移 × 4 B）。</li>
+<li>序号规则：某段数据字节序号范围 [seq, seq + L − 1]；确认号 ACK = 已连续按序接收的最后字节序号 + 1（期望收到的下一字节序号）。</li>
+<li>发送窗口 W = min(cwnd, rwnd)；还可发送字节数 = W − 已发送未确认字节数。</li>
+<li>三次握手：SYN=1, seq=x → SYN=1, ACK=1, seq=y, ack=x+1 → ACK=1, seq=x+1, ack=y+1；SYN 与 FIN 各消耗 1 个序号。</li>
+<li>四次挥手：主动关闭方发 FIN 后收 FIN 发 ACK，进入 TIME-WAIT，等 2MSL 后进 CLOSED；被动关闭方最少 1.5 RTT。</li>
+<li>慢开始：cwnd &lt; ssthresh 时每 RTT 指数翻倍；拥塞避免：cwnd ≥ ssthresh 时每 RTT 加 1 MSS。</li>
+<li>超时：ssthresh = cwnd/2，cwnd = 1，重新慢开始；收到 3 个冗余 ACK 触发快重传，ssthresh = cwnd/2，cwnd = ssthresh，直入拥塞避免（快恢复）。</li>
+<li>零窗口死锁：收到 rwnd = 0 启动持续计时器，超时发 1 字节零窗口探测报文段。</li>
+<li>流量控制是接收方以接收能力抑制发送方；拥塞控制是发送方按网络拥塞程度调控自身发送能力。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第5章传输层与第6章应用层）</span></h4>
+<ul>
+<li>序号三式：末字节 = 起始 + 长度 − 1；下一段起始 = 起始 + 长度；本段起始 = 上一段起始 + 上一段长度。</li>
+<li>握手/挥手默写模板：三次握手 SYN=1,seq=x → SYN=1,ACK=1,seq=y,ack=x+1 → ACK=1,seq=x+1,ack=y+1；有确认号就必须 ACK=1。</li>
+<li>拥塞控制画图法：阈值前 ×2，阈值后 +1；遇超时 cwnd 写 1、ssthresh 写“当前 cwnd ÷ 2”；遇三冗余 ACK cwnd 直接写“当前 cwnd ÷ 2”，不写 1。</li>
+<li>释放时间公式：主动关闭方 = 1 RTT + 2 MSL；被动关闭方 = 1.5 RTT。</li>
+<li>把序号当报文段序号是错的：长度 200、起始 100 的段，末字节是 299，下一段起始是 300。</li>
+<li>确认号理解反了是错的：确认号 N 表示“N−1 及以前都收到”，不是“最后收到的是 N”。</li>
+<li>ssthresh 减半减错对象是坑：减的是拥塞发生时的 cwnd，不是原 ssthresh。</li>
+<li>快恢复把 cwnd 写成 1 是错的：三个冗余 ACK → cwnd = 新 ssthresh；只有超时才 cwnd = 1。</li>
+<li>忘记 SYN/FIN 各消耗一个序号是坑：首序号 1000，FIN seq = 5001，则数据是 1001~5000 共 4000 B。</li>
+<li>TIME-WAIT 认错主体是坑：TIME-WAIT 由主动关闭方进入。</li>
+<li>窗口扣减漏算在途数据是坑：已发 200 B 未确认，通告窗口 500，则还能发 500−200 = 300 B。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 18 次</span></h4>
+<ul class="luodian">
+<li><b>2009-38</b>：考 TCP 累计确认号的计算（两段 300 B + 500 B，首序号 200）。（源A无解析，据题干归纳）</li>
+<li><b>2009-39</b>：考超时后慢开始与拥塞避免下 4 个 RTT 后的拥塞窗口大小。（源A无解析，据题干归纳）</li>
+<li><b>2010-39</b>：考发送窗口 min(cwnd, rwnd) 下还可发送的最大字节数（扣已发未确认）。（源A无解析，据题干归纳）</li>
+<li><b>2011-39</b>：考三次握手第二次握手段的正确形式（SYN=1, ACK=1, ack = 11221）。答案 C。（源A无解析无答案，已独立求解）。</li>
+<li><b>2011-40</b>：考 TCP 序号与确认号的推导（第 3 段序号 900，乙仅收到第 1、3 段）。</li>
+<li><b>2013-39</b>：考已建连双方持续传输时甲立即发送段的序号与确认号。</li>
+<li><b>2014-38</b>：考超时后 10 个 RTT 的发送窗口（慢开始转拥塞避免，受 rwnd 10 KB 封顶）。（源A无解析，据题干归纳）</li>
+<li><b>2015-33</b>：考 POP3 接收邮件使用的传输层服务类型（面向连接的 TCP）。</li>
+<li><b>2015-39</b>：考 TCP 流量控制与拥塞控制下发送窗口的决定（min[拥塞窗口, 接收窗口]）。</li>
+<li><b>2017-39</b>：考慢开始下发送窗口达到 32 KB 至少经过的时间（每 RTT 翻倍）。</li>
+<li><b>2019-38</b>：考收到 3 个重复确认时触发快速重传（重发 seq = 100 的段）。</li>
+<li><b>2019-39</b>：考三次握手第三次握手段的确认序号（乙初始序号 + 1）。</li>
+<li><b>2020-38</b>：考拥塞窗口从 8 KB 增长到 32 KB 所需的最长时间（加法增大阶段）。</li>
+<li><b>2020-39</b>：考 SYN/FIN 消耗序号下已发送应用层数据的字节数（4000 B）。</li>
+<li><b>2021-38</b>：考客户收 FIN 发 ACK 后客户的 TCP 状态（TIME-WAIT，需等 2MSL）。</li>
+<li><b>2021-40</b>：考接收窗口限制下甲未收到新确认前还能发送的数据序号范围。</li>
+<li><b>2022-38</b>：考超时后拥塞窗口再次增长到 16 KB 至少需要的时间。答案 C（超时后 ssthresh=8KB、cwnd=1KB，慢开始 3 个 RTT 到 8KB，拥塞避免 8 个 RTT 到 16KB，共 11 RTT）。（源A无解析无答案，已独立求解）。</li>
+<li><b>2022-39</b>：考客户主动断开时 C 与 S 进入 CLOSED 状态的最少时间（1 RTT + 2MSL 相关）。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+<h3 class="grp">第6章 应用层 (HTTP / DNS / FTP / 邮件 / DHCP)</h3>
+<div class="card" id="s-4.6.1">
+<div class="card-h"><span class="code">4.6.1</span><span class="ttl">网络应用模型</span><span class="badge">真题 3 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>DNS 查询最少 0 次（本地/本地域名服务器缓存命中）；迭代解析最多 4 次：根 → 顶级（.com）→ 权限（xyz.com）→ 权限（abc.xyz.com）。</li>
+<li>递归查询：一查到底，由被查询者代劳；迭代查询：分步指路，本地域名服务器逐级请求。</li>
+<li>主机 → 本地域名服务器必为递归；本地域名服务器 → 根/顶级/权限才可能是迭代。</li>
+<li>C/S 模型：客户发起请求，服务器被动响应，客户之间不能直接通信。</li>
+<li>P2P 模型：每个结点权利义务对等，可将任务分配到各节点，减轻单服务器压力、提高资源利用率。</li>
+<li>源A本章 md 未展开 C/S 与 P2P 模型（见汇报）；模型要点据源B第6章详解一与源A真题解析。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第5章传输层与第6章应用层）</span></h4>
+<ul>
+<li>DNS 查询次数速算：最少 0 次（有缓存）；最多（迭代）= 1（根）+ 1（顶级）+ 权限服务器级数。</li>
+<li>递归/迭代主体搞反是坑：主机 → 本地必为递归；本地 → 根/顶级/权限才可能是迭代。</li>
+<li>DNS 最少次数答 1 是错的：本地有缓存时最少是 0 次，不是 1 次。</li>
+<li>权限域名服务器级数漏算是坑：www.abc.xyz.com 有两级权限服务器，最多查 4 次。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 3 次</span></h4>
+<ul class="luodian">
+<li><b>2010-40</b>：考递归解析时用户主机与本地域名服务器发送的域名请求消息数（一条、多条）。答案 B。（源A无解析无答案，已独立求解）。</li>
+<li><b>2016-40</b>：考迭代查询下本地域名服务器完成域名解析可能发出的最多查询次数（4 次）。</li>
+<li><b>2019-40</b>：考关于网络应用模型叙述中的错误项（C/S 与 P2P 模型的区别）。</li>
+</ul>
+</div></div>
+<div class="card" id="s-4.6.3">
+<div class="card-h"><span class="code">4.6.3</span><span class="ttl">FTP 协议</span><span class="badge">真题 2 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>FTP 控制连接（TCP 21）：整个会话期间持续开启，传输控制命令（带外传输）。</li>
+<li>FTP 数据连接（TCP 20 / 临时端口）：每次传数据或目录列表时动态建立，传完立即关闭。</li>
+<li>主动模式（PORT）：服务端用 TCP 20 主动连接客户端；被动模式（PASV）：客户端主动连接服务端的临时端口。</li>
+<li>FTP 客户与服务器间传递命令用建立在 TCP 之上的控制连接。</li>
+<li>本节包内 2020-40 题干实为 DNS 递归/迭代与 HTTP 传输耗时综合题（按包归类未改动，见汇报）。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第5章传输层与第6章应用层）</span></h4>
+<ul>
+<li>FTP 记法：“21 管命令不断线，20 传数据传完就断”。</li>
+<li>FTP 控制连接与数据连接的生存期写反是错的：控制连接不断，数据连接传完即断。</li>
+<li>FTP 端口主体错是坑：21/20 都是服务器端口，题目说“客户端 21 端口”是错的。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 2 次</span></h4>
+<ul class="luodian">
+<li><b>2009-40</b>：考 FTP 客户与服务器间传递 FTP 命令使用的连接（TCP 控制连接）。答案 A。（源A无解析无答案，已独立求解）。</li>
+<li><b>2020-40</b>：考递归 + 迭代查询下主机访问 Web 服务器的最短与最长时间。</li>
+</ul>
+</div></div>
+<div class="card" id="s-4.6.4">
+<div class="card-h"><span class="code">4.6.4</span><span class="ttl">电子邮件</span><span class="badge">真题 4 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>邮件传输黄金法则：给服务器送信（客户端 → 服务器、服务器 → 服务器）全用 SMTP（推）；从服务器取信（服务器 → 客户端）才用 POP3 或 IMAP（拉）。</li>
+<li>SMTP（TCP 25）：用户代理向邮件服务器发信、邮件服务器之间发信；只支持 7 位 ASCII 内容，汉字需 MIME 编码。</li>
+<li>POP3（TCP 110）/ IMAP（TCP 143）：用户从目的邮件服务器读取邮件。</li>
+<li>FTP 控制连接存在于整个会话，数据连接每次传输时建立、传完关闭；默认数据连接 TCP 20、控制连接 TCP 21（主动方式；被动方式端口由双方协商）。</li>
+<li>本节包内 2017-40 题干实为 FTP 协议题（按包归类未改动，见汇报）。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第5章传输层与第6章应用层）</span></h4>
+<ul>
+<li>邮件协议方向记法：“发用 SMTP，收用 POP3”；SMTP 是“推”，POP3/IMAP 是“拉”；服务器之间永远 SMTP。</li>
+<li>收邮件写成 SMTP 是错的：SMTP 只负责“推”到接收方服务器；用户取信是 POP3/IMAP。</li>
+<li>SMTP 能传汉字是错的：只能 7 位 ASCII，汉字要靠 MIME 编码。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 4 次</span></h4>
+<ul class="luodian">
+<li><b>2012-40</b>：考电子邮件发送与接收三阶段分别使用的应用层协议（SMTP、SMTP、POP3）。</li>
+<li><b>2013-40</b>：考关于 SMTP 协议叙述的正确项（只支持 7 位 ASCII、服务器间与用户向服务器发信）。</li>
+<li><b>2017-40</b>：考关于 FTP 协议叙述中的错误项（被动方式数据连接端口由双方协商，非必用 TCP 20）。</li>
+<li><b>2018-40</b>：考无需转换即可由 SMTP 直接传输的内容（7 位 ASCII 码内容）。</li>
+</ul>
+</div></div>
+<div class="card" id="s-4.6.5">
+<div class="card-h"><span class="code">4.6.5</span><span class="ttl">HTTP 协议与网页访问</span><span class="badge">真题 3 次</span></div>
+<div class="card-b">
+<h4>知识点</h4>
+<ul>
+<li>访问网页顺序：先解析（DNS）→ 再握手（TCP 三次）→ 后请求（HTTP）→ 末释放。</li>
+<li>HTTP 连接耗时：非持续 2(1 + n) RTT；持续非流水线 (2 + n) RTT；持续流水线 3 RTT（与引用对象数无关）。</li>
+<li>HTTP/1.1 默认使用流水线的持久连接；第三次握手可捎带 HTTP 请求，握手只算 1 个 RTT。</li>
+<li>HTTP 请求报文：Connection: Close 为非持续连接，keep-alive 为持续连接；Cookie 是服务器生成的识别码，客户端回传用于会话跟踪。</li>
+<li>浏览器访问 Web 主页可能用到 PPP、ARP、UDP（DNS），不可能用到 SMTP。</li>
+<li>HTTP 无连接是无状态语义层面的说法，传输层仍要先三次握手。</li>
+</ul>
+<h4>口诀 / 技巧 / 易错点 <span class="src">（源B：第5章传输层与第6章应用层）</span></h4>
+<ul>
+<li>访问网页的顺序口诀：“先解析、再握手、后请求、末释放”：DNS → TCP 三次握手 → HTTP 请求 → HTTP 响应。</li>
+<li>HTTP 连接方式速记：1.0 非持续 2(N+1) RTT；1.1 持续非流水线 N+2 RTT；1.1 持续流水线 3 RTT。</li>
+<li>非持续连接只算 N 个 RTT 是错的：每个对象要“建 TCP 1 RTT + 请求响应 1 RTT”= 2 RTT，还要加基础页面的 2 RTT。</li>
+<li>流水线与非流水线混淆是坑：非流水线须收到前一个响应才发下一个请求（N+2）；流水线一次性发完（3 RTT）。</li>
+<li>把 HTTP 的“无连接”当成“不用 TCP”是错的：传输层仍要先三次握手。</li>
+<li>忘记“第三次握手可携带请求”是坑：算 RTT 时握手只算 1 个 RTT，请求搭在第三次握手上，不再另加。</li>
+<li>例 18 型综合题漏掉拥塞窗口限制是坑：图片 3 MSS 不能在 1 个 RTT 内发完，首次 cwnd = 1，之后 2、4，须拆成 2 个 RTT。</li>
+</ul>
+<h4>真题落点 <span class="src">2009–2022 共 3 次</span></h4>
+<ul class="luodian">
+<li><b>2014-40</b>：考浏览器访问 Web 网站主页时不可能使用到的协议（SMTP）。答案 D。（源A无解析无答案，已独立求解）。</li>
+<li><b>2015-40</b>：考 HTTP 请求报文的 Connection 与 Cookie 字段含义（非持续连接、曾访问过该服务器）。</li>
+<li><b>2022-40</b>：考 HTTP/1.1 流水线持久连接下传输页面与图像的最少时间（慢开始窗口限制，4 RTT）。</li>
+</ul>
+<p class="hubu">互补：源B 补充记忆点</p>
+</div></div>
+</div></div>
+<footer>来源：cs408-notes（zhaoyang51）· 408-first-round（chenxi101w）· ddy-ddy/cs-408 收录的王道 2023 复习指导书与 OneNote 笔记（补缺参考）。王道为商业出版物，本手册只作原创措辞的知识点摘要，不抄原文。2023–2026 真题已排除，留作 12 月模考。更新 2026-11-10。</footer>
+</div>
+</body>
+</html>
