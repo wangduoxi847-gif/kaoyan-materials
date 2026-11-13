@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PDF 阅读器 · 考研资料站</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:#525659;color:#222;font-size:15px}
+header{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:8px;background:#3d5a99;color:#fff;padding:10px 14px;flex-wrap:wrap}
+header a{color:#fff;text-decoration:none;white-space:nowrap}
+header .t{flex:1;min-width:120px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:15px}
+header .pi{font-size:13px;opacity:.9;white-space:nowrap}
+header button,header .btn{background:rgba(255,255,255,.16);border:0;color:#fff;border-radius:8px;padding:7px 12px;font-size:14px;cursor:pointer;white-space:nowrap}
+header button:active,header .btn:active{background:rgba(255,255,255,.3)}
+#doc{padding:16px 16px 40px}
+.page{background:#fff;margin:0 auto 14px;box-shadow:0 2px 10px rgba(0,0,0,.35);position:relative}
+.page canvas{display:block;width:100%;height:100%}
+.page .pn{position:absolute;right:8px;bottom:6px;font-size:12px;color:#999;background:rgba(255,255,255,.85);padding:1px 6px;border-radius:6px;pointer-events:none}
+#status{color:#fff;text-align:center;padding:60px 20px;font-size:15px;line-height:1.8}
+#status a{color:#bcd0ff}
+</style>
+</head>
+<body>
+<header>
+<a href="./">← 返回资料站</a>
+<span class="t" id="title">正在打开…</span>
+<span class="pi" id="pageinfo"></span>
+<button id="prev">上一页</button>
+<button id="next">下一页</button>
+<button id="zoomout">－</button>
+<button id="fitw">适合宽度</button>
+<button id="zoomin">＋</button>
+<a class="btn" id="dl" href="#" download>下载原文件</a>
+</header>
+<main id="doc"><div id="status">正在加载 PDF…</div></main>
+<script type="module">
+import * as pdfjsLib from './pdf.min.mjs';
+pdfjsLib.GlobalWorkerOptions.workerSrc = './pdf.worker.min.mjs';
+
+const $ = id => document.getElementById(id);
+const docEl = $('doc');
+const params = new URLSearchParams(location.search);
+const file = params.get('file') || '';
+const ok = /^[A-Za-z0-9._\-\/]+\.pdf$/i.test(file) && !file.split('/').includes('..') && file.indexOf('://') === -1;
+
+function fail(msg){
+  docEl.innerHTML = '<div id="status">' + msg + '<br><a href="./">← 返回资料站</a></div>';
+}
+if (!ok){
+  $('title').textContent = '参数错误';
+  fail('链接里的文件参数不对，无法打开。');
+  throw new Error('bad file param');
+}
+
+const title = params.get('title') || file.split('/').pop();
+$('title').textContent = title;
+$('dl').href = './' + file;
+
+let pdf = null, total = 0, zoom = 1, current = 1;
+const dpr = Math.min(window.devicePixelRatio || 1, 2);
+const pages = []; // {wrap, canvas, num, w, h, rendered, task}
+
+function pageWidthCss(){ return Math.max(200, docEl.clientWidth - 32); }
+function cssScaleFor(p){ return (pageWidthCss() / p.w) * zoom; }
+function layoutPage(p){
+  const s = cssScaleFor(p);
+  p.wrap.style.width = Math.round(p.w * s) + 'px';
+  p.wrap.style.height = Math.round(p.h * s) + 'px';
+}
+async function renderPage(p){
+  if (p.rendered || p.task) return;
+  try{
+    const pg = await pdf.getPage(p.num);
+    const vp = pg.getViewport({scale: cssScaleFor(p) * dpr});
+    p.canvas.width = Math.floor(vp.width);
+    p.canvas.height = Math.floor(vp.height);
+    const ctx = p.canvas.getContext('2d');
+    p.task = pg.render({canvasContext: ctx, viewport: vp});
+    await p.task.promise;
+    p.rendered = true;
+  }catch(e){
+    if (!e || e.name !== 'RenderingCancelledException') console.warn('render page ' + p.num + ' failed', e);
+  }finally{ p.task = null; }
+}
+function unrenderPage(p){
+  if (p.task){ try{ p.task.cancel(); }catch(e){} p.task = null; }
+  if (p.rendered){ p.canvas.width = 1; p.canvas.height = 1; p.rendered = false; }
+}
+function refreshVisible(){
+  pages.forEach(p => {
+    layoutPage(p);
+    const r = p.wrap.getBoundingClientRect();
+    if (r.bottom > -600 && r.top < innerHeight + 600){ unrenderPage(p); renderPage(p); }
+  });
+}
+function updateCurrent(){
+  for (const p of pages){
+    if (p.wrap.getBoundingClientRect().bottom > 70){ setCurrent(p.num); return; }
+  }
+  setCurrent(total);
+}
+function setCurrent(n){
+  if (n !== current){
+    current = n;
+    $('pageinfo').textContent = '第 ' + current + ' / ' + total + ' 页';
+  }
+}
+function scrollToPage(n){
+  n = Math.max(1, Math.min(total, n));
+  const p = pages[n - 1];
+  if (!p) return;
+  const y = p.wrap.getBoundingClientRect().top + scrollY - 60;
+  scrollTo({top: y, behavior: 'smooth'});
+  setCurrent(n);
+}
+
+try{
+  pdf = await pdfjsLib.getDocument({url: './' + file}).promise;
+  total = pdf.numPages;
+  $('pageinfo').textContent = '第 1 / ' + total + ' 页';
+  const dims = await Promise.all(Array.from({length: total}, (_, i) =>
+    pdf.getPage(i + 1).then(pg => {
+      const v = pg.getViewport({scale: 1});
+      return {w: v.width, h: v.height};
+    })
+  ));
+  docEl.innerHTML = '';
+  dims.forEach((d, i) => {
+    const n = i + 1;
+    const wrap = document.createElement('div');
+    wrap.className = 'page';
+    wrap.dataset.n = n;
+    const cv = document.createElement('canvas');
+    const tag = document.createElement('div');
+    tag.className = 'pn';
+    tag.textContent = n + ' / ' + total;
+    wrap.appendChild(cv);
+    wrap.appendChild(tag);
+    docEl.appendChild(wrap);
+    const p = {wrap, canvas: cv, num: n, w: d.w, h: d.h, rendered: false, task: null};
+    pages.push(p);
+    layoutPage(p);
+  });
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      const p = pages[+en.target.dataset.n - 1];
+      if (!p) return;
+      if (en.isIntersecting) renderPage(p);
+      else if (Math.abs(p.num - current) > 3) unrenderPage(p);
+    });
+  }, {rootMargin: '800px 0px 800px 0px'});
+  pages.forEach(p => io.observe(p.wrap));
+  let ticking = false;
+  addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => { updateCurrent(); ticking = false; });
+  }, {passive: true});
+}catch(e){
+  console.error(e);
+  fail('这个 PDF 打不开（文件可能损坏或网络有问题）。<br><a href="./' + file + '" download>点这里直接下载原文件</a>');
+}
+
+$('prev').onclick = () => scrollToPage(current - 1);
+$('next').onclick = () => scrollToPage(current + 1);
+$('zoomin').onclick = () => { zoom = Math.min(3, zoom * 1.25); refreshVisible(); };
+$('zoomout').onclick = () => { zoom = Math.max(0.5, zoom / 1.25); refreshVisible(); };
+$('fitw').onclick = () => { zoom = 1; refreshVisible(); };
+let rt;
+addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(refreshVisible, 200); });
+</script>
+</body>
+</html>

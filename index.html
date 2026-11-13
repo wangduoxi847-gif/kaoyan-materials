@@ -74,7 +74,9 @@ function rowFolder(name, full){
 }
 function rowFile(f){
   const starred = get('kym_star', []).includes(f.h) ? ' on' : '';
-  return '<a class="row" data-h="' + esc(f.h) + '" href="' + esc(f.h) + '"><div class="ic">📄</div><div class="tt"><div class="t">' + esc(f.t) + '</div><div class="d">' + esc(f.d) + '</div><div class="m">' + esc(f.m) + '</div></div><div class="star' + starred + '" data-s="' + esc(f.h) + '">★</div></a>';
+  const isPdf = /\.pdf$/i.test(f.h);
+  const href = isPdf ? './viewer.html?file=' + encodeURIComponent(f.h.replace(/^\.\//, '')) + '&title=' + encodeURIComponent(f.t) : f.h;
+  return '<a class="row" data-h="' + esc(f.h) + '" href="' + esc(href) + '"><div class="ic">📄</div><div class="tt"><div class="t">' + esc(f.t) + '</div><div class="d">' + esc(f.d) + '</div><div class="m">' + esc(f.m) + '</div></div><div class="star' + starred + '" data-s="' + esc(f.h) + '">★</div></a>';
 }
 function render(){
   const q = $('q').value.trim();
