@@ -56,11 +56,41 @@ h3.grp:first-child{margin-top:4px}
 .card-b ul.luodian li{margin-bottom:5px}
 .hubu{font-size:13.5px;color:#6b7585;background:#f3f4f7;border-radius:6px;padding:8px 12px;margin:8px 0;font-family:"Noto Sans SC",sans-serif}
 footer{margin-top:26px;font-size:13px;color:#6b7585;font-family:"Noto Sans SC",sans-serif;line-height:1.8}
+.toolbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(6px);border-bottom:1px solid #d9dde4;font-family:"Noto Sans SC",sans-serif}
+.toolbar-in{max-width:860px;margin:0 auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:9px 18px}
+.toolbar .logo{font-weight:700;font-size:14px;letter-spacing:.5px;margin-right:auto;white-space:nowrap}
+.toolbar button{font-family:inherit;font-size:13px;border:1px solid #d9dde4;background:#fff;color:#3d4757;padding:6px 13px;border-radius:7px;cursor:pointer;line-height:1.2;white-space:nowrap}
+.toolbar button:hover{border-color:#6b7585;color:#1f2733}
+.toolbar select{font-family:inherit;font-size:13px;border:1px solid #d9dde4;border-radius:7px;padding:6px 8px;background:#fff;color:#3d4757}
+.toolbar .fs{font-size:13px;color:#3d4757;white-space:nowrap}
+.toolbar a.home{font-size:13px;color:#3d4757;text-decoration:none;white-space:nowrap}
+.toc .t-sub .tgl{display:inline-block;width:22px;text-align:center;cursor:pointer;color:#6b7585;font-size:12px;user-select:none}
+.toc ul.collapsed{display:none}
+.toc li a.cur{color:#2b5d8a;font-weight:700}
+.toc .t-sub.cur a{color:#2b5d8a}
+.backdrop{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:55}
 @media(max-width:640px){.cover{padding:28px 20px 24px}.cover h1{font-size:26px}.goal{flex-wrap:wrap}.goal div{flex:1 1 40%}}
-@media print{body{background:#fff}.cover,.toc,.sec{border-color:#ccc}.card{break-inside:avoid}}
+@media(max-width:899px){
+  .toc{display:none;position:fixed;left:0;top:0;bottom:0;width:min(320px,86vw);z-index:60;overflow-y:auto;margin:0;border-right:1px solid #d9dde4;box-shadow:2px 0 16px rgba(0,0,0,.2)}
+  body.toc-open .toc{display:block}
+}
+@media(min-width:900px){
+  .toc{position:fixed;left:0;top:50px;bottom:0;width:260px;z-index:40;overflow-y:auto;margin:0;border-right:1px solid #d9dde4}
+  body:not(.toc-off) .wrap{margin-left:280px}
+  body.toc-off .toc{display:none}
+  .backdrop{display:none !important}
+}
+@media print{body{background:#fff}.cover,.toc,.sec{border-color:#ccc}.card{break-inside:avoid}.toolbar,.backdrop{display:none !important}.toc{position:static !important;width:auto !important;height:auto !important;overflow:visible !important;margin:16px 0 !important}.toc ul.collapsed{display:block !important}.wrap{margin:0 auto !important}}
 </style>
 </head>
 <body>
+<div class="toolbar"><div class="toolbar-in">
+<span class="logo">408 选择题背诵手册</span>
+<button id="tocBtn" type="button">☰ 目录</button>
+<label class="fs">字号 <select id="fontSize"><option value="15.5">标准</option><option value="17">大</option><option value="18.5">特大</option></select></label>
+<a class="home" href="./index.html">← 返回首页</a>
+</div></div>
+<div class="backdrop" id="backdrop" hidden></div>
 <div class="wrap">
 <div class="cover">
 <div class="kicker">408 · 选择题背诵手册</div>
@@ -69,9 +99,10 @@ footer{margin-top:26px;font-size:13px;color:#6b7585;font-family:"Noto Sans SC",s
 <div class="goal"><div><b>91</b><span>个 section</span></div><div><b>548</b><span>道真题选择题</span></div><div><b>2009–2022</b><span>年份范围</span></div><div><b>4 科</b><span>数据结构 · 组成原理 · 操作系统 · 计网</span></div></div>
 <div class="note">来源：源A cs408-notes（知识库 + 真题库）与源B 408-first-round（复旦发哥课程笔记），取长补短；缺口处用 ddy-ddy/cs-408 收录的王道 2023 复习指导书与 OneNote 笔记补齐（只作核对与补缺参考，不抄原文）。只收 2009–2022 年选择题，2023–2026 已排除，留作 12 月模考。</div>
 <div class="note warn">质量提醒（请先读）：108/548 道题源A无解析，其中 11 道同时无答案——这 11 道已独立求解并标注答案，其余 97 道的一句话总结据题干归纳、句末已标注；源A知识库偏薄的小节，知识点据真题解析提炼；通道与 HDLC 在最新大纲已删除，标注为“超纲，了解即可”，但真题考过所以收录。</div>
+<div class="note">收录进度：已索引 548/560 题（2009–2022 年共 14 年，每年 40 题）；缺失的 12 题待后续补齐，补齐后此行更新。</div>
 </div>
 <div class="toc"><h2>目录</h2>
-<div class="t-sub"><a href="#anchor-ds">数据结构</a> <span class="cnt">30 个 section · 146 题</span></div><ul>
+<div class="t-sub" data-sub="ds"><span class="tgl">▾</span><a href="#anchor-ds">数据结构</a> <span class="cnt">30 个 section · 146 题</span></div><ul>
 <li><a href="#s-1.1.1">1.1.1 算法时空复杂度</a> <span class="cnt">（8 次）</span></li>
 <li><a href="#s-1.2.2">1.2.2 线性表的链式存储</a> <span class="cnt">（3 次）</span></li>
 <li><a href="#s-1.5.1">1.5.1 KMP 匹配算法</a> <span class="cnt">（2 次）</span></li>
@@ -103,7 +134,7 @@ footer{margin-top:26px;font-size:13px;color:#6b7585;font-family:"Noto Sans SC",s
 <li><a href="#s-1.9.7">1.9.7 归并排序</a> <span class="cnt">（4 次）</span></li>
 <li><a href="#s-1.9.8">1.9.8 基数排序</a> <span class="cnt">（3 次）</span></li>
 </ul>
-<div class="t-sub"><a href="#anchor-co">计算机组成原理</a> <span class="cnt">27 个 section · 152 题</span></div><ul>
+<div class="t-sub" data-sub="co"><span class="tgl">▾</span><a href="#anchor-co">计算机组成原理</a> <span class="cnt">27 个 section · 152 题</span></div><ul>
 <li><a href="#s-2.1.1">2.1.1 计算机层级结构</a> <span class="cnt">（4 次）</span></li>
 <li><a href="#s-2.1.2">2.1.2 计算机性能指标</a> <span class="cnt">（9 次）</span></li>
 <li><a href="#s-2.2.1">2.2.1 定点数的表示与运算</a> <span class="cnt">（8 次）</span></li>
@@ -132,7 +163,7 @@ footer{margin-top:26px;font-size:13px;color:#6b7585;font-family:"Noto Sans SC",s
 <li><a href="#s-2.7.3">2.7.3 程序中断方式</a> <span class="cnt">（5 次）</span></li>
 <li><a href="#s-2.7.4">2.7.4 DMA 方式</a> <span class="cnt">（3 次）</span></li>
 </ul>
-<div class="t-sub"><a href="#anchor-os">操作系统</a> <span class="cnt">16 个 section · 139 题</span></div><ul>
+<div class="t-sub" data-sub="os"><span class="tgl">▾</span><a href="#anchor-os">操作系统</a> <span class="cnt">16 个 section · 139 题</span></div><ul>
 <li><a href="#s-3.1.1">3.1.1 操作系统的概念与功能</a> <span class="cnt">（4 次）</span></li>
 <li><a href="#s-3.1.2">3.1.2 操作系统的运行环境</a> <span class="cnt">（16 次）</span></li>
 <li><a href="#s-3.1.3">3.1.3 操作系统的结构与引导</a> <span class="cnt">（2 次）</span></li>
@@ -150,7 +181,7 @@ footer{margin-top:26px;font-size:13px;color:#6b7585;font-family:"Noto Sans SC",s
 <li><a href="#s-3.5.3">3.5.3 设备分配与回收</a> <span class="cnt">（2 次）</span></li>
 <li><a href="#s-3.5.4">3.5.4 磁盘与调度算法</a> <span class="cnt">（5 次）</span></li>
 </ul>
-<div class="t-sub"><a href="#anchor-cn">计算机网络</a> <span class="cnt">18 个 section · 111 题</span></div><ul>
+<div class="t-sub" data-sub="cn"><span class="tgl">▾</span><a href="#anchor-cn">计算机网络</a> <span class="cnt">18 个 section · 111 题</span></div><ul>
 <li><a href="#s-4.1.2">4.1.2 三种交换方式</a> <span class="cnt">（1 次）</span></li>
 <li><a href="#s-4.1.3">4.1.3 OSI 与 TCP/IP 参考模型</a> <span class="cnt">（11 次）</span></li>
 <li><a href="#s-4.2.1">4.2.1 通信基础</a> <span class="cnt">（6 次）</span></li>
@@ -2921,7 +2952,93 @@ footer{margin-top:26px;font-size:13px;color:#6b7585;font-family:"Noto Sans SC",s
 <p class="hubu">互补：源B 补充记忆点</p>
 </div></div>
 </div></div>
-<footer>来源：cs408-notes（zhaoyang51）· 408-first-round（chenxi101w）· ddy-ddy/cs-408 收录的王道 2023 复习指导书与 OneNote 笔记（补缺参考）。王道为商业出版物，本手册只作原创措辞的知识点摘要，不抄原文。2023–2026 真题已排除，留作 12 月模考。更新 2026-11-10。</footer>
+<footer>来源：cs408-notes（zhaoyang51）· 408-first-round（chenxi101w）· ddy-ddy/cs-408 收录的王道 2023 复习指导书与 OneNote 笔记（补缺参考）。王道为商业出版物，本手册只作原创措辞的知识点摘要，不抄原文。2023–2026 真题已排除，留作 12 月模考。更新 2026-11-14。</footer>
 </div>
+<script>
+(function(){
+  var WIDE = window.matchMedia('(min-width:900px)');
+  /* 字号：标准 / 大 / 特大，保存在本机 */
+  var FS_KEY = 'xz408_font';
+  var fsSel = document.getElementById('fontSize');
+  function applyFont(v){ document.body.style.fontSize = v + 'px'; }
+  try{ var sv = localStorage.getItem(FS_KEY); if (sv){ fsSel.value = sv; applyFont(sv); } }catch(e){}
+  fsSel.addEventListener('change', function(){ applyFont(fsSel.value); try{ localStorage.setItem(FS_KEY, fsSel.value); }catch(e){} });
+  /* 滚动位置记忆：无 hash 时恢复上次位置 */
+  var SC_KEY = 'xz408_scroll';
+  function saveScroll(){ try{ localStorage.setItem(SC_KEY, String(window.scrollY)); }catch(e){} }
+  var tick = false;
+  window.addEventListener('scroll', function(){ if (tick) return; tick = true; requestAnimationFrame(function(){ saveScroll(); spy(); tick = false; }); }, {passive:true});
+  window.addEventListener('beforeunload', saveScroll);
+  if (!location.hash){
+    try{ var y = parseInt(localStorage.getItem(SC_KEY) || '0', 10); if (y > 0) window.scrollTo(0, y); }catch(e){}
+  }
+  /* 目录：宽屏为侧边栏开关，窄屏为抽屉开关 */
+  var tocEl = document.querySelector('.toc');
+  var tocBtn = document.getElementById('tocBtn');
+  var backdrop = document.getElementById('backdrop');
+  function closeDrawer(){ document.body.classList.remove('toc-open'); backdrop.hidden = true; }
+  tocBtn.addEventListener('click', function(){
+    if (WIDE.matches){ document.body.classList.toggle('toc-off'); }
+    else{
+      var open = document.body.classList.toggle('toc-open');
+      backdrop.hidden = !open;
+      if (open) scrollTocToCurrent();
+    }
+  });
+  backdrop.addEventListener('click', closeDrawer);
+  /* 科目折叠：只展开当前科目 */
+  var subs = Array.prototype.slice.call(document.querySelectorAll('.toc .t-sub'));
+  function ulOf(sub){ var n = sub.nextSibling; while (n && n.nodeType !== 1) n = n.nextSibling; return n; }
+  function expandSub(key){
+    subs.forEach(function(s){
+      var ul = ulOf(s); if (!ul) return;
+      var on = s.getAttribute('data-sub') === key;
+      ul.classList.toggle('collapsed', !on);
+      var tgl = s.querySelector('.tgl'); if (tgl) tgl.textContent = on ? '▾' : '▸';
+      s.classList.toggle('cur', on);
+    });
+  }
+  subs.forEach(function(s){
+    var tgl = s.querySelector('.tgl');
+    if (tgl) tgl.addEventListener('click', function(e){
+      e.preventDefault(); e.stopPropagation();
+      var ul = ulOf(s); if (!ul) return;
+      var collapsed = ul.classList.toggle('collapsed');
+      tgl.textContent = collapsed ? '▸' : '▾';
+    });
+  });
+  /* 滚动侦测：高亮当前章节，展开其科目，目录滚动到当前项 */
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.card[id]'));
+  var tocLinks = {};
+  document.querySelectorAll('.toc li a').forEach(function(a){ tocLinks[a.getAttribute('href')] = a; });
+  var curId = null;
+  function scrollTocToCurrent(){
+    if (!curId || !tocEl) return;
+    var a = tocLinks['#' + curId];
+    if (!a) return;
+    var top = a.offsetTop, h = a.offsetHeight;
+    var viewTop = tocEl.scrollTop, viewBottom = viewTop + tocEl.clientHeight;
+    if (top < viewTop + 40) tocEl.scrollTop = Math.max(0, top - 60);
+    else if (top + h > viewBottom - 20) tocEl.scrollTop = top + h - tocEl.clientHeight + 60;
+  }
+  function spy(){
+    var y = window.scrollY + 140, cur = null;
+    for (var i = 0; i < cards.length; i++){
+      if (cards[i].getBoundingClientRect().top + window.scrollY <= y) cur = cards[i]; else break;
+    }
+    if (!cur || cur.id === curId) return;
+    curId = cur.id;
+    var prev = document.querySelector('.toc li a.cur'); if (prev) prev.classList.remove('cur');
+    var a = tocLinks['#' + curId]; if (a) a.classList.add('cur');
+    var sec = cur.closest('.sec');
+    if (sec) expandSub(sec.id.replace('anchor-', ''));
+    scrollTocToCurrent();
+  }
+  document.querySelectorAll('.toc a').forEach(function(a){
+    a.addEventListener('click', function(){ if (!WIDE.matches) closeDrawer(); });
+  });
+  spy();
+})();
+</script>
 </body>
 </html>

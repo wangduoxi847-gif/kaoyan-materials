@@ -24,6 +24,13 @@ body{font-family:var(--serif);color:var(--ink);background:var(--bg);line-height:
 .toolbar button.primary{background:var(--ink);color:#fff;border-color:var(--ink)}
 .toolbar .prog{font-size:12.5px;color:var(--ink3);white-space:nowrap}
 .toolbar select{font-family:inherit;font-size:13px;border:1px solid var(--line);border-radius:7px;padding:6px 8px;background:#fff;color:var(--ink2)}
+.toolbar .fs{font-size:13px;color:var(--ink2);white-space:nowrap}
+.more{position:relative}
+.more-menu{position:absolute;right:0;top:calc(100% + 6px);background:#fff;border:1px solid var(--line);border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,.14);padding:6px;display:flex;flex-direction:column;gap:6px;z-index:60;min-width:150px}
+.more-menu button{width:100%;text-align:left}
+.plan-t a{color:#2b5d8a}
+.backlink{display:inline-block;margin-top:6px;font-size:12.5px;color:#2b5d8a;font-family:var(--sans);text-decoration:none}
+.backlink:hover{text-decoration:underline}
 .cover{background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--ink);margin:26px 0 18px;padding:40px 44px 34px}
 .cover .kicker{font-family:var(--sans);font-size:12.5px;letter-spacing:3px;color:var(--gold);font-weight:500}
 .cover h1{font-size:34px;font-weight:900;letter-spacing:2px;margin:10px 0 6px;line-height:1.25}
@@ -70,13 +77,16 @@ table.t{width:100%;border-collapse:collapse;margin:8px 0 10px;font-family:var(--
 table.t th,table.t td{border:1px solid var(--line2);padding:6px 9px;text-align:left;vertical-align:top}
 table.t th{background:#f5f6f8;font-weight:600;color:var(--ink2)}
 table.t tr:nth-child(even) td{background:#fbfcfd}
-.chk{flex:none;width:21px;height:21px;border:1.6px solid #b7bdc7;background:#fff;border-radius:5px;cursor:pointer;font-size:13px;line-height:1;color:transparent;padding:0;display:inline-flex;align-items:center;justify-content:center;font-family:var(--sans)}
+.chk{flex:none;width:21px;height:21px;border:1.6px solid #b7bdc7;background:#fff;border-radius:5px;cursor:pointer;font-size:13px;line-height:1;color:transparent;padding:0;display:inline-flex;align-items:center;justify-content:center;font-family:var(--sans);position:relative}
+.chk::after{content:'';position:absolute;left:50%;top:50%;width:44px;height:44px;transform:translate(-50%,-50%)}
 .chk:hover{border-color:var(--gold)}
-.chk.on{background:var(--gold-bg);border-color:var(--gold);color:var(--gold)}
+.chk.s1{background:#fff7e8;border-color:#d99a2b;color:#b26a00}
+.chk.s2{background:var(--gold-bg);border-color:var(--gold);color:var(--gold)}
 .ckrow{display:flex;gap:10px;align-items:flex-start;margin:7px 0}
 .ckrow .body{flex:1;min-width:0}
-.ckrow.done .body{color:#9aa1ad}
-.ckrow.done .body .tt{text-decoration:line-through}
+.ckrow.st1{background:#fffdf4}
+.ckrow.st2 .body{color:#9aa1ad}
+.ckrow.st2 .body .tt{text-decoration:line-through}
 .ckrow .tt{font-weight:600;font-size:14.6px}
 .ckrow .ds-text{font-size:13.6px;color:var(--ink2);font-family:var(--sans);line-height:1.68;margin-top:1px}
 .map-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:6px 0 4px}
@@ -90,6 +100,21 @@ table.t tr:nth-child(even) td{background:#fbfcfd}
 .plan-t .day{font-family:var(--sans);font-weight:600;color:var(--gold);white-space:nowrap}
 .giveup li{margin:7px 0}
 .foot{font-family:var(--sans);font-size:12px;color:var(--ink3);text-align:center;margin:26px 0 0;line-height:1.8}
+/* 新增：三态打卡/自测模式/导航/元信息 */
+.meta-line{font-family:var(--sans);font-size:12px;color:var(--ink3);margin-top:12px;line-height:1.8}
+.meta-line a{color:var(--ds)}
+.sec{scroll-margin-top:64px}
+.savehint{font-size:11.5px;color:var(--ink3);white-space:nowrap}
+.quiz .ds-text{display:none}
+.quiz .ckrow.revealed .ds-text{display:block}
+.quiz .chk{visibility:hidden}
+.qz{display:none;margin:8px 0 2px;gap:6px;align-items:center;flex-wrap:wrap}
+.quiz .qz{display:flex}
+.qz button{font-family:var(--sans);font-size:12.5px;border:1px solid var(--line);background:#fff;color:var(--ink2);border-radius:6px;padding:6px 14px;cursor:pointer;min-height:34px}
+.qz button:active{background:#eef0f3}
+.qz .qr{font-size:12.5px;font-family:var(--sans);font-weight:600}
+.qr.ok{color:#2e7d32}.qr.mid{color:#b26a00}.qr.no{color:#b3261e}
+#toTop{position:fixed;right:14px;bottom:22px;width:50px;height:50px;border-radius:50%;background:var(--ink);color:#fff;border:none;font-size:22px;display:none;z-index:60;box-shadow:0 2px 10px rgba(0,0,0,.28);cursor:pointer;font-family:var(--sans)}
 @media (max-width:680px){
  body{font-size:15px}.wrap{padding:0 11px 60px}
  .cover{padding:26px 20px 22px}.cover h1{font-size:26px}
@@ -105,9 +130,10 @@ table.t tr:nth-child(even) td{background:#fbfcfd}
  .sec,.cover{border:1px solid #bbb;break-inside:avoid}.cover{margin-top:0}
  .card{break-inside:avoid;page-break-inside:avoid;border-color:#bbb}
  .card-h{background:#f2f2f2 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
- .badge,.tag,.map-c,.f,.ic,table.t th,.card.must,.map-c.ds,.map-c.co,.map-c.os,.map-c.cn,.chk.on,.stars,.sec>.sec-h .no{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ .badge,.tag,.map-c,.f,.ic,table.t th,.card.must,.map-c.ds,.map-c.co,.map-c.os,.map-c.cn,.chk.s1,.chk.s2,.stars,.sec>.sec-h .no{-webkit-print-color-adjust:exact;print-color-adjust:exact}
  .chk{border-color:#888;color:transparent !important;background:#fff !important}
- .ckrow.done .body{color:inherit}.ckrow.done .body .tt{text-decoration:none}
+ .ckrow.st2 .body{color:inherit}.ckrow.st2 .body .tt{text-decoration:none}
+ #toTop,.qz{display:none !important}
  .map-grid{grid-template-columns:repeat(4,1fr)}.pagebreak{break-before:page;page-break-before:always}
  a{color:inherit;text-decoration:none}}
 </style>
@@ -120,9 +146,29 @@ table.t tr:nth-child(even) td{background:#fbfcfd}
     <option value="undone">只看未背</option>
     <option value="must">只看必背</option>
   </select>
-  <span class="prog" id="prog">已背 0 / 0</span>
-  <button id="resetBtn" type="button">重置打卡</button>
+  <select id="gonav" aria-label="目录跳转">
+    <option value="">目录跳转…</option>
+    <option value="#anchor-ds">数据结构</option>
+    <option value="#anchor-co">组成原理</option>
+    <option value="#anchor-os">操作系统</option>
+    <option value="#anchor-cn">计算机网络</option>
+    <option value="#anchor-plan">30天计划</option>
+    <option value="#anchor-giveup">降权清单</option>
+    <option value="#errata">勘误记录</option>
+    <option value="./index.html">← 返回首页</option>
+  </select>
+  <span class="prog" id="prog">…</span>
+  <span class="prog" id="quizProg" hidden></span>
+  <label class="fs">字号 <select id="fontSize" aria-label="字号"><option value="15.5">标准</option><option value="17">大</option><option value="18.5">特大</option></select></label>
+  <button id="quizBtn" type="button">自测模式</button>
+  <button id="expBtn" type="button">导出进度</button>
+  <button id="impBtn" type="button">导入进度</button>
+  <input type="file" id="impFile" accept=".json,application/json" hidden>
+  <div class="more"><button id="moreBtn" type="button" aria-haspopup="true">更多 ▾</button><div class="more-menu" id="moreMenu" hidden>
   <button id="printBtn" type="button" class="primary">打印 / 存PDF</button>
+  <button id="resetBtn" type="button">重置打卡</button>
+  </div></div>
+  <span class="savehint">进度仅保存在当前浏览器</span>
 </div></div>
 <div class="wrap" id="root">
 <!-- ===== 封面 ===== -->
@@ -130,6 +176,7 @@ table.t tr:nth-child(even) td{background:#fbfcfd}
   <div class="kicker">王 道 408 强 化 · 大 题 高 频 结 论 速 记</div>
   <h1>408 五星考点背诵手册</h1>
   <div class="sub">数据结构 · 计算机组成原理 · 操作系统 · 计算机网络　|　依据四门王道强化课件与 2009–2025 真题命题规律整理</div>
+  <div class="meta-line">更新 2026-11-14 · 适用：2027 考研 408 大题背诵 · 核验：已按王道强化课件与 2009–2025 真题交叉核对 · <a href="#errata">勘误记录（4 条）</a></div>
   <div class="goal">
     <div><b>100 分</b><span>408 目标分数：小题少丢 + 大题套路拿稳</span></div>
     <div><b>7 道大题</b><span>DS 算法+应用；CO/OS 各 2；CN 1 道综合</span></div>
@@ -138,12 +185,12 @@ table.t tr:nth-child(even) td{background:#fbfcfd}
   <div class="note">
     <b>怎么用：</b>① 每天按文末「30 天背诵计划」推进，当天条目逐条复述，能合上讲义讲全即点前面方框打卡（自动保存在本机）；
     ② <span class="badge must">必背</span>＝大题母题与公式，要能默写、能套用；<span class="badge know">掌握</span>＝会判断会计算；<span class="badge know2">了解</span>＝留印象；
-    ③ 点右上角「打印 / 存PDF」即用 A4 输出，方框留空可手写勾选，建议双面装订，每天背一页勾一页。
+    ③ 点右上角「更多」里的「打印 / 存PDF」即用 A4 输出，方框留空可手写勾选，建议双面装订，每天背一页勾一页。
   </div>
 </section>
 
 <!-- ===== 命题地图 ===== -->
-<section class="sec">
+<section class="sec" id="anchor-map">
   <div class="sec-h"><span class="no">★</span><h2>四科大题命题地图（先看这张）</h2><span class="en">EXAM MAP</span></div>
   <div class="sec-b">
     <p class="lead">408 满分 150：单选 40 题×2＝80 分；大题 7 题共 70 分。冲 100 分的关键是把下表这些反复出现的大题母题套熟。</p>
@@ -157,7 +204,7 @@ table.t tr:nth-child(even) td{background:#fbfcfd}
       <div class="map-c cn"><h4>计网 25 分</h4><div class="sc">选择约 16 分 · 大题 1 道</div>
         <ul><li>47 题·网络综合（浏览器全流程）</li><li>高频：TCP / IP分片 / ARP / DHCP</li><li>选择题章节零散，靠结论速记</li></ul></div>
     </div>
-    <p class="lead" style="margin-top:12px"><b>大题取舍：</b>DS 算法题拿下「快排 / 归并 / 链表 / 二叉树递归 / BFS」五类模板基本分（写不出最优解，次优 O(n) 也有约 11 分）；CO/OS/CN 把本手册母题套熟，即可覆盖大题七成以上分值。</p>
+    <p class="lead" style="margin-top:12px"><b>大题取舍：</b>DS 算法题拿下「快排 / 归并 / 链表 / 二叉树递归 / BFS」五类模板基本分（写不出最优解，次优 O(n) 也能拿步骤分（往年给分经验，非官方保证））；CO/OS/CN 把本手册母题套熟，能覆盖大题多数常规分值。</p>
   </div>
 </section>
 
@@ -241,110 +288,110 @@ table.t tr:nth-child(even) td{background:#fbfcfd}
       <div class="card-h"><span class="stars">★★★★★</span><span class="ttl">特殊矩阵的压缩存储</span><span class="badge must">必背公式</span></div>
       <div class="card-b">
         <p class="sub">审题先定三件事：行优先还是列优先？矩阵下标从 0 还是 1（默认 1）？数组下标从 0 还是 1（默认 0）？压下三角还是上三角？</p>
-        <div class="ckrow" data-k="ds-a1a"><button class="chk" type="button"></button><div class="body"><div class="tt">对称矩阵（存下三角+主对角线，行优先）</div><div class="ds-text">n 阶、矩阵下标从 1、数组下标从 0：i≥j 时 k = i(i−1)/2 + j − 1；i&lt;j 时把 i、j 互换代入（k = j(j−1)/2 + i − 1）。无向图邻接矩阵就是对称矩阵，常结合考。</div></div></div>
-        <div class="ckrow" data-k="ds-a1b"><button class="chk" type="button"></button><div class="body"><div class="tt">三角矩阵 / 三对角矩阵</div><div class="ds-text">上三角行优先 k = (i−1)(2n−i+2)/2 + (j−i)；下三角是上三角 i、j 互换。三对角（带状）矩阵多为选择题，应用题概率低。</div></div></div>
-        <div class="ckrow" data-k="ds-a1c"><button class="chk" type="button"></button><div class="body"><div class="tt">有向无环图 ↔ 三角矩阵</div><div class="ds-text">邻接矩阵只有下三角非空 ⇒ 必为有向无环图（边都从大号点指向小号点，不可能成环）；DAG 按拓扑序重编号后邻接矩阵可化为上三角。</div></div></div>
+        <div class="ckrow" id="k-ds-a1a" data-k="ds-a1a"><button class="chk" type="button"></button><div class="body"><div class="tt">对称矩阵（存下三角+主对角线，行优先）</div><div class="ds-text">n 阶、矩阵下标从 1、数组下标从 0：i≥j 时 k = i(i−1)/2 + j − 1；i&lt;j 时把 i、j 互换代入（k = j(j−1)/2 + i − 1）。无向图邻接矩阵就是对称矩阵，常结合考。</div></div></div>
+        <div class="ckrow" id="k-ds-a1b" data-k="ds-a1b"><button class="chk" type="button"></button><div class="body"><div class="tt">三角矩阵 / 三对角矩阵</div><div class="ds-text">上三角行优先 k = (i−1)(2n−i+2)/2 + (j−i)；下三角是上三角 i、j 互换。三对角（带状）矩阵多为选择题，应用题概率低。</div></div></div>
+        <div class="ckrow" id="k-ds-a1c" data-k="ds-a1c"><button class="chk" type="button"></button><div class="body"><div class="tt">有向无环图 ↔ 三角矩阵</div><div class="ds-text">邻接矩阵只有下三角非空 ⇒ 必为有向无环图（边都从大号点指向小号点，不可能成环）；DAG 按拓扑序重编号后邻接矩阵可化为上三角。</div></div></div>
       </div>
     </div>
 
     <div class="card">
       <div class="card-h"><span class="stars">★★★★</span><span class="ttl">栈、队列的应用</span><span class="badge know">掌握</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="ds-a2a"><button class="chk" type="button"></button><div class="body"><div class="tt">括号匹配（栈）</div><div class="ds-text">左括号入栈；遇右括号弹栈顶并判断是否同类，不匹配即失败；遍历完栈空则成功。要会用文字描述过程。</div></div></div>
-        <div class="ckrow" data-k="ds-a2b"><button class="chk" type="button"></button><div class="body"><div class="tt">循环队列判空/满、元素数</div><div class="ds-text">牺牲一格法：空 front==rear；满 (rear+1)%Max==front；元素数 =(rear−front+Max)%Max。</div></div></div>
-        <div class="ckrow" data-k="ds-a2c"><button class="chk" type="button"></button><div class="body"><div class="tt">共享栈（一个数组存两个栈）</div><div class="ds-text">S1 从左向右、S2 从右向左。初值 top1=−1, top2=N：栈满 top1+1==top2；元素总数 =(top1+1)+(N−top2)。</div></div></div>
-        <div class="ckrow" data-k="ds-a2d"><button class="chk" type="button"></button><div class="body"><div class="tt">链栈/链队列</div><div class="ds-text">单链表实现栈：栈顶在链头，入栈＝头插、出栈＝头删；队列＝尾插头删。会写数据结构定义与基本操作。</div></div></div>
+        <div class="ckrow" id="k-ds-a2a" data-k="ds-a2a"><button class="chk" type="button"></button><div class="body"><div class="tt">括号匹配（栈）</div><div class="ds-text">左括号入栈；遇右括号弹栈顶并判断是否同类，不匹配即失败；遍历完栈空则成功。要会用文字描述过程。</div></div></div>
+        <div class="ckrow" id="k-ds-a2b" data-k="ds-a2b"><button class="chk" type="button"></button><div class="body"><div class="tt">循环队列判空/满、元素数</div><div class="ds-text">牺牲一格法：空 front==rear；满 (rear+1)%Max==front；元素数 =(rear−front+Max)%Max。</div></div></div>
+        <div class="ckrow" id="k-ds-a2c" data-k="ds-a2c"><button class="chk" type="button"></button><div class="body"><div class="tt">共享栈（一个数组存两个栈）</div><div class="ds-text">S1 从左向右、S2 从右向左。初值 top1=−1, top2=N：栈满 top1+1==top2；元素总数 =(top1+1)+(N−top2)。</div></div></div>
+        <div class="ckrow" id="k-ds-a2d" data-k="ds-a2d"><button class="chk" type="button"></button><div class="body"><div class="tt">链栈/链队列</div><div class="ds-text">单链表实现栈：栈顶在链头，入栈＝头插、出栈＝头删；队列＝尾插头删。会写数据结构定义与基本操作。</div></div></div>
       </div>
     </div>
 
     <div class="card must">
       <div class="card-h"><span class="stars">★★★★★</span><span class="ttl">二叉树性质 + 顺序存储下标</span><span class="badge must">必背</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="ds-a3a"><button class="chk" type="button"></button><div class="body"><div class="tt">结点数关系（最高频）</div><div class="ds-text">n₀ = n₂ + 1（叶子数＝度为2结点数+1）；推广 n₀ = 1 + Σ(i−1)nᵢ（i 从 2 起）。第 i 层至多 2ⁱ⁻¹ 个结点；高 h 的二叉树至多 2ʰ−1 个结点；n 个结点的完全二叉树高 = ⌊log₂n⌋+1。</div></div></div>
-        <div class="ckrow" data-k="ds-a3b"><button class="chk" type="button"></button><div class="body"><div class="tt">顺序存储下标换算</div><div class="ds-text">下标从 1：父 i/2、左孩子 2i、右孩子 2i+1；下标从 0：父 (i−1)/2、左 2i+1、右 2i+2。要求会据此写找父/孩子函数并实现遍历。</div></div></div>
-        <div class="ckrow" data-k="ds-a3c"><button class="chk" type="button"></button><div class="body"><div class="tt">正则 k 叉树性质推演</div><div class="ds-text">2016 真题考数学风格证明：用「边数＝结点数−1＝Σ度·结点数」联立，求叶子数最值、结点总数最值，套 n₀ 与度结点关系即可。</div></div></div>
+        <div class="ckrow" id="k-ds-a3a" data-k="ds-a3a"><button class="chk" type="button"></button><div class="body"><div class="tt">结点数关系（最高频）</div><div class="ds-text">n₀ = n₂ + 1（叶子数＝度为2结点数+1）；推广 n₀ = 1 + Σ(i−1)nᵢ（i 从 2 起）。第 i 层至多 2ⁱ⁻¹ 个结点；高 h 的二叉树至多 2ʰ−1 个结点；n 个结点的完全二叉树高 = ⌊log₂n⌋+1。</div></div></div>
+        <div class="ckrow" id="k-ds-a3b" data-k="ds-a3b"><button class="chk" type="button"></button><div class="body"><div class="tt">顺序存储下标换算</div><div class="ds-text">下标从 1：父 i/2、左孩子 2i、右孩子 2i+1；下标从 0：父 (i−1)/2、左 2i+1、右 2i+2。要求会据此写找父/孩子函数并实现遍历。</div></div></div>
+        <div class="ckrow" id="k-ds-a3c" data-k="ds-a3c"><button class="chk" type="button"></button><div class="body"><div class="tt">正则 k 叉树性质推演</div><div class="ds-text">2016 真题考数学风格证明：用「边数＝结点数−1＝Σ度·结点数」联立，求叶子数最值、结点总数最值，套 n₀ 与度结点关系即可。</div></div></div>
       </div>
     </div>
 
     <div class="card">
       <div class="card-h"><span class="stars">★★★</span><span class="ttl">树与森林的存储表示（画图题）</span><span class="badge know">掌握</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="ds-a4a"><button class="chk" type="button"></button><div class="body"><div class="tt">三种表示要会定义+画图</div><div class="ds-text">①双亲表示法（数组，根 parent=−1，可表示森林）；②孩子表示法（结点表+孩子单链表，与图邻接表、散列拉链、基数排序结构同源）；③孩子兄弟表示法（firstchild、nextsibling 两指针，即二叉链表）。</div></div></div>
-        <div class="ckrow" data-k="ds-a4b"><button class="chk" type="button"></button><div class="body"><div class="tt">森林与二叉树转换、遍历对应</div><div class="ds-text">左孩子右兄弟；树/森林的先序＝对应二叉树先序，树/森林的后序（中序遍历森林）＝对应二叉树中序。</div></div></div>
+        <div class="ckrow" id="k-ds-a4a" data-k="ds-a4a"><button class="chk" type="button"></button><div class="body"><div class="tt">三种表示要会定义+画图</div><div class="ds-text">①双亲表示法（数组，根 parent=−1，可表示森林）；②孩子表示法（结点表+孩子单链表，与图邻接表、散列拉链、基数排序结构同源）；③孩子兄弟表示法（firstchild、nextsibling 两指针，即二叉链表）。</div></div></div>
+        <div class="ckrow" id="k-ds-a4b" data-k="ds-a4b"><button class="chk" type="button"></button><div class="body"><div class="tt">森林与二叉树转换、遍历对应</div><div class="ds-text">左孩子右兄弟；树/森林的先序＝对应二叉树先序，树/森林的后序（中序遍历森林）＝对应二叉树中序。</div></div></div>
       </div>
     </div>
 
     <div class="card must">
       <div class="card-h"><span class="stars">★★★★</span><span class="ttl">并查集</span><span class="badge must">必背模板</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="ds-a5a"><button class="chk" type="button"></button><div class="body"><div class="tt">结构与两个操作</div><div class="ds-text">数组 S[]，根结点存负数（绝对值＝该树结点数），非根存父下标。Find：沿父指针走到 S[x]&lt;0 即根；Union：把一根接到另一根。</div></div></div>
-        <div class="ckrow" data-k="ds-a5b"><button class="chk" type="button"></button><div class="body"><div class="tt">两个优化（会手算）</div><div class="ds-text">①小树并到大树（按结点数，根的负值累加）；②路径压缩（Find 时先找到根，再把路径上结点直接挂到根下）。应用题常给一串 Union/Find 让画最终森林。</div></div></div>
+        <div class="ckrow" id="k-ds-a5a" data-k="ds-a5a"><button class="chk" type="button"></button><div class="body"><div class="tt">结构与两个操作</div><div class="ds-text">数组 S[]，根结点存负数（绝对值＝该树结点数），非根存父下标。Find：沿父指针走到 S[x]&lt;0 即根；Union：把一根接到另一根。</div></div></div>
+        <div class="ckrow" id="k-ds-a5b" data-k="ds-a5b"><button class="chk" type="button"></button><div class="body"><div class="tt">两个优化（会手算）</div><div class="ds-text">①小树并到大树（按结点数，根的负值累加）；②路径压缩（Find 时先找到根，再把路径上结点直接挂到根下）。应用题常给一串 Union/Find 让画最终森林。</div></div></div>
       </div>
     </div>
 
     <div class="card must">
       <div class="card-h"><span class="stars">★★★★</span><span class="ttl">二叉排序树 BST / 平衡二叉树 AVL</span><span class="badge must">必背</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="ds-a6a"><button class="chk" type="button"></button><div class="body"><div class="tt">BST 判定与删除</div><div class="ds-text">左&lt;根&lt;右，中序遍历为升序（判 BST 的正确做法是看中序是否升序，不能只逐结点比左右）。删除四情况：叶子直接删；只有左/右子树则孩子顶替；左右都有用直接前驱（左子树最大）或后继（右子树最小）顶替。</div></div></div>
-        <div class="ckrow" data-k="ds-a6b"><button class="chk" type="button"></button><div class="body"><div class="tt">ASL 计算</div><div class="ds-text">查找成功 ASL＝各结点比较次数（=层次数）之和/n；查找失败要补外部（失败）结点，按失败区间算。题目要求 ≥10 个关键字自己插入并画每步。</div></div></div>
-        <div class="ckrow" data-k="ds-a6c"><button class="chk" type="button"></button><div class="body"><div class="tt">AVL 四种旋转</div><div class="ds-text">平衡因子＝左高−右高，|bf|≤1。LL 右旋；RR 左旋；LR 先对左子树左旋、再整体右旋；RL 先对右子树右旋、再整体左旋。要会覆盖四种情况各设计一例并算 ASL。</div></div></div>
+        <div class="ckrow" id="k-ds-a6a" data-k="ds-a6a"><button class="chk" type="button"></button><div class="body"><div class="tt">BST 判定与删除</div><div class="ds-text">左&lt;根&lt;右，中序遍历为升序（判 BST 的正确做法是看中序是否升序，不能只逐结点比左右）。删除四情况：叶子直接删；只有左/右子树则孩子顶替；左右都有用直接前驱（左子树最大）或后继（右子树最小）顶替。</div></div></div>
+        <div class="ckrow" id="k-ds-a6b" data-k="ds-a6b"><button class="chk" type="button"></button><div class="body"><div class="tt">ASL 计算</div><div class="ds-text">查找成功 ASL＝各结点比较次数（=层次数）之和/n；查找失败要补外部（失败）结点，按失败区间算。题目要求 ≥10 个关键字自己插入并画每步。</div></div></div>
+        <div class="ckrow" id="k-ds-a6c" data-k="ds-a6c"><button class="chk" type="button"></button><div class="body"><div class="tt">AVL 四种旋转</div><div class="ds-text">平衡因子＝左高−右高，|bf|≤1。LL 右旋；RR 左旋；LR 先对左子树左旋、再整体右旋；RL 先对右子树右旋、再整体左旋。要会覆盖四种情况各设计一例并算 ASL。</div></div></div>
       </div>
     </div>
 
     <div class="card">
       <div class="card-h"><span class="stars">★★★★</span><span class="ttl">哈夫曼树与前缀编码</span><span class="badge know">掌握</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="ds-a7a"><button class="chk" type="button"></button><div class="body"><div class="tt">构造与 WPL</div><div class="ds-text">每次取两个权最小的结点合并，新结点权=二者之和；n 个叶子共合并 n−1 次、总结点 2n−1。WPL＝Σ(叶权×路径长度)＝所有非叶结点权值之和。</div></div></div>
-        <div class="ckrow" data-k="ds-a7b"><button class="chk" type="button"></button><div class="body"><div class="tt">前缀编码 / 译码</div><div class="ds-text">左 0 右 1 得哈夫曼编码，任一编码不是其他编码前缀；判字符集是否前缀编码＝沿树搜索能否在叶子前匹配。2020 真题考编码译码文字描述。度为 m 的哈夫曼树只有度 0 和度 m 结点。</div></div></div>
+        <div class="ckrow" id="k-ds-a7a" data-k="ds-a7a"><button class="chk" type="button"></button><div class="body"><div class="tt">构造与 WPL</div><div class="ds-text">每次取两个权最小的结点合并，新结点权=二者之和；n 个叶子共合并 n−1 次、总结点 2n−1。WPL＝Σ(叶权×路径长度)＝所有非叶结点权值之和。</div></div></div>
+        <div class="ckrow" id="k-ds-a7b" data-k="ds-a7b"><button class="chk" type="button"></button><div class="body"><div class="tt">前缀编码 / 译码</div><div class="ds-text">左 0 右 1 得哈夫曼编码，任一编码不是其他编码前缀；判字符集是否前缀编码＝沿树搜索能否在叶子前匹配。2020 真题考编码译码文字描述。度为 m 的哈夫曼树只有度 0 和度 m 结点。</div></div></div>
       </div>
     </div>
     <div class="card must">
       <div class="card-h"><span class="stars">★★★★★</span><span class="ttl">图的存储：邻接矩阵 / 邻接表（要会写定义）</span><span class="badge must">必背代码</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="ds-a8a"><button class="chk" type="button"></button><div class="body"><div class="tt">邻接矩阵</div><div class="ds-text">顶点表 vex[N]＋边/权矩阵 weight[N][N]＋vexnum、arcnum。无向图矩阵对称；第 i 行非零个数＝顶点 i 的度；Aᵐ 元素 [i][j]＝从 i 到 j 长度为 m 的路径数（2015 真题）。</div></div></div>
-        <div class="ckrow" data-k="ds-a8b"><button class="chk" type="button"></button><div class="body"><div class="tt">邻接表</div><div class="ds-text">顶点结点 VNode{data, first}＋边结点 ArcNode{adjvex, weight, next}。无向图边结点数＝2e，有向图＝e；会按图画出邻接表，注意题目若改“邻接表存储”要换遍历写法。邻接多重表（无向）、十字链表（有向）仅了解。</div></div></div>
+        <div class="ckrow" id="k-ds-a8a" data-k="ds-a8a"><button class="chk" type="button"></button><div class="body"><div class="tt">邻接矩阵</div><div class="ds-text">顶点表 vex[N]＋边/权矩阵 weight[N][N]＋vexnum、arcnum。无向图矩阵对称；第 i 行非零个数＝顶点 i 的度；Aᵐ 元素 [i][j]＝从 i 到 j 长度为 m 的路径数（2015 真题）。</div></div></div>
+        <div class="ckrow" id="k-ds-a8b" data-k="ds-a8b"><button class="chk" type="button"></button><div class="body"><div class="tt">邻接表</div><div class="ds-text">顶点结点 VNode{data, first}＋边结点 ArcNode{adjvex, weight, next}。无向图边结点数＝2e，有向图＝e；会按图画出邻接表，注意题目若改“邻接表存储”要换遍历写法。邻接多重表（无向）、十字链表（有向）仅了解。</div></div></div>
       </div>
     </div>
 
     <div class="card must">
       <div class="card-h"><span class="stars">★★★★★</span><span class="ttl">最小生成树 Prim / Kruskal</span><span class="badge must">必背过程</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="ds-a9a"><button class="chk" type="button"></button><div class="body"><div class="tt">Prim＝选“点”</div><div class="ds-text">从一起点把点加入集合 U，每轮选一个端点在 U、另一端不在 U 的最小权边，把新点纳入 U，重复 n−1 次。记 Prim 与 Point 都以 P 开头。适合稠密图，O(n²)。</div></div></div>
-        <div class="ckrow" data-k="ds-a9b"><button class="chk" type="button"></button><div class="body"><div class="tt">Kruskal＝选“边”</div><div class="ds-text">所有边按权升序排序，依次取边，若两端不连通（并查集判定）则加入 MST，直到选够 n−1 条。适合稀疏图，O(e log e)。</div></div></div>
-        <div class="ckrow" data-k="ds-a9c"><button class="chk" type="button"></button><div class="body"><div class="tt">并列权与唯一性</div><div class="ds-text">同权时按编号小的点/起点小的边优先（保证过程可复现）。MST 总代价唯一、形态可能不唯一；充分条件：图中各边权值互不相等，则 MST 唯一。2017、2018、2014（结合 OSPF）多次考。</div></div></div>
+        <div class="ckrow" id="k-ds-a9a" data-k="ds-a9a"><button class="chk" type="button"></button><div class="body"><div class="tt">Prim＝选“点”</div><div class="ds-text">从一起点把点加入集合 U，每轮选一个端点在 U、另一端不在 U 的最小权边，把新点纳入 U，重复 n−1 次。记 Prim 与 Point 都以 P 开头。适合稠密图，O(n²)。</div></div></div>
+        <div class="ckrow" id="k-ds-a9b" data-k="ds-a9b"><button class="chk" type="button"></button><div class="body"><div class="tt">Kruskal＝选“边”</div><div class="ds-text">所有边按权升序排序，依次取边，若两端不连通（并查集判定）则加入 MST，直到选够 n−1 条。适合稀疏图，O(e log e)。</div></div></div>
+        <div class="ckrow" id="k-ds-a9c" data-k="ds-a9c"><button class="chk" type="button"></button><div class="body"><div class="tt">并列权与唯一性</div><div class="ds-text">同权时按编号小的点/起点小的边优先（保证过程可复现）。MST 总代价唯一、形态可能不唯一；充分条件：图中各边权值互不相等，则 MST 唯一。2017、2018、2014（结合 OSPF）多次考。</div></div></div>
       </div>
     </div>
 
     <div class="card must">
       <div class="card-h"><span class="stars">★★★★★</span><span class="ttl">最短路径：Dijkstra / BFS</span><span class="badge must">必背过程</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="ds-a10a"><button class="chk" type="button"></button><div class="body"><div class="tt">Dijkstra 单源（非负权）</div><div class="ds-text">dist[] 初始化为源点直连权、其余 ∞；每轮选未确定中 dist 最小的点定稿，用它松弛邻边，重复 n−1 轮。答题按“第 k 轮：到点 x 最短路径为 …，距离 …”分行写，不必画复杂大表。不能处理负权边。</div></div></div>
-        <div class="ckrow" data-k="ds-a10b"><button class="chk" type="button"></button><div class="body"><div class="tt">BFS 求无权图最短路径</div><div class="ds-text">队列＋visited＋distance，源点入队距离 0，每访问一个未访问邻点距离+1 入队，到终点即得最少边数（如“最少坐几趟列车”）。这是算法题最高频的图模板。</div></div></div>
-        <div class="ckrow" data-k="ds-a10c"><button class="chk" type="button"></button><div class="body"><div class="tt">Floyd</div><div class="ds-text">多源最短路径，三重循环动态规划 A⁽ᵏ⁾[i][j]=min(A⁽ᵏ⁻¹⁾[i][j], A[i][k]+A[k][j])，可处理负权但不能有负环。选择题为主。</div></div></div>
+        <div class="ckrow" id="k-ds-a10a" data-k="ds-a10a"><button class="chk" type="button"></button><div class="body"><div class="tt">Dijkstra 单源（非负权）</div><div class="ds-text">dist[] 初始化为源点直连权、其余 ∞；每轮选未确定中 dist 最小的点定稿，用它松弛邻边，重复 n−1 轮。答题按“第 k 轮：到点 x 最短路径为 …，距离 …”分行写，不必画复杂大表。不能处理负权边。</div></div></div>
+        <div class="ckrow" id="k-ds-a10b" data-k="ds-a10b"><button class="chk" type="button"></button><div class="body"><div class="tt">BFS 求无权图最短路径</div><div class="ds-text">队列＋visited＋distance，源点入队距离 0，每访问一个未访问邻点距离+1 入队，到终点即得最少边数（如“最少坐几趟列车”）。这是算法题最高频的图模板。</div></div></div>
+        <div class="ckrow" id="k-ds-a10c" data-k="ds-a10c"><button class="chk" type="button"></button><div class="body"><div class="tt">Floyd</div><div class="ds-text">多源最短路径，三重循环动态规划 A⁽ᵏ⁾[i][j]=min(A⁽ᵏ⁻¹⁾[i][j], A[i][k]+A[k][j])，可处理负权但不能有负环。选择题为主。</div></div></div>
       </div>
     </div>
 
     <div class="card must">
       <div class="card-h"><span class="stars">★★★★</span><span class="ttl">拓扑排序 与 关键路径（DAG）</span><span class="badge must">必背</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="ds-a11a"><button class="chk" type="button"></button><div class="body"><div class="tt">拓扑排序步骤</div><div class="ds-text">统计各点入度→入度为 0 者入队→出队并输出、把其出边指向点入度−1，减到 0 再入队→队空结束；输出点数&lt;n 说明有环。要会列出所有合法拓扑序列。</div></div></div>
-        <div class="ckrow" data-k="ds-a11b"><button class="chk" type="button"></button><div class="body"><div class="tt">关键路径 AOE</div><div class="ds-text">先拓扑排序；正向算各事件最早发生 ve（取 max）；逆向算最迟 vl（取 min）。活动 &lt;i,j&gt;：最早开始 ee=ve[i]，最迟开始 el=vl[j]−权；ee==el 即关键活动，串成关键路径。关键路径长度＝源到汇最长路径＝工程最短工期。2025、2011 真题考。</div></div></div>
+        <div class="ckrow" id="k-ds-a11a" data-k="ds-a11a"><button class="chk" type="button"></button><div class="body"><div class="tt">拓扑排序步骤</div><div class="ds-text">统计各点入度→入度为 0 者入队→出队并输出、把其出边指向点入度−1，减到 0 再入队→队空结束；输出点数&lt;n 说明有环。要会列出所有合法拓扑序列。</div></div></div>
+        <div class="ckrow" id="k-ds-a11b" data-k="ds-a11b"><button class="chk" type="button"></button><div class="body"><div class="tt">关键路径 AOE</div><div class="ds-text">先拓扑排序；正向算各事件最早发生 ve（取 max）；逆向算最迟 vl（取 min）。活动 &lt;i,j&gt;：最早开始 ee=ve[i]，最迟开始 el=vl[j]−权；ee==el 即关键活动，串成关键路径。关键路径长度＝源到汇最长路径＝工程最短工期。2025、2011 真题考。</div></div></div>
       </div>
     </div>
 
     <div class="card must">
       <div class="card-h"><span class="stars">★★★★★</span><span class="ttl">查找：折半 / 分块 / 散列 与 ASL</span><span class="badge must">必背计算</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="ds-a12a"><button class="chk" type="button"></button><div class="body"><div class="tt">折半查找判定树</div><div class="ds-text">仅适用有序顺序表（链表不行）。画判定树（平衡的二叉树）算 ASL：成功 ASL＝Σ层次/n；失败按外部结点算。时间 O(log₂n)。二分找左右边界可求 k 出现次数＝right−left+1（O(logn)）。</div></div></div>
-        <div class="ckrow" data-k="ds-a12b"><button class="chk" type="button"></button><div class="body"><div class="tt">分块查找</div><div class="ds-text">块间有序、块内无序；先顺序（或折半）查块索引、再块内顺序查。成功 ASL＝查索引长度+块内长度，逐项相加/n；失败一般只给特定关键字算比较次数。</div></div></div>
-        <div class="ckrow" data-k="ds-a12c"><button class="chk" type="button"></button><div class="body"><div class="tt">散列·线性探测</div><div class="ds-text">H(key)=key%p，冲突则向后逐格探测到空位。成功 ASL＝各元素插入时比较次数均；失败 ASL：从散列值位置一直比到第一个空槽的长度，对各散列值取均。表长可大于 p。2010、2024 真题考。</div></div></div>
-        <div class="ckrow" data-k="ds-a12d"><button class="chk" type="button"></button><div class="body"><div class="tt">散列·拉链法</div><div class="ds-text">表长＝p，同散列值挂一条链。成功 ASL＝各元素在链中位次均；失败 ASL＝该桶链长（空链为 0），对各桶取均。装填因子 α=记录数/表长，越小冲突越少。</div></div></div>
+        <div class="ckrow" id="k-ds-a12a" data-k="ds-a12a"><button class="chk" type="button"></button><div class="body"><div class="tt">折半查找判定树</div><div class="ds-text">仅适用有序顺序表（链表不行）。画判定树（平衡的二叉树）算 ASL：成功 ASL＝Σ层次/n；失败按外部结点算。时间 O(log₂n)。二分找左右边界可求 k 出现次数＝right−left+1（O(logn)）。</div></div></div>
+        <div class="ckrow" id="k-ds-a12b" data-k="ds-a12b"><button class="chk" type="button"></button><div class="body"><div class="tt">分块查找</div><div class="ds-text">块间有序、块内无序；先顺序（或折半）查块索引、再块内顺序查。成功 ASL＝查索引长度+块内长度，逐项相加/n；失败一般只给特定关键字算比较次数。</div></div></div>
+        <div class="ckrow" id="k-ds-a12c" data-k="ds-a12c"><button class="chk" type="button"></button><div class="body"><div class="tt">散列·线性探测</div><div class="ds-text">H(key)=key%p，冲突则向后逐格探测到空位。成功 ASL＝各元素插入时比较次数均；失败 ASL：从散列值位置一直比到第一个空槽的长度，对各散列值取均。表长可大于 p。2010、2024 真题考。</div></div></div>
+        <div class="ckrow" id="k-ds-a12d" data-k="ds-a12d"><button class="chk" type="button"></button><div class="body"><div class="tt">散列·拉链法</div><div class="ds-text">表长＝p，同散列值挂一条链。成功 ASL＝各元素在链中位次均；失败 ASL＝该桶链长（空链为 0），对各桶取均。装填因子 α=记录数/表长，越小冲突越少。</div></div></div>
       </div>
     </div>
     <div class="card must">
       <div class="card-h"><span class="stars">★★★★</span><span class="ttl">内部排序：性质对比 + 画过程</span><span class="badge must">必背表</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="ds-a13a"><button class="chk" type="button"></button><div class="body"><div class="tt">八种排序性质（选择/应用题都考）</div><div class="ds-text">
+        <div class="ckrow" id="k-ds-a13a" data-k="ds-a13a"><button class="chk" type="button"></button><div class="body"><div class="tt">八种排序性质（选择/应用题都考）</div><div class="ds-text">
           <table class="t">
           <tr><th>算法</th><th>平均/最坏</th><th>空间</th><th>稳定</th><th>适用与要点</th></tr>
           <tr><td>直接插入</td><td>n² / n²</td><td>O(1)</td><td>稳</td><td>顺序表、链表均可；基本有序时最快</td></tr>
@@ -357,26 +404,26 @@ table.t tr:nth-child(even) td{background:#fbfcfd}
           <tr><td><b>二路归并</b></td><td>nlogn / nlogn</td><td>O(n)</td><td>稳</td><td>合并有序表/有序链表最强</td></tr>
           <tr><td>基数排序</td><td colspan="2">O(d(n+r)) / O(r)</td><td>稳</td><td>分配+收集，链表可，多关键字</td></tr>
           </table></div></div></div>
-        <div class="ckrow" data-k="ds-a13b"><button class="chk" type="button"></button><div class="body"><div class="tt">堆与堆排序</div><div class="ds-text">数组即顺序存储完全二叉树，下标 0 起左孩子 2i+1、右 2i+2；大根堆要求根≥两孩子。升序建大根堆：从最后一个非叶结点 ⌊n/2⌋−1 起向前调整；每轮堆顶与表尾交换、堆规模−1 后下沉。会判断数组是否为堆、画建堆后状态（画数组即可）。</div></div></div>
-        <div class="ckrow" data-k="ds-a13c"><button class="chk" type="button"></button><div class="body"><div class="tt">应用题重点画过程的排序</div><div class="ds-text">代码太复杂不适合考代码的：希尔、堆、基数（画每轮分配收集）；快排、归并通常在算法题考，也建议画一遍。计数排序考代码阅读与性质（2021）。</div></div></div>
+        <div class="ckrow" id="k-ds-a13b" data-k="ds-a13b"><button class="chk" type="button"></button><div class="body"><div class="tt">堆与堆排序</div><div class="ds-text">数组即顺序存储完全二叉树，下标 0 起左孩子 2i+1、右 2i+2；大根堆要求根≥两孩子。升序建大根堆：从最后一个非叶结点 ⌊n/2⌋−1 起向前调整；每轮堆顶与表尾交换、堆规模−1 后下沉。会判断数组是否为堆、画建堆后状态（画数组即可）。</div></div></div>
+        <div class="ckrow" id="k-ds-a13c" data-k="ds-a13c"><button class="chk" type="button"></button><div class="body"><div class="tt">应用题重点画过程的排序</div><div class="ds-text">代码太复杂不适合考代码的：希尔、堆、基数（画每轮分配收集）；快排、归并通常在算法题考，也建议画一遍。计数排序考代码阅读与性质（2021）。</div></div></div>
       </div>
     </div>
 
     <div class="card must">
       <div class="card-h"><span class="stars">★★★★</span><span class="ttl">外部排序（2023 偷袭考点，务必会）</span><span class="badge must">必背</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="ds-a14a"><button class="chk" type="button"></button><div class="body"><div class="tt">置换-选择排序生成初始归并段</div><div class="ds-text">工作区 WA 中反复选最小关键字输出到 FO，同时从 FI 读入新记录；当选出的关键字比上一个输出还小则不能进当前段，标记后开新段。n 条记录各占一块时，读盘 n 次、写盘 n 次。</div></div></div>
-        <div class="ckrow" data-k="ds-a14b"><button class="chk" type="button"></button><div class="body"><div class="tt">最佳归并树与虚段</div><div class="ds-text">m 个初始段做 k 路归并，若 (m−1)%(k−1)≠0，需补 (k−1)−(m−1)%(k−1) 个长度为 0 的虚段；按 k 阶哈夫曼树构造最佳归并树。WPL＝Σ(叶权×路径)＝归并总读盘次数＝总写盘次数，磁盘 I/O 总数＝2×WPL。</div></div></div>
-        <div class="ckrow" data-k="ds-a14c"><button class="chk" type="button"></button><div class="body"><div class="tt">败者树</div><div class="ds-text">作用：多路归并时减少关键字比较次数。构造 k 路败者树初始比较 k−1 次；此后每输出一个、从该段补入新关键字，沿树向上比较到根即可找到新最小（次数＝树高层级，7 路时最多 3 次、最少 2 次）。</div></div></div>
+        <div class="ckrow" id="k-ds-a14a" data-k="ds-a14a"><button class="chk" type="button"></button><div class="body"><div class="tt">置换-选择排序生成初始归并段</div><div class="ds-text">工作区 WA 中反复选最小关键字输出到 FO，同时从 FI 读入新记录；当选出的关键字比上一个输出还小则不能进当前段，标记后开新段。n 条记录各占一块时，读盘 n 次、写盘 n 次。</div></div></div>
+        <div class="ckrow" id="k-ds-a14b" data-k="ds-a14b"><button class="chk" type="button"></button><div class="body"><div class="tt">最佳归并树与虚段</div><div class="ds-text">m 个初始段做 k 路归并，若 (m−1)%(k−1)≠0，需补 (k−1)−(m−1)%(k−1) 个长度为 0 的虚段；按 k 阶哈夫曼树构造最佳归并树。WPL＝Σ(叶权×路径)＝归并总读盘次数＝总写盘次数，磁盘 I/O 总数＝2×WPL。</div></div></div>
+        <div class="ckrow" id="k-ds-a14c" data-k="ds-a14c"><button class="chk" type="button"></button><div class="body"><div class="tt">败者树</div><div class="ds-text">作用：多路归并时减少关键字比较次数。构造 k 路败者树初始比较 k−1 次；此后每输出一个、从该段补入新关键字，沿树向上比较到根即可找到新最小（次数＝树高层级，7 路时最多 3 次、最少 2 次）。</div></div></div>
       </div>
     </div>
     <h3 class="grp">B · 算法题五类必背模板（41 题，写代码）</h3>
-    <p class="lead">给分按复杂度：最优 O(logn)≈13、次优 O(n)≈11、O(n²)≈10。先保证写对、能拿基本分，再追求最优；代码无 bug、健壮性扣分很少。答题三段式：①算法思想 ②C 代码+注释 ③时间/空间复杂度（必须与代码匹配）。</p>
+    <p class="lead">给分按复杂度（往年经验估计、非官方标准）：最优 O(logn)≈13、次优 O(n)≈11、O(n²)≈10。先保证写对、能拿基本分，再追求最优；代码无 bug、健壮性扣分很少。答题三段式：①算法思想 ②C 代码+注释 ③时间/空间复杂度（必须与代码匹配）。</p>
 
     <div class="card must">
       <div class="card-h"><span class="stars">★★★★★</span><span class="ttl">模板① 快速排序 + 划分思想</span><span class="badge must">必背默写</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="ds-b1a"><button class="chk" type="button"></button><div class="body"><div class="tt">快排（乱序数组首选，平均 nlogn）</div><div class="ds-text">
+        <div class="ckrow" id="k-ds-b1a" data-k="ds-b1a"><button class="chk" type="button"></button><div class="body"><div class="tt">快排（乱序数组首选，平均 nlogn）</div><div class="ds-text">
 <div class="f">int Partition(int A[],int low,int high){
   int pivot=A[low];
   while(low&lt;high){
@@ -389,14 +436,14 @@ void QuickSort(int A[],int low,int high){
   if(low&lt;high){ int p=Partition(A,low,high);
     QuickSort(A,low,p-1); QuickSort(A,p+1,high); }
 }</div></div></div></div>
-        <div class="ckrow" data-k="ds-b1b"><button class="chk" type="button"></button><div class="body"><div class="tt">划分思想：第 k 小 / 最小的 k 个数（平均 O(n)）</div><div class="ds-text">Partition 返回枢轴位置 M，则枢轴是第 M+1 小：M==k−1 即答案；M&gt;k−1 只在左半继续，否则只在右半继续（不必整序）。用于“找第 k 小/前 k 小/把数组按某阈值分两边”（2016 真题、王道 8.3.3）。</div></div></div>
+        <div class="ckrow" id="k-ds-b1b" data-k="ds-b1b"><button class="chk" type="button"></button><div class="body"><div class="tt">划分思想：第 k 小 / 最小的 k 个数（平均 O(n)）</div><div class="ds-text">Partition 返回枢轴位置 M，则枢轴是第 M+1 小：M==k−1 即答案；M&gt;k−1 只在左半继续，否则只在右半继续（不必整序）。用于“找第 k 小/前 k 小/把数组按某阈值分两边”（2016 真题、王道 8.3.3）。</div></div></div>
       </div>
     </div>
 
     <div class="card must">
       <div class="card-h"><span class="stars">★★★★★</span><span class="ttl">模板② 二路归并（合并有序表）</span><span class="badge must">必背默写</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="ds-b2a"><button class="chk" type="button"></button><div class="body"><div class="tt">Merge 两个有序段 O(n)</div><div class="ds-text">
+        <div class="ckrow" id="k-ds-b2a" data-k="ds-b2a"><button class="chk" type="button"></button><div class="body"><div class="tt">Merge 两个有序段 O(n)</div><div class="ds-text">
 <div class="f">// A[low..mid]、A[mid+1..high] 各自有序，辅助数组 B
 while(i&lt;=mid &amp;&amp; j&lt;=high)
   B[k++] = A[i]&lt;=A[j] ? A[i++] : A[j++];
@@ -410,43 +457,43 @@ for(t=low;t&lt;=high;t++) A[t]=B[t];</div>
     <div class="card must">
       <div class="card-h"><span class="stars">★★★★★</span><span class="ttl">模板③ 单链表（通常带头结点）</span><span class="badge must">必背默写</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="ds-b3a"><button class="chk" type="button"></button><div class="body"><div class="tt">基本功 + 两个技巧</div><div class="ds-text">按位序查找＝遍历+计数器（倒数第 k＝正数第 n−k+1）；按条件查找后插入/删除＝<b>前后指针 pre、p</b>；有序链表插入新结点找 pre。头插法＝原地逆置，尾插法＝保持原序。</div></div></div>
-        <div class="ckrow" data-k="ds-b3b"><button class="chk" type="button"></button><div class="body"><div class="tt">头插法原地逆置（背 4 行）</div><div class="ds-text">
+        <div class="ckrow" id="k-ds-b3a" data-k="ds-b3a"><button class="chk" type="button"></button><div class="body"><div class="tt">基本功 + 两个技巧</div><div class="ds-text">按位序查找＝遍历+计数器（倒数第 k＝正数第 n−k+1）；按条件查找后插入/删除＝<b>前后指针 pre、p</b>；有序链表插入新结点找 pre。头插法＝原地逆置，尾插法＝保持原序。</div></div></div>
+        <div class="ckrow" id="k-ds-b3b" data-k="ds-b3b"><button class="chk" type="button"></button><div class="body"><div class="tt">头插法原地逆置（背 4 行）</div><div class="ds-text">
 <div class="f">p = head-&gt;next; head-&gt;next = NULL;   // 拆链
 while(p){ q=p-&gt;next;
   p-&gt;next = head-&gt;next; head-&gt;next = p; // 头插
   p=q; }</div></div></div></div>
-        <div class="ckrow" data-k="ds-b3c"><button class="chk" type="button"></button><div class="body"><div class="tt">退路</div><div class="ds-text">想不出原地算法就“链表转数组处理再转回”，空间 O(n) 也有次优分；完成比完美重要。</div></div></div>
+        <div class="ckrow" id="k-ds-b3c" data-k="ds-b3c"><button class="chk" type="button"></button><div class="body"><div class="tt">退路</div><div class="ds-text">想不出原地算法就“链表转数组处理再转回”，空间 O(n) 也有次优分；完成比完美重要。</div></div></div>
       </div>
     </div>
 
     <div class="card must">
       <div class="card-h"><span class="stars">★★★★★</span><span class="ttl">模板④ 二叉树递归（最高频树题套路）</span><span class="badge must">必背默写</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="ds-b4a"><button class="chk" type="button"></button><div class="body"><div class="tt">遍历框架 + 层序</div><div class="ds-text">
+        <div class="ckrow" id="k-ds-b4a" data-k="ds-b4a"><button class="chk" type="button"></button><div class="body"><div class="tt">遍历框架 + 层序</div><div class="ds-text">
 <div class="f">void Pre(BTNode *T){ if(!T)return;
   visit(T); Pre(T-&gt;lchild); Pre(T-&gt;rchild); }   // 中序左-visit-右，后序左-右-visit
 // 层序：根入队；队非空则出队访问、左右孩子依次入队</div></div></div></div>
-        <div class="ckrow" data-k="ds-b4b"><button class="chk" type="button"></button><div class="body"><div class="tt">属性计算（后序返回值）</div><div class="ds-text">高度 H(T)=!T?0:max(H(l),H(r))+1；宽度＝先序带 level 参数累加 width[level] 再取 max；WPL＝遍历到叶子累加 权×深度。</div></div></div>
-        <div class="ckrow" data-k="ds-b4c"><button class="chk" type="button"></button><div class="body"><div class="tt">三种判定</div><div class="ds-text">判 BST＝中序是否严格升序（记录前驱值）；判平衡＝后序返回高度并查 |左高−右高|&gt;1；判完全二叉树＝层序遍历，一旦遇到空结点，其后不得再出现非空结点（且“无左有右”直接为假）。</div></div></div>
-        <div class="ckrow" data-k="ds-b4d"><button class="chk" type="button"></button><div class="body"><div class="tt">信息传递三思路</div><div class="ds-text">①递归参数自顶向下传（层次、上下界）；②返回值自底向上传（高度、计数）；③全局变量跨函数共享（WPL、叶子数）。</div></div></div>
+        <div class="ckrow" id="k-ds-b4b" data-k="ds-b4b"><button class="chk" type="button"></button><div class="body"><div class="tt">属性计算（后序返回值）</div><div class="ds-text">高度 H(T)=!T?0:max(H(l),H(r))+1；宽度＝先序带 level 参数累加 width[level] 再取 max；WPL＝遍历到叶子累加 权×深度。</div></div></div>
+        <div class="ckrow" id="k-ds-b4c" data-k="ds-b4c"><button class="chk" type="button"></button><div class="body"><div class="tt">三种判定</div><div class="ds-text">判 BST＝中序是否严格升序（记录前驱值）；判平衡＝后序返回高度并查 |左高−右高|&gt;1；判完全二叉树＝层序遍历，一旦遇到空结点，其后不得再出现非空结点（且“无左有右”直接为假）。</div></div></div>
+        <div class="ckrow" id="k-ds-b4d" data-k="ds-b4d"><button class="chk" type="button"></button><div class="body"><div class="tt">信息传递三思路</div><div class="ds-text">①递归参数自顶向下传（层次、上下界）；②返回值自底向上传（高度、计数）；③全局变量跨函数共享（WPL、叶子数）。</div></div></div>
       </div>
     </div>
 
     <div class="card must">
       <div class="card-h"><span class="stars">★★★★</span><span class="ttl">模板⑤ 图 DFS / BFS</span><span class="badge must">必背</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="ds-b5a"><button class="chk" type="button"></button><div class="body"><div class="tt">BFS 求无权图最短路径（邻接矩阵）</div><div class="ds-text">
+        <div class="ckrow" id="k-ds-b5a" data-k="ds-b5a"><button class="chk" type="button"></button><div class="body"><div class="tt">BFS 求无权图最短路径（邻接矩阵）</div><div class="ds-text">
 <div class="f">visited[]=0; dist[]=-1; dist[start]=0; 入队 start;
 while(队非空){ u=出队;
   for(v=0..n-1) if(edge[u][v] &amp;&amp; !visited[v]){
     visited[v]=1; dist[v]=dist[u]+1; 入队 v; } }
 // dist[end] 即最少边数（最少换乘次数），-1 为不可达</div></div></div></div>
-        <div class="ckrow" data-k="ds-b5b"><button class="chk" type="button"></button><div class="body"><div class="tt">DFS / 连通分量</div><div class="ds-text">DFS 访问 v 后递归访问所有未访问邻接点、全部走完回溯；判两点是否同集合＝从一点 DFS/BFS 看能否到另一点（也可用并查集）。邻接表时把“扫一行矩阵”换成“沿 first 指针遍历边结点”。</div></div></div>
+        <div class="ckrow" id="k-ds-b5b" data-k="ds-b5b"><button class="chk" type="button"></button><div class="body"><div class="tt">DFS / 连通分量</div><div class="ds-text">DFS 访问 v 后递归访问所有未访问邻接点、全部走完回溯；判两点是否同集合＝从一点 DFS/BFS 看能否到另一点（也可用并查集）。邻接表时把“扫一行矩阵”换成“沿 first 指针遍历边结点”。</div></div></div>
       </div>
     </div>
 
-    <h3 class="grp">2009–2025 数据结构大题考点年表</h3>
+    <h3 class="grp" id="ds-years">2009–2025 数据结构大题考点年表</h3>
     <div class="card"><div class="card-b">
       <table class="t">
       <tr><th>年份</th><th>41 算法题</th><th>42 应用题</th></tr>
@@ -482,10 +529,10 @@ while(队非空){ u=出队;
       <div class="card-h"><span class="stars">★★★★★</span><span class="ttl">查询 / 中断 / DMA 的 CPU 开销与不丢数据条件</span><span class="badge must">必背公式</span></div>
       <div class="card-b">
         <p class="sub">设设备速率 n B/s、接口缓冲 4B；查询间隔 t₁、单次查询耗时 t₂、单次中断处理 t₃、DMA 每块预处理+后处理 t₄、块大小 d B。</p>
-        <div class="ckrow" data-k="co-1a"><button class="chk" type="button"></button><div class="body"><div class="tt">查询方式不丢数据</div><div class="ds-text">缓冲充满时间＝4/n，故查询间隔必须 <span class="ic">t₁ &lt; 4/n</span>；查询全程 CPU 忙等。</div></div></div>
-        <div class="ckrow" data-k="co-1b"><button class="chk" type="button"></button><div class="body"><div class="tt">中断优于查询的条件</div><div class="ds-text">每秒中断 n/4 次（每装满 4B 中断一次），每秒查询 1/t₁ 次：<span class="ic">(n/4)·t₃ &lt; (1/t₁)·t₂</span>。</div></div></div>
-        <div class="ckrow" data-k="co-1c"><button class="chk" type="button"></button><div class="body"><div class="tt">DMA 优于中断的条件</div><div class="ds-text">DMA 每块只介入 1 次，同一块用中断需 d/4 次：<span class="ic">t₄ &lt; (d/4)·t₃</span>。</div></div></div>
-        <div class="ckrow" data-k="co-1d"><button class="chk" type="button"></button><div class="body"><div class="tt">介入次数与丢失判据（结论）</div><div class="ds-text">DMA 每块介入 1 次、中断每字（每缓冲满）介入 1 次、程序查询全程忙等。<b>是否丢数据＝处理/响应时间是否 &gt; 缓冲充满时间</b>。DMA 传送期间 CPU 可继续执行，仅预处理/后处理需介入。</div></div></div>
+        <div class="ckrow" id="k-co-1a" data-k="co-1a"><button class="chk" type="button"></button><div class="body"><div class="tt">查询方式不丢数据</div><div class="ds-text">缓冲充满时间＝4/n，故查询间隔必须 <span class="ic">t₁ &lt; 4/n</span>；查询全程 CPU 忙等。</div></div></div>
+        <div class="ckrow" id="k-co-1b" data-k="co-1b"><button class="chk" type="button"></button><div class="body"><div class="tt">中断优于查询的条件</div><div class="ds-text">每秒中断 n/4 次（每装满 4B 中断一次），每秒查询 1/t₁ 次：<span class="ic">(n/4)·t₃ &lt; (1/t₁)·t₂</span>。</div></div></div>
+        <div class="ckrow" id="k-co-1c" data-k="co-1c"><button class="chk" type="button"></button><div class="body"><div class="tt">DMA 优于中断的条件</div><div class="ds-text">DMA 每块只介入 1 次，同一块用中断需 d/4 次：<span class="ic">t₄ &lt; (d/4)·t₃</span>。</div></div></div>
+        <div class="ckrow" id="k-co-1d" data-k="co-1d"><button class="chk" type="button"></button><div class="body"><div class="tt">介入次数与丢失判据（结论）</div><div class="ds-text">DMA 每块介入 1 次、中断每字（每缓冲满）介入 1 次、程序查询全程忙等。<b>是否丢数据＝处理/响应时间是否 &gt; 缓冲充满时间</b>。DMA 传送期间 CPU 可继续执行，仅预处理/后处理需介入。</div></div></div>
       </div>
     </div>
 
@@ -493,22 +540,22 @@ while(队非空){ u=出队;
     <div class="card must">
       <div class="card-h"><span class="stars">★★★★★</span><span class="ttl">加减运算标志位 CF / OF / ZF / SF</span><span class="badge must">必背</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="co-2a"><button class="chk" type="button"></button><div class="body"><div class="tt">四个标志位公式</div><div class="ds-text">
+        <div class="ckrow" id="k-co-2a" data-k="co-2a"><button class="chk" type="button"></button><div class="body"><div class="tt">四个标志位公式</div><div class="ds-text">
 <div class="f">CF = 最高位进位 ⊕ Sub    （Sub=1 减法、0 加法；管<b>无符号</b>溢出/借位）
 OF = 最高位进位 ⊕ 次高位进位 （管<b>有符号</b>溢出）
 ZF = 结果全 0 时为 1
 SF = 结果的最高位（即符号位）</div></div></div></div>
-        <div class="ckrow" data-k="co-2b"><button class="chk" type="button"></button><div class="body"><div class="tt">看哪些标志</div><div class="ds-text">有符号数看 OF、SF、ZF（CF 无意义）；无符号数看 CF、ZF。减法＝减数（连符号位）按位取反、末位加 1 后相加。</div></div></div>
+        <div class="ckrow" id="k-co-2b" data-k="co-2b"><button class="chk" type="button"></button><div class="body"><div class="tt">看哪些标志</div><div class="ds-text">有符号数看 OF、SF、ZF（CF 无意义）；无符号数看 CF、ZF。减法＝减数（连符号位）按位取反、末位加 1 后相加。</div></div></div>
       </div>
     </div>
 
     <div class="card must">
       <div class="card-h"><span class="stars">★★★★</span><span class="ttl">乘除溢出 + IEEE754 + 浮点加减</span><span class="badge must">必背</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="co-2c"><button class="chk" type="button"></button><div class="body"><div class="tt">乘法溢出判定</div><div class="ds-text">n×n 位乘积用 2n 位存一定不溢出；只留 n 位时：无符号数高 n 位全 0 才不溢出，有符号数高 n+1 位全 0（正）或全 1（负）才不溢出。整数除法不溢出。</div></div></div>
-        <div class="ckrow" data-k="co-2d"><button class="chk" type="button"></button><div class="body"><div class="tt">IEEE754 三种格式</div><div class="ds-text">float＝1 符+8 阶(偏置127)+23 尾，有效精度 24 位；double＝1+11(偏1023)+52，精度 53 位；long double＝1+15+64。规格化尾数隐含前导 1。</div></div></div>
-        <div class="ckrow" data-k="co-2e"><button class="chk" type="button"></button><div class="body"><div class="tt">浮点加减五步</div><div class="ds-text">①对阶（<b>小阶向大阶看齐</b>、小阶尾数右移）→②尾数求和→③规格化（左规阶码−1 可多次；右规阶码+1 至多一次）→④舍入（0 舍 1 入）→⑤判溢出（阶码上溢报异常；下溢按非规格化数或机器 0）。</div></div></div>
-        <div class="ckrow" data-k="co-2f"><button class="chk" type="button"></button><div class="body"><div class="tt">C 语言类型转换</div><div class="ds-text">等长转换机器数不变、解释改变；短变长：无符号零扩展、有符号符号扩展；长变短截低位；int→float 可能丢精度，float→int 丢小数（向 0 取整）。</div></div></div>
+        <div class="ckrow" id="k-co-2c" data-k="co-2c"><button class="chk" type="button"></button><div class="body"><div class="tt">乘法溢出判定</div><div class="ds-text">n×n 位乘积用 2n 位存一定不溢出；只留 n 位时：无符号数高 n 位全 0 才不溢出，有符号数高 n+1 位全 0（正）或全 1（负）才不溢出。整数除法不溢出。</div></div></div>
+        <div class="ckrow" id="k-co-2d" data-k="co-2d"><button class="chk" type="button"></button><div class="body"><div class="tt">IEEE754 三种格式</div><div class="ds-text">float＝1 符+8 阶(偏置127)+23 尾，有效精度 24 位；double＝1+11(偏1023)+52，精度 53 位；long double＝1+15+64。规格化尾数隐含前导 1。</div></div></div>
+        <div class="ckrow" id="k-co-2e" data-k="co-2e"><button class="chk" type="button"></button><div class="body"><div class="tt">浮点加减五步</div><div class="ds-text">①对阶（<b>小阶向大阶看齐</b>、小阶尾数右移）→②尾数求和→③规格化（左规阶码−1 可多次；右规阶码+1 至多一次）→④舍入（0 舍 1 入）→⑤判溢出（阶码上溢报异常；下溢按非规格化数或机器 0）。</div></div></div>
+        <div class="ckrow" id="k-co-2f" data-k="co-2f"><button class="chk" type="button"></button><div class="body"><div class="tt">C 语言类型转换</div><div class="ds-text">等长转换机器数不变、解释改变；短变长：无符号零扩展、有符号符号扩展；长变短截低位；int→float 可能丢精度，float→int 丢小数（向 0 取整）。</div></div></div>
       </div>
     </div>
 
@@ -516,29 +563,29 @@ SF = 结果的最高位（即符号位）</div></div></div></div>
     <div class="card must">
       <div class="card-h"><span class="stars">★★★★★</span><span class="ttl">Cache 六条件 与 地址划分</span><span class="badge must">必背</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="co-3a"><button class="chk" type="button"></button><div class="body"><div class="tt">审题六条件</div><div class="ds-text">①物理地址位数 ②Cache 总行数 ③块大小 ④映射方式 ⑤写策略 ⑥替换算法。块内偏移位数＝log₂(块大小)。</div></div></div>
-        <div class="ckrow" data-k="co-3b"><button class="chk" type="button"></button><div class="body"><div class="tt">地址拆分</div><div class="ds-text">全相联 [Tag | 块内]；直接映射 [Tag | 行号 | 块内]，行号位＝log₂(总行数)；组相联 [Tag | 组号 | 块内]，组数＝总行数÷路数。</div></div></div>
-        <div class="ckrow" data-k="co-3c"><button class="chk" type="button"></button><div class="body"><div class="tt">一个 Cache 行的总位数</div><div class="ds-text">有效位 V 恒 1 bit；数据位＝块大小；脏位：写回法 1 bit、全写法 0；替换信息：直接映射 0，全相联 LRU/FIFO 为 log₂(总行数)、组相联为 log₂(路数)、随机替换 0。即 <span class="ic">行位数＝1+脏位+替换位+Tag+块大小</span>。</div></div></div>
-        <div class="ckrow" data-k="co-3d"><button class="chk" type="button"></button><div class="body"><div class="tt">写策略</div><div class="ds-text">全写法(写直达)：同时写 Cache 和主存、无脏位、一致性好、写慢，常配写缓冲；写回法：只写 Cache、置脏位、替换时才写回，需脏位。写分配/非写分配决定缺失时是否调入块。</div></div></div>
+        <div class="ckrow" id="k-co-3a" data-k="co-3a"><button class="chk" type="button"></button><div class="body"><div class="tt">审题六条件</div><div class="ds-text">①物理地址位数 ②Cache 总行数 ③块大小 ④映射方式 ⑤写策略 ⑥替换算法。块内偏移位数＝log₂(块大小)。</div></div></div>
+        <div class="ckrow" id="k-co-3b" data-k="co-3b"><button class="chk" type="button"></button><div class="body"><div class="tt">地址拆分</div><div class="ds-text">全相联 [Tag | 块内]；直接映射 [Tag | 行号 | 块内]，行号位＝log₂(总行数)；组相联 [Tag | 组号 | 块内]，组数＝总行数÷路数。</div></div></div>
+        <div class="ckrow" id="k-co-3c" data-k="co-3c"><button class="chk" type="button"></button><div class="body"><div class="tt">一个 Cache 行的总位数</div><div class="ds-text">有效位 V 恒 1 bit；数据位＝块大小；脏位：写回法 1 bit、全写法 0；替换信息：直接映射 0，全相联 LRU/FIFO 为 log₂(总行数)、组相联为 log₂(路数)、随机替换 0。即 <span class="ic">行位数＝1+脏位+替换位+Tag+块大小</span>。</div></div></div>
+        <div class="ckrow" id="k-co-3d" data-k="co-3d"><button class="chk" type="button"></button><div class="body"><div class="tt">写策略</div><div class="ds-text">全写法(写直达)：同时写 Cache 和主存、无脏位、一致性好、写慢，常配写缓冲；写回法：只写 Cache、置脏位、替换时才写回，需脏位。写分配/非写分配决定缺失时是否调入块。</div></div></div>
       </div>
     </div>
 
     <div class="card must">
       <div class="card-h"><span class="stars">★★★★★</span><span class="ttl">i7 地址转换全流程（CO44 + OS45 共用）</span><span class="badge must">必背</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="co-3e"><button class="chk" type="button"></button><div class="body"><div class="tt">i7 参数（背数字）</div><div class="ds-text">虚拟地址 VA 48 位＝虚页号 36 + 页内 12；物理地址 PA 52 位＝页框号 40 + 页内 12；页面 4KB；4 级页表、每级页号 9 位；页表项 8B。L1 数据 Cache：8 路组相联、共 512 行、每行 64B，行额外＝(40 Tag+1 V+3 LRU+1 脏)bit。</div></div></div>
-        <div class="ckrow" data-k="co-3f"><button class="chk" type="button"></button><div class="body"><div class="tt">访问九步</div><div class="ds-text">VA 查 TLB（命中直接得物理页框号 PPN）→未命中查多级页表（可能缺页）→PPN 拼页内偏移得 PA→用 PA 查 Cache→命中取数、未命中访存。TLB 表项＝Tag+有效位 1+页框号+替换信息。</div></div></div>
-        <div class="ckrow" data-k="co-3g"><button class="chk" type="button"></button><div class="body"><div class="tt">页表项标志位</div><div class="ds-text">P 存在位(0 缺页)、R/W 读写、U/S 用户态可否访问、A 访问位、D 脏位。非法访问内核区由 PSW 态与 U/S 位判定并触发异常。</div></div></div>
-        <div class="ckrow" data-k="co-3h"><button class="chk" type="button"></button><div class="body"><div class="tt">改进型 Clock 四轮扫描（看 A、D）</div><div class="ds-text">第一轮找 (0,0) 不改标志；第二轮找 (0,1) 并把扫过帧 A 置 0；第三轮再找 (0,0)；第四轮找 (0,1)。最多四轮必选中一页。</div></div></div>
+        <div class="ckrow" id="k-co-3e" data-k="co-3e"><button class="chk" type="button"></button><div class="body"><div class="tt">i7 参数（背数字）</div><div class="ds-text">虚拟地址 VA 48 位＝虚页号 36 + 页内 12；物理地址 PA 52 位＝页框号 40 + 页内 12；页面 4KB；4 级页表、每级页号 9 位；页表项 8B。L1 数据 Cache：8 路组相联、共 512 行、每行 64B，行额外＝(40 Tag+1 V+3 LRU+1 脏)bit。</div></div></div>
+        <div class="ckrow" id="k-co-3f" data-k="co-3f"><button class="chk" type="button"></button><div class="body"><div class="tt">访问九步</div><div class="ds-text">VA 查 TLB（命中直接得物理页框号 PPN）→未命中查多级页表（可能缺页）→PPN 拼页内偏移得 PA→用 PA 查 Cache→命中取数、未命中访存。TLB 表项＝Tag+有效位 1+页框号+替换信息。</div></div></div>
+        <div class="ckrow" id="k-co-3g" data-k="co-3g"><button class="chk" type="button"></button><div class="body"><div class="tt">页表项标志位</div><div class="ds-text">P 存在位(0 缺页)、R/W 读写、U/S 用户态可否访问、A 访问位、D 脏位。非法访问内核区由 PSW 态与 U/S 位判定并触发异常。</div></div></div>
+        <div class="ckrow" id="k-co-3h" data-k="co-3h"><button class="chk" type="button"></button><div class="body"><div class="tt">改进型 Clock 四轮扫描（看 A、D）</div><div class="ds-text">第一轮找 (0,0) 不改标志；第二轮找 (0,1) 并把扫过帧 A 置 0；第三轮再找 (0,0)；第四轮找 (0,1)。最多四轮必选中一页。</div></div></div>
       </div>
     </div>
     <h3 class="grp">题块四 · 指令系统与一条指令的执行</h3>
     <div class="card must">
       <div class="card-h"><span class="stars">★★★★</span><span class="ttl">x86 与 MIPS、指令格式、条件转移</span><span class="badge must">必背</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="co-4a"><button class="chk" type="button"></button><div class="body"><div class="tt">两套指令集对比</div><div class="ds-text">x86＝CISC、变长指令、寄存器 eax/ebx/ecx/edx、寄存器间接用 [ ]；MIPS＝RISC、定长 32 位、寄存器写 R[i]、转移以 b 开头（beq/bne）、取数存数 lw/sw。</div></div></div>
-        <div class="ckrow" data-k="co-4b"><button class="chk" type="button"></button><div class="body"><div class="tt">真题默认 Intel 格式</div><div class="ds-text">目的操作数在前；寄存器不加 %、立即数不加 $、十六进制末尾加 h（AT&amp;T 相反：源在前、加 %/$、0x 前缀）。注释风格：2016 后袁版 R[i]、M[addr]；之前唐版 (Ri)、M(addr)。</div></div></div>
-        <div class="ckrow" data-k="co-4c"><button class="chk" type="button"></button><div class="body"><div class="tt">条件转移 jcc（结合标志位）</div><div class="ds-text">
+        <div class="ckrow" id="k-co-4a" data-k="co-4a"><button class="chk" type="button"></button><div class="body"><div class="tt">两套指令集对比</div><div class="ds-text">x86＝CISC、变长指令、寄存器 eax/ebx/ecx/edx、寄存器间接用 [ ]；MIPS＝RISC、定长 32 位、寄存器写 R[i]、转移以 b 开头（beq/bne）、取数存数 lw/sw。</div></div></div>
+        <div class="ckrow" id="k-co-4b" data-k="co-4b"><button class="chk" type="button"></button><div class="body"><div class="tt">真题默认 Intel 格式</div><div class="ds-text">目的操作数在前；寄存器不加 %、立即数不加 $、十六进制末尾加 h（AT&amp;T 相反：源在前、加 %/$、0x 前缀）。注释风格：2016 后袁版 R[i]、M[addr]；之前唐版 (Ri)、M(addr)。</div></div></div>
+        <div class="ckrow" id="k-co-4c" data-k="co-4c"><button class="chk" type="button"></button><div class="body"><div class="tt">条件转移 jcc（结合标志位）</div><div class="ds-text">
           <table class="t">
           <tr><th>无符号（看 CF/ZF）</th><th>条件</th><th>有符号（看 SF/OF/ZF）</th><th>条件</th></tr>
           <tr><td>je/jz</td><td>ZF=1</td><td>jg（大于）</td><td>SF=OF 且 ZF=0</td></tr>
@@ -548,15 +595,15 @@ SF = 结果的最高位（即符号位）</div></div></div></div>
           <tr><td>ja（高于）</td><td>CF=0 且 ZF=0</td><td>jae</td><td>CF=0</td></tr>
           </table>
           cmp 本质做 A−B 只置标志、不存结果；test 做 A∧B。</div></div></div>
-        <div class="ckrow" data-k="co-4d"><button class="chk" type="button"></button><div class="body"><div class="tt">call / ret 与栈帧</div><div class="ds-text">call 先把返回地址压栈再跳转；ret 从栈顶弹出返回地址。栈帧布局：参数 [ebp+8]、[ebp+12]…，局部变量 [ebp−4]、[ebp−8]…，返回值放 eax；push 使 ESP−4、pop 使 ESP+4。转移指令用相对寻址（补码偏移，x86 按字节、MIPS 按指令字计）。</div></div></div>
+        <div class="ckrow" id="k-co-4d" data-k="co-4d"><button class="chk" type="button"></button><div class="body"><div class="tt">call / ret 与栈帧</div><div class="ds-text">call 先把返回地址压栈再跳转；ret 从栈顶弹出返回地址。栈帧布局：参数 [ebp+8]、[ebp+12]…，局部变量 [ebp−4]、[ebp−8]…，返回值放 eax；push 使 ESP−4、pop 使 ESP+4。转移指令用相对寻址（补码偏移，x86 按字节、MIPS 按指令字计）。</div></div></div>
       </div>
     </div>
 
     <div class="card">
       <div class="card-h"><span class="stars">★★★★</span><span class="ttl">数据通路与一条指令的执行（微操作）</span><span class="badge know">掌握</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="co-4e"><button class="chk" type="button"></button><div class="body"><div class="tt">认元件</div><div class="ds-text">ALU、加法器、乘除器、三态门、多路选择器 MUX（2ⁿ 路需 n 位选择信号）、译码器；普通寄存器 MAR/MDR/IR/PC/FR、暂存器、通用寄存器组、移位寄存器、自增寄存器；符号扩展、零扩展、取反部件。</div></div></div>
-        <div class="ckrow" data-k="co-4f"><button class="chk" type="button"></button><div class="body"><div class="tt">单总线关键约束 + 取指周期</div><div class="ds-text">单总线是临界资源，同一时刻只允许一个部件向总线送数（靠三态门控制）。取指微操作：PC→MAR，发读命令，M(MAR)→MDR，MDR→IR，(PC)+1→PC。再按操作码进入间址/执行/中断周期，会按节拍安排微操作、标各寄存器打入/使能信号。</div></div></div>
+        <div class="ckrow" id="k-co-4e" data-k="co-4e"><button class="chk" type="button"></button><div class="body"><div class="tt">认元件</div><div class="ds-text">ALU、加法器、乘除器、三态门、多路选择器 MUX（2ⁿ 路需 n 位选择信号）、译码器；普通寄存器 MAR/MDR/IR/PC/FR、暂存器、通用寄存器组、移位寄存器、自增寄存器；符号扩展、零扩展、取反部件。</div></div></div>
+        <div class="ckrow" id="k-co-4f" data-k="co-4f"><button class="chk" type="button"></button><div class="body"><div class="tt">单总线关键约束 + 取指周期</div><div class="ds-text">单总线是临界资源，同一时刻只允许一个部件向总线送数（靠三态门控制）。取指微操作：PC→MAR，发读命令，M(MAR)→MDR，MDR→IR，(PC)+1→PC。再按操作码进入间址/执行/中断周期，会按节拍安排微操作、标各寄存器打入/使能信号。</div></div></div>
       </div>
     </div>
 
@@ -564,10 +611,10 @@ SF = 结果的最高位（即符号位）</div></div></div></div>
     <div class="card must">
       <div class="card-h"><span class="stars">★★★★★</span><span class="ttl">三类冒险与处理（必考）</span><span class="badge must">必背</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="co-5a"><button class="chk" type="button"></button><div class="body"><div class="tt">结构冒险</div><div class="ds-text">同一时刻争用同一资源（如取指和访存都要用存储器）。解决：分离指令 Cache 与数据 Cache、寄存器堆双端口、插入气泡。</div></div></div>
-        <div class="ckrow" data-k="co-5b"><button class="chk" type="button"></button><div class="body"><div class="tt">数据冒险（重点）</div><div class="ds-text">后指令要读前指令尚未写回的寄存器，只需看“前一条”与“后三条”。多数靠<b>转发/旁路（forwarding）</b>解决；唯独 <span class="ic">Load-use</span>（上一条是 load、下一条立刻用该寄存器）转发也来不及，必须阻塞（插气泡）1 个周期。</div></div></div>
-        <div class="ckrow" data-k="co-5c"><button class="chk" type="button"></button><div class="body"><div class="tt">控制冒险</div><div class="ds-text">仅转移/分支指令引起，取指时不知下条地址。处理：阻塞后续 IF（提前到 ID 判断可减为 1 周期，否则约 3 周期）、分支预测、延迟槽。</div></div></div>
-        <div class="ckrow" data-k="co-5d"><button class="chk" type="button"></button><div class="body"><div class="tt">时空图与计算</div><div class="ds-text">会画五段流水线时空图，数阻塞气泡、算完成 n 条指令的周期数、加速比与吞吐；2014 真题考 bne + OFFSET 相对寻址结合流水线时空图。</div></div></div>
+        <div class="ckrow" id="k-co-5a" data-k="co-5a"><button class="chk" type="button"></button><div class="body"><div class="tt">结构冒险</div><div class="ds-text">同一时刻争用同一资源（如取指和访存都要用存储器）。解决：分离指令 Cache 与数据 Cache、寄存器堆双端口、插入气泡。</div></div></div>
+        <div class="ckrow" id="k-co-5b" data-k="co-5b"><button class="chk" type="button"></button><div class="body"><div class="tt">数据冒险（重点）</div><div class="ds-text">后指令要读前指令尚未写回的寄存器，只需看“前一条”与“后三条”。多数靠<b>转发/旁路（forwarding）</b>解决；唯独 <span class="ic">Load-use</span>（上一条是 load、下一条立刻用该寄存器）转发也来不及，必须阻塞（插气泡）1 个周期。</div></div></div>
+        <div class="ckrow" id="k-co-5c" data-k="co-5c"><button class="chk" type="button"></button><div class="body"><div class="tt">控制冒险</div><div class="ds-text">仅转移/分支指令引起，取指时不知下条地址。处理：阻塞后续 IF（提前到 ID 判断可减为 1 周期，否则约 3 周期）、分支预测、延迟槽。</div></div></div>
+        <div class="ckrow" id="k-co-5d" data-k="co-5d"><button class="chk" type="button"></button><div class="body"><div class="tt">时空图与计算</div><div class="ds-text">会画五段流水线时空图，数阻塞气泡、算完成 n 条指令的周期数、加速比与吞吐；2014 真题考 bne + OFFSET 相对寻址结合流水线时空图。</div></div></div>
       </div>
     </div>
 
@@ -594,66 +641,66 @@ SF = 结果的最高位（即符号位）</div></div></div></div>
     <div class="card must">
       <div class="card-h"><span class="stars">★★★★★</span><span class="ttl">PV 大题六步打草稿法</span><span class="badge must">必背流程</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="os-1a"><button class="chk" type="button"></button><div class="body"><div class="tt">六步法</div><div class="ds-text">①分几类进程，每类写一个函数；②在函数内用<b>中文</b>描述每个动作（标清“只做一次”还是“不断重复”），注意隐含的互斥（对缓冲区/共享变量的访问）；③逐个分析动作前是否需要 P，<b>有 P 必有 V、先写 P 再写 V</b>；④P/V 写完再定义信号量并定初值；⑤检查连续多个 P 是否会死锁，必要时调换 P 的顺序；⑥读题核对是否满足全部要求。</div></div></div>
-        <div class="ckrow" data-k="os-1b"><button class="chk" type="button"></button><div class="body"><div class="tt">信号量初值规律</div><div class="ds-text">互斥信号量初值＝1；同步（资源）信号量初值＝初始可用资源数。生产者-消费者三个量：mutex=1（缓冲互斥）、empty=空位数、full=产品数=0。<b>P 的顺序：先 P 资源、后 P 互斥；V 的顺序：先 V 互斥、后 V 资源</b>，反了会死锁。</div></div></div>
+        <div class="ckrow" id="k-os-1a" data-k="os-1a"><button class="chk" type="button"></button><div class="body"><div class="tt">六步法</div><div class="ds-text">①分几类进程，每类写一个函数；②在函数内用<b>中文</b>描述每个动作（标清“只做一次”还是“不断重复”），注意隐含的互斥（对缓冲区/共享变量的访问）；③逐个分析动作前是否需要 P，<b>有 P 必有 V、先写 P 再写 V</b>；④P/V 写完再定义信号量并定初值；⑤检查连续多个 P 是否会死锁，必要时调换 P 的顺序；⑥读题核对是否满足全部要求。</div></div></div>
+        <div class="ckrow" id="k-os-1b" data-k="os-1b"><button class="chk" type="button"></button><div class="body"><div class="tt">信号量初值规律</div><div class="ds-text">互斥信号量初值＝1；同步（资源）信号量初值＝初始可用资源数。生产者-消费者三个量：mutex=1（缓冲互斥）、empty=空位数、full=产品数=0。<b>P 的顺序：先 P 资源、后 P 互斥；V 的顺序：先 V 互斥、后 V 资源</b>，反了会死锁。</div></div></div>
       </div>
     </div>
 
     <div class="card must">
       <div class="card-h"><span class="stars">★★★★★</span><span class="ttl">五大题型识别（对号入座）</span><span class="badge must">必背</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="os-1c"><button class="chk" type="button"></button><div class="body"><div class="tt">① 生产者-消费者（生产—消费关系）</div><div class="ds-text">多车间/多缓冲区是它的变形（如 A、B 零件各一个货架 F1/F2，分别设 empty/full/mutex）；和尚提水还要对“井、缸、水桶”分别设互斥与资源信号量。</div></div></div>
-        <div class="ckrow" data-k="os-1d"><button class="chk" type="button"></button><div class="body"><div class="tt">② 理发师问题（服务—被服务）</div><div class="ds-text">顾客是生产者、理发师是消费者、等待座位是缓冲；信号量 customers(=0)、barbers(=0)、mutex(=1) 加 waiting 计数。</div></div></div>
-        <div class="ckrow" data-k="os-1e"><button class="chk" type="button"></button><div class="body"><div class="tt">③ 读者-写者（同类不互斥、异类互斥）</div><div class="ds-text">读者可并发、写者独占。三种变体：<b>读者优先</b>（可能饿死写者）、<b>写者优先</b>（可能饿死读者，更衣室题教练=写者、队员=读者）、<b>读写公平</b>（加一个初值 1 的排队信号量 queue，无论读者写者先 P(queue) 排队，进入临界区前 V(queue)）。用 count 计读者数、第一个读者 P(写锁)、最后一个读者 V(写锁)。</div></div></div>
-        <div class="ckrow" data-k="os-1f"><button class="chk" type="button"></button><div class="body"><div class="tt">④ 哲学家进餐（同时需多种资源→防死锁）</div><div class="ds-text">三种解法：ⓐ奇偶号反向取筷（不通用，不推荐）；ⓑ限制并发人数；ⓒ<b>一口气取得全部资源才运行</b>（破坏“请求和保持”，最通用、并发度最高，推荐）。推广“干饭人拿 r 个盆、共 N 盆”：限人数 x 满足 (r−1)·x+1 ≤ N，即 x ≤ (N−1)/(r−1)；或用 while(pot≥r 且 seat≥1) 的静态分配。</div></div></div>
-        <div class="ckrow" data-k="os-1g"><button class="chk" type="button"></button><div class="body"><div class="tt">⑤ 前驱图同步（送分）</div><div class="ds-text">每条前驱边设一个初值 0 的信号量；前驱结点动作后 V，后继结点动作前 P。按图连线即可。</div></div></div>
+        <div class="ckrow" id="k-os-1c" data-k="os-1c"><button class="chk" type="button"></button><div class="body"><div class="tt">① 生产者-消费者（生产—消费关系）</div><div class="ds-text">多车间/多缓冲区是它的变形（如 A、B 零件各一个货架 F1/F2，分别设 empty/full/mutex）；和尚提水还要对“井、缸、水桶”分别设互斥与资源信号量。</div></div></div>
+        <div class="ckrow" id="k-os-1d" data-k="os-1d"><button class="chk" type="button"></button><div class="body"><div class="tt">② 理发师问题（服务—被服务）</div><div class="ds-text">顾客是生产者、理发师是消费者、等待座位是缓冲；信号量 customers(=0)、barbers(=0)、mutex(=1) 加 waiting 计数。</div></div></div>
+        <div class="ckrow" id="k-os-1e" data-k="os-1e"><button class="chk" type="button"></button><div class="body"><div class="tt">③ 读者-写者（同类不互斥、异类互斥）</div><div class="ds-text">读者可并发、写者独占。三种变体：<b>读者优先</b>（可能饿死写者）、<b>写者优先</b>（可能饿死读者，更衣室题教练=写者、队员=读者）、<b>读写公平</b>（加一个初值 1 的排队信号量 queue，无论读者写者先 P(queue) 排队，进入临界区前 V(queue)）。用 count 计读者数、第一个读者 P(写锁)、最后一个读者 V(写锁)。</div></div></div>
+        <div class="ckrow" id="k-os-1f" data-k="os-1f"><button class="chk" type="button"></button><div class="body"><div class="tt">④ 哲学家进餐（同时需多种资源→防死锁）</div><div class="ds-text">三种解法：ⓐ奇偶号反向取筷（不通用，不推荐）；ⓑ限制并发人数；ⓒ<b>一口气取得全部资源才运行</b>（破坏“请求和保持”，最通用、并发度最高，推荐）。推广“干饭人拿 r 个盆、共 N 盆”：限人数 x 满足 (r−1)·x+1 ≤ N，即 x ≤ (N−1)/(r−1)；或用 while(pot≥r 且 seat≥1) 的静态分配。</div></div></div>
+        <div class="ckrow" id="k-os-1g" data-k="os-1g"><button class="chk" type="button"></button><div class="body"><div class="tt">⑤ 前驱图同步（送分）</div><div class="ds-text">每条前驱边设一个初值 0 的信号量；前驱结点动作后 V，后继结点动作前 P。按图连线即可。</div></div></div>
       </div>
     </div>
     <h3 class="grp">题块二 · 内存：虚拟分页 + TLB + 缺页（45 题，与计组联动）</h3>
     <div class="card must">
       <div class="card-h"><span class="stars">★★★★★</span><span class="ttl">虚拟地址空间与多级页表</span><span class="badge must">必背</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="os-2a"><button class="chk" type="button"></button><div class="body"><div class="tt">进程虚拟地址空间布局（高→低）</div><div class="ds-text">内核区（用户不可访问）→ 栈（向下增长）→ 共享库(mmap) → 堆（malloc，向上增长）→ BSS（未初始化数据）→ 已初始化读写数据段 → 只读代码段。代码段只读、非法写触发保护异常。</div></div></div>
-        <div class="ckrow" data-k="os-2b"><button class="chk" type="button"></button><div class="body"><div class="tt">为什么要多级页表</div><div class="ds-text">单级页表必须连续存放且按虚址空间大小分配，浪费内存；多级页表只为用到的区域建下级表，离散存放。TLB（快表）全相联或组相联（标记+有效位+页框号），与内存慢表配合。</div></div></div>
-        <div class="ckrow" data-k="os-2c"><button class="chk" type="button"></button><div class="body"><div class="tt">地址转换九步（与计组同一流程）</div><div class="ds-text">VA=[虚页号|页内]：查 TLB→命中得页框号；未命中查多级页表（可能缺页）→PPN 拼页内偏移得 PA=[页框号|页内]→查 Cache→未命中访存。4KB 页偏移 12 位。</div></div></div>
+        <div class="ckrow" id="k-os-2a" data-k="os-2a"><button class="chk" type="button"></button><div class="body"><div class="tt">进程虚拟地址空间布局（高→低）</div><div class="ds-text">内核区（用户不可访问）→ 栈（向下增长）→ 共享库(mmap) → 堆（malloc，向上增长）→ BSS（未初始化数据）→ 已初始化读写数据段 → 只读代码段。代码段只读、非法写触发保护异常。</div></div></div>
+        <div class="ckrow" id="k-os-2b" data-k="os-2b"><button class="chk" type="button"></button><div class="body"><div class="tt">为什么要多级页表</div><div class="ds-text">单级页表必须连续存放且按虚址空间大小分配，浪费内存；多级页表只为用到的区域建下级表，离散存放。TLB（快表）全相联或组相联（标记+有效位+页框号），与内存慢表配合。</div></div></div>
+        <div class="ckrow" id="k-os-2c" data-k="os-2c"><button class="chk" type="button"></button><div class="body"><div class="tt">地址转换九步（与计组同一流程）</div><div class="ds-text">VA=[虚页号|页内]：查 TLB→命中得页框号；未命中查多级页表（可能缺页）→PPN 拼页内偏移得 PA=[页框号|页内]→查 Cache→未命中访存。4KB 页偏移 12 位。</div></div></div>
       </div>
     </div>
 
     <div class="card must">
       <div class="card-h"><span class="stars">★★★★★</span><span class="ttl">平均地址转换时间 / 最大缺页率（结课考试计算）</span><span class="badge must">必会算</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="os-2d"><button class="chk" type="button"></button><div class="body"><div class="tt">平均访问时间通式</div><div class="ds-text">设 TLB 查找 t、访存 m、p 级页表、命中率 h：<span class="ic">EAT = h·t + (1−h)(t + p·m) + m</span>（最后 +m 是取数据；若题目只问“地址转换”则不加）。结课题 t=1ns、m=100ns、4 级页表：命中 1ns，未命中 1+100×4=401ns。</div></div></div>
-        <div class="ckrow" data-k="os-2e"><button class="chk" type="button"></button><div class="body"><div class="tt">含缺页的加权方程</div><div class="ds-text">EAT = (1−缺页率)·正常访问 + 缺页率·[页表处理 + 缺页中断处理]；脏页置换需先写回外存再读入（如读 5ms、脏页写回共 10ms），按“60% 置换的是脏页”加权，令 EAT &lt; 给定值（如 1ms）反解最大缺页率，或反解最低 TLB 命中率。</div></div></div>
-        <div class="ckrow" data-k="os-2f"><button class="chk" type="button"></button><div class="body"><div class="tt">页面置换算法</div><div class="ds-text">OPT 最佳（淘汰未来最久不用，理论值）；FIFO（可能 Belady 异常，分配帧增多缺页反增）；LRU（最近最久未用，性能近 OPT、开销大）；简单 Clock（看访问位 A，遇 1 置 0 跳过、遇 0 淘汰）；<b>改进型 Clock 看 (A,D) 四轮</b>（同计组）。会按引用串画缺页、算缺页率与物理块数关系。</div></div></div>
+        <div class="ckrow" id="k-os-2d" data-k="os-2d"><button class="chk" type="button"></button><div class="body"><div class="tt">平均访问时间通式</div><div class="ds-text">设 TLB 查找 t、访存 m、p 级页表、命中率 h：<span class="ic">EAT = h·t + (1−h)(t + p·m) + m</span>（最后 +m 是取数据；若题目只问“地址转换”则不加）。结课题 t=1ns、m=100ns、4 级页表：命中 1ns，未命中 1+100×4=401ns。</div></div></div>
+        <div class="ckrow" id="k-os-2e" data-k="os-2e"><button class="chk" type="button"></button><div class="body"><div class="tt">含缺页的加权方程</div><div class="ds-text">EAT = (1−缺页率)·正常访问 + 缺页率·[页表处理 + 缺页中断处理]；脏页置换需先写回外存再读入（如读 5ms、脏页写回共 10ms），按“60% 置换的是脏页”加权，令 EAT &lt; 给定值（如 1ms）反解最大缺页率，或反解最低 TLB 命中率。</div></div></div>
+        <div class="ckrow" id="k-os-2f" data-k="os-2f"><button class="chk" type="button"></button><div class="body"><div class="tt">页面置换算法</div><div class="ds-text">OPT 最佳（淘汰未来最久不用，理论值）；FIFO（可能 Belady 异常，分配帧增多缺页反增）；LRU（最近最久未用，性能近 OPT、开销大）；简单 Clock（看访问位 A，遇 1 置 0 跳过、遇 0 淘汰）；<b>改进型 Clock 看 (A,D) 四轮</b>（同计组）。会按引用串画缺页、算缺页率与物理块数关系。</div></div></div>
       </div>
     </div>
     <h3 class="grp">题块三 · 文件系统（46 题，难度最高）</h3>
     <div class="card must">
       <div class="card-h"><span class="stars">★★★★</span><span class="ttl">开机引导、磁盘初始化与磁盘地址</span><span class="badge know">掌握</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="os-3a"><button class="chk" type="button"></button><div class="body"><div class="tt">开机引导四步</div><div class="ds-text">ROM 自举程序 → 读 MBR 主引导记录 → 读活动分区引导记录 → 启动管理器（加载 OS）。</div></div></div>
-        <div class="ckrow" data-k="os-3b"><button class="chk" type="button"></button><div class="body"><div class="tt">磁盘初始化三步</div><div class="ds-text">①低级（物理）格式化：划分扇区，每扇区＝头标+数据+尾(CRC)；②分区；③逻辑格式化：建根目录、位示图/空闲表。</div></div></div>
-        <div class="ckrow" data-k="os-3c"><button class="chk" type="button"></button><div class="body"><div class="tt">物理地址与调度</div><div class="ds-text">物理地址＝(柱面号, 盘面号, 扇区号)，同一柱面各磁头“共进退”。访问时间＝寻道+旋转延迟+传输。调度：FCFS、SSTF（最短寻道）、SCAN（电梯，走到头折返）、C-SCAN（到一端空转回另一端）。</div></div></div>
+        <div class="ckrow" id="k-os-3a" data-k="os-3a"><button class="chk" type="button"></button><div class="body"><div class="tt">开机引导四步</div><div class="ds-text">ROM 自举程序 → 读 MBR 主引导记录 → 读活动分区引导记录 → 启动管理器（加载 OS）。</div></div></div>
+        <div class="ckrow" id="k-os-3b" data-k="os-3b"><button class="chk" type="button"></button><div class="body"><div class="tt">磁盘初始化三步</div><div class="ds-text">①低级（物理）格式化：划分扇区，每扇区＝头标+数据+尾(CRC)；②分区；③逻辑格式化：建根目录、位示图/空闲表。</div></div></div>
+        <div class="ckrow" id="k-os-3c" data-k="os-3c"><button class="chk" type="button"></button><div class="body"><div class="tt">物理地址与调度</div><div class="ds-text">物理地址＝(柱面号, 盘面号, 扇区号)，同一柱面各磁头“共进退”。访问时间＝寻道+旋转延迟+传输。调度：FCFS、SSTF（最短寻道）、SCAN（电梯，走到头折返）、C-SCAN（到一端空转回另一端）。</div></div></div>
       </div>
     </div>
 
     <div class="card must">
       <div class="card-h"><span class="stars">★★★★★</span><span class="ttl">UFS inode 混合索引（读盘次数大题）</span><span class="badge must">必背</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="os-3d"><button class="chk" type="button"></button><div class="body"><div class="tt">结构与最大文件</div><div class="ds-text">inode 含 10 个直接地址 + 一级间接 + 二级间接 + 三级间接。索引块 4KB、每项 4B ⇒ 每索引块 1024 项。最大文件块数＝<span class="ic">10 + 1024 + 1024² + 1024³</span>。</div></div></div>
-        <div class="ckrow" data-k="os-3e"><button class="chk" type="button"></button><div class="body"><div class="tt">定位第 x 块（块号从 0）</div><div class="ds-text">0–9 直接；10–1033 走一级；1034–(1034+1024²−1) 走二级；再往上走三级。例：第 6154 块（10+1024=1034，6154&gt;1034 且远小于 1034+1024²）走<b>二级间接</b>。</div></div></div>
-        <div class="ckrow" data-k="os-3f"><button class="chk" type="button"></button><div class="body"><div class="tt">读盘次数（inode 已在内存）</div><div class="ds-text">直接地址：1 次数据；一级：1 次索引块+1 次数据；二级：2 次索引块+1 次数据；三级：3 次索引块+1 次数据。若 inode 不在内存，还要加“查目录→读 inode”的次数。</div></div></div>
-        <div class="ckrow" data-k="os-3g"><button class="chk" type="button"></button><div class="body"><div class="tt">块内放几条记录/目录项</div><div class="ds-text">用块大小整除记录大小：512B 块放 255B 记录＝2 条；放 127B 目录项＝4 个。先算“一个块装几条”，再算“读某记录要读几个块、启动磁盘几次”。</div></div></div>
+        <div class="ckrow" id="k-os-3d" data-k="os-3d"><button class="chk" type="button"></button><div class="body"><div class="tt">结构与最大文件</div><div class="ds-text">inode 含 10 个直接地址 + 一级间接 + 二级间接 + 三级间接。索引块 4KB、每项 4B ⇒ 每索引块 1024 项。最大文件块数＝<span class="ic">10 + 1024 + 1024² + 1024³</span>。</div></div></div>
+        <div class="ckrow" id="k-os-3e" data-k="os-3e"><button class="chk" type="button"></button><div class="body"><div class="tt">定位第 x 块（块号从 0）</div><div class="ds-text">0–9 直接；10–1033 走一级；1034–(1034+1024²−1) 走二级；再往上走三级。例：第 6154 块（10+1024=1034，6154&gt;1034 且远小于 1034+1024²）走<b>二级间接</b>。</div></div></div>
+        <div class="ckrow" id="k-os-3f" data-k="os-3f"><button class="chk" type="button"></button><div class="body"><div class="tt">读盘次数（inode 已在内存）</div><div class="ds-text">直接地址：1 次数据；一级：1 次索引块+1 次数据；二级：2 次索引块+1 次数据；三级：3 次索引块+1 次数据。若 inode 不在内存，还要加“查目录→读 inode”的次数。</div></div></div>
+        <div class="ckrow" id="k-os-3g" data-k="os-3g"><button class="chk" type="button"></button><div class="body"><div class="tt">块内放几条记录/目录项</div><div class="ds-text">用块大小整除记录大小：512B 块放 255B 记录＝2 条；放 127B 目录项＝4 个。先算“一个块装几条”，再算“读某记录要读几个块、启动磁盘几次”。</div></div></div>
       </div>
     </div>
 
     <div class="card must">
       <div class="card-h"><span class="stars">★★★★</span><span class="ttl">目录、FAT、位示图、空闲管理</span><span class="badge must">必背</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="os-3h"><button class="chk" type="button"></button><div class="body"><div class="tt">目录项与 inode 分离</div><div class="ds-text">目录项只含“文件名 + inode 号”，属性全在 inode（缩短目录项、一个块放更多项、硬链接共享 inode）。每个目录含 “.”（自己）和 “..”（父目录），根目录的 “..” 指向自身；根目录位置固定、开机常驻内存。设置当前工作目录可减少 open 时逐级读盘。</div></div></div>
-        <div class="ckrow" data-k="os-3i"><button class="chk" type="button"></button><div class="body"><div class="tt">FAT 显式链接</div><div class="ds-text">开机把整张 FAT 读入内存常驻；目录项给起始块号，按表项查下一块、−1 结尾。表项位数决定最大块数（16bit ⇒ 2¹⁶ 块）。内存查表，随机访问比隐式链接快。</div></div></div>
-        <div class="ckrow" data-k="os-3j"><button class="chk" type="button"></button><div class="body"><div class="tt">位示图</div><div class="ds-text">每 bit 对应一块：1 已分配、0 空闲。块号从 0 计：字号 i=块号 div 字长、位号 j=块号 mod 字长；反求块号=i×字长+j。</div></div></div>
-        <div class="ckrow" data-k="os-3k"><button class="chk" type="button"></button><div class="body"><div class="tt">随机读速度排序（结论）</div><div class="ds-text">连续分配 &gt; FAT 显式链接（表在内存）&gt; 混合索引 &gt; 隐式链接（要顺序追链）。open 返回文件描述符 fd，经进程打开文件表→系统打开文件表→inode。</div></div></div>
+        <div class="ckrow" id="k-os-3h" data-k="os-3h"><button class="chk" type="button"></button><div class="body"><div class="tt">目录项与 inode 分离</div><div class="ds-text">目录项只含“文件名 + inode 号”，属性全在 inode（缩短目录项、一个块放更多项、硬链接共享 inode）。每个目录含 “.”（自己）和 “..”（父目录），根目录的 “..” 指向自身；根目录位置固定、开机常驻内存。设置当前工作目录可减少 open 时逐级读盘。</div></div></div>
+        <div class="ckrow" id="k-os-3i" data-k="os-3i"><button class="chk" type="button"></button><div class="body"><div class="tt">FAT 显式链接</div><div class="ds-text">开机把整张 FAT 读入内存常驻；目录项给起始块号，按表项查下一块、−1 结尾。表项位数决定最大块数（16bit ⇒ 2¹⁶ 块）。内存查表，随机访问比隐式链接快。</div></div></div>
+        <div class="ckrow" id="k-os-3j" data-k="os-3j"><button class="chk" type="button"></button><div class="body"><div class="tt">位示图</div><div class="ds-text">每 bit 对应一块：1 已分配、0 空闲。块号从 0 计：字号 i=块号 div 字长、位号 j=块号 mod 字长；反求块号=i×字长+j。</div></div></div>
+        <div class="ckrow" id="k-os-3k" data-k="os-3k"><button class="chk" type="button"></button><div class="body"><div class="tt">随机读速度排序（结论）</div><div class="ds-text">连续分配 &gt; FAT 显式链接（表在内存）&gt; 混合索引 &gt; 隐式链接（要顺序追链）。open 返回文件描述符 fd，经进程打开文件表→系统打开文件表→inode。</div></div></div>
       </div>
     </div>
 
@@ -661,14 +708,14 @@ SF = 结果的最高位（即符号位）</div></div></div></div>
     <div class="card">
       <div class="card-h"><span class="stars">★★★</span><span class="ttl">I/O 管理高频结论</span><span class="badge know">掌握</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="os-4a"><button class="chk" type="button"></button><div class="body"><div class="tt">I/O 软件层次（自顶向下）</div><div class="ds-text">用户层 I/O → 设备独立性软件（逻辑设备名、保护、缓冲、统一接口）→ 设备驱动程序 → 中断处理程序 → 硬件。</div></div></div>
-        <div class="ckrow" data-k="os-4b"><button class="chk" type="button"></button><div class="body"><div class="tt">SPOOLing 假脱机</div><div class="ds-text">磁盘上设输入井/输出井 + 输入/输出缓冲区与守护进程，把独占设备“改造”为可共享的虚拟设备（典型：打印机排队打印），提高并发。</div></div></div>
-        <div class="ckrow" data-k="os-4c"><button class="chk" type="button"></button><div class="body"><div class="tt">缓冲区作用</div><div class="ds-text">缓和 CPU 与设备速度不匹配、减少中断频率、解耦生产/消费节奏；单缓冲、双缓冲（可双向并行）、循环缓冲。DMA/中断/查询效率比较见计组题块一。</div></div></div>
-        <div class="ckrow" data-k="os-4d"><button class="chk" type="button"></button><div class="body"><div class="tt">设备独立性</div><div class="ds-text">用户用逻辑设备名，由逻辑设备表 LUT 映射到物理设备，换设备不改程序。</div></div></div>
+        <div class="ckrow" id="k-os-4a" data-k="os-4a"><button class="chk" type="button"></button><div class="body"><div class="tt">I/O 软件层次（自顶向下）</div><div class="ds-text">用户层 I/O → 设备独立性软件（逻辑设备名、保护、缓冲、统一接口）→ 设备驱动程序 → 中断处理程序 → 硬件。</div></div></div>
+        <div class="ckrow" id="k-os-4b" data-k="os-4b"><button class="chk" type="button"></button><div class="body"><div class="tt">SPOOLing 假脱机</div><div class="ds-text">磁盘上设输入井/输出井 + 输入/输出缓冲区与守护进程，把独占设备“改造”为可共享的虚拟设备（典型：打印机排队打印），提高并发。</div></div></div>
+        <div class="ckrow" id="k-os-4c" data-k="os-4c"><button class="chk" type="button"></button><div class="body"><div class="tt">缓冲区作用</div><div class="ds-text">缓和 CPU 与设备速度不匹配、减少中断频率、解耦生产/消费节奏；单缓冲、双缓冲（可双向并行）、循环缓冲。DMA/中断/查询效率比较见计组题块一。</div></div></div>
+        <div class="ckrow" id="k-os-4d" data-k="os-4d"><button class="chk" type="button"></button><div class="body"><div class="tt">设备独立性</div><div class="ds-text">用户用逻辑设备名，由逻辑设备表 LUT 映射到物理设备，换设备不改程序。</div></div></div>
       </div>
     </div>
 
-    <h3 class="grp">操作系统大题年份分布（王道强化真题）</h3>
+    <h3 class="grp" id="os-years">操作系统大题年份分布（王道强化真题）</h3>
     <div class="card"><div class="card-b">
       <table class="t">
       <tr><th>板块</th><th>考过大题的年份</th></tr>
@@ -691,9 +738,9 @@ SF = 结果的最高位（即符号位）</div></div></div></div>
     <div class="card must">
       <div class="card-h"><span class="stars">★★★★★</span><span class="ttl">从输入网址到页面显示的完整链路</span><span class="badge must">必背默写</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="cn-1a"><button class="chk" type="button"></button><div class="body"><div class="tt">① DNS 解析域名→IP</div><div class="ds-text">顺序：浏览器缓存 → hosts → 本地 DNS 服务器。<b>递归查询</b>＝本地 DNS 替你一路问到底、只给最终结果；<b>迭代查询</b>＝本地 DNS 依次问 根 → 顶级域 → 权威 DNS，自己逐级拿答案。</div></div></div>
-        <div class="ckrow" data-k="cn-1b"><button class="chk" type="button"></button><div class="body"><div class="tt">② 三次握手建 TCP（目的端口 80/443）</div><div class="ds-text">SYN（seq=x）→ SYN+ACK（seq=y, ack=x+1）→ ACK（ack=y+1）；<b>第三个 ACK 报文段可以捎带 HTTP 请求</b>，省一个 RTT。</div></div></div>
-        <div class="ckrow" data-k="cn-1c"><button class="chk" type="button"></button><div class="body"><div class="tt">③ 请求 HTML、再取引用对象（RTT 计算）</div><div class="ds-text">GET 请求 html → 服务器响应；html 里引用 n 个对象，再发 n 组请求/响应。四种模式的 RTT（设基础文档已取到）：
+        <div class="ckrow" id="k-cn-1a" data-k="cn-1a"><button class="chk" type="button"></button><div class="body"><div class="tt">① DNS 解析域名→IP</div><div class="ds-text">顺序：浏览器缓存 → hosts → 本地 DNS 服务器。<b>递归查询</b>＝本地 DNS 替你一路问到底、只给最终结果；<b>迭代查询</b>＝本地 DNS 依次问 根 → 顶级域 → 权威 DNS，自己逐级拿答案。</div></div></div>
+        <div class="ckrow" id="k-cn-1b" data-k="cn-1b"><button class="chk" type="button"></button><div class="body"><div class="tt">② 三次握手建 TCP（目的端口 80/443）</div><div class="ds-text">SYN（seq=x）→ SYN+ACK（seq=y, ack=x+1）→ ACK（ack=y+1）；<b>第三个 ACK 报文段可以捎带 HTTP 请求</b>，省一个 RTT。</div></div></div>
+        <div class="ckrow" id="k-cn-1c" data-k="cn-1c"><button class="chk" type="button"></button><div class="body"><div class="tt">③ 请求 HTML、再取引用对象（RTT 计算）</div><div class="ds-text">GET 请求 html → 服务器响应；html 里引用 n 个对象，再发 n 组请求/响应。四种模式的 RTT（设基础文档已取到）：
           <table class="t">
           <tr><th>连接模式</th><th>n 个对象额外耗时</th></tr>
           <tr><td>非持续·非流水线（HTTP/1.0，串行）</td><td>每对象 2 RTT（握手+请求），共 2n RTT</td></tr>
@@ -702,27 +749,27 @@ SF = 结果的最高位（即符号位）</div></div></div></div>
           <tr><td>持续·流水线 pipelining</td><td>请求连发，批量约 1 RTT</td></tr>
           </table>
           请求报文很小通常不计传输时延；响应/对象大要计 <b>对象大小÷带宽</b> 的传输时延。</div></div></div>
-        <div class="ckrow" data-k="cn-1d"><button class="chk" type="button"></button><div class="body"><div class="tt">④ 四次挥手</div><div class="ds-text">FIN→ACK→FIN→ACK；主动关闭方进入 TIME_WAIT，等待 <b>2 MSL</b> 后关闭。</div></div></div>
+        <div class="ckrow" id="k-cn-1d" data-k="cn-1d"><button class="chk" type="button"></button><div class="body"><div class="tt">④ 四次挥手</div><div class="ds-text">FIN→ACK→FIN→ACK；主动关闭方进入 TIME_WAIT，等待 <b>2 MSL</b> 后关闭。</div></div></div>
       </div>
     </div>
 
     <div class="card must">
       <div class="card-h"><span class="stars">★★★★★</span><span class="ttl">TCP：拥塞控制 / 流量控制 / 时间计算</span><span class="badge must">必背</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="cn-2a"><button class="chk" type="button"></button><div class="body"><div class="tt">快重传与拥塞窗口</div><div class="ds-text">一个 RTT 内收到 <b>3 个及以上相同的冗余 ACK</b> 立即重传丢失段（不等超时），并把 ssthresh 与 cwnd <b>都减半</b>（例 cwnd=5 → 2）。超时则 ssthresh=cwnd/2、cwnd 归 1 重新慢开始。慢开始指数增长到 ssthresh 后转拥塞避免、每 RTT 线性 +1。</div></div></div>
-        <div class="ckrow" data-k="cn-2b"><button class="chk" type="button"></button><div class="body"><div class="tt">流量控制</div><div class="ds-text">接收窗口 rwnd 随接收缓存被占用而缩小，可缩到 0；发送方发零窗口探测报文防止死锁。发送窗口＝min(cwnd, rwnd)。</div></div></div>
-        <div class="ckrow" data-k="cn-2c"><button class="chk" type="button"></button><div class="body"><div class="tt">TIME_WAIT / 最短时间</div><div class="ds-text">TIME_WAIT＝2 MSL。问“主机 H3 收到 FIN 后到真正关闭的最短时间”＝1 RTT + 2 MSL；服务器侧常为 1 RTT + 1 MSL。例 MSL=600ms、RTT=200ms ⇒ H3 最短 200+1200=1400ms。</div></div></div>
+        <div class="ckrow" id="k-cn-2a" data-k="cn-2a"><button class="chk" type="button"></button><div class="body"><div class="tt">快重传与拥塞窗口</div><div class="ds-text">一个 RTT 内收到 <b>3 个及以上相同的冗余 ACK</b> 立即重传丢失段（不等超时），并把 ssthresh 与 cwnd <b>都减半</b>（例 cwnd=5 → 2）。超时则 ssthresh=cwnd/2、cwnd 归 1 重新慢开始。慢开始指数增长到 ssthresh 后转拥塞避免、每 RTT 线性 +1。</div></div></div>
+        <div class="ckrow" id="k-cn-2b" data-k="cn-2b"><button class="chk" type="button"></button><div class="body"><div class="tt">流量控制</div><div class="ds-text">接收窗口 rwnd 随接收缓存被占用而缩小，可缩到 0；发送方发零窗口探测报文防止死锁。发送窗口＝min(cwnd, rwnd)。</div></div></div>
+        <div class="ckrow" id="k-cn-2c" data-k="cn-2c"><button class="chk" type="button"></button><div class="body"><div class="tt">TIME_WAIT / 最短时间</div><div class="ds-text">TIME_WAIT＝2 MSL。问“主机 H3 收到 FIN 后到真正关闭的最短时间”＝1 RTT + 2 MSL；服务器侧常为 1 RTT + 1 MSL。例 MSL=600ms、RTT=200ms ⇒ H3 最短 200+1200=1400ms。</div></div></div>
       </div>
     </div>
     <h3 class="grp">题块二 · 网络层：DHCP / ARP / 交换机 / IP 分片</h3>
     <div class="card must">
       <div class="card-h"><span class="stars">★★★★★</span><span class="ttl">新主机入网与转发沿途封装</span><span class="badge must">必背</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="cn-3a"><button class="chk" type="button"></button><div class="body"><div class="tt">DHCP 四报文</div><div class="ds-text">DISCOVER（广播）→ OFFER → REQUEST（广播）→ ACK。主机尚无 IP 时源 IP=0.0.0.0、目的=255.255.255.255，源 MAC 全 0、目的 MAC 全 F；类比“海投简历，只收一个 Offer”。</div></div></div>
-        <div class="ckrow" data-k="cn-3b"><button class="chk" type="button"></button><div class="body"><div class="tt">ARP（仅同一局域网）</div><div class="ds-text">由 IP 查 MAC：广播请求、单播响应；只在本网段/同一链路用，跨网段解析的是<b>默认网关</b>的 MAC。<b>被动学习</b>：收到并非查自己的 ARP 请求，也顺手把“发送方 IP↔MAC”记进 ARP 表。</div></div></div>
-        <div class="ckrow" data-k="cn-3c"><button class="chk" type="button"></button><div class="body"><div class="tt">交换机自学习与转发时延</div><div class="ds-text">按“源 MAC + 入端口”建交换表，按目的 MAC 转发、查不到则泛洪；<b>隔离冲突域、不隔离广播域</b>。直通转发只需收到 6B 目的地址：时延＝6B/速率（10Mbps 时 4.8μs）；存储转发要收完整个帧：时延＝yB/速率。</div></div></div>
-        <div class="ckrow" data-k="cn-3d"><button class="chk" type="button"></button><div class="body"><div class="tt">IP 分片（MTU=1500）</div><div class="ds-text">每片数据部分长度须为 <b>8B 的整数倍</b>（1500−20 首部=1480，恰为 8 倍数）；<b>片偏移以 8B 为单位</b>；标志 MF=1 表示后面还有片、DF=1 不分片。口诀“4 1 8 首总偏”（首部：版本/IHL、区分服务、总长度、标识、标志+片偏移）。</div></div></div>
-        <div class="ckrow" data-k="cn-3e"><button class="chk" type="button"></button><div class="body"><div class="tt">NAT 与子网</div><div class="ds-text">NAT 路由器转换<b>四元组</b>（源/目的 IP、源/目的端口）。子网中主机号全 0 是网络地址、全 1 是广播地址，均不可分配；主机位 h 位时可用主机 2ʰ−2；点对点链路只需 2 个地址 ⇒ 主机位 2 位。</div></div></div>
+        <div class="ckrow" id="k-cn-3a" data-k="cn-3a"><button class="chk" type="button"></button><div class="body"><div class="tt">DHCP 四报文</div><div class="ds-text">DISCOVER（广播）→ OFFER → REQUEST（广播）→ ACK。主机尚无 IP 时源 IP=0.0.0.0、目的=255.255.255.255，源 MAC 为客户端网卡地址、目的 MAC 全 F；类比“海投简历，只收一个 Offer”。</div></div></div>
+        <div class="ckrow" id="k-cn-3b" data-k="cn-3b"><button class="chk" type="button"></button><div class="body"><div class="tt">ARP（仅同一局域网）</div><div class="ds-text">由 IP 查 MAC：广播请求、单播响应；只在本网段/同一链路用，跨网段解析的是<b>默认网关</b>的 MAC。<b>被动学习</b>：收到并非查自己的 ARP 请求，也顺手把“发送方 IP↔MAC”记进 ARP 表。</div></div></div>
+        <div class="ckrow" id="k-cn-3c" data-k="cn-3c"><button class="chk" type="button"></button><div class="body"><div class="tt">交换机自学习与转发时延</div><div class="ds-text">按“源 MAC + 入端口”建交换表，按目的 MAC 转发、查不到则泛洪；<b>隔离冲突域、不隔离广播域</b>。直通转发只需收到 6B 目的地址：时延＝6B/速率（10Mbps 时 4.8μs）；存储转发要收完整个帧：时延＝yB/速率。</div></div></div>
+        <div class="ckrow" id="k-cn-3d" data-k="cn-3d"><button class="chk" type="button"></button><div class="body"><div class="tt">IP 分片（MTU=1500）</div><div class="ds-text">每片数据部分长度须为 <b>8B 的整数倍</b>（1500−20 首部=1480，恰为 8 倍数；<b>最后一片例外</b>）；<b>片偏移以 8B 为单位</b>；标志 MF=1 表示后面还有片、DF=1 不分片。口诀“4 1 8 首总偏”（首部：版本/IHL、区分服务、总长度、标识、标志+片偏移）。</div></div></div>
+        <div class="ckrow" id="k-cn-3e" data-k="cn-3e"><button class="chk" type="button"></button><div class="body"><div class="tt">NAT 与子网</div><div class="ds-text">NAT 路由器转换<b>四元组</b>（源/目的 IP、源/目的端口）。子网中主机号全 0 是网络地址、全 1 是广播地址，均不可分配；主机位 h 位时可用主机 2ʰ−2；点对点链路只需 2 个地址 ⇒ 主机位 2 位。</div></div></div>
       </div>
     </div>
 
@@ -730,20 +777,20 @@ SF = 结果的最高位（即符号位）</div></div></div></div>
     <div class="card must">
       <div class="card-h"><span class="stars">★★★★</span><span class="ttl">体系结构、性能指标、编码与 MAC</span><span class="badge must">必背</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="cn-4a"><button class="chk" type="button"></button><div class="body"><div class="tt">OSI 七层与功能</div><div class="ds-text">下→上：物链网传会示用。会话层＝会话管理/断点续传；表示层＝格式转换、编码、加密压缩；网络层可提供虚电路；传输层端到端。TCP/IP 为四层：网络接口、网际、传输、应用。</div></div></div>
-        <div class="ckrow" data-k="cn-4b"><button class="chk" type="button"></button><div class="body"><div class="tt">奈氏准则 与 香农定理</div><div class="ds-text">奈氏（无噪）：极限码元速率 2B Baud，数据率＝2B·log₂V；香农（有噪）：C＝B·log₂(1+S/N)；分贝换算 S/N＝10^(dB/10)。比特率＝码元速率×log₂(码元离散值数)。</div></div></div>
-        <div class="ckrow" data-k="cn-4c"><button class="chk" type="button"></button><div class="body"><div class="tt">曼彻斯特编码</div><div class="ds-text">每个码元中间必有跳变，既当时钟又当数据（效率 1/2）；差分曼彻斯特：位首有跳变为 0、无跳变为 1。</div></div></div>
-        <div class="ckrow" data-k="cn-4d"><button class="chk" type="button"></button><div class="body"><div class="tt">CSMA/CD（有线以太网）</div><div class="ds-text">争用期＝2τ（端到端往返时延）；最短帧长＝2τ×速率；二进制指数退避：从 0…(2ᵏ−1) 中随机取 r、k=min(重传次数,10)，冲突 ≥16 次丢弃。</div></div></div>
-        <div class="ckrow" data-k="cn-4e"><button class="chk" type="button"></button><div class="body"><div class="tt">CSMA/CA（无线）</div><div class="ds-text">DIFS 后用 RTS/CTS 预约信道、SIFS 间隔、数据后 ACK，靠虚拟载波监听 NAV 避冲突（无线听不到对方，不能用 CD）。</div></div></div>
+        <div class="ckrow" id="k-cn-4a" data-k="cn-4a"><button class="chk" type="button"></button><div class="body"><div class="tt">OSI 七层与功能</div><div class="ds-text">下→上：物链网传会示用。会话层＝会话管理/断点续传；表示层＝格式转换、编码、加密压缩；网络层可提供虚电路；传输层端到端。TCP/IP 为四层：网络接口、网际、传输、应用。</div></div></div>
+        <div class="ckrow" id="k-cn-4b" data-k="cn-4b"><button class="chk" type="button"></button><div class="body"><div class="tt">奈氏准则 与 香农定理</div><div class="ds-text">奈氏（无噪）：极限码元速率 2B Baud，数据率＝2B·log₂V；香农（有噪）：C＝B·log₂(1+S/N)；分贝换算 S/N＝10^(dB/10)。比特率＝码元速率×log₂(码元离散值数)。</div></div></div>
+        <div class="ckrow" id="k-cn-4c" data-k="cn-4c"><button class="chk" type="button"></button><div class="body"><div class="tt">曼彻斯特编码</div><div class="ds-text">每个码元中间必有跳变，既当时钟又当数据（效率 1/2）；差分曼彻斯特：位首有跳变为 0、无跳变为 1。</div></div></div>
+        <div class="ckrow" id="k-cn-4d" data-k="cn-4d"><button class="chk" type="button"></button><div class="body"><div class="tt">CSMA/CD（有线以太网）</div><div class="ds-text">争用期＝2τ（端到端往返时延）；最短帧长＝2τ×速率；二进制指数退避：从 0…(2ᵏ−1) 中随机取 r、k=min(重传次数,10)，冲突 ≥16 次丢弃。</div></div></div>
+        <div class="ckrow" id="k-cn-4e" data-k="cn-4e"><button class="chk" type="button"></button><div class="body"><div class="tt">CSMA/CA（无线）</div><div class="ds-text">DIFS 后用 RTS/CTS 预约信道、SIFS 间隔、数据后 ACK，靠虚拟载波监听 NAV 避冲突（无线听不到对方，不能用 CD）。</div></div></div>
       </div>
     </div>
 
     <div class="card must">
       <div class="card-h"><span class="stars">★★★★</span><span class="ttl">三种 ARQ 窗口、CRC、网络设备</span><span class="badge must">必背</span></div>
       <div class="card-b">
-        <div class="ckrow" data-k="cn-4f"><button class="chk" type="button"></button><div class="body"><div class="tt">停等 / GBN / SR 窗口与利用率</div><div class="ds-text">停等窗口=1；GBN 累积确认、发送窗口 ≤2ⁿ−1、失序帧丢弃；SR 逐帧确认、窗口 ≤2ⁿ⁻¹、缓存失序帧。信道利用率＝窗口×发送时延 /(发送时延+RTT)。</div></div></div>
-        <div class="ckrow" data-k="cn-4g"><button class="chk" type="button"></button><div class="body"><div class="tt">CRC 与设备隔离</div><div class="ds-text">CRC 用生成多项式 G 做模 2 除法、余数作 FCS，只检错不纠错。中继器/集线器（物理层）不隔离冲突域；网桥/交换机（链路层）隔离冲突域、不隔离广播域；路由器（网络层）冲突域、广播域都隔离。</div></div></div>
-        <div class="ckrow" data-k="cn-4h"><button class="chk" type="button"></button><div class="body"><div class="tt">三大路由协议对比</div><div class="ds-text">
+        <div class="ckrow" id="k-cn-4f" data-k="cn-4f"><button class="chk" type="button"></button><div class="body"><div class="tt">停等 / GBN / SR 窗口与利用率</div><div class="ds-text">停等窗口=1；GBN 累积确认、发送窗口 ≤2ⁿ−1、失序帧丢弃；SR 逐帧确认、窗口 ≤2ⁿ⁻¹、缓存失序帧。信道利用率＝窗口×发送时延 /(发送时延+RTT)。</div></div></div>
+        <div class="ckrow" id="k-cn-4g" data-k="cn-4g"><button class="chk" type="button"></button><div class="body"><div class="tt">CRC 与设备隔离</div><div class="ds-text">CRC 用生成多项式 G 做模 2 除法、余数作 FCS，只检错不纠错。中继器/集线器（物理层）不隔离冲突域；网桥/交换机（链路层）隔离冲突域、不隔离广播域；路由器（网络层）冲突域、广播域都隔离。</div></div></div>
+        <div class="ckrow" id="k-cn-4h" data-k="cn-4h"><button class="chk" type="button"></button><div class="body"><div class="tt">三大路由协议对比</div><div class="ds-text">
           <table class="t">
           <tr><th></th><th>RIP</th><th>OSPF</th><th>BGP</th></tr>
           <tr><td>算法</td><td>距离向量</td><td>链路状态</td><td>路径向量</td></tr>
@@ -761,42 +808,56 @@ SF = 结果的最高位（即符号位）</div></div></div></div>
 <section class="sec pagebreak" id="anchor-plan">
   <div class="sec-h"><span class="no">✓</span><h2>30 天五星考点背诵计划</h2><span class="en">30-DAY PLAN</span></div>
   <div class="sec-b">
-    <p class="lead">每天约 40–60 分钟：先合上讲义复述当天卡片（能讲全即打勾），再动手默 1 个代码/公式模板。每格可单独打卡，进度自动保存在本机。建议顺序：数据结构 → 计组 → 操作系统 → 计网，最后两天全科滚动。</p>
+    <p class="lead">每天约 40–60 分钟（含默写；只背诵约 20–30 分钟）：先合上讲义复述当天卡片（能讲全即打勾），再动手默 1 个代码/公式模板。每格可单独打卡，进度自动保存在本机。建议顺序：数据结构 → 计组 → 操作系统 → 计网，最后两天全科滚动。</p>
     <div class="card must"><div class="card-b">
       <table class="t plan-t">
       <tr><th style="width:64px">天数</th><th>当天背诵 / 默写任务</th></tr>
-      <tr><td><b>第 1 天</b></td><td><div class="ckrow" data-k="plan-01"><button class="chk" type="button"></button><div class="body"><div class="ds-text">命题地图；特殊矩阵压缩公式；栈/队列（括号匹配、循环队列、共享栈）</div></div></div></td></tr>
-      <tr><td><b>第 2 天</b></td><td><div class="ckrow" data-k="plan-02"><button class="chk" type="button"></button><div class="body"><div class="ds-text">二叉树性质（n₀=n₂+1）与顺序存储下标；树/森林三种表示与转换</div></div></div></td></tr>
-      <tr><td><b>第 3 天</b></td><td><div class="ckrow" data-k="plan-03"><button class="chk" type="button"></button><div class="body"><div class="ds-text">并查集 Find/Union 两优化；BST 删除、ASL；AVL 四种旋转</div></div></div></td></tr>
-      <tr><td><b>第 4 天</b></td><td><div class="ckrow" data-k="plan-04"><button class="chk" type="button"></button><div class="body"><div class="ds-text">哈夫曼构造/WPL/前缀编码；图的邻接矩阵与邻接表定义（会写结构体）</div></div></div></td></tr>
-      <tr><td><b>第 5 天</b></td><td><div class="ckrow" data-k="plan-05"><button class="chk" type="button"></button><div class="body"><div class="ds-text">Prim / Kruskal 全过程与 MST 唯一性；Dijkstra、Floyd</div></div></div></td></tr>
-      <tr><td><b>第 6 天</b></td><td><div class="ckrow" data-k="plan-06"><button class="chk" type="button"></button><div class="body"><div class="ds-text">拓扑排序、关键路径 ve/vl；折半、分块、散列（线性探测/拉链）ASL</div></div></div></td></tr>
-      <tr><td><b>第 7 天</b></td><td><div class="ckrow" data-k="plan-07"><button class="chk" type="button"></button><div class="body"><div class="ds-text">八种排序性质表（稳定性/复杂度/适用）；堆判断与建堆；外部排序虚段与 WPL</div></div></div></td></tr>
-      <tr><td><b>第 8 天</b></td><td><div class="ckrow" data-k="plan-08"><button class="chk" type="button"></button><div class="body"><div class="ds-text">默写快排 Partition + 划分找第 k 小；默写二路归并 Merge</div></div></div></td></tr>
-      <tr><td><b>第 9 天</b></td><td><div class="ckrow" data-k="plan-09"><button class="chk" type="button"></button><div class="body"><div class="ds-text">默写链表头插逆置、前后指针删除；默写二叉树递归框架/高度/三种判定</div></div></div></td></tr>
-      <tr><td><b>第 10 天</b></td><td><div class="ckrow" data-k="plan-10"><button class="chk" type="button"></button><div class="body"><div class="ds-text">默写图 BFS 最短路径；过一遍 DS 大题年表，标记不熟题型</div></div></div></td></tr>
-      <tr><td><b>第 11 天</b></td><td><div class="ckrow" data-k="plan-11"><button class="chk" type="button"></button><div class="body"><div class="ds-text">计组 I/O 三方式三个不等式；标志位 CF/OF/ZF/SF 公式与有/无符号判断</div></div></div></td></tr>
-      <tr><td><b>第 12 天</b></td><td><div class="ckrow" data-k="plan-12"><button class="chk" type="button"></button><div class="body"><div class="ds-text">乘除溢出判定；IEEE754 三格式；浮点加减五步；C 类型转换</div></div></div></td></tr>
-      <tr><td><b>第 13 天</b></td><td><div class="ckrow" data-k="plan-13"><button class="chk" type="button"></button><div class="body"><div class="ds-text">Cache 六条件、三种映射地址划分、Cache 行总位数计算</div></div></div></td></tr>
-      <tr><td><b>第 14 天</b></td><td><div class="ckrow" data-k="plan-14"><button class="chk" type="button"></button><div class="body"><div class="ds-text">i7 地址转换九步（背数字）；页表项标志；改进型 Clock 四轮</div></div></div></td></tr>
-      <tr><td><b>第 15 天</b></td><td><div class="ckrow" data-k="plan-15"><button class="chk" type="button"></button><div class="body"><div class="ds-text">x86/MIPS 区别、Intel 格式；jcc 条件转移表；call/ret 与栈帧布局</div></div></div></td></tr>
-      <tr><td><b>第 16 天</b></td><td><div class="ckrow" data-k="plan-16"><button class="chk" type="button"></button><div class="body"><div class="ds-text">数据通路元件与取指微操作；五段流水线三冒险、Load-use、画时空图</div></div></div></td></tr>
-      <tr><td><b>第 17 天</b></td><td><div class="ckrow" data-k="plan-17"><button class="chk" type="button"></button><div class="body"><div class="ds-text">OS PV 六步法；生产者-消费者、理发师信号量设置（先资源后互斥）</div></div></div></td></tr>
-      <tr><td><b>第 18 天</b></td><td><div class="ckrow" data-k="plan-18"><button class="chk" type="button"></button><div class="body"><div class="ds-text">读者-写者三种变体（读者优先/写者优先/公平 queue）；哲学家三解法与人数不等式</div></div></div></td></tr>
-      <tr><td><b>第 19 天</b></td><td><div class="ckrow" data-k="plan-19"><button class="chk" type="button"></button><div class="body"><div class="ds-text">前驱图同步；限时做 2 道 PV 综合大题并对照六步检查</div></div></div></td></tr>
-      <tr><td><b>第 20 天</b></td><td><div class="ckrow" data-k="plan-20"><button class="chk" type="button"></button><div class="body"><div class="ds-text">虚拟地址空间布局；多级页表为何省内存；地址转换九步（与计组对照）</div></div></div></td></tr>
-      <tr><td><b>第 21 天</b></td><td><div class="ckrow" data-k="plan-21"><button class="chk" type="button"></button><div class="body"><div class="ds-text">EAT 通式与最大缺页率/最低 TLB 命中率方程；OPT/FIFO/LRU/Clock 置换</div></div></div></td></tr>
-      <tr><td><b>第 22 天</b></td><td><div class="ckrow" data-k="plan-22"><button class="chk" type="button"></button><div class="body"><div class="ds-text">开机引导四步、磁盘初始化三步、物理地址与调度；inode 混合索引最大文件</div></div></div></td></tr>
-      <tr><td><b>第 23 天</b></td><td><div class="ckrow" data-k="plan-23"><button class="chk" type="button"></button><div class="body"><div class="ds-text">inode 定位与读盘次数；块内放几条记录；FAT、位示图、目录项 “.”“..”</div></div></div></td></tr>
-      <tr><td><b>第 24 天</b></td><td><div class="ckrow" data-k="plan-24"><button class="chk" type="button"></button><div class="body"><div class="ds-text">I/O 软件分层、SPOOLing、缓冲、设备独立性；过 OS 大题年份表</div></div></div></td></tr>
-      <tr><td><b>第 25 天</b></td><td><div class="ckrow" data-k="plan-25"><button class="chk" type="button"></button><div class="body"><div class="ds-text">计网浏览器全流程默写；DNS 递归/迭代；四种连接模式 RTT 计算</div></div></div></td></tr>
-      <tr><td><b>第 26 天</b></td><td><div class="ckrow" data-k="plan-26"><button class="chk" type="button"></button><div class="body"><div class="ds-text">三次/四次握手标志；快重传 3 冗余 ACK、cwnd/ssthresh；rwnd；TIME_WAIT=2MSL</div></div></div></td></tr>
-      <tr><td><b>第 27 天</b></td><td><div class="ckrow" data-k="plan-27"><button class="chk" type="button"></button><div class="body"><div class="ds-text">DHCP 四报文封装；ARP 被动学习；交换机自学习/转发时延；IP 分片 8B；NAT/子网</div></div></div></td></tr>
-      <tr><td><b>第 28 天</b></td><td><div class="ckrow" data-k="plan-28"><button class="chk" type="button"></button><div class="body"><div class="ds-text">OSI 七层功能；奈氏/香农与 dB；曼彻斯特；CSMA/CD 最短帧、CSMA/CA</div></div></div></td></tr>
-      <tr><td><b>第 29 天</b></td><td><div class="ckrow" data-k="plan-29"><button class="chk" type="button"></button><div class="body"><div class="ds-text">停等/GBN/SR 窗口与利用率；CRC；三种设备隔离域；RIP/OSPF/BGP 对比表</div></div></div></td></tr>
-      <tr><td><b>第 30 天</b></td><td><div class="ckrow" data-k="plan-30"><button class="chk" type="button"></button><div class="body"><div class="ds-text">全科二刷：只过「必背」徽章卡片与错题，重默五个算法模板，补齐未打勾项</div></div></div></td></tr>
+      <tr><td><b>第 1 天</b></td><td><div class="ckrow" id="k-plan-01" data-k="plan-01"><button class="chk" type="button"></button><div class="body"><div class="ds-text"><a href="#anchor-map">命题地图</a>；<a href="#k-ds-a1a">特殊矩阵压缩公式</a>；<a href="#k-ds-a2a">栈/队列（括号匹配、循环队列、共享栈）</a></div></div></div></td></tr>
+      <tr><td><b>第 2 天</b></td><td><div class="ckrow" id="k-plan-02" data-k="plan-02"><button class="chk" type="button"></button><div class="body"><div class="ds-text"><a href="#k-ds-a3a">二叉树性质（n₀=n₂+1）与顺序存储下标</a>；<a href="#k-ds-a4a">树/森林三种表示与转换</a></div></div></div></td></tr>
+      <tr><td><b>第 3 天</b></td><td><div class="ckrow" id="k-plan-03" data-k="plan-03"><button class="chk" type="button"></button><div class="body"><div class="ds-text"><a href="#k-ds-a5a">并查集 Find/Union 两优化</a>；<a href="#k-ds-a6a">BST 删除、ASL</a>；<a href="#k-ds-a6c">AVL 四种旋转</a></div></div></div></td></tr>
+      <tr><td><b>第 4 天</b></td><td><div class="ckrow" id="k-plan-04" data-k="plan-04"><button class="chk" type="button"></button><div class="body"><div class="ds-text"><a href="#k-ds-a7a">哈夫曼构造/WPL/前缀编码</a>；<a href="#k-ds-a8a">图的邻接矩阵与邻接表定义（会写结构体）</a></div></div></div></td></tr>
+      <tr><td><b>第 5 天</b></td><td><div class="ckrow" id="k-plan-05" data-k="plan-05"><button class="chk" type="button"></button><div class="body"><div class="ds-text"><a href="#k-ds-a9a">Prim / Kruskal 全过程与 MST 唯一性</a>；<a href="#k-ds-a10a">Dijkstra、Floyd</a></div></div></div></td></tr>
+      <tr><td><b>第 6 天</b></td><td><div class="ckrow" id="k-plan-06" data-k="plan-06"><button class="chk" type="button"></button><div class="body"><div class="ds-text"><a href="#k-ds-a11a">拓扑排序、关键路径 ve/vl</a>；<a href="#k-ds-a12a">折半、分块、散列（线性探测/拉链）ASL</a></div></div></div></td></tr>
+      <tr><td><b>第 7 天</b></td><td><div class="ckrow" id="k-plan-07" data-k="plan-07"><button class="chk" type="button"></button><div class="body"><div class="ds-text"><a href="#k-ds-a13a">八种排序性质表（稳定性/复杂度/适用）</a>；<a href="#k-ds-a13b">堆判断与建堆</a>；<a href="#k-ds-a14b">外部排序虚段与 WPL</a></div></div></div></td></tr>
+      <tr><td><b>第 8 天</b></td><td><div class="ckrow" id="k-plan-08" data-k="plan-08"><button class="chk" type="button"></button><div class="body"><div class="ds-text"><a href="#k-ds-b1a">默写快排 Partition + 划分找第 k 小</a>；<a href="#k-ds-b2a">默写二路归并 Merge</a></div></div></div></td></tr>
+      <tr><td><b>第 9 天</b></td><td><div class="ckrow" id="k-plan-09" data-k="plan-09"><button class="chk" type="button"></button><div class="body"><div class="ds-text"><a href="#k-ds-b3b">默写链表头插逆置、前后指针删除</a>；<a href="#k-ds-b4a">默写二叉树递归框架/高度/三种判定</a></div></div></div></td></tr>
+      <tr><td><b>第 10 天</b></td><td><div class="ckrow" id="k-plan-10" data-k="plan-10"><button class="chk" type="button"></button><div class="body"><div class="ds-text"><a href="#k-ds-b5a">默写图 BFS 最短路径</a>；<a href="#ds-years">过一遍 DS 大题年表，标记不熟题型</a></div></div></div></td></tr>
+      <tr><td><b>第 11 天</b></td><td><div class="ckrow" id="k-plan-11" data-k="plan-11"><button class="chk" type="button"></button><div class="body"><div class="ds-text"><a href="#k-co-1a">计组 I/O 三方式三个不等式</a>；<a href="#k-co-2a">标志位 CF/OF/ZF/SF 公式与有/无符号判断</a></div></div></div></td></tr>
+      <tr><td><b>第 12 天</b></td><td><div class="ckrow" id="k-plan-12" data-k="plan-12"><button class="chk" type="button"></button><div class="body"><div class="ds-text"><a href="#k-co-2c">乘除溢出判定</a>；<a href="#k-co-2d">IEEE754 三格式</a>；<a href="#k-co-2e">浮点加减五步</a>；<a href="#k-co-2f">C 类型转换</a></div></div></div></td></tr>
+      <tr><td><b>第 13 天</b></td><td><div class="ckrow" id="k-plan-13" data-k="plan-13"><button class="chk" type="button"></button><div class="body"><div class="ds-text"><a href="#k-co-3a">Cache 六条件、三种映射地址划分、Cache 行总位数计算</a></div></div></div></td></tr>
+      <tr><td><b>第 14 天</b></td><td><div class="ckrow" id="k-plan-14" data-k="plan-14"><button class="chk" type="button"></button><div class="body"><div class="ds-text"><a href="#k-co-3e">i7 地址转换九步（背数字）</a>；<a href="#k-co-3g">页表项标志</a>；<a href="#k-co-3h">改进型 Clock 四轮</a></div></div></div></td></tr>
+      <tr><td><b>第 15 天</b></td><td><div class="ckrow" id="k-plan-15" data-k="plan-15"><button class="chk" type="button"></button><div class="body"><div class="ds-text"><a href="#k-co-4a">x86/MIPS 区别、Intel 格式</a>；<a href="#k-co-4c">jcc 条件转移表</a>；<a href="#k-co-4d">call/ret 与栈帧布局</a></div></div></div></td></tr>
+      <tr><td><b>第 16 天</b></td><td><div class="ckrow" id="k-plan-16" data-k="plan-16"><button class="chk" type="button"></button><div class="body"><div class="ds-text"><a href="#k-co-4e">数据通路元件与取指微操作</a>；<a href="#k-co-5a">五段流水线三冒险、Load-use、画时空图</a></div></div></div></td></tr>
+      <tr><td><b>第 17 天</b></td><td><div class="ckrow" id="k-plan-17" data-k="plan-17"><button class="chk" type="button"></button><div class="body"><div class="ds-text"><a href="#k-os-1a">OS PV 六步法</a>；<a href="#k-os-1c">生产者-消费者、理发师信号量设置（先资源后互斥）</a></div></div></div></td></tr>
+      <tr><td><b>第 18 天</b></td><td><div class="ckrow" id="k-plan-18" data-k="plan-18"><button class="chk" type="button"></button><div class="body"><div class="ds-text"><a href="#k-os-1e">读者-写者三种变体（读者优先/写者优先/公平 queue）</a>；<a href="#k-os-1f">哲学家三解法与人数不等式</a></div></div></div></td></tr>
+      <tr><td><b>第 19 天</b></td><td><div class="ckrow" id="k-plan-19" data-k="plan-19"><button class="chk" type="button"></button><div class="body"><div class="ds-text"><a href="#k-os-1g">前驱图同步</a>；<a href="#k-os-1a">限时做 2 道 PV 综合大题并对照六步检查</a></div></div></div></td></tr>
+      <tr><td><b>第 20 天</b></td><td><div class="ckrow" id="k-plan-20" data-k="plan-20"><button class="chk" type="button"></button><div class="body"><div class="ds-text"><a href="#k-os-2a">虚拟地址空间布局</a>；<a href="#k-os-2b">多级页表为何省内存</a>；<a href="#k-os-2c">地址转换九步（与计组对照）</a></div></div></div></td></tr>
+      <tr><td><b>第 21 天</b></td><td><div class="ckrow" id="k-plan-21" data-k="plan-21"><button class="chk" type="button"></button><div class="body"><div class="ds-text"><a href="#k-os-2d">EAT 通式与最大缺页率/最低 TLB 命中率方程</a>；<a href="#k-os-2f">OPT/FIFO/LRU/Clock 置换</a></div></div></div></td></tr>
+      <tr><td><b>第 22 天</b></td><td><div class="ckrow" id="k-plan-22" data-k="plan-22"><button class="chk" type="button"></button><div class="body"><div class="ds-text"><a href="#k-os-3a">开机引导四步、磁盘初始化三步、物理地址与调度</a>；<a href="#k-os-3d">inode 混合索引最大文件</a></div></div></div></td></tr>
+      <tr><td><b>第 23 天</b></td><td><div class="ckrow" id="k-plan-23" data-k="plan-23"><button class="chk" type="button"></button><div class="body"><div class="ds-text"><a href="#k-os-3e">inode 定位与读盘次数</a>；<a href="#k-os-3g">块内放几条记录</a>；<a href="#k-os-3i">FAT、位示图、目录项 “.”“..”</a></div></div></div></td></tr>
+      <tr><td><b>第 24 天</b></td><td><div class="ckrow" id="k-plan-24" data-k="plan-24"><button class="chk" type="button"></button><div class="body"><div class="ds-text"><a href="#k-os-4a">I/O 软件分层、SPOOLing、缓冲、设备独立性</a>；<a href="#os-years">过 OS 大题年份表</a></div></div></div></td></tr>
+      <tr><td><b>第 25 天</b></td><td><div class="ckrow" id="k-plan-25" data-k="plan-25"><button class="chk" type="button"></button><div class="body"><div class="ds-text"><a href="#k-cn-1a">计网浏览器全流程默写</a>；<a href="#k-cn-1a">DNS 递归/迭代</a>；<a href="#k-cn-1c">四种连接模式 RTT 计算</a></div></div></div></td></tr>
+      <tr><td><b>第 26 天</b></td><td><div class="ckrow" id="k-plan-26" data-k="plan-26"><button class="chk" type="button"></button><div class="body"><div class="ds-text"><a href="#k-cn-1b">三次/四次握手标志</a>；<a href="#k-cn-2a">快重传 3 冗余 ACK、cwnd/ssthresh</a>；<a href="#k-cn-2b">rwnd</a>；<a href="#k-cn-2c">TIME_WAIT=2MSL</a></div></div></div></td></tr>
+      <tr><td><b>第 27 天</b></td><td><div class="ckrow" id="k-plan-27" data-k="plan-27"><button class="chk" type="button"></button><div class="body"><div class="ds-text"><a href="#k-cn-3a">DHCP 四报文封装</a>；<a href="#k-cn-3b">ARP 被动学习</a>；<a href="#k-cn-3c">交换机自学习/转发时延</a>；<a href="#k-cn-3d">IP 分片 8B</a>；<a href="#k-cn-3e">NAT/子网</a></div></div></div></td></tr>
+      <tr><td><b>第 28 天</b></td><td><div class="ckrow" id="k-plan-28" data-k="plan-28"><button class="chk" type="button"></button><div class="body"><div class="ds-text"><a href="#k-cn-4a">OSI 七层功能</a>；<a href="#k-cn-4b">奈氏/香农与 dB</a>；<a href="#k-cn-4c">曼彻斯特</a>；<a href="#k-cn-4d">CSMA/CD 最短帧、CSMA/CA</a></div></div></div></td></tr>
+      <tr><td><b>第 29 天</b></td><td><div class="ckrow" id="k-plan-29" data-k="plan-29"><button class="chk" type="button"></button><div class="body"><div class="ds-text"><a href="#k-cn-4f">停等/GBN/SR 窗口与利用率</a>；<a href="#k-cn-4g">CRC</a>；<a href="#k-cn-4g">三种设备隔离域</a>；<a href="#k-cn-4h">RIP/OSPF/BGP 对比表</a></div></div></div></td></tr>
+      <tr><td><b>第 30 天</b></td><td><div class="ckrow" id="k-plan-30" data-k="plan-30"><button class="chk" type="button"></button><div class="body"><div class="ds-text">全科二刷：只过「必背」徽章卡片与错题，<a href="#k-ds-b1a">重默五个算法模板</a>，补齐未打勾项</div></div></div></td></tr>
       </table>
     </div></div>
+  </div>
+</section>
+<!-- ===== 勘误记录 ===== -->
+<section class="sec" id="errata">
+  <div class="sec-h"><span class="no">勘</span><h2>勘误记录</h2><span class="en">ERRATA</span></div>
+  <div class="sec-b">
+    <table class="t">
+    <tr><th style="width:110px">日期</th><th>修正内容</th></tr>
+    <tr><td>2026-10-31</td><td>IP 分片"每片数据部分须为 8B 整数倍"补上"最后一片例外"（依据 RFC 791）</td></tr>
+    <tr><td>2026-10-31</td><td>大题给分表述统一为"往年经验估计、非官方标准"，不作通用保证</td></tr>
+    <tr><td>2026-10-31</td><td>每日时长口径统一：只背诵 20–30 分钟，加默写约 40–60 分钟</td></tr>
+    <tr><td>2026-11-14</td><td>DHCP 四报文："源 MAC 全 0"改为"源 MAC 为客户端网卡地址"（初次 Discover 的源 IP 为 0.0.0.0，源 MAC 是客户端自身网卡地址；依据 Cisco 抓包示例）</td></tr>
+    </table>
+    <p class="lead">结论表述能找到依据的才写进手册；发现新的错误请告诉我，我来改。</p>
   </div>
 </section>
 <!-- ===== 降权清单 ===== -->
@@ -815,7 +876,7 @@ SF = 结果的最高位（即符号位）</div></div></div></div>
       </table>
     </div></div>
     <div class="note" style="margin-top:14px">
-      <b>冲 100 分的时间分配建议：</b>大题套路（本手册「必背」卡片）优先于偏难怪选择；DS 算法题先保证五类模板写对拿基本分，CO/OS/CN 母题套熟即可覆盖大题七成以上分值。五星卡片能合上讲义复述、公式能默写，再去碰降权清单。
+      <b>冲 100 分的时间分配建议：</b>大题套路（本手册「必背」卡片）优先于偏难怪选择；DS 算法题先保证五类模板写对拿基本分，CO/OS/CN 母题套熟可拿下大题多数常规分值。五星卡片能合上讲义复述、公式能默写，再去碰降权清单。
     </div>
   </div>
 </section>
@@ -826,39 +887,195 @@ SF = 结果的最高位（即符号位）</div></div></div></div>
   <p>打卡进度保存在本机浏览器（localStorage），更换浏览器或清理缓存会重置；打印 A4 版请在方框内手写勾选。</p>
 </div>
 </div>
+<button id="toTop" type="button" aria-label="返回顶部">↑</button>
 <script>
 (function(){
-  var KEY="hb408_v1";
-  var state=JSON.parse(localStorage.getItem(KEY)||"{}");
+  var KEY="hb408_v1",QKEY="hb408_quiz_v1";
+  function load(k){try{var v=JSON.parse(localStorage.getItem(k));return v&&typeof v==="object"?v:{}}catch(e){return{}}}
+  function save(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+  var state=load(KEY),quiz=load(QKEY),quizMode=false;
   var root=document.getElementById("root");
+  function st(k){var v=state[k];return (v===true||v===2)?2:(v===1?1:0)}
+  function isPlan(k){return k.slice(0,5)==="plan-"}
+  /* 知识点条目预建自测控件（30天计划条目不参与自测） */
+  var allRows=root.querySelectorAll(".ckrow[data-k]");
+  for(var i=0;i<allRows.length;i++){
+    (function(r){
+      var k=r.getAttribute("data-k");if(isPlan(k))return;
+      var qz=document.createElement("div");qz.className="qz";
+      qz.innerHTML='<button type="button" data-q="show">看答案</button>'+
+        '<span class="qrate" hidden><button type="button" data-q="ok">会</button>'+
+        '<button type="button" data-q="mid">不熟</button>'+
+        '<button type="button" data-q="no">不会</button></span>'+
+        '<span class="qr" data-q="res"></span>';
+      r.querySelector(".body").appendChild(qz);
+      paintRes(r);
+    })(allRows[i]);
+  }
+  function paintRes(r){
+    var k=r.getAttribute("data-k"),v=quiz[k],el=r.querySelector('[data-q="res"]');
+    if(!el)return;
+    el.className="qr"+(v?" "+v:"");
+    el.textContent=v==="ok"?"自测：会":(v==="mid"?"自测：不熟":(v==="no"?"自测：不会":""));
+  }
   function refresh(){
-    var rows=document.querySelectorAll(".ckrow"),done=0;
-    rows.forEach(function(r){var k=r.getAttribute("data-k");var on=!!state[k];
-      r.classList.toggle("done",on);
-      var b=r.querySelector(".chk");if(b){b.classList.toggle("on",on);b.textContent=on?"✓":"";b.setAttribute("aria-pressed",on);}
-      if(on)done++;});
-    document.getElementById("prog").textContent="已背 "+done+" / "+rows.length;
+    var kDone=0,kRev=0,kTot=0,pDone=0,pTot=0;
+    var rows=root.querySelectorAll(".ckrow[data-k]");
+    for(var i=0;i<rows.length;i++){
+      var r=rows[i],k=r.getAttribute("data-k"),s=st(k),plan=isPlan(k);
+      r.classList.toggle("st1",s===1);r.classList.toggle("st2",s===2);
+      var b=r.querySelector(".chk");
+      if(b){
+        b.classList.toggle("s1",s===1);b.classList.toggle("s2",s===2);
+        b.textContent=s===2?"\u2713":(s===1?"~":"");
+        b.title=s===0?"未学 → 点我标记待复习":(s===1?"待复习 → 点我标记能独立复述":"能独立复述 → 点我回到未学");
+      }
+      if(plan){pTot++;if(s===2)pDone++}else{kTot++;if(s===2)kDone++;else if(s===1)kRev++}
+    }
+    document.getElementById("prog").textContent="已掌握 "+kDone+"/"+kTot+" · 待复习 "+kRev+" · 计划 "+pDone+"/"+pTot;
+    applyFilter();refreshQuizProg();
+  }
+  function applyFilter(){
     var f=document.getElementById("filter").value;
-    document.querySelectorAll(".card").forEach(function(c){
-      var show=true;
-      if(f==="undone"){show=!!c.querySelector(".ckrow:not(.done)");}
-      else if(f==="must"){show=c.classList.contains("must");}
-      c.style.display=show?"":"none";
-    });
+    var cards=document.querySelectorAll("#root .card");
+    for(var i=0;i<cards.length;i++){
+      var c=cards[i],vis=0,rows=c.querySelectorAll(".ckrow[data-k]");
+      for(var j=0;j<rows.length;j++){
+        var r=rows[j],show=true;
+        if(f==="undone")show=st(r.getAttribute("data-k"))<2;
+        r.style.display=show?"":"none";if(show)vis++;
+      }
+      var cardShow=true;
+      if(f==="must")cardShow=c.classList.contains("must");
+      else if(f==="undone")cardShow=vis>0;
+      c.style.display=cardShow?"":"none";
+    }
+  }
+  function refreshQuizProg(){
+    var ok=0,mid=0,no=0,tot=0;
+    var rows=root.querySelectorAll(".ckrow[data-k]");
+    for(var i=0;i<rows.length;i++){
+      var k=rows[i].getAttribute("data-k");if(isPlan(k))continue;tot++;
+      var v=quiz[k];if(v==="ok")ok++;else if(v==="mid")mid++;else if(v==="no")no++;
+    }
+    document.getElementById("quizProg").textContent="自测 会"+ok+" · 不熟"+mid+" · 不会"+no+" · 已测"+(ok+mid+no)+"/"+tot;
+  }
+  function setQuiz(on){
+    quizMode=on;
+    document.body.classList.toggle("quiz",on);
+    document.getElementById("quizBtn").classList.toggle("primary",on);
+    document.getElementById("prog").hidden=on;
+    document.getElementById("quizProg").hidden=!on;
+    if(!on){
+      var rev=root.querySelectorAll(".ckrow.revealed");
+      for(var i=0;i<rev.length;i++){
+        rev[i].classList.remove("revealed");
+        var b=rev[i].querySelector('[data-q="show"]');if(b)b.textContent="看答案";
+        var qr=rev[i].querySelector(".qrate");if(qr)qr.hidden=true;
+      }
+    }
+    refreshQuizProg();
   }
   root.addEventListener("click",function(e){
-    var b=e.target.closest(".chk");if(!b)return;
-    var r=b.closest(".ckrow");var k=r.getAttribute("data-k");
-    state[k]=!state[k];if(!state[k])delete state[k];
-    localStorage.setItem(KEY,JSON.stringify(state));refresh();
+    var t=e.target;
+    var qb=(t&&t.closest)?t.closest("[data-q]"):null;
+    if(qb&&quizMode){
+      var r=qb.closest(".ckrow"),k=r.getAttribute("data-k"),act=qb.getAttribute("data-q");
+      if(act==="show"){
+        var rev=r.classList.toggle("revealed");
+        qb.textContent=rev?"收起答案":"看答案";
+        r.querySelector(".qrate").hidden=!rev;
+      }else{
+        quiz[k]=act;save(QKEY,quiz);paintRes(r);
+      }
+      refreshQuizProg();return;
+    }
+    var b=(t&&t.closest)?t.closest(".chk"):null;
+    if(!b||quizMode)return;
+    var r2=b.closest(".ckrow"),k2=r2.getAttribute("data-k"),ns=(st(k2)+1)%3;
+    if(ns===0)delete state[k2];else state[k2]=ns;
+    save(KEY,state);refresh();
   });
-  document.getElementById("filter").addEventListener("change",refresh);
-  document.getElementById("printBtn").addEventListener("click",function(){window.print();});
+  document.getElementById("filter").addEventListener("change",applyFilter);
+  document.getElementById("quizBtn").addEventListener("click",function(){setQuiz(!quizMode)});
+  document.getElementById("gonav").addEventListener("change",function(e){
+    var v=e.target.value;e.target.value="";if(!v)return;
+    if(v.charAt(0)==="#"){var t=document.querySelector(v);if(t)t.scrollIntoView({behavior:"smooth",block:"start"})}
+    else location.href=v;
+  });
+  var toTop=document.getElementById("toTop");
+  window.addEventListener("scroll",function(){toTop.style.display=window.scrollY>600?"block":"none"},{passive:true});
+  toTop.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})});
+  document.getElementById("printBtn").addEventListener("click",function(){window.print()});
   document.getElementById("resetBtn").addEventListener("click",function(){
-    if(confirm("清空全部打卡记录？")){state={};localStorage.removeItem(KEY);refresh();}
+    if(quizMode){
+      if(confirm("清空自测记录？")){quiz={};save(QKEY,quiz);
+        var rows=root.querySelectorAll(".ckrow[data-k]");
+        for(var i=0;i<rows.length;i++)paintRes(rows[i]);
+        refreshQuizProg()}
+    }else if(confirm("清空全部打卡记录？")){state={};save(KEY,state);refresh()}
+  });
+  document.getElementById("expBtn").addEventListener("click",function(){
+    var d={v:1,exported:new Date().toISOString().slice(0,10),checkin:load(KEY),quiz:load(QKEY)};
+    var blob=new Blob([JSON.stringify(d)],{type:"application/json"});
+    var a=document.createElement("a");a.href=URL.createObjectURL(blob);
+    a.download="408背诵进度-"+d.exported+".json";document.body.appendChild(a);a.click();
+    setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},800);
+  });
+  document.getElementById("impBtn").addEventListener("click",function(){document.getElementById("impFile").click()});
+  document.getElementById("impFile").addEventListener("change",function(e){
+    var f=e.target.files[0];if(!f)return;
+    var rd=new FileReader();
+    rd.onload=function(){
+      try{
+        var d=JSON.parse(rd.result);
+        if(!d||typeof d!=="object"||(!d.checkin&&!d.quiz))throw 0;
+        if(confirm("导入将覆盖当前本机进度，继续？")){
+          if(d.checkin){state=d.checkin;save(KEY,state)}
+          if(d.quiz){quiz=d.quiz;save(QKEY,quiz);
+            var rows=root.querySelectorAll(".ckrow[data-k]");
+            for(var i=0;i<rows.length;i++)paintRes(rows[i])}
+          refresh();
+        }
+      }catch(err){alert("文件格式不对，导入失败")}
+      e.target.value="";
+    };
+    rd.readAsText(f);
+  });
+  /* 字号：标准 / 大 / 特大，保存在本机 */
+  var fsSel=document.getElementById("fontSize");
+  function applyFont(v){ document.body.style.fontSize=v+"px"; }
+  try{ var fsv=localStorage.getItem("hb408_font"); if(fsv){ fsSel.value=fsv; applyFont(fsv); } }catch(e){}
+  fsSel.addEventListener("change",function(){ applyFont(fsSel.value); try{localStorage.setItem("hb408_font",fsSel.value)}catch(e){} });
+  /* 滚动位置记忆：无 hash 时恢复上次位置 */
+  function saveScroll(){ try{localStorage.setItem("hb408_scroll",String(window.scrollY))}catch(e){} }
+  var sTick=false;
+  window.addEventListener("scroll",function(){ if(sTick)return; sTick=true; requestAnimationFrame(function(){saveScroll();sTick=false}); },{passive:true});
+  window.addEventListener("beforeunload",saveScroll);
+  if(!location.hash){
+    try{ var sy=parseInt(localStorage.getItem("hb408_scroll")||"0",10); if(sy>0)window.scrollTo(0,sy); }catch(e){}
+  }
+  /* 更多菜单 */
+  var moreBtn=document.getElementById("moreBtn"),moreMenu=document.getElementById("moreMenu");
+  moreBtn.addEventListener("click",function(e){ e.stopPropagation(); moreMenu.hidden=!moreMenu.hidden; });
+  moreMenu.addEventListener("click",function(){ moreMenu.hidden=true; });
+  document.addEventListener("click",function(e){ if(!moreMenu.hidden && !e.target.closest(".more"))moreMenu.hidden=true; });
+  /* 计划回链：知识点条目后加"↩ 第 N 天计划" */
+  var BACK={"cn-1a":[25],"cn-1b":[26],"cn-1c":[25],"cn-2a":[26],"cn-2b":[26],"cn-2c":[26],"cn-3a":[27],"cn-3b":[27],"cn-3c":[27],"cn-3d":[27],"cn-3e":[27],"cn-4a":[28],"cn-4b":[28],"cn-4c":[28],"cn-4d":[28],"cn-4f":[29],"cn-4g":[29],"cn-4h":[29],"co-1a":[11],"co-2a":[11],"co-2c":[12],"co-2d":[12],"co-2e":[12],"co-2f":[12],"co-3a":[13],"co-3e":[14],"co-3g":[14],"co-3h":[14],"co-4a":[15],"co-4c":[15],"co-4d":[15],"co-4e":[16],"co-5a":[16],"ds-a10a":[5],"ds-a11a":[6],"ds-a12a":[6],"ds-a13a":[7],"ds-a13b":[7],"ds-a14b":[7],"ds-a1a":[1],"ds-a2a":[1],"ds-a3a":[2],"ds-a4a":[2],"ds-a5a":[3],"ds-a6a":[3],"ds-a6c":[3],"ds-a7a":[4],"ds-a8a":[4],"ds-a9a":[5],"ds-b1a":[8,30],"ds-b2a":[8],"ds-b3b":[9],"ds-b4a":[9],"ds-b5a":[10],"os-1a":[17,19],"os-1c":[17],"os-1e":[18],"os-1f":[18],"os-1g":[19],"os-2a":[20],"os-2b":[20],"os-2c":[20],"os-2d":[21],"os-2f":[21],"os-3a":[22],"os-3d":[22],"os-3e":[23],"os-3g":[23],"os-3i":[23],"os-4a":[24]};
+  Object.keys(BACK).forEach(function(k){
+    var row=root.querySelector('.ckrow[data-k="'+k+'"]');
+    if(!row)return;
+    var body=row.querySelector(".body"); if(!body)return;
+    BACK[k].forEach(function(d){
+      var a=document.createElement("a");
+      a.className="backlink"; a.href="#k-plan-"+(d<10?"0"+d:d);
+      a.textContent="↩ 第 "+d+" 天计划";
+      body.appendChild(a);
+    });
   });
   refresh();
 })();
+
 </script>
 </body>
 </html>

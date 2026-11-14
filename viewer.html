@@ -13,6 +13,8 @@ header .t{flex:1;min-width:120px;white-space:nowrap;overflow:hidden;text-overflo
 header .pi{font-size:13px;opacity:.9;white-space:nowrap}
 header button,header .btn{background:rgba(255,255,255,.16);border:0;color:#fff;border-radius:8px;padding:7px 12px;font-size:14px;cursor:pointer;white-space:nowrap}
 header button:active,header .btn:active{background:rgba(255,255,255,.3)}
+header button.on{background:rgba(255,255,255,.38)}
+header input#goto{width:58px;padding:6px 8px;border:0;border-radius:8px;font-size:14px;text-align:center;outline:none;background:#fff;color:#222}
 #doc{padding:16px 16px 40px}
 .page{background:#fff;margin:0 auto 14px;box-shadow:0 2px 10px rgba(0,0,0,.35);position:relative}
 .page canvas{display:block;width:100%;height:100%}
@@ -28,8 +30,11 @@ header button:active,header .btn:active{background:rgba(255,255,255,.3)}
 <span class="pi" id="pageinfo"></span>
 <button id="prev">上一页</button>
 <button id="next">下一页</button>
+<input id="goto" type="number" min="1" inputmode="numeric" placeholder="页码" aria-label="跳转到指定页">
+<button id="goBtn">跳页</button>
 <button id="zoomout">－</button>
 <button id="fitw">适合宽度</button>
+<button id="fitp">整页显示</button>
 <button id="zoomin">＋</button>
 <a class="btn" id="dl" href="#" download>下载原文件</a>
 </header>
@@ -57,12 +62,26 @@ const title = params.get('title') || file.split('/').pop();
 $('title').textContent = title;
 $('dl').href = './' + file;
 
-let pdf = null, total = 0, zoom = 1, current = 1;
+let pdf = null, total = 0, zoom = 1, current = 1, fitMode = 'width';
 const dpr = Math.min(window.devicePixelRatio || 1, 2);
 const pages = []; // {wrap, canvas, num, w, h, rendered, task}
 
+/* 阅读位置记忆：按文件存页码 / 缩放 / 显示模式，下次打开同一文件时恢复 */
+const POS_KEY = 'pdfpos_' + file;
+function loadPos(){ try{ const v = JSON.parse(localStorage.getItem(POS_KEY)); return v && typeof v === 'object' ? v : {}; }catch(e){ return {}; } }
+function savePos(){ try{ localStorage.setItem(POS_KEY, JSON.stringify({page: current, zoom, fit: fitMode})); }catch(e){} }
+const savedPos = loadPos();
+if (typeof savedPos.zoom === 'number') zoom = Math.min(3, Math.max(0.5, savedPos.zoom));
+if (savedPos.fit === 'page' || savedPos.fit === 'width') fitMode = savedPos.fit;
+/* ?page=N 参数优先于记忆的位置 */
+const startPage = (() => { const n = parseInt(params.get('page') || '', 10); return Number.isFinite(n) && n > 0 ? n : (savedPos.page || 1); })();
+
 function pageWidthCss(){ return Math.max(200, docEl.clientWidth - 32); }
-function cssScaleFor(p){ return (pageWidthCss() / p.w) * zoom; }
+function pageHeightCss(){ return Math.max(200, innerHeight - 110); }
+function cssScaleFor(p){
+  const s = fitMode === 'page' ? Math.min(pageWidthCss() / p.w, pageHeightCss() / p.h) : pageWidthCss() / p.w;
+  return s * zoom;
+}
 function layoutPage(p){
   const s = cssScaleFor(p);
   p.wrap.style.width = Math.round(p.w * s) + 'px';
@@ -104,14 +123,15 @@ function setCurrent(n){
   if (n !== current){
     current = n;
     $('pageinfo').textContent = '第 ' + current + ' / ' + total + ' 页';
+    savePos();
   }
 }
-function scrollToPage(n){
+function scrollToPage(n, behavior){
   n = Math.max(1, Math.min(total, n));
   const p = pages[n - 1];
   if (!p) return;
   const y = p.wrap.getBoundingClientRect().top + scrollY - 60;
-  scrollTo({top: y, behavior: 'smooth'});
+  scrollTo({top: y, behavior: behavior || 'smooth'});
   setCurrent(n);
 }
 
@@ -151,6 +171,8 @@ try{
     });
   }, {rootMargin: '800px 0px 800px 0px'});
   pages.forEach(p => io.observe(p.wrap));
+  if (fitMode === 'page') $('fitp').classList.add('on');
+  if (startPage > 1) scrollToPage(startPage, 'auto');
   let ticking = false;
   addEventListener('scroll', () => {
     if (ticking) return;
@@ -164,9 +186,13 @@ try{
 
 $('prev').onclick = () => scrollToPage(current - 1);
 $('next').onclick = () => scrollToPage(current + 1);
-$('zoomin').onclick = () => { zoom = Math.min(3, zoom * 1.25); refreshVisible(); };
-$('zoomout').onclick = () => { zoom = Math.max(0.5, zoom / 1.25); refreshVisible(); };
-$('fitw').onclick = () => { zoom = 1; refreshVisible(); };
+$('zoomin').onclick = () => { zoom = Math.min(3, zoom * 1.25); refreshVisible(); savePos(); };
+$('zoomout').onclick = () => { zoom = Math.max(0.5, zoom / 1.25); refreshVisible(); savePos(); };
+$('fitw').onclick = () => { zoom = 1; fitMode = 'width'; $('fitp').classList.remove('on'); refreshVisible(); savePos(); };
+$('fitp').onclick = () => { fitMode = fitMode === 'page' ? 'width' : 'page'; $('fitp').classList.toggle('on', fitMode === 'page'); refreshVisible(); savePos(); };
+$('goBtn').onclick = () => { const n = parseInt($('goto').value, 10); if (Number.isFinite(n)) scrollToPage(n); };
+$('goto').addEventListener('keydown', e => { if (e.key === 'Enter'){ const n = parseInt(e.target.value, 10); if (Number.isFinite(n)) scrollToPage(n); } });
+addEventListener('beforeunload', savePos);
 let rt;
 addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(refreshVisible, 200); });
 </script>
